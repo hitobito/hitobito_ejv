@@ -1,0 +1,496 @@
+#  Copyright (c) 2012-2024, Eidgenössischer Jodlerverband. This file is part of
+#  hitobito_ejv and licensed under the Affero General Public License version 3
+#  or later. See the COPYING file at the top-level directory or at
+#  https://github.com/hitobito/hitobito_ejv.
+
+
+fr:
+  activerecord:
+    models:
+
+      ### GROUPS
+
+      group/root:
+        one: Organisation faîtière
+        many: Organisations faîtières
+        other: Organisations faîtières
+      group/root_geschaeftsstelle:
+        one: Secrétariat
+        many: Secrétariats
+        other: Secrétariats
+      group/root_vorstand:
+        one: Direction de l'association
+        many: Direction de l'association
+        other: Direction de l'association
+      group/root_musikkommission:
+        one: Commission de musique
+        many: Commissions de musique
+        other: Commissions de musique
+      group/root_arbeitsgruppe:
+        one: Groupe de travail
+        many: Groupes de travail
+        other: Groupes de travail
+      group/root_ehrenmitglieder:
+        one: Membre d'honneur
+        many: Membres d'honneur
+        other: Membres d'honneur
+      group/root_veteranen:
+        one: Vétéran
+        many: Vétérans
+        other: Vétérans
+      group/root_veteranen/veteran:
+        one: Vétéran fédéral
+        many: Vétérans fédéraux
+        other: Vétérans fédéraux
+      group/root_veteranen/ehrenveteran:
+        one: 'Vétéran d’honneur fédéral '
+        many: Vétérans d’honneur fédéraux
+        other: Vétérans d’honneur fédéraux
+      group/root_veteranen/cism_veteran:
+        one: Vétérans CISM
+        many: Vétérans CISM
+        other: Vétérans CISM
+      group/root_kontakte:
+        one: Contacts
+        many: Contacts
+        other: Contacts
+      group/root/suisa_admin:
+        one: Responsable SUISA
+        many: Responsables SUISA
+        other: Responsables SUISA
+
+      group/mitgliederverband:
+        one: Association membre
+        many: Associations membres
+        other: Associations membres
+      group/mitgliederverband_geschaeftsstelle:
+        one: Secrétariats
+        many: Secrétariats
+        other: Secrétariats
+      group/mitgliederverband_vorstand:
+        one: Comité
+        many: Comités
+        other: Comités
+      group/mitgliederverband_musikkommission:
+        one: Commissions de musique
+        many: Commissions de musique
+        other: Commissions de musique
+      group/mitgliederverband_arbeitsgruppe:
+        one: Groupes de travail
+        many: Groupes de travail
+        other: Groupes de travail
+      group/mitgliederverband_ehrenmitglieder:
+        one: Membres d'honneur
+        many: Membres d'honneur
+        other: Membres d'honneur
+      group/mitgliederverband_veteranen:
+        one: Vétérans
+        many: Vétérans
+        other: Vétérans
+      group/mitgliederverband_veteranen/veteran:
+        one: Vétéran cantonal
+        many: Vétérans cantonaux
+        other: Vétérans cantonaux
+      group/mitgliederverband_veteranen/ehrenveteran:
+        one: Vétéran d'honneur cantonal
+        many: Vétérans d'honneur cantonaux
+        other: Vétérans d'honneur cantonaux
+      group/mitgliederverband_kontakte:
+        one: Contacts
+        many: Contacts
+        other: Contacts
+      group/mitgliederverband/suisa_admin:
+        one: Responsables SUISA
+        many: Responsables SUISA
+        other: Responsables SUISA
+
+      group/kreis:
+        one: ''
+        many: ''
+        other: ''
+      group/kreis_geschaeftsstelle:
+        one: ''
+        many: ''
+        other: ''
+      group/kreis_vorstand:
+        one: ''
+        many: ''
+        other: ''
+      group/kreis_musikkommission:
+        one: ''
+        many: ''
+        other: ''
+      group/kreis_arbeitsgruppe:
+        one: ''
+        many: ''
+        other: ''
+      group/kreis_ehrenmitglieder:
+        one: ''
+        many: ''
+        other: ''
+      group/kreis_kontakte:
+        one: ''
+        many: ''
+        other: ''
+      group/kreis/suisa_admin:
+        one: ''
+        many: ''
+        other: ''
+
+      group/regionalverband:
+        one: Association régionale
+        many: Associations régionales
+        other: Associations régionales
+      group/regionalverband_geschaeftsstelle:
+        one: Secrétariats
+        many: Secrétariats
+        other: Secrétariats
+      group/regionalverband_vorstand:
+        one: Comités
+        many: Comités
+        other: Comités
+      group/regionalverband_musikkommission:
+        one: Commissions de musique
+        many: Commissions de musique
+        other: Commissions de musique
+      group/regionalverband_arbeitsgruppe:
+        one: Groupes de travail
+        many: Groupes de travail
+        other: Groupes de travail
+      group/regionalverband_ehrenmitglieder:
+        one: Membres d'honneur
+        many: Membres d'honneur
+        other: Membres d'honneur
+      group/regionalverband_kontakte:
+        one: Contacts
+        many: Contacts
+        other: Contacts
+      group/regionalverband/suisa_admin:
+        one: Responsables SUISA
+        many: Responsables SUISA
+        other: Responsables SUISA
+
+      group/verein:
+        one: Société
+        many: Sociétés
+        other: Sociétés
+      group/verein_vorstand:
+        one: Comités
+        many: Comités
+        other: Comités
+      group/verein_musikkommission:
+        one: Commissions de musique
+        many: Commissions de musique
+        other: Commissions de musique
+      group/verein_arbeitsgruppe:
+        one: Groupes de travail
+        many: Groupes de travail
+        other: Groupes de travail
+      group/verein_mitglieder:
+        one: Membres
+        oter: Membres
+      group/verein_kontakte:
+        one: Contacts
+        many: Contacts
+        other: Contacts
+      group/verein/conductor:
+        one: Directeur-trice
+        many: Directeur-trice-s
+        other: Directeur-trice-s
+      group/verein/jugendverantwortlicher:
+        one: ''
+        many: ''
+        other: ''
+      group/verein/suisa_admin:
+        one: Responsables SUISA
+        many: Responsables SUISA
+        other: Responsables SUISA
+
+      ### ROLES FOR ALL LAYERS
+
+      #### General
+
+      role/admin:
+        one: Administrateur
+        many: Administrateurs
+        other: Administrateurs
+      role/adressverwaltung:
+        one: Gestion des adresses
+        many: Gestion des adresses
+        other: Gestion des adresses
+
+      #### Geschaeftsstelle Roles
+
+      role/geschaeftsstelle_manager:
+        one: Direction du secrétariat
+        many: Direction du secrétariat
+        other: Direction du secrétariat
+      role/geschaeftsstelle_staff:
+        one: Collaborateur
+        many: Collaborateurs
+        other: Collaborateurs
+      role/geschaeftsstelle_help:
+        one: Aide
+        many: Aides
+        other: Aides
+
+      #### Vorstand Roles
+
+      role/vorstand_kassier:
+        one: Caissier
+        many: Caissiers
+        other: Caissiers
+      role/vorstand_finanzchef:
+        one: Chef des finances
+        many: Chefs des finances
+        other: Chefs des finances
+      role/vorstand_mitglied:
+        one: Membre
+        many: Membres
+        other: Membres
+      role/vorstand_praesident:
+        one: Président
+        many: Présidents
+        other: Présidents
+      role/vorstand_vize_praesident:
+        one: Vice-président
+        many: Vice-présidents
+        other: Vice-présidents
+      role/vorstand_veteranenchef:
+        one: Chef des vétérans
+        many: Chefs des vétérans
+        other: Chefs des vétérans
+      role/vorstand_materialverwaltung:
+        one: Responsable matériel
+        many: Responsable matériel
+        other: Responsable matériel
+
+      #### Musikkommission Roles
+
+      role/musikkommission_praesident:
+        one: Présidents
+        many: Présidents
+        other: Présidents
+      role/musikkommission_mitglied:
+        one: Membres
+        many: Membres
+        other: Membres
+
+      #### Arbeitsgruppen Roles
+
+      role/arbeitsgruppe_leitung:
+        one: Direction
+        many: Direction
+        other: Direction
+      role/arbeitsgruppe_mitglied:
+        one: Membres
+        many: Membres
+        other: Membres
+
+      #### Ehrenmitglieder
+
+      role/ehrenmitglied:
+        one: Membre d'honneur
+        many: Membres d'honneur
+        other: Membres d'honneur
+
+      #### Kontakte Roles
+
+      role/kontakt:
+        one: Contact
+        many: Contacts
+        other: Contacts
+
+      #### Mitglieder Roles
+
+      role/mitglieder_mitglied:
+        one: Membres
+        many: Membres
+        other: Membres
+      role/mitglieder_passivmitglied:
+        one: Membre passif
+        many: Membres passifs
+        other: Membres passifs
+
+      song:
+        one: Oeuvre
+        many: Œuvres
+        other: Œuvres
+
+      song_census:
+        one: Liste d'annonce
+
+      song_count:
+        one: Annonce d'oeuvre
+        many: Annonces d'œuvres
+        other: Annonces d'œuvres
+
+      concert:
+        one: Interprétation
+        other: Interprétations
+        without_date: Interprétation sans date
+
+      mailing_list:
+        one: Liste
+        many: Listes
+        other: Listes
+
+      event/group_participation:
+        one: Inscriptions de groupe
+        many: Inscriptions de groupe
+        other: Inscriptions de groupe
+
+      invoice_item/membership_fee:
+        one: ''
+        many: ''
+        other: ''
+
+    attributes:
+      person:
+        correspondence_language: Langue de correspondance
+        profession: Profession
+        active_years: Années d'activité actuelles
+        active_role: adhésion active
+        prognostic_active_years: Années d'activité - projection
+        personal_data_usage: Utilisation des données d'adresse
+      group:
+        vereinssitz: Siège de la société
+        founding_year: Année de fondation
+        klasse: Classe
+        klasse_value: Classe
+        besetzung: Instrumentation
+        besetzung_value: Instrumentation
+        unterhaltungsmusik: Musique de divertissement
+        unterhaltungsmusik_value: Musique de divertissement
+        correspondence_language: Langue de correspondance
+        subventionen: Subventions
+        recognized_members: Membres saisis
+        manual_member_count: ""
+        manually_counted_members: Membres saisis manuellement
+        besetzungen:
+          _nil: Inconnu
+          brass_band: Brass Band
+          harmonie: Harmonie
+          fanfare_benelux: Fanfare Benelux
+          fanfare_mixte: Fanfare Mixte
+          tambour_percussion: Tambours et percussion
+        unterhaltungsmusik_stufen:
+          _nil: Inconnu
+          oberstufe: Catégorie supérieure
+          mittelstufe: Catégorie moyenne
+          unterstufe: Catégorie inférieure
+        klassen:
+          _nil: Inconnu
+          hoechste: Classe d'excellence
+          erste: 1ère classe
+          zweite: 2ème classe
+          dritte: 3ème classe
+          vierte: 4ème classe
+        mitgliederverband: Associations membres
+        secondary_parent_groups: autres appartenances à un groupe
+        secondary_parent_id: secondaire
+        secondary_parent: appartenance secondaire
+        tertiary_parent_id: autres
+        tertiary_parent: appartenance supplémentaire
+        hostname: Hostname
+        buv_lohnsumme: Salaire AAP
+        nbuv_lohnsumme: Salaire AANP
+        contact_email: Adresse email de la personne de contact
+        suisa_status: Statut SUISA
+      role:
+        dates: Données
+        created_at: Entrée
+        deleted_at: Démission
+        correspondence_language: Langue de correspondance
+        class:
+          permission:
+            description:
+              song_census: Peut gérer les annonces SUISA.
+              layer_full: Tout lire et écrire à ce niveau. Créer des manifestations et des listes à ce niveau.
+              group_full: Lire et écrire sur le groupe. Créer des manifestations et des listes sur le groupe.
+              festival_participation: Peut inscrire la société à des fêtes de musique et traiter l’inscription.
+              uv_lohnsumme: Peut gérer le salaire AA.
+
+      invoice_item:
+        amount: ""
+        cutoff_date: ""
+
+      song:
+        title: Titre
+        composed_by: Compositeur
+        arranged_by: Arrangeur
+        published_by: Éditeur
+        suisa_id: ID-SUISA
+
+      song_count:
+        song: Œuvre
+        song_id: Œuvre
+        count: Nombre
+        title: Titre
+        composed_by: Compositeur
+        arranged_by: Arrangeur
+        published_by: Éditeur
+        suisa_id: ID-SUISA
+        verein: Société
+        verein_id: ID société
+        verein_with_town: Société et lieu
+
+      song_counts:
+        song: Œuvre
+        song_id: Œuvre
+
+      concert:
+        song_counts: Saisie de l'oeuvre
+        performed_at: Date
+        name: Interprétation
+        reasons:
+          _nil: joué(e)
+          joint_play: SUISA déclarée par l'association d'ensembles
+          not_playable: sans exécution musicale cette année
+          otherwise_billed: SUISA payé par un tiers
+
+      event/group_participation:
+        name: "Inscription %{group} à %{event}"
+        group_id: Société
+        joint_participation: Inscription comme association d’ensembles
+        secondary_group: Société partenaire
+        secondary_group_id: Association d’ensembles avec
+        secondary_group_is_primary: La société partenaire est leader
+        music_style: Domaine
+        music_type: Instrumentation
+        music_level: Catégorie
+        parade_music: Musique de parade en plus
+        music_styles:
+          concert_music: Musique de concert
+          contemporary_music: Musique de divertissement
+          parade_music: Musique de parade
+        music_types:
+          harmony: Harmonie
+          brass_band: Brass Band
+          fanfare_benelux: Fanfare Benelux
+          fanfare_mixte: Fanfare Mixte
+          traditional_parade: Musique de parade traditionnelle
+          show_parade: Musique de parade avec évolutions et/ou show
+          parade_music: oui
+          no_parade: non
+        music_levels:
+          high: Catégorie supérieure
+          medium: Catégorie moyenne
+          low: Catégorie inférieure
+          highest: Classe d'excellence
+          first: 1re catégorie
+          second: 2e catégorie
+          third: 3e catégorie
+          fourth: 4e catégorie
+
+    errors:
+      models:
+        song:
+          attributes:
+            title:
+              taken: existe déjà avec le même compositeur chez cet éditeur
+
+  errors:
+    messages:
+      cannot_be_later_than_today: ne peut pas être postérieur à aujourd'hui
+      cannot_be_later_than_deleted_at: doit être antérieur à ou le jour même de la démission

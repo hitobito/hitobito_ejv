@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-#  Copyright (c) 2019-2020, Schweizer Blasmusikverband. This file is part of
-#  hitobito and licensed under the Affero General Public License version 3
+#  Copyright (c) 2012-2024, Eidgenössischer Jodlerverband. This file is part of
+#  hitobito_ejv and licensed under the Affero General Public License version 3
 #  or later. See the COPYING file at the top-level directory or at
-#  https://github.com/hitobito/hitobito.
+#  https://github.com/hitobito/hitobito_ejv.
 
 require "spec_helper"
 
@@ -62,15 +62,6 @@ describe GroupAbility do
   end
 
   describe "manage UV-Lohnsummen" do
-    context "as admin of generalverband" do
-      let(:group_role_class) { Group::Generalverband::Admin }
-      let(:group) { groups(:superstructure) }
-      let(:checked_group) { groups(:musikgesellschaft_aarberg) }
-
-      it { is_expected.to be_able_to(:show_uv_lohnsummen, checked_group) }
-      it { is_expected.to be_able_to(:edit_uv_lohnsummen, checked_group) }
-    end
-
     context "as admin of dachverband" do
       let(:group_role_class) { Group::Root::Admin }
       let(:group) { groups(:hauptgruppe_1) }
@@ -132,14 +123,6 @@ describe GroupAbility do
       Fabricate(Group::VereinMitglieder::Mitglied.name.to_sym,
         group: checked_group.children.where(type: Group::VereinMitglieder.sti_name).first,
         person: checked_person)
-    end
-
-    context "as admin of generalverband" do
-      let(:group_role_class) { Group::Generalverband::Admin }
-      let(:group) { groups(:superstructure) }
-      let(:checked_group) { groups(:musikgesellschaft_aarberg) }
-
-      it { is_expected.to be_able_to(:destroy, checked_person) }
     end
 
     context "as admin of dachverband" do

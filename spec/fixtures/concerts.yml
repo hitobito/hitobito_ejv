@@ -1,25 +1,9 @@
-#  Copyright (c) 2012-2020, Schweizer Blasmusikverband. This file is part of
-#  hitobito_sbv and licensed under the Affero General Public License version 3
+#  Copyright (c) 2012-2024, Eidgenössischer Jodlerverband. This file is part of
+#  hitobito_ejv and licensed under the Affero General Public License version 3
 #  or later. See the COPYING file at the top-level directory or at
-#  https://github.com/hitobito/hitobito_sbv.
-# == Schema Information
-#
-# Table name: concerts
-#
-#  id                   :integer          not null, primary key
-#  name                 :string(255)      not null
-#  verein_id            :integer          not null
-#  mitgliederverband_id :integer
-#  regionalverband_id   :integer
-#  song_census_id       :integer
-#  performed_at         :date
-#  year                 :integer          not null
-#  editable             :boolean          default(TRUE), not null
-#  created_at           :datetime         not null
-#  updated_at           :datetime         not null
-#
+#  https://github.com/hitobito/hitobito_ejv.
 
-first_concert:
+
   name: first concert
   verein: musikgesellschaft_aarberg
   year: 2018
