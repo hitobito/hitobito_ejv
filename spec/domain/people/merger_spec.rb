@@ -11,7 +11,7 @@ describe People::Merger do
   let(:person) { Fabricate(:person) }
   let(:duplicate) { Fabricate(:person_with_address_and_phone) }
   let(:actor) { people(:admin) }
-  let(:person_roles) { person.roles.with_deleted }
+  let(:person_roles) { person.roles.with_inactive }
 
   let(:merger) { described_class.new(@source.reload, @target.reload, actor) }
 
@@ -19,8 +19,8 @@ describe People::Merger do
     Fabricate("Group::RootMusikkommission::Mitglied",
       group: groups(:musikkommission_4),
       person: duplicate,
-      created_at: 5.seconds.ago,
-      deleted_at: Time.zone.now)
+      start_on: 5.seconds.ago,
+      end_on: Time.zone.now)
   end
 
   context "merge people" do

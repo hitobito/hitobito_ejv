@@ -3,7 +3,7 @@
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_ejv.
 
-
+hauptgruppe_1:
   parent:
   layer_group_id: <%= ActiveRecord::FixtureSet.identify(:hauptgruppe_1) %>
   lft: 2

@@ -4,18 +4,6 @@
 #  https://github.com/hitobito/hitobito_ejv.
 
 
-# == Schema Information
-#
-# Table name: songs
-#
-#  id           :integer          not null, primary key
-#  title        :string(255)      not null
-#  composed_by  :string(255)      not null
-#  arranged_by  :string(255)
-#  published_by :string(255)
-#  suisa_id     :integer
-#
-
 papa:
   title: "Papa Was a Rollin' Stone"
   composed_by: 'Barrett Strong / Norman Whitfield'
