@@ -9,6 +9,17 @@
   background-color: lighten(desaturate($link-color, 60%), 55%);
 }
 
+@include responsive(mediaDesktop) {
+  #page.is-nav-not-rendered {
+    padding-left: 240px; // space to display the logo
+  }
+}
+@include responsive(mediaPhone, $media-desktop) {
+  #page.is-nav-not-rendered {
+    padding-top: 240px; // space to display the logo
+  }
+}
+
 .song-counts {
   input[name="q"] {
     width: 100%;

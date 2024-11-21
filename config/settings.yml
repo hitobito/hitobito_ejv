@@ -10,7 +10,7 @@ application:
   logo:
     image: logo-ejv.svg
     width: 200
-    height: 60
+    height: 200
     background_color: white
 
   languages:
