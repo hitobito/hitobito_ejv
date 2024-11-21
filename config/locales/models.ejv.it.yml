@@ -399,8 +399,8 @@ it:
         suisa_status: ""
       role:
         dates: Dati
-        created_at: Entrata
-        deleted_at: Uscita
+        start_on: ""
+        end_on: ""
         correspondence_language: ""
         class:
           permission:
@@ -472,7 +472,7 @@ it:
           traditional_parade: Musica da parata tradizionale
           show_parade: Musica da parata con evoluzioni e/o spettacolo
           parade_music: sì
-          no_parade: no
+          no_parade: ""
         music_levels:
           high: Categoria superiore
           medium: Categoria media

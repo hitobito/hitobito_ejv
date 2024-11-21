@@ -3,6 +3,7 @@
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_ejv.
 
+
 fr:
   global:
     last_change: "Dernière modification: %{date}"
