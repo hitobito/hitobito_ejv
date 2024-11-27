@@ -238,6 +238,10 @@ de:
         one: Gruppenanmeldung
         other: Gruppenanmeldungen
 
+      event/role/jury_mitglied:
+        one: Jurymitglied
+        other: Jurymitglieder
+
       invoice_item/membership_fee:
         one: Mitgliederbeitrag
         other: Mitgliederbeiträge
