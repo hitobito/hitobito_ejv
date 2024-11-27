@@ -14,97 +14,72 @@ de:
         one: Dachverband
         other: Dachverbände
       group/root_geschaeftsstelle:
-        one: Geschäftsstelle
-        other: Geschäftsstellen
+        one: Zentralsekretariat
+        other: Zentralsekretariate
       group/root_vorstand:
-        one: Verbandsleitung
-        other: Verbandsleitung
-      group/root_musikkommission:
-        one: Musikkommission
-        other: Musikkommissionen
+        one: Zentralvorstand
+        other: Zentralvorstände
+      group/root_delegierte:
+        one: Delegierte
+        other: Delegierte
+      group/root_delegierte/mitglied:
+        one: Mitglied
+        other: Mitglieder
       group/root_arbeitsgruppe:
-        one: Arbeitsgruppe
-        other: Arbeitsgruppen
-      group/root_ehrenmitglieder:
-        one: Ehrenmitglieder
-        other: Ehrenmitglieder
-      group/root_veteranen:
-        one: Veteranen
-        other: Veteranen
-      group/root_veteranen/veteran:
-        one: Eidgenössischer Veteran
-        other: Eidgenössiche Veteranen
-      group/root_veteranen/ehrenveteran:
-        one: Eidgenössicher Ehrenveteran
-        other: Eidgenössiche Ehrenveteranen
-      group/root_veteranen/cism_veteran:
-        one: CISM Veteran
-        other: CISM Veteranen
-      group/root_kontakte:
-        one: Kontakte
-        other: Kontakte
+        one: Fachkommission
+        other: Fachkommissionen
       group/root/suisa_admin:
         one: Verantwortlicher SUISA
         other: Verantworliche SUISA
 
       group/mitgliederverband:
-        one: Mitgliederverband
-        other: Mitgliederverbände
+        one: Unterverband
+        other: Unterverbände
       group/mitgliederverband_geschaeftsstelle:
         one: Geschäftsstelle
         other: Geschäftsstellen
       group/mitgliederverband_vorstand:
         one: Vorstand
         other: Vorstände
-      group/mitgliederverband_musikkommission:
-        one: Musikkommission
-        other: Musikkommissionen
-      group/mitgliederverband_arbeitsgruppe:
-        one: Arbeitsgruppe
-        other: Arbeitsgruppen
+      group/mitgliederverband_vorstand/sekretaer:
+        one: Sekretär
+        other: Sekretäre
       group/mitgliederverband_ehrenmitglieder:
         one: Ehrenmitglieder
         other: Ehrenmitglieder
-      group/mitgliederverband_veteranen:
-        one: Veteranen
-        other: Veteranen
-      group/mitgliederverband_veteranen/veteran:
-        one: Kantonaler Veteran
-        other: Kantonale Veteranen
-      group/mitgliederverband_veteranen/ehrenveteran:
-        one: Kantonaler Ehrenveteran
-        other: Kantonale Ehrenveteranen
-      group/mitgliederverband_kontakte:
-        one: Kontakte
-        other: Kontakte
       group/mitgliederverband/suisa_admin:
         one: Verantwortlicher SUISA
         other: Verantworliche SUISA
-
-      group/kreis:
-        one: Kreis
-        other: Kreise
-      group/kreis_geschaeftsstelle:
-        one: Geschäftsstelle
-        other: Geschäftsstellen
-      group/kreis_vorstand:
-        one: Vorstand
-        other: Vorstände
-      group/kreis_musikkommission:
-        one: Musikkommission
-        other: Musikkommissionen
-      group/kreis_arbeitsgruppe:
-        one: Arbeitsgruppe
-        other: Arbeitsgruppen
-      group/kreis_ehrenmitglieder:
-        one: Ehrenmitglieder
+      group/mitgliederverband_einzelmitglieder:
+        one: Einzelmitglieder
+        other: Einzelmitglieder
+      group/mitgliederverband_einzelmitglieder/jodler:
+        one: Jodler
+        other: Jodler
+      group/mitgliederverband_einzelmitglieder/alphornblaeser:
+        one: Alphornbläser
+        other: Alphornbläser
+      group/mitgliederverband_einzelmitglieder/fahnenschwinger:
+        one: Fahnenschwinger
+        other: Fahnenschwinger
+      group/mitgliederverband_einzelmitglieder/freund:
+        one: "Freund & Gönner"
+        other: "Freunde & Gönner"
+      group/mitgliederverband_einzelmitglieder/ehrenmitglied:
+        one: Ehrenmitglied
         other: Ehrenmitglieder
-      group/kreis_kontakte:
-        one: Kontakte
-        other: Kontakte
-      group/kreis/suisa_admin:
-        one: Verantwortlicher SUISA
-        other: Verantworliche SUISA
+      group/mitgliederverband_einzelmitglieder/freimitglied:
+        one: Freimitglied
+        other: Freimitglieder
+      group/mitgliederverband_vereinigung:
+        one: Vereinigung
+        other: Vereinigungen
+      group/mitgliederverband_vereinigung/praesident:
+        one: Präsident
+        other: Präsidenten
+      group/mitgliederverband_vereinigung/mitglied:
+        one: Mitglied
+        other: Mitglieder
 
       group/regionalverband:
         one: Regionalverband
@@ -132,8 +107,8 @@ de:
         other: Verantworliche SUISA
 
       group/verein:
-        one: Verein
-        other: Vereine
+        one: Gruppe
+        other: Gruppen
       group/verein_vorstand:
         one: Vorstand
         other: Vorstände
@@ -150,8 +125,8 @@ de:
         one: Kontakte
         other: Kontakte
       group/verein/conductor:
-        one: DirigentIn
-        other: DirigentInnen
+        one: ChorleiterIn
+        other: ChorleiterInnen
       group/verein/jugendverantwortlicher:
         one: Jugendverantwortlicher
         other: Jugendverantwortliche
@@ -173,11 +148,11 @@ de:
       #### Geschaeftsstelle Roles
 
       role/geschaeftsstelle_manager:
-        one: Geschäftsführung
-        other: Geschäftsführung
+        one: Administrator
+        other: Administratoren
       role/geschaeftsstelle_staff:
-        one: Mitarbeiter
-        other: Mitarbeiter
+        one: Sekretär
+        other: Sekretäre
       role/geschaeftsstelle_help:
         one: Hilfe
         other: Hilfen
@@ -200,8 +175,8 @@ de:
         one: Vizepräsident
         other: Vizepräsidenten
       role/vorstand_veteranenchef:
-        one: Veteranenchef
-        other: Veteranenchefs
+        one: Mitgliederverwalter
+        other: Mitgliederverwalter
       role/vorstand_materialverwaltung:
         one: Materialverwaltung
         other: Materialverwaltung
@@ -218,17 +193,11 @@ de:
       #### Arbeitsgruppen Roles
 
       role/arbeitsgruppe_leitung:
-        one: Leitung
-        other: Leitung
+        one: Präsident
+        other: Präsidenten
       role/arbeitsgruppe_mitglied:
         one: Mitglied
         other: Mitglieder
-
-      #### Ehrenmitglieder
-
-      role/ehrenmitglied:
-        one: Ehrenmitglied
-        other: Ehrenmitglieder
 
       #### Kontakte Roles
 

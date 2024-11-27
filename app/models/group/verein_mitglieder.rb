@@ -8,18 +8,10 @@
 class Group::VereinMitglieder < Group
   children Group::VereinMitglieder
 
-  class Adressverwaltung < Role::Adressverwaltung
-  end
-
   class Mitglied < Role::MitgliederMitglied
-  end
-
-  class Passivmitglied < Role::MitgliederPassivmitglied
-  end
-
-  class Ehrenmitglied < Role::Ehrenmitglied
+    self.permissions = [:group_read]
   end
 
   self.default_role = Mitglied
-  roles Adressverwaltung, Mitglied, Passivmitglied, Ehrenmitglied
+  roles Mitglied
 end

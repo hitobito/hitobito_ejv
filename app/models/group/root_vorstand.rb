@@ -9,18 +9,9 @@ class Group::RootVorstand < Group
   class Praesident < Role::VorstandPraesident
   end
 
-  class VizePraesident < Role::VorstandVizePraesident
-  end
-
-  class Finanzchef < Role::VorstandFinanzchef
-  end
-
-  class Veteranenchef < Role::VorstandVeteranenchef
-  end
-
   class Mitglied < Role::VorstandMitglied
   end
 
   self.default_role = Mitglied
-  roles Praesident, VizePraesident, Finanzchef, Veteranenchef, Mitglied
+  roles Praesident, Mitglied
 end

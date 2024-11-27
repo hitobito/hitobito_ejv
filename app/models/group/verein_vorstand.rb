@@ -15,15 +15,9 @@ class Group::VereinVorstand < Group
   class Kassier < Role::VorstandKassier
   end
 
-  class Veteranenchef < Role::VorstandVeteranenchef
-  end
-
-  class Materialverwaltung < Role::VorstandMaterialverwaltung
-  end
-
   class Mitglied < Role::VorstandMitglied
   end
 
   self.default_role = Mitglied
-  roles Praesident, VizePraesident, Kassier, Veteranenchef, Materialverwaltung, Mitglied
+  roles Praesident, VizePraesident, Kassier, Mitglied
 end
