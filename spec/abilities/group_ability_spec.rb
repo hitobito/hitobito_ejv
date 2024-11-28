@@ -80,15 +80,6 @@ describe GroupAbility do
       it { is_expected.to be_able_to(:edit_uv_lohnsummen, checked_group) }
     end
 
-    context "as admin of regionalverband" do
-      let(:group_role_class) { Group::Regionalverband::Admin }
-      let(:group) { groups(:regionalverband_mittleres_seeland) }
-      let(:checked_group) { groups(:musikgesellschaft_aarberg) }
-
-      it { is_expected.not_to be_able_to(:show_uv_lohnsummen, checked_group) }
-      it { is_expected.not_to be_able_to(:edit_uv_lohnsummen, checked_group) }
-    end
-
     context "as admin of group" do
       let(:group_role_class) { Group::Verein::Admin }
       let(:group) { groups(:musikgesellschaft_aarberg) }
@@ -141,14 +132,6 @@ describe GroupAbility do
       it { is_expected.to be_able_to(:destroy, checked_person) }
     end
 
-    context "as admin of regionalverband" do
-      let(:group_role_class) { Group::Regionalverband::Admin }
-      let(:group) { groups(:regionalverband_mittleres_seeland) }
-      let(:checked_group) { groups(:musikgesellschaft_aarberg) }
-
-      it { is_expected.not_to be_able_to(:destroy, checked_person) }
-    end
-
     context "as admin of group" do
       let(:group_role_class) { Group::Verein::Admin }
       let(:group) { groups(:musikgesellschaft_aarberg) }
@@ -193,7 +176,7 @@ describe GroupAbility do
   end
 
   context "finance" do
-    let(:role) { Fabricate(Group::RegionalverbandVorstand::Kassier.name.to_sym, group: groups(:vorstand_16)) }
+    let(:role) { Fabricate(Group::MitgliederverbandVorstand::Kassier.name.to_sym, group: groups(:vorstand_16)) }
 
     it "may not show subverein_select on random group" do
       is_expected.not_to be_able_to(:subverein_select, Group.new)

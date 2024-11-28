@@ -8,7 +8,7 @@
 require "spec_helper"
 
 describe ConcertsController do
-  let(:group) { Fabricate(Group::Regionalverband.name.to_sym) }
+  let(:group) { Fabricate(Group::Mitgliederverband.name.to_sym) }
   let(:verein) { Fabricate(Group::Verein.name.to_sym, parent: group, name: "Harmonie Sursee") }
   let(:admin) { people(:suisa_admin) }
 

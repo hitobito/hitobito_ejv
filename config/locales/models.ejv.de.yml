@@ -81,31 +81,6 @@ de:
         one: Mitglied
         other: Mitglieder
 
-      group/regionalverband:
-        one: Regionalverband
-        other: Regionalverbände
-      group/regionalverband_geschaeftsstelle:
-        one: Geschäftsstelle
-        other: Geschäftsstellen
-      group/regionalverband_vorstand:
-        one: Vorstand
-        other: Vorstände
-      group/regionalverband_musikkommission:
-        one: Musikkommission
-        other: Musikkommissionen
-      group/regionalverband_arbeitsgruppe:
-        one: Arbeitsgruppe
-        other: Arbeitsgruppen
-      group/regionalverband_ehrenmitglieder:
-        one: Ehrenmitglieder
-        other: Ehrenmitglieder
-      group/regionalverband_kontakte:
-        one: Kontakte
-        other: Kontakte
-      group/regionalverband/suisa_admin:
-        one: Verantwortlicher SUISA
-        other: Verantworliche SUISA
-
       group/verein:
         one: Gruppe
         other: Gruppen

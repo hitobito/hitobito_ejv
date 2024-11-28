@@ -18,9 +18,8 @@ describe SubvereinCheckboxesBuilder do
       nesting = subject.send(:vereine_nesting)
       expected = {}
       expected[root] = {}
-      regionalverband = groups(:regionalverband_mittleres_seeland)
-      expected[root][regionalverband] = {}
-      expected[root][regionalverband][regionalverband] = vereine
+      expected[root][root] = vereine
+
       expect(nesting).to eq(expected)
     end
   end

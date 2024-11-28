@@ -14,23 +14,14 @@ describe Concert do
     expect(concert).to be_respond_to(:infer_verband_ids)
     expect do
       concert.infer_verband_ids
-    end.to change(concert, :regionalverband).from(nil).to(groups(:alt_thiesdorf_30))
-      .and change(concert, :mitgliederverband).from(nil).to(groups(:societe_cantonale_des_musiques_fribourgeoises_freiburger_kantonal_musikverband_24))
+    end.to change(concert, :mitgliederverband).from(nil).to(groups(:societe_cantonale_des_musiques_fribourgeoises_freiburger_kantonal_musikverband_24))
   end
 
   context "before validation" do
-    it "sets verband ids for verein nested under regionalverband " do
-      concert = Concert.create!(verein: groups(:musikgesellschaft_alterswil), year: 2018)
-
-      expect(concert.regionalverband).to eq groups(:alt_thiesdorf_30)
-      expect(concert.mitgliederverband).to eq groups(:societe_cantonale_des_musiques_fribourgeoises_freiburger_kantonal_musikverband_24)
-    end
-
     it "sets mitgliederverband for verein nested under mitgliederverband" do
       verein = Group::Verein.create!(name: "group", parent: groups(:bernischer_kantonal_musikverband))
       concert = Concert.create!(verein: verein, year: 2018)
 
-      expect(concert.regionalverband).to be_nil
       expect(concert.mitgliederverband).to eq groups(:bernischer_kantonal_musikverband)
     end
 
@@ -38,7 +29,6 @@ describe Concert do
       verein = Group::Verein.create!(name: "group", parent: groups(:hauptgruppe_1))
       concert = Concert.create!(verein: verein, year: 2018)
 
-      expect(concert.regionalverband).to be_nil
       expect(concert.mitgliederverband).to be_nil
     end
 

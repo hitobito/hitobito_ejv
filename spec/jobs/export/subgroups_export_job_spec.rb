@@ -19,7 +19,7 @@ describe Export::SubgroupsExportJob do
 
   it "only exports Verband and Verein group types" do
     names = root_export.send(:entries).collect { |e| e.class.sti_name }.uniq
-    expect(names).to eq ["Group::Mitgliederverband", "Group::Regionalverband", "Group::Verein"]
+    expect(names).to eq ["Group::Mitgliederverband", "Group::Verein"]
   end
 
   it "exports address and special columns" do
@@ -27,7 +27,6 @@ describe Export::SubgroupsExportJob do
       "Name",
       "Gruppentyp",
       "Mitgliederverband",
-      "Regionalverband",
       "sekundäre Zugehörigkeit",
       "weitere Zugehörigkeit",
       "Haupt-E-Mail",

@@ -104,39 +104,6 @@ fr:
         many: Responsables SUISA
         other: Responsables SUISA
 
-      group/regionalverband:
-        one: Association régionale
-        many: Associations régionales
-        other: Associations régionales
-      group/regionalverband_geschaeftsstelle:
-        one: Secrétariats
-        many: Secrétariats
-        other: Secrétariats
-      group/regionalverband_vorstand:
-        one: Comités
-        many: Comités
-        other: Comités
-      group/regionalverband_musikkommission:
-        one: Commissions de musique
-        many: Commissions de musique
-        other: Commissions de musique
-      group/regionalverband_arbeitsgruppe:
-        one: Groupes de travail
-        many: Groupes de travail
-        other: Groupes de travail
-      group/regionalverband_ehrenmitglieder:
-        one: Membres d'honneur
-        many: Membres d'honneur
-        other: Membres d'honneur
-      group/regionalverband_kontakte:
-        one: Contacts
-        many: Contacts
-        other: Contacts
-      group/regionalverband/suisa_admin:
-        one: Responsables SUISA
-        many: Responsables SUISA
-        other: Responsables SUISA
-
       group/verein:
         one: Société
         many: Sociétés

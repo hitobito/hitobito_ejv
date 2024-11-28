@@ -13,7 +13,6 @@
 #  name                 :string(255)      not null
 #  verein_id            :integer          not null
 #  mitgliederverband_id :integer
-#  regionalverband_id   :integer
 #  song_census_id       :integer
 #  performed_at         :date
 #  year                 :integer          not null
@@ -28,7 +27,6 @@ class Concert < ActiveRecord::Base
 
   belongs_to :song_census
   belongs_to :verein, class_name: "Group::Verein"
-  belongs_to :regionalverband, class_name: "Group::Regionalverband"
   belongs_to :mitgliederverband, class_name: "Group::Mitgliederverband"
 
   has_many :song_counts, dependent: :destroy
@@ -64,14 +62,11 @@ class Concert < ActiveRecord::Base
     return if verein.blank?
 
     case verein.parent
-    when Group::Regionalverband
-      self.regionalverband_id = verein.parent.id
-      self.mitgliederverband_id = verein.parent.parent.id
     when Group::Mitgliederverband
       self.mitgliederverband_id = verein.parent.id
     end
 
-    [regionalverband_id, mitgliederverband_id]
+    [mitgliederverband_id]
   end
 
   private

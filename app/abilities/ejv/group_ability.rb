@@ -42,7 +42,6 @@ module Ejv::GroupAbility
     [
       Group::Root::Admin,
       Group::Mitgliederverband::Admin
-      # Group::Regionalverband::Admin # is not allowed, according to hitobito/hitobito_sbv#30
     ].any? { |admin_role| role_type?(admin_role) }
   end
 

@@ -33,7 +33,6 @@ SongCensus.all.each do |census|
         concert.name = Faker::Company.name
         concert.song_census_id = census.id
         concert.verein_id = verein.id
-        concert.regionalverband_id = verein.parent.id if verein.parent.is_a?(Group::Regionalverband)
         concert.mitgliederverband_id = verein.parent.parent.id if verein.parent.try(:parent).is_a?(Group::Mitgliederverband)
         concert.year = census.year
         concert.editable = (census == current_census)

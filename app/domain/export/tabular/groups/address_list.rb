@@ -11,7 +11,7 @@ module Export::Tabular::Groups
 
     def attributes
       %w[
-        name type mitgliederverband regionalverband
+        name type mitgliederverband
         secondary_parent tertiary_parent
         email contact contact_email address zip_code town country
         besetzung klasse unterhaltungsmusik

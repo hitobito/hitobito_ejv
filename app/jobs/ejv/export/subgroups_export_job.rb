@@ -28,7 +28,6 @@ module Ejv::Export::SubgroupsExportJob
   def types
     [
       Group::Mitgliederverband,
-      Group::Regionalverband,
       Group::Verein
     ]
   end
