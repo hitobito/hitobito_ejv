@@ -16,7 +16,7 @@ describe SongCountsController do
 
     before do
       Fabricate(Group::Verein::SuisaAdmin.name.to_sym, group: verein, person: admin)
-      Fabricate(Group::Regionalverband::SuisaAdmin.name.to_sym, group: group, person: admin)
+      Fabricate(Group::Mitgliederverband::SuisaAdmin.name.to_sym, group: group, person: admin)
       sign_in(admin)
     end
 

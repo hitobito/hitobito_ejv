@@ -23,6 +23,7 @@ of the Eidgenössischer Jodlerverband.
     * Unterverband
       * Unterverband
         * Administrator: [:layer_and_below_full]
+        * Verantwortlicher SUISA: [:group_read, :song_census]
       * Vorstand
         * Präsident: [:layer_full, :layer_and_below_read]
         * Vizepräsident: [:layer_and_below_read]

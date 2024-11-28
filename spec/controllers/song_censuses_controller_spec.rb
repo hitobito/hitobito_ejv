@@ -8,13 +8,13 @@
 require "spec_helper"
 
 describe SongCensusesController do
-  let(:group) { Fabricate(Group::Regionalverband.name.to_sym) }
+  let(:group) { Fabricate(Group::Mitgliederverband.name.to_sym) }
 
   context "index" do
     let(:admin) { people(:admin) }
 
     before do
-      Fabricate(Group::Regionalverband::SuisaAdmin.name.to_sym, group: group, person: admin)
+      Fabricate(Group::Mitgliederverband::SuisaAdmin.name.to_sym, group: group, person: admin)
       sign_in(admin)
     end
 
@@ -33,7 +33,7 @@ describe SongCensusesController do
     before do
       sign_in(people(:suisa_admin))
 
-      Fabricate(Group::Regionalverband::SuisaAdmin.name.to_sym, group: group, person: people(:suisa_admin))
+      Fabricate(Group::Mitgliederverband::SuisaAdmin.name.to_sym, group: group, person: people(:suisa_admin))
       2.times { Fabricate(Group::Verein::SuisaAdmin.name.to_sym, group: verein1) }
       Fabricate(Group::Verein::SuisaAdmin.name.to_sym, group: verein2)
     end
