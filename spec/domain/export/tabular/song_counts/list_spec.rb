@@ -12,7 +12,7 @@ describe Export::Tabular::SongCounts::List do
   let(:data) { Export::Tabular::SongCounts::List.csv(list) }
   let(:data_without_bom) { data.gsub(Regexp.new("^#{Export::Csv::UTF8_BOM}"), "") }
   let(:csv) { CSV.parse(data_without_bom, headers: true, col_sep: Settings.csv.separator) }
-  let(:sorted_csv) { csv.sort_by { |r| [r["SUISA-ID"], r["Titel"]] } }
+  let(:sorted_csv) { csv.sort_by { |r| [r["SUISA-ID"], r["Titel"]].join(" ") } }
 
   subject { csv }
 
