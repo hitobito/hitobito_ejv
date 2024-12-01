@@ -10,7 +10,7 @@ require "spec_helper"
 describe Group do
   let(:group) { groups(:delegierte) }
 
-  include_examples "group types"
+  include_examples "group types", group_group_label: "Group::Verein"
 
   context "hostname" do
     it "is nullfied when blank" do
