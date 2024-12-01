@@ -5,10 +5,10 @@
 
 
 top_event:
-  groups: hauptgruppe_1
+  groups: root
 
 top_course:
-  groups: hauptgruppe_1
+  groups: root
   type: Event::Course
   kind: dummy
   priorization: true
@@ -16,5 +16,5 @@ top_course:
   external_applications: true
 
 festival:
-  groups: hauptgruppe_1
+  groups: root
   type: Event::Festival

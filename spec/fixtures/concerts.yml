@@ -5,43 +5,43 @@
 
 first_concert:
   name: first concert
-  verein: musikgesellschaft_aarberg
+  verein: jodlergruppe_engstligtal_adelboden
   year: 2018
   song_census: two_o_18
 
 second_concert:
   name: second concert
-  verein: musikgesellschaft_aarberg
+  verein: jodlergruppe_engstligtal_adelboden
   year: 2018
   song_census: two_o_18
 
 third_concert:
   name: third concert
-  verein: musikgesellschaft_alterswil
+  verein: jodlerklub_edelweiss_thun
   year: 2018
   song_census: two_o_18
 
 fourth_concert:
   name: fourth concert
-  verein: musikverband_hastdutoene
+  verein: jodlerklub_edelweiss
   year: 2018
   song_census: two_o_18
 
 fifth_concert:
   name: concert with wrong year
-  verein: musikverband_hastdutoene
+  verein: jodlerklub_berna_bern
   year: 2019
   song_census: two_o_18
 
 six_concert:
   name: unsubmitted concert
-  verein: musikverband_hastdutoene
+  verein: jodlerklub_berna_bern
   year: 2018
   song_census:
 
 unplayed_concert:
   name: not playable this year
-  verein: musikverband_alterswil
+  verein: emmentaler_jodler_konolfingen
   year: 2019
   song_census: two_o_19
   reason: not_playable

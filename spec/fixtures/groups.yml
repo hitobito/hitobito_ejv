@@ -3,364 +3,384 @@
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_ejv.
 
-hauptgruppe_1:
+root:
   parent:
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:hauptgruppe_1) %>
-  lft: 2
-  rgt: 89
-  name: Hauptgruppe
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:root)%>"
+  lft: 1
+  rgt: 106
+  name: EJV
   type: Group::Root
-geschaeftsstelle_2:
-  parent: hauptgruppe_1
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:hauptgruppe_1) %>
-  lft: 47
-  rgt: 48
-  name: Geschäftsstelle
+zentralsekretariat:
+  parent: root
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:root)%>"
+  lft: 102
+  rgt: 103
+  name: Zentralsekretariat
   type: Group::RootGeschaeftsstelle
-verbandsleitung_3:
-  parent: hauptgruppe_1
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:hauptgruppe_1) %>
-  lft: 85
-  rgt: 86
-  name: Verbandsleitung
+zentralvorstand:
+  parent: root
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:root)%>"
+  lft: 104
+  rgt: 105
+  name: Zentralvorstand
   type: Group::RootVorstand
-musikkommission_4:
-  parent: hauptgruppe_1
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:hauptgruppe_1) %>
-  lft: 51
-  rgt: 52
-  name: Musikkommission
-  type: Group::RootMusikkommission
-kontakte_5:
-  parent: hauptgruppe_1
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:hauptgruppe_1) %>
-  lft: 49
-  rgt: 50
-  name: Kontakte
-  type: Group::RootKontakte
-ehrenmitglieder_6:
-  parent: hauptgruppe_1
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:hauptgruppe_1) %>
-  lft: 45
-  rgt: 46
-  name: Ehrenmitglieder
-  type: Group::RootEhrenmitglieder
-veteranen_7:
-  parent: hauptgruppe_1
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:hauptgruppe_1) %>
-  lft: 87
-  rgt: 88
-  name: Veteranen
-  type: Group::RootVeteranen
-bernischer_kantonal_musikverband:
-  parent: hauptgruppe_1
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:bernischer_kantonal_musikverband) %>
-  lft: 3
-  rgt: 44
-  name: Bernischer Kantonal-Musikverband
-  type: Group::Mitgliederverband
-geschaeftsstelle_9:
-  parent: bernischer_kantonal_musikverband
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:bernischer_kantonal_musikverband) %>
-  lft: 4
-  rgt: 5
-  name: Geschäftsstelle
-  type: Group::MitgliederverbandGeschaeftsstelle
-  email: hosea@example.org
-  street: Auf der Weide
-  housenumber: 209
-  zip_code: 9976
-  town: Stahldorf
-vorstand_10:
-  parent: bernischer_kantonal_musikverband
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:bernischer_kantonal_musikverband) %>
+ehemalige_aus_verlauf:
+  parent: root
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:ehemalige_aus_verlauf)%>"
   lft: 42
   rgt: 43
-  name: Vorstand
-  type: Group::MitgliederverbandVorstand
-  email: eulalia@example.com
-  street: Stephanusstr.
-  housenumber: 13b
-  zip_code: 1090
-  town: Emelieburg
-kontakte_11:
-  parent: bernischer_kantonal_musikverband
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:bernischer_kantonal_musikverband) %>
-  lft: 6
-  rgt: 7
-  name: Kontakte
-  type: Group::MitgliederverbandKontakte
-  email: annamarie@example.org
-  street: Müritzstr.
-  housenumber: 98
-  zip_code: 1094
-  town: Felicitasstadt
-musikkommission_12:
-  parent: bernischer_kantonal_musikverband
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:bernischer_kantonal_musikverband) %>
-  lft: 28
-  rgt: 29
-  name: Musikkommission
-  type: Group::MitgliederverbandMusikkommission
-  email: lambert@example.com
-  street: An der Dingbank
-  housenumber: 74
-  zip_code: 3143
-  town: Feuerbachscheid
-veteranen_13:
-  parent: bernischer_kantonal_musikverband
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:bernischer_kantonal_musikverband) %>
+  name: Ehemalige aus Verlauf
+  type: Group::Verein
+delegierte:
+  parent: root
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:root)%>"
   lft: 40
   rgt: 41
-  name: Veteranen
-  type: Group::MitgliederverbandVeteranen
-  email: duncan_lang@example.org
-  street: An der Fettehenne
-  housenumber: 85b
-  zip_code: 3990
-  town: Nord Michaelaland
-regionalverband_mittleres_seeland:
-  parent: bernischer_kantonal_musikverband
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:regionalverband_mittleres_seeland) %>
-  lft: 8
-  rgt: 27
-  name: Mittleres Seeland
-  type: Group::Regionalverband
-  street: Schellingstr.
-  housenumber: 8
-  zip_code: 5692
-  town: Damianburg
-geschaeftsstelle_15:
-  parent: regionalverband_mittleres_seeland
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:regionalverband_mittleres_seeland) %>
-  lft: 9
-  rgt: 10
-  name: Geschäftsstelle
-  type: Group::RegionalverbandGeschaeftsstelle
-vorstand_16:
-  parent: regionalverband_mittleres_seeland
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:regionalverband_mittleres_seeland) %>
-  lft: 25
-  rgt: 26
-  name: Vorstand
-  type: Group::RegionalverbandVorstand
-kontakte_17:
-  parent: regionalverband_mittleres_seeland
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:regionalverband_mittleres_seeland) %>
-  lft: 11
-  rgt: 12
-  name: Kontakte
-  type: Group::RegionalverbandKontakte
-musikkommission_18:
-  parent: regionalverband_mittleres_seeland
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:regionalverband_mittleres_seeland) %>
-  lft: 23
-  rgt: 24
-  name: Musikkommission
-  type: Group::RegionalverbandMusikkommission
-musikgesellschaft_aarberg:
-  parent: regionalverband_mittleres_seeland
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:musikgesellschaft_aarberg) %>
-  lft: 13
-  rgt: 22
-  name: Musikgesellschaft Aarberg
-  type: Group::Verein
-  street: Bielertstr.
-  housenumber: 91c
-  zip_code: 6648
-  town: Thiloscheid
-  buv_lohnsumme: 133700
-  nbuv_lohnsumme: 4223
-vorstand_mg_aarberg:
-  parent: musikgesellschaft_aarberg
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:musikgesellschaft_aarberg) %>
-  lft: 20
-  rgt: 21
-  name: Vorstand
-  type: Group::VereinVorstand
-kontakte_21:
-  parent: musikgesellschaft_aarberg
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:musikgesellschaft_aarberg) %>
-  lft: 14
-  rgt: 15
-  name: Kontakte
-  type: Group::VereinKontakte
-mitglieder_mg_aarberg:
-  parent: musikgesellschaft_aarberg
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:musikgesellschaft_aarberg) %>
-  lft: 16
-  rgt: 17
-  name: Mitglieder
-  type: Group::VereinMitglieder
-musikkommission_23:
-  parent: musikgesellschaft_aarberg
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:musikgesellschaft_aarberg) %>
-  lft: 18
-  rgt: 19
-  name: Musikkommission
-  type: Group::VereinMusikkommission
-societe_cantonale_des_musiques_fribourgeoises_freiburger_kantonal_musikverband_24:
-  parent: hauptgruppe_1
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:societe_cantonale_des_musiques_fribourgeoises_freiburger_kantonal_musikverband_24) %>
-  lft: 53
-  rgt: 84
-  name: Société cantonale des musiques fribourgeoises / Freiburger Kantonal-Musikverband
+  name: Delegierte
+  type: Group::RootDelegierte
+fk_jodeln:
+  parent: root
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:root)%>"
+  lft: 48
+  rgt: 49
+  name: Fachkommission Jodeln
+  short_name: FK Jodeln
+  type: Group::RootArbeitsgruppe
+fk_alphorn:
+  parent: root
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:root)%>"
+  lft: 44
+  rgt: 45
+  name: Fachkommission Alphorn
+  short_name: FK Alphorn
+  type: Group::RootArbeitsgruppe
+fk_fahnenschwingen:
+  parent: root
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:root)%>"
+  lft: 46
+  rgt: 47
+  name: Fachkommission Fahnenschwingen
+  short_name: FK Fahnenschwingen
+  type: Group::RootArbeitsgruppe
+bkjv:
+  parent: root
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:bkjv)%>"
+  lft: 2
+  rgt: 39
+  name: Bernisch-Kantonaler Jodlerverband
+  short_name: BKJV
   type: Group::Mitgliederverband
-geschaeftsstelle_25:
-  parent: societe_cantonale_des_musiques_fribourgeoises_freiburger_kantonal_musikverband_24
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:societe_cantonale_des_musiques_fribourgeoises_freiburger_kantonal_musikverband_24) %>
-  lft: 74
-  rgt: 75
-  name: Geschäftsstelle
-  type: Group::MitgliederverbandGeschaeftsstelle
-vorstand_26:
-  parent: societe_cantonale_des_musiques_fribourgeoises_freiburger_kantonal_musikverband_24
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:societe_cantonale_des_musiques_fribourgeoises_freiburger_kantonal_musikverband_24) %>
-  lft: 82
-  rgt: 83
+vorstand_bkjv:
+  parent: bkjv
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:bkjv)%>"
+  lft: 37
+  rgt: 38
   name: Vorstand
   type: Group::MitgliederverbandVorstand
-kontakte_27:
-  parent: societe_cantonale_des_musiques_fribourgeoises_freiburger_kantonal_musikverband_24
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:societe_cantonale_des_musiques_fribourgeoises_freiburger_kantonal_musikverband_24) %>
-  lft: 76
-  rgt: 77
-  name: Kontakte
-  type: Group::MitgliederverbandKontakte
-musikkommission_28:
-  parent: societe_cantonale_des_musiques_fribourgeoises_freiburger_kantonal_musikverband_24
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:societe_cantonale_des_musiques_fribourgeoises_freiburger_kantonal_musikverband_24) %>
-  lft: 78
+einzelmitglieder_11:
+  parent: bkjv
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:bkjv)%>"
+  lft: 3
+  rgt: 4
+  name: Einzelmitglieder
+  type: Group::MitgliederverbandEinzelmitglieder
+nosjv:
+  parent: root
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:nosjv)%>"
+  lft: 50
   rgt: 79
-  name: Musikkommission
-  type: Group::MitgliederverbandMusikkommission
-veteranen_29:
-  parent: societe_cantonale_des_musiques_fribourgeoises_freiburger_kantonal_musikverband_24
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:societe_cantonale_des_musiques_fribourgeoises_freiburger_kantonal_musikverband_24) %>
-  lft: 80
-  rgt: 81
-  name: Veteranen
-  type: Group::MitgliederverbandVeteranen
-alt_thiesdorf_30:
-  parent: societe_cantonale_des_musiques_fribourgeoises_freiburger_kantonal_musikverband_24
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:alt_thiesdorf_30) %>
-  lft: 54
-  rgt: 73
-  name: Alt Thiesdorf
-  type: Group::Regionalverband
-  street: Karl-Ulitzka-Str.
-  housenumber: 23
-  zip_code: 1092
-  town: Björnstadt
-geschaeftsstelle_31:
-  parent: alt_thiesdorf_30
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:alt_thiesdorf_30) %>
-  lft: 55
-  rgt: 56
-  name: Geschäftsstelle
-  type: Group::RegionalverbandGeschaeftsstelle
-vorstand_32:
-  parent: alt_thiesdorf_30
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:alt_thiesdorf_30) %>
-  lft: 71
-  rgt: 72
+  name: Nordostschweizerischer Jodlerverband
+  short_name: NOSJV
+  type: Group::Mitgliederverband
+vorstand_13:
+  parent: nosjv
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:nosjv)%>"
+  lft: 77
+  rgt: 78
   name: Vorstand
-  type: Group::RegionalverbandVorstand
-kontakte_33:
-  parent: alt_thiesdorf_30
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:alt_thiesdorf_30) %>
-  lft: 57
-  rgt: 58
-  name: Kontakte
-  type: Group::RegionalverbandKontakte
-musikkommission_34:
-  parent: alt_thiesdorf_30
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:alt_thiesdorf_30) %>
-  lft: 69
-  rgt: 70
-  name: Musikkommission
-  type: Group::RegionalverbandMusikkommission
-musikgesellschaft_alterswil:
-  parent: alt_thiesdorf_30
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:musikgesellschaft_alterswil) %>
-  lft: 59
-  rgt: 68
-  name: Musikgesellschaft Alterswil
+  type: Group::MitgliederverbandVorstand
+einzelmitglieder_14:
+  parent: nosjv
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:nosjv)%>"
+  lft: 51
+  rgt: 52
+  name: Einzelmitglieder
+  type: Group::MitgliederverbandEinzelmitglieder
+jodlerklub_edelweiss_thun:
+  parent: bkjv
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_edelweiss_thun)%>"
+  lft: 29
+  rgt: 36
+  name: Jodlerklub Edelweiss Thun
   type: Group::Verein
-  street: Am Junkernkamp
-  housenumber: 2
-  zip_code: 7400
-  town: Nord Boland
-  email: alterswil@hitobito.example.com
-vorstand_mg_alterswil:
-  parent: musikgesellschaft_alterswil
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:musikgesellschaft_alterswil) %>
+vorstand_16:
+  parent: jodlerklub_edelweiss_thun
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_edelweiss_thun)%>"
+  lft: 34
+  rgt: 35
+  name: Vorstand
+  type: Group::VereinVorstand
+mitglieder_17:
+  parent: jodlerklub_edelweiss_thun
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_edelweiss_thun)%>"
+  lft: 30
+  rgt: 31
+  name: Mitglieder
+  type: Group::VereinMitglieder
+musikkommission_18:
+  parent: jodlerklub_edelweiss_thun
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_edelweiss_thun)%>"
+  lft: 32
+  rgt: 33
+  name: Musikkommission
+  type: Group::VereinMusikkommission
+jodlerklub_berna_bern:
+  parent: bkjv
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_berna_bern)%>"
+  lft: 21
+  rgt: 28
+  name: Jodlerklub Berna Bern
+  type: Group::Verein
+vorstand_20:
+  parent: jodlerklub_berna_bern
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_berna_bern)%>"
+  lft: 26
+  rgt: 27
+  name: Vorstand
+  type: Group::VereinVorstand
+mitglieder_berna_bern:
+  parent: jodlerklub_berna_bern
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_berna_bern)%>"
+  lft: 22
+  rgt: 23
+  name: Mitglieder
+  type: Group::VereinMitglieder
+musikkommission_22:
+  parent: jodlerklub_berna_bern
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_berna_bern)%>"
+  lft: 24
+  rgt: 25
+  name: Musikkommission
+  type: Group::VereinMusikkommission
+jodlergruppe_engstligtal_adelboden:
+  parent: bkjv
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlergruppe_engstligtal_adelboden)%>"
+  lft: 13
+  rgt: 20
+  name: Jodlergruppe Engstligtal Adelboden
+  type: Group::Verein
+vorstand_adelboden:
+  parent: jodlergruppe_engstligtal_adelboden
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlergruppe_engstligtal_adelboden)%>"
+  lft: 18
+  rgt: 19
+  name: Vorstand
+  type: Group::VereinVorstand
+mitglieder_adelboden:
+  parent: jodlergruppe_engstligtal_adelboden
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlergruppe_engstligtal_adelboden)%>"
+  lft: 14
+  rgt: 15
+  name: Mitglieder
+  type: Group::VereinMitglieder
+musikkommission_26:
+  parent: jodlergruppe_engstligtal_adelboden
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlergruppe_engstligtal_adelboden)%>"
+  lft: 16
+  rgt: 17
+  name: Musikkommission
+  type: Group::VereinMusikkommission
+emmentaler_jodler_konolfingen:
+  parent: bkjv
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:emmentaler_jodler_konolfingen)%>"
+  lft: 5
+  rgt: 12
+  name: Emmentaler-Jodler Konolfingen
+  type: Group::Verein
+vorstand_28:
+  parent: emmentaler_jodler_konolfingen
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:emmentaler_jodler_konolfingen)%>"
+  lft: 10
+  rgt: 11
+  name: Vorstand
+  type: Group::VereinVorstand
+mitglieder_29:
+  parent: emmentaler_jodler_konolfingen
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:emmentaler_jodler_konolfingen)%>"
+  lft: 6
+  rgt: 7
+  name: Mitglieder
+  type: Group::VereinMitglieder
+musikkommission_30:
+  parent: emmentaler_jodler_konolfingen
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:emmentaler_jodler_konolfingen)%>"
+  lft: 8
+  rgt: 9
+  name: Musikkommission
+  type: Group::VereinMusikkommission
+jodlerclub_stadt_st_gallen:
+  parent: nosjv
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerclub_stadt_st_gallen)%>"
+  lft: 61
+  rgt: 68
+  name: Jodlerclub Stadt St. Gallen
+  type: Group::Verein
+vorstand_32:
+  parent: jodlerclub_stadt_st_gallen
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerclub_stadt_st_gallen)%>"
   lft: 66
   rgt: 67
   name: Vorstand
   type: Group::VereinVorstand
-kontakte_37:
-  parent: musikgesellschaft_alterswil
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:musikgesellschaft_alterswil) %>
-  lft: 60
-  rgt: 61
-  name: Kontakte
-  type: Group::VereinKontakte
-mitglieder_38:
-  parent: musikgesellschaft_alterswil
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:musikgesellschaft_alterswil) %>
+mitglieder_33:
+  parent: jodlerclub_stadt_st_gallen
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerclub_stadt_st_gallen)%>"
   lft: 62
   rgt: 63
   name: Mitglieder
   type: Group::VereinMitglieder
-musikkommission_39:
-  parent: musikgesellschaft_alterswil
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:musikgesellschaft_alterswil) %>
+musikkommission_34:
+  parent: jodlerclub_stadt_st_gallen
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerclub_stadt_st_gallen)%>"
   lft: 64
   rgt: 65
   name: Musikkommission
   type: Group::VereinMusikkommission
-musikverband_hastdutoene:
-  parent: bernischer_kantonal_musikverband
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:musikverband_hastdutoene) %>
-  lft: 30
-  rgt: 39
-  name: Musikverband HastDuTöne
+appenzeller_naturjodel:
+  parent: nosjv
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:appenzeller_naturjodel)%>"
+  lft: 69
+  rgt: 76
+  name: Appenzeller Naturjodel
   type: Group::Verein
-  street: Friedrich-Engels-Str.
-  housenumber: 98c
-  zip_code: 7892
-  town: Neu Maddoxscheid
+vorstand_36:
+  parent: appenzeller_naturjodel
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:appenzeller_naturjodel)%>"
+  lft: 74
+  rgt: 75
+  name: Vorstand
+  type: Group::VereinVorstand
+mitglieder_37:
+  parent: appenzeller_naturjodel
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:appenzeller_naturjodel)%>"
+  lft: 70
+  rgt: 71
+  name: Mitglieder
+  type: Group::VereinMitglieder
+musikkommission_38:
+  parent: appenzeller_naturjodel
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:appenzeller_naturjodel)%>"
+  lft: 72
+  rgt: 73
+  name: Musikkommission
+  type: Group::VereinMusikkommission
+jodlergruppe_hirschberg_appenzell:
+  parent: nosjv
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlergruppe_hirschberg_appenzell)%>"
+  lft: 53
+  rgt: 60
+  name: Jodlergruppe Hirschberg Appenzell
+  type: Group::Verein
+vorstand_40:
+  parent: jodlergruppe_hirschberg_appenzell
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlergruppe_hirschberg_appenzell)%>"
+  lft: 58
+  rgt: 59
+  name: Vorstand
+  type: Group::VereinVorstand
+mitglieder_41:
+  parent: jodlergruppe_hirschberg_appenzell
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlergruppe_hirschberg_appenzell)%>"
+  lft: 54
+  rgt: 55
+  name: Mitglieder
+  type: Group::VereinMitglieder
+musikkommission_42:
+  parent: jodlergruppe_hirschberg_appenzell
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlergruppe_hirschberg_appenzell)%>"
+  lft: 56
+  rgt: 57
+  name: Musikkommission
+  type: Group::VereinMusikkommission
+nwsjv:
+  parent: root
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:nwsjv)%>"
+  lft: 80
+  rgt: 101
+  name: Nordwestschweizer Jodlerverband
+  short_name: NWSJV
+  type: Group::Mitgliederverband
+vorstand_44:
+  parent: nwsjv
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:nwsjv)%>"
+  lft: 99
+  rgt: 100
+  name: Vorstand
+  type: Group::MitgliederverbandVorstand
+einzelmitglieder_45:
+  parent: nwsjv
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:nwsjv)%>"
+  lft: 81
+  rgt: 82
+  name: Einzelmitglieder
+  type: Group::MitgliederverbandEinzelmitglieder
+jodlerklub_gunzgen_olten:
+  parent: nwsjv
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_gunzgen_olten)%>"
+  lft: 91
+  rgt: 98
+  name: Jodlerklub Gunzgen-Olten
+  type: Group::Verein
+vorstand_47:
+  parent: jodlerklub_gunzgen_olten
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_gunzgen_olten)%>"
+  lft: 96
+  rgt: 97
+  name: Vorstand
+  type: Group::VereinVorstand
+mitglieder_48:
+  parent: jodlerklub_gunzgen_olten
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_gunzgen_olten)%>"
+  lft: 92
+  rgt: 93
+  name: Mitglieder
+  type: Group::VereinMitglieder
+musikkommission_49:
+  parent: jodlerklub_gunzgen_olten
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_gunzgen_olten)%>"
+  lft: 94
+  rgt: 95
+  name: Musikkommission
+  type: Group::VereinMusikkommission
+jodlerklub_edelweiss:
+  parent: nwsjv
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_edelweiss)%>"
+  lft: 83
+  rgt: 90
+  name: Jodlerklub Edelweiss
+  type: Group::Verein
   deleted_at: 2020-01-20
-vorstand_41:
-  parent: musikverband_hastdutoene
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:musikverband_hastdutoene) %>
-  lft: 37
-  rgt: 38
+vorstand_51:
+  parent: jodlerklub_edelweiss
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_edelweiss)%>"
+  lft: 88
+  rgt: 89
   name: Vorstand
   type: Group::VereinVorstand
   deleted_at: 2020-01-20
-kontakte_42:
-  parent: musikverband_hastdutoene
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:musikverband_hastdutoene) %>
-  lft: 31
-  rgt: 32
-  name: Kontakte
-  type: Group::VereinKontakte
-  deleted_at: 2020-01-20
-mitglieder_hastdutoene:
-  parent: musikverband_hastdutoene
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:musikverband_hastdutoene) %>
-  lft: 33
-  rgt: 34
+mitglieder_52:
+  parent: jodlerklub_edelweiss
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_edelweiss)%>"
+  lft: 84
+  rgt: 85
   name: Mitglieder
   type: Group::VereinMitglieder
   deleted_at: 2020-01-20
-musikkommission_44:
-  parent: musikverband_hastdutoene
-  layer_group_id: <%= ActiveRecord::FixtureSet.identify(:musikverband_hastdutoene) %>
-  lft: 35
-  rgt: 36
+musikkommission_53:
+  parent: jodlerklub_edelweiss
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_edelweiss)%>"
+  lft: 86
+  rgt: 87
   name: Musikkommission
   type: Group::VereinMusikkommission
   deleted_at: 2020-01-20

@@ -10,7 +10,7 @@ admin:
   email: admin@hitobito.example.com
   gender: m
   contact_data_visible: true
-  primary_group: superstructure
+  primary_group: root
   birthday: 26.04.1965
 
 leader:
@@ -18,14 +18,14 @@ leader:
   last_name: Leader
   email: a.leader@hitobito.example.com
   contact_data_visible: true
-  primary_group: musikgesellschaft_alterswil
+  primary_group: jodlerklub_edelweiss_thun
   birthday: 10.11.1970
 
 member:
   first_name: My
   last_name: Member
   email: member0@hitobito.example.com
-  primary_group: musikverband_hastdutoene
+  primary_group: jodlerklub_berna_bern
   birthday: 01.02.1990
   nickname: mynick
 
@@ -33,12 +33,12 @@ suisa_admin:
   first_name: Suisa
   last_name: Boy
   email: suisa@hitobito.example.com
-  primary_group: musikgesellschaft_alterswil
+  primary_group: jodlerklub_edelweiss_thun
   birthday: 10.01.1980
 
 conductor:
   first_name: Dieter
   last_name: Irigent
   email: dirigent@hitobito.example.com
-  primary_group: musikverband_hastdutoene
+  primary_group: jodlerklub_berna_bern
   birthday: 14.08.1970
