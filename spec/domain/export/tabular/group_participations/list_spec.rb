@@ -18,8 +18,8 @@ xdescribe Export::Tabular::GroupParticipations::List do
 
   before do
     events(:festival).group_participations.create(
-      group: groups(:musikgesellschaft_aarberg),
-      secondary_group: groups(:musikgesellschaft_alterswil),
+      group: groups(:jodlergruppe_engstligtal_adelboden),
+      secondary_group: groups(:jodlerklub_edelweiss_thun),
       joint_participation: true,
       primary_state: "music_type_and_level_selected",
       secondary_state: "opened",
@@ -28,13 +28,13 @@ xdescribe Export::Tabular::GroupParticipations::List do
       music_level: "highest"
     )
 
-    groups(:musikgesellschaft_aarberg).roles.create(
+    groups(:jodlergruppe_engstligtal_adelboden).roles.create(
       person: people(:conductor),
       type: Group::Verein::Conductor
     )
 
     events(:festival).group_participations.create(
-      group: groups(:musikverband_hastdutoene),
+      group: groups(:jodlerklub_berna_bern),
       joint_participation: false,
       primary_state: "music_type_and_level_selected",
       music_style: "concert_music",

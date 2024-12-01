@@ -9,7 +9,7 @@ require "spec_helper"
 
 describe Event::Festival do
   let(:festival) { events(:festival) }
-  let(:group) { groups(:musikgesellschaft_aarberg) }
+  let(:group) { groups(:jodlergruppe_engstligtal_adelboden) }
 
   it "has prerequisites" do
     do_not_participate(group, festival)

@@ -9,7 +9,7 @@ require "spec_helper"
 
 describe Ejv::RolesHelper do
   describe "#default_language_for_person" do
-    let(:group) { groups(:hauptgruppe_1) }
+    let(:group) { groups(:root) }
 
     it "returns predefined language for group if preset" do
       group.correspondence_language = "de"

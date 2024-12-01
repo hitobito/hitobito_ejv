@@ -52,7 +52,7 @@ describe Person do
       Fabricate(
         role_class.name.to_sym,
         person: subject,
-        group: groups(:mitglieder_hastdutoene),
+        group: groups(:mitglieder_adelboden),
         start_on:,
         end_on:
       )
@@ -66,7 +66,7 @@ describe Person do
       roles = subject.roles.map { |r| [r.type, r.group_id] }
 
       expect(roles).to match_array [
-        ["Group::Verein::Conductor", 678378847]
+        ["Group::Verein::Conductor", groups(:jodlerklub_berna_bern).id]
       ]
     end
 
@@ -87,7 +87,7 @@ describe Person do
       Fabricate.build(
         :"Role::MitgliederMitglied",
         person: subject,
-        group: groups(:mitglieder_hastdutoene),
+        group: groups(:jodlerklub_berna_bern),
         start_on: Date.current.change(year: 2005, day: 25),
         end_on: Date.current.change(year: 2012)
       ).save(validate: false)
@@ -189,7 +189,7 @@ describe Person do
         Fabricate(
           Group::VereinMitglieder::Mitglied.name.to_sym,
           person: subject,
-          group: groups(:mitglieder_hastdutoene),
+          group: groups(:mitglieder_adelboden),
           start_on: Date.current.change(year: 2010),
           end_on: nil # active Role
         )

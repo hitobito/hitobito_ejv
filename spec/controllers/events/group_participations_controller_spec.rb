@@ -12,9 +12,9 @@ xdescribe Events::GroupParticipationsController do
 
   let(:group) { organizer_group }
 
-  let(:organizer_group) { groups(:hauptgruppe_1) }
-  let(:participant_group) { groups(:musikgesellschaft_alterswil) }
-  let(:other_group) { groups(:musikverband_hastdutoene) }
+  let(:organizer_group) { groups(:root) }
+  let(:participant_group) { groups(:jodlerklub_edelweiss_thun) }
+  let(:other_group) { groups(:jodlerklub_berna_bern) }
 
   let(:festival) { Fabricate(:festival, name: "Fäschti-Wal", groups: [group]) }
 

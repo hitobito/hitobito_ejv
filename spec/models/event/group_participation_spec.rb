@@ -12,7 +12,7 @@ describe Event::GroupParticipation do
     subject do
       described_class.create(
         event: events(:festival),
-        group: groups(:musikgesellschaft_aarberg)
+        group: groups(:jodlergruppe_engstligtal_adelboden)
       )
     end
 
@@ -56,7 +56,7 @@ describe Event::GroupParticipation do
       subject do
         described_class.new(
           event: events(:festival),
-          group: groups(:musikgesellschaft_aarberg),
+          group: groups(:jodlergruppe_engstligtal_adelboden),
           primary_state: "primary_group_selected",
           secondary_state: "opened",
           joint_participation: true
@@ -68,7 +68,7 @@ describe Event::GroupParticipation do
 
         is_expected.to_not be_valid
 
-        subject.secondary_group = groups(:musikgesellschaft_alterswil)
+        subject.secondary_group = groups(:jodlerklub_edelweiss_thun)
 
         is_expected.to be_valid
       end
@@ -81,7 +81,7 @@ describe Event::GroupParticipation do
       subject do
         described_class.new(
           event: events(:festival),
-          group: groups(:musikgesellschaft_aarberg),
+          group: groups(:jodlergruppe_engstligtal_adelboden),
           primary_state: "music_style_selected"
         )
       end
@@ -102,7 +102,7 @@ describe Event::GroupParticipation do
       subject do
         described_class.new(
           event: events(:festival),
-          group: groups(:musikgesellschaft_aarberg),
+          group: groups(:jodlergruppe_engstligtal_adelboden),
           primary_state: "music_type_and_level_selected"
         )
       end

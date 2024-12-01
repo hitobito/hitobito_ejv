@@ -16,12 +16,12 @@ describe SongAbility do
       concert.infer_verband_ids
     end
   end
-  let(:verein) { groups(:musikgesellschaft_aarberg) }
-  let(:group) { groups(:bernischer_kantonal_musikverband) }
+  let(:verein) { groups(:jodlergruppe_engstligtal_adelboden) }
+  let(:group) { groups(:bkjv) }
 
   [
-    %w[Group::Verein::Admin musikgesellschaft_aarberg],
-    %w[Group::VereinMitglieder::Mitglied mitglieder_mg_aarberg]
+    %w[Group::Verein::Admin jodlergruppe_engstligtal_adelboden],
+    %w[Group::VereinMitglieder::Mitglied mitglieder_adelboden]
   ].each do |role, group|
     context role do
       let(:role) { Fabricate(role.to_sym, group: groups(group)) }
@@ -157,7 +157,7 @@ describe SongAbility do
         end
 
         it "may not manage_song_census in layer above" do
-          is_expected.not_to be_able_to(:manage_song_census, groups(:hauptgruppe_1))
+          is_expected.not_to be_able_to(:manage_song_census, groups(:root))
         end
 
         it "may manage_song_census in groups below" do

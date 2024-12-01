@@ -14,7 +14,7 @@ describe SongCensusMailer do
   end
 
   let(:person) { people(:suisa_admin) }
-  let(:group) { groups(:musikgesellschaft_alterswil) }
+  let(:group) { groups(:jodlerklub_edelweiss_thun) }
 
   subject { mail }
 
@@ -26,8 +26,8 @@ describe SongCensusMailer do
       its(:from) { is_expected.to eql ["noreply@localhost"] }
       its(:to) { is_expected.to eql [person.email] }
       its(:body) { is_expected.to match(/Hallo Suisa Boy/) }
-      its(:body) { is_expected.to match(/die Meldeliste für den Verein 'Musikgesellschaft Alterswil'/) }
-      its(:body) { is_expected.to match(/Dein Hauptgruppe/) }
+      its(:body) { is_expected.to match(/die Meldeliste für den Verein 'Jodlerklub Edelweiss Thun'/) }
+      its(:body) { is_expected.to match(/Dein EJV/) }
     end
   end
 end

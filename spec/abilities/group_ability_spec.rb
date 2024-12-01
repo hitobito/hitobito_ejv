@@ -13,7 +13,7 @@ describe GroupAbility do
   let(:role) { Fabricate(group_role_class.name.to_sym, group: group) }
 
   context "listing festivals" do
-    let(:group) { groups(:hauptgruppe_1) }
+    let(:group) { groups(:root) }
     let(:group_role_class) { Group::Root::Admin }
 
     it { is_expected.to be_able_to(:"index_event/festivals", group) }
@@ -22,40 +22,40 @@ describe GroupAbility do
   xdescribe "manage application to festivals" do
     context "as admin of a group" do
       let(:group_role_class) { Group::Verein::Admin }
-      let(:group) { groups(:musikgesellschaft_aarberg) }
-      let(:checked_group) { groups(:musikgesellschaft_aarberg) }
+      let(:group) { groups(:jodlergruppe_engstligtal_adelboden) }
+      let(:checked_group) { groups(:jodlergruppe_engstligtal_adelboden) }
 
       it { is_expected.to be_able_to(:manage_festival_application, checked_group) }
     end
 
     context "as admin of a group" do
       let(:group_role_class) { Group::Verein::Admin }
-      let(:group) { groups(:musikgesellschaft_aarberg) }
-      let(:checked_group) { groups(:musikgesellschaft_aarberg) }
+      let(:group) { groups(:jodlergruppe_engstligtal_adelboden) }
+      let(:checked_group) { groups(:jodlergruppe_engstligtal_adelboden) }
 
       it { is_expected.to be_able_to(:manage_festival_application, checked_group) }
     end
 
     context "as member of a group" do
       let(:group_role_class) { Group::VereinMitglieder::Mitglied }
-      let(:group) { groups(:mitglieder_mg_aarberg) }
-      let(:checked_group) { groups(:musikgesellschaft_aarberg) }
+      let(:group) { groups(:mitglieder_adelboden) }
+      let(:checked_group) { groups(:jodlergruppe_engstligtal_adelboden) }
 
       it { is_expected.to_not be_able_to(:manage_festival_application, checked_group) }
     end
 
     context "as president of a group" do
       let(:group_role_class) { Group::VereinVorstand::Praesident }
-      let(:group) { groups(:vorstand_mg_aarberg) }
-      let(:checked_group) { groups(:musikgesellschaft_aarberg) }
+      let(:group) { groups(:vorstand_adelboden) }
+      let(:checked_group) { groups(:jodlergruppe_engstligtal_adelboden) }
 
       it { is_expected.to_not be_able_to(:manage_festival_application, checked_group) }
     end
 
     context "as admin of a different group" do
       let(:group_role_class) { Group::Verein::Admin }
-      let(:group) { groups(:musikgesellschaft_alterswil) }
-      let(:checked_group) { groups(:musikgesellschaft_aarberg) }
+      let(:group) { groups(:jodlerklub_edelweiss_thun) }
+      let(:checked_group) { groups(:jodlergruppe_engstligtal_adelboden) }
 
       it { is_expected.to_not be_able_to(:manage_festival_application, checked_group) }
     end
@@ -64,8 +64,8 @@ describe GroupAbility do
   xdescribe "manage UV-Lohnsummen" do # uv-lohnsumme is not a permission that is currently used
     context "as admin of dachverband" do
       let(:group_role_class) { Group::Root::Admin }
-      let(:group) { groups(:hauptgruppe_1) }
-      let(:checked_group) { groups(:musikgesellschaft_aarberg) }
+      let(:group) { groups(:root) }
+      let(:checked_group) { groups(:jodlergruppe_engstligtal_adelboden) }
 
       it { is_expected.to be_able_to(:show_uv_lohnsummen, checked_group) }
       it { is_expected.to be_able_to(:edit_uv_lohnsummen, checked_group) }
@@ -73,8 +73,8 @@ describe GroupAbility do
 
     context "as admin of mitgliederverband" do
       let(:group_role_class) { Group::Mitgliederverband::Admin }
-      let(:group) { groups(:bernischer_kantonal_musikverband) }
-      let(:checked_group) { groups(:musikgesellschaft_aarberg) }
+      let(:group) { groups(:bkjv) }
+      let(:checked_group) { groups(:jodlergruppe_engstligtal_adelboden) }
 
       it { is_expected.to be_able_to(:show_uv_lohnsummen, checked_group) }
       it { is_expected.to be_able_to(:edit_uv_lohnsummen, checked_group) }
@@ -82,7 +82,7 @@ describe GroupAbility do
 
     context "as admin of group" do
       let(:group_role_class) { Group::Verein::Admin }
-      let(:group) { groups(:musikgesellschaft_aarberg) }
+      let(:group) { groups(:jodlergruppe_engstligtal_adelboden) }
       let(:checked_group) { group }
 
       it { is_expected.not_to be_able_to(:show_uv_lohnsummen, checked_group) }
@@ -91,8 +91,8 @@ describe GroupAbility do
 
     context "as admin of different group" do
       let(:group_role_class) { Group::Verein::Admin }
-      let(:group) { groups(:musikgesellschaft_aarberg) }
-      let(:checked_group) { groups(:musikgesellschaft_alterswil) }
+      let(:group) { groups(:jodlergruppe_engstligtal_adelboden) }
+      let(:checked_group) { groups(:jodlerklub_edelweiss_thun) }
 
       it { is_expected.not_to be_able_to(:show_uv_lohnsummen, checked_group) }
       it { is_expected.not_to be_able_to(:edit_uv_lohnsummen, checked_group) }
@@ -100,7 +100,7 @@ describe GroupAbility do
 
     context "as member of a group" do
       let(:group_role_class) { Group::VereinMitglieder::Mitglied }
-      let(:group) { groups(:mitglieder_mg_aarberg) }
+      let(:group) { groups(:mitglieder_adelboden) }
       let(:checked_group) { group.layer_group }
 
       it { is_expected.not_to be_able_to(:show_uv_lohnsummen, checked_group) }
@@ -118,23 +118,23 @@ describe GroupAbility do
 
     context "as admin of dachverband" do
       let(:group_role_class) { Group::Root::Admin }
-      let(:group) { groups(:hauptgruppe_1) }
-      let(:checked_group) { groups(:musikgesellschaft_aarberg) }
+      let(:group) { groups(:root) }
+      let(:checked_group) { groups(:jodlergruppe_engstligtal_adelboden) }
 
       it { is_expected.to be_able_to(:destroy, checked_person) }
     end
 
     context "as admin of mitgliederverband" do
       let(:group_role_class) { Group::Mitgliederverband::Admin }
-      let(:group) { groups(:bernischer_kantonal_musikverband) }
-      let(:checked_group) { groups(:musikgesellschaft_aarberg) }
+      let(:group) { groups(:bkjv) }
+      let(:checked_group) { groups(:jodlergruppe_engstligtal_adelboden) }
 
       it { is_expected.to be_able_to(:destroy, checked_person) }
     end
 
     context "as admin of group" do
       let(:group_role_class) { Group::Verein::Admin }
-      let(:group) { groups(:musikgesellschaft_aarberg) }
+      let(:group) { groups(:jodlergruppe_engstligtal_adelboden) }
       let(:checked_group) { group }
 
       it { is_expected.not_to be_able_to(:destroy, checked_person) }
@@ -142,15 +142,15 @@ describe GroupAbility do
 
     context "as admin of different group" do
       let(:group_role_class) { Group::Verein::Admin }
-      let(:group) { groups(:musikgesellschaft_aarberg) }
-      let(:checked_group) { groups(:musikgesellschaft_alterswil) }
+      let(:group) { groups(:jodlergruppe_engstligtal_adelboden) }
+      let(:checked_group) { groups(:jodlerklub_edelweiss_thun) }
 
       it { is_expected.not_to be_able_to(:destroy, checked_person) }
     end
 
     context "as member of a group" do
       let(:group_role_class) { Group::VereinMitglieder::Mitglied }
-      let(:group) { groups(:mitglieder_mg_aarberg) }
+      let(:group) { groups(:mitglieder_adelboden) }
       let(:checked_group) { group.layer_group }
 
       it { is_expected.not_to be_able_to(:destroy, checked_person) }
@@ -160,7 +160,7 @@ describe GroupAbility do
   describe "show deleted_subgroups" do
     context "as admin of group" do
       let(:group_role_class) { Group::Verein::Admin }
-      let(:group) { groups(:musikgesellschaft_aarberg) }
+      let(:group) { groups(:jodlergruppe_engstligtal_adelboden) }
       let(:checked_group) { group }
 
       it { is_expected.to be_able_to(:deleted_subgroups, checked_group) }
@@ -168,30 +168,30 @@ describe GroupAbility do
 
     context "as admin of different group" do
       let(:group_role_class) { Group::Verein::Admin }
-      let(:group) { groups(:musikgesellschaft_alterswil) }
-      let(:checked_group) { groups(:musikgesellschaft_aarberg) }
+      let(:group) { groups(:jodlerklub_edelweiss_thun) }
+      let(:checked_group) { groups(:jodlergruppe_engstligtal_adelboden) }
 
       it { is_expected.not_to be_able_to(:deleted_subgroups, checked_group) }
     end
   end
 
   context "finance" do
-    let(:role) { Fabricate(Group::MitgliederverbandVorstand::Kassier.name.to_sym, group: groups(:vorstand_16)) }
+    let(:role) { Fabricate(Group::MitgliederverbandVorstand::Kassier.name.to_sym, group: groups(:vorstand_bkjv)) }
 
     it "may not show subverein_select on random group" do
       is_expected.not_to be_able_to(:subverein_select, Group.new)
     end
 
     it "may not show subverein_select in own group" do
-      is_expected.not_to be_able_to(:subverein_select, groups(:vorstand_16))
+      is_expected.not_to be_able_to(:subverein_select, groups(:vorstand_bkjv))
     end
 
     it "may not show subverein_select in layer below" do
-      is_expected.not_to be_able_to(:subverein_select, groups(:musikgesellschaft_aarberg))
+      is_expected.not_to be_able_to(:subverein_select, groups(:jodlergruppe_engstligtal_adelboden))
     end
 
     it "may show subverein_select in layer" do
-      is_expected.to be_able_to(:subverein_select, groups(:regionalverband_mittleres_seeland))
+      is_expected.to be_able_to(:subverein_select, groups(:bkjv))
     end
   end
 end

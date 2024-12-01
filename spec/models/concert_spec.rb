@@ -9,31 +9,31 @@ require "spec_helper"
 
 describe Concert do
   it "can infer verband-relations" do
-    concert = Concert.new(verein: groups(:musikgesellschaft_alterswil), year: 2018)
+    concert = Concert.new(verein: groups(:jodlerklub_edelweiss_thun), year: 2018)
 
     expect(concert).to be_respond_to(:infer_verband_ids)
     expect do
       concert.infer_verband_ids
-    end.to change(concert, :mitgliederverband).from(nil).to(groups(:societe_cantonale_des_musiques_fribourgeoises_freiburger_kantonal_musikverband_24))
+    end.to change(concert, :mitgliederverband).from(nil).to(groups(:bkjv))
   end
 
   context "before validation" do
     it "sets mitgliederverband for verein nested under mitgliederverband" do
-      verein = Group::Verein.create!(name: "group", parent: groups(:bernischer_kantonal_musikverband))
+      verein = Group::Verein.create!(name: "group", parent: groups(:bkjv))
       concert = Concert.create!(verein: verein, year: 2018)
 
-      expect(concert.mitgliederverband).to eq groups(:bernischer_kantonal_musikverband)
+      expect(concert.mitgliederverband).to eq groups(:bkjv)
     end
 
     it "does not set verband ids for verein nested under root" do
-      verein = Group::Verein.create!(name: "group", parent: groups(:hauptgruppe_1))
+      verein = Group::Verein.create!(name: "group", parent: groups(:root))
       concert = Concert.create!(verein: verein, year: 2018)
 
       expect(concert.mitgliederverband).to be_nil
     end
 
     it "sets name if nothing is given" do
-      concert = Concert.create!(verein: groups(:musikgesellschaft_alterswil), year: 2018)
+      concert = Concert.create!(verein: groups(:jodlerklub_edelweiss_thun), year: 2018)
 
       expect(concert.name).to eq "Aufführung ohne Datum"
     end
@@ -43,7 +43,7 @@ describe Concert do
         SongCount.new(count: 0, song: songs(:son), year: 2018),
         SongCount.new(count: 1, song: songs(:girl), year: 2018)]
 
-      concert = Concert.create!(verein: groups(:musikgesellschaft_alterswil),
+      concert = Concert.create!(verein: groups(:jodlerklub_edelweiss_thun),
         year: 2018,
         song_counts: song_counts)
 

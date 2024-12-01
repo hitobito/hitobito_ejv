@@ -9,7 +9,7 @@ require "spec_helper"
 
 describe CensusSubmission do
   let(:census) { song_censuses(:two_o_18) }
-  let(:group) { groups(:musikgesellschaft_aarberg) }
+  let(:group) { groups(:jodlergruppe_engstligtal_adelboden) }
 
   subject { described_class.new(group, census) }
 

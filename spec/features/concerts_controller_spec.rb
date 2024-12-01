@@ -10,7 +10,7 @@ require "spec_helper"
 describe ConcertsController, js: true do
   subject { page }
 
-  let(:verein) { groups(:musikgesellschaft_alterswil) }
+  let(:verein) { groups(:jodlerklub_edelweiss_thun) }
   let(:concert) { concerts(:third_concert) }
 
   before do

@@ -9,8 +9,8 @@ require "spec_helper"
 
 describe SubvereinCheckboxesBuilder do
   describe "#vereine_nesting" do
-    let(:root) { groups(:bernischer_kantonal_musikverband) }
-    let(:vereine) { Group.where(id: [groups(:musikgesellschaft_aarberg).id]) }
+    let(:root) { groups(:bkjv) }
+    let(:vereine) { Group.where(parent_id: [root.id], type: "Group::Verein") }
 
     subject { described_class.new(root, nil) }
 

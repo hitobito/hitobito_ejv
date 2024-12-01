@@ -16,8 +16,8 @@ describe People::Merger do
   let(:merger) { described_class.new(@source.reload, @target.reload, actor) }
 
   before do
-    Fabricate("Group::RootMusikkommission::Mitglied",
-      group: groups(:musikkommission_4),
+    Fabricate("Group::RootDelegierte::Mitglied",
+      group: groups(:delegierte),
       person: duplicate,
       start_on: 5.seconds.ago,
       end_on: Time.zone.now)
@@ -36,7 +36,7 @@ describe People::Merger do
 
       expect(person_roles.count).to eq(1)
       group_ids = person_roles.map(&:group_id)
-      expect(group_ids).to include(groups(:musikkommission_4).id)
+      expect(group_ids).to include(groups(:delegierte).id)
 
       expect(Person.where(id: duplicate.id)).not_to exist
     end

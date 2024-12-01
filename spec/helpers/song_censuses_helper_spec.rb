@@ -17,7 +17,7 @@ describe SongCensusesHelper do
   describe "#census_finish_button" do
     context "for a current, finished census, it" do
       let(:census) { song_censuses(:two_o_18) }
-      let(:group) { groups(:hauptgruppe_1) }
+      let(:group) { groups(:root) }
 
       let(:today) { Date.parse("2018-12-01") }
 
@@ -43,7 +43,7 @@ describe SongCensusesHelper do
 
   describe "#census_submit_button" do
     let(:today) { Date.parse("2018-12-01") } # determines the current census, but useless to change per context
-    let(:group) { groups(:musikverband_hastdutoene) }
+    let(:group) { groups(:jodlerklub_berna_bern) }
 
     let(:disabled_class_regex) { /div class="tooltip-wrapper".*a class="[^"]*disabled[^"]*"/ }
     let(:button_class_regex) { /class="[^"]*btn[^"]*"/ }

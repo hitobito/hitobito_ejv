@@ -14,9 +14,9 @@ xdescribe Event::GroupParticipationAbility do
 
   let(:role) { Fabricate(group_role_class.name.to_sym, group: group) }
 
-  let(:organizer_group) { groups(:hauptgruppe_1) }
-  let(:participant_group) { groups(:musikgesellschaft_alterswil) }
-  let(:other_group) { groups(:musikverband_hastdutoene) }
+  let(:organizer_group) { groups(:root) }
+  let(:participant_group) { groups(:jodlerklub_edelweiss_thun) }
+  let(:other_group) { groups(:jodlerklub_berna_bern) }
 
   let(:festival) { Fabricate(:festival) }
   let(:application_open) { festival.application_opening_at }
