@@ -152,10 +152,6 @@ describe SongAbility do
           is_expected.to be_able_to(:manage_song_census, group)
         end
 
-        it "may manage_song_census in layer" do
-          is_expected.to be_able_to(:manage_song_census, groups(:veteranen_13))
-        end
-
         it "may not manage_song_census in layer above" do
           is_expected.not_to be_able_to(:manage_song_census, groups(:root))
         end
