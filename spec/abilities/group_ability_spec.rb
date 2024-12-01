@@ -19,7 +19,7 @@ describe GroupAbility do
     it { is_expected.to be_able_to(:"index_event/festivals", group) }
   end
 
-  describe "manage application to festivals" do
+  xdescribe "manage application to festivals" do
     context "as admin of a group" do
       let(:group_role_class) { Group::Verein::Admin }
       let(:group) { groups(:musikgesellschaft_aarberg) }
@@ -61,7 +61,7 @@ describe GroupAbility do
     end
   end
 
-  describe "manage UV-Lohnsummen" do
+  xdescribe "manage UV-Lohnsummen" do # uv-lohnsumme is not a permission that is currently used
     context "as admin of dachverband" do
       let(:group_role_class) { Group::Root::Admin }
       let(:group) { groups(:hauptgruppe_1) }

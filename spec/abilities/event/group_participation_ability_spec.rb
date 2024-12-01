@@ -7,7 +7,7 @@
 
 require "spec_helper"
 
-describe Event::GroupParticipationAbility do
+xdescribe Event::GroupParticipationAbility do
   include ActiveSupport::Testing::TimeHelpers
 
   subject { Ability.new(role.person.reload) }

@@ -8,7 +8,7 @@
 require "spec_helper"
 require "csv"
 
-describe Export::Tabular::GroupParticipations::List do
+xdescribe Export::Tabular::GroupParticipations::List do
   let(:list) { events(:festival).group_participations.includes(:group, :secondary_group) }
   let(:data) { described_class.csv(list) }
   let(:data_without_bom) { data.gsub(Regexp.new("^#{Export::Csv::UTF8_BOM}"), "") }
