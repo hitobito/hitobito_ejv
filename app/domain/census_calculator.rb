@@ -18,8 +18,7 @@ class CensusCalculator
 
     {
       verein: vereins_total,
-      mitgliederverband: verbands_total(:mitgliederverband),
-      regionalverband: verbands_total(:regionalverband)
+      mitgliederverband: verbands_total(:mitgliederverband)
     }
   end
 

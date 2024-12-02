@@ -19,11 +19,11 @@
 #  deleted_at :datetime
 #
 
-#  Copyright (c) 2012-2013, Puzzle ITC GmbH. This file is part of
+#  Copyright (c) 2012-2024, Puzzle ITC GmbH. This file is part of
 #  hitobito_generic and licensed under the Affero General Public License version 3
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_generic.
 
 class Role::ArbeitsgruppeMitglied < Role
-  self.permissions = [:group_and_below_read]
+  self.permissions = [:group_read]
 end

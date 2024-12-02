@@ -46,7 +46,7 @@ module Ejv::Group
 
     # potential other parents, dropdown data
     def self.secondary_parents
-      where(type: %w[Group::Mitgliederverband Group::Regionalverband])
+      where(type: %w[Group::Mitgliederverband])
         .order(:type, :name)
         .select(:id, :name)
     end
@@ -62,10 +62,6 @@ module Ejv::Group
 
   def mitgliederverband
     ancestors.find_by(type: Group::Mitgliederverband.sti_name)
-  end
-
-  def regionalverband
-    ancestors.find_by(type: Group::Regionalverband.sti_name)
   end
 
   # actual other parents, secondary and tertiary

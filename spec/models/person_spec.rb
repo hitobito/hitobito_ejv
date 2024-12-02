@@ -52,7 +52,7 @@ describe Person do
       Fabricate(
         role_class.name.to_sym,
         person: subject,
-        group: groups(:mitglieder_hastdutoene),
+        group: groups(:mitglieder_adelboden),
         start_on:,
         end_on:
       )
@@ -66,7 +66,7 @@ describe Person do
       roles = subject.roles.map { |r| [r.type, r.group_id] }
 
       expect(roles).to match_array [
-        ["Group::Verein::Conductor", 678378847]
+        ["Group::Verein::Conductor", groups(:jodlerklub_berna_bern).id]
       ]
     end
 
@@ -87,7 +87,7 @@ describe Person do
       Fabricate.build(
         :"Role::MitgliederMitglied",
         person: subject,
-        group: groups(:mitglieder_hastdutoene),
+        group: groups(:jodlerklub_berna_bern),
         start_on: Date.current.change(year: 2005, day: 25),
         end_on: Date.current.change(year: 2012)
       ).save(validate: false)
@@ -95,43 +95,6 @@ describe Person do
       subject.update_active_years
 
       expect(subject.active_years).to be 8 # even partial years count, so 7 years later cover 8 years
-    end
-
-    it "does not consider PassivMitglied" do
-      create_role(Group::VereinMitglieder::Passivmitglied, years: 10)
-      subject.update_active_years
-
-      expect(subject.active_years).to be 0
-    end
-
-    it "does not consider historic PassivMitglied roles" do
-      # Create the role without validation because it's technically not allowed,
-      # but we create such roles anyway in import.rake
-      Fabricate.build(
-        :"Role::MitgliederPassivmitglied",
-        person: subject,
-        group: groups(:mitglieder_hastdutoene),
-        start_on: Date.current.change(year: 2005, day: 25),
-        end_on: Date.current.change(year: 2015, day: 25)
-      ).save(validate: false)
-
-      subject.update_active_years
-
-      expect(subject.active_years).to be 0
-    end
-
-    it "does not consider Adressverwaltung" do
-      create_role(Group::VereinMitglieder::Adressverwaltung, years: 10)
-      subject.update_active_years
-
-      expect(subject.active_years).to be 0
-    end
-
-    it "does not consider Ehrenmitglied" do
-      create_role(Group::VereinMitglieder::Ehrenmitglied, years: 10)
-      subject.update_active_years
-
-      expect(subject.active_years).to be 0
     end
 
     context "assuming it is the summer of 2020" do
@@ -189,7 +152,7 @@ describe Person do
         Fabricate(
           Group::VereinMitglieder::Mitglied.name.to_sym,
           person: subject,
-          group: groups(:mitglieder_hastdutoene),
+          group: groups(:mitglieder_adelboden),
           start_on: Date.current.change(year: 2010),
           end_on: nil # active Role
         )

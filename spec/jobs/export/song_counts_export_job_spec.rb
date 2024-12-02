@@ -9,9 +9,9 @@ require "spec_helper"
 require "csv"
 
 describe Export::SongCountsExportJob do
-  subject(:root_export) { described_class.new(:csv, people(:admin).id, groups(:hauptgruppe_1).id, "2018", {}) }
+  subject(:root_export) { described_class.new(:csv, people(:admin).id, groups(:root).id, "2018", {}) }
 
-  subject(:bern_export) { described_class.new(:csv, people(:admin).id, groups(:bernischer_kantonal_musikverband).id, "2018", {}) }
+  subject(:bern_export) { described_class.new(:csv, people(:admin).id, groups(:jodlerklub_edelweiss_thun).id, "2018", {}) }
 
   let(:data_without_bom) { export.data.gsub(Regexp.new("^#{Export::Csv::UTF8_BOM}"), "") }
   let(:csv) { CSV.parse(data_without_bom, col_sep: ";", headers: true) }
@@ -27,7 +27,7 @@ describe Export::SongCountsExportJob do
           "Arrangeur" => "Creedence Clearwater Revival",
           "Verlag" => "Fantasy",
           "SUISA-ID" => "12345",
-          "Verein und Ort" => "Musikgesellschaft Aarberg, Thiloscheid"
+          "Verein und Ort" => "Jodlergruppe Engstligtal Adelboden"
         },
         {
           "Anzahl" => "2",
@@ -36,16 +36,7 @@ describe Export::SongCountsExportJob do
           "Arrangeur" => "Madonna",
           "Verlag" => "Sire",
           "SUISA-ID" => "34567",
-          "Verein und Ort" => "Musikgesellschaft Alterswil, Nord Boland"
-        },
-        {
-          "Anzahl" => "8",
-          "Titel" => "Papa Was a Rollin' Stone",
-          "Komponist" => "Barrett Strong / Norman Whitfield",
-          "Arrangeur" => "The Temptations",
-          "Verlag" => "Motown",
-          "SUISA-ID" => "23456",
-          "Verein und Ort" => "Musikgesellschaft Aarberg, Thiloscheid"
+          "Verein und Ort" => "Jodlerklub Edelweiss Thun"
         },
         {
           "Anzahl" => "4",
@@ -54,7 +45,16 @@ describe Export::SongCountsExportJob do
           "Arrangeur" => "The Temptations",
           "Verlag" => "Motown",
           "SUISA-ID" => "23456",
-          "Verein und Ort" => "Musikgesellschaft Alterswil, Nord Boland"
+          "Verein und Ort" => "Jodlerklub Edelweiss Thun"
+        },
+        {
+          "Anzahl" => "8",
+          "Titel" => "Papa Was a Rollin' Stone",
+          "Komponist" => "Barrett Strong / Norman Whitfield",
+          "Arrangeur" => "The Temptations",
+          "Verlag" => "Motown",
+          "SUISA-ID" => "23456",
+          "Verein und Ort" => "Jodlergruppe Engstligtal Adelboden"
         }
       ]
     end
@@ -75,24 +75,20 @@ describe Export::SongCountsExportJob do
     let(:expected_data) do
       [
         {
-          "Anzahl" => "12",
-          "Titel" => "Fortunate Son",
-          "Komponist" => "John Fogerty",
-          "Arrangeur" => "Creedence Clearwater Revival",
-          "Verlag" => "Fantasy",
-          "SUISA-ID" => "12345",
-          "Verein" => "Musikgesellschaft Aarberg",
-          "Vereins ID" => "53161061"
+          "Anzahl" => "2",
+          "Titel" => "Material Girl",
+          "Komponist" => "Peter Brown / Robert Rans",
+          "Arrangeur" => "Madonna",
+          "Verlag" => "Sire",
+          "SUISA-ID" => "34567"
         },
         {
-          "Anzahl" => "8",
+          "Anzahl" => "4",
           "Titel" => "Papa Was a Rollin' Stone",
           "Komponist" => "Barrett Strong / Norman Whitfield",
           "Arrangeur" => "The Temptations",
           "Verlag" => "Motown",
-          "SUISA-ID" => "23456",
-          "Verein" => "Musikgesellschaft Aarberg",
-          "Vereins ID" => "53161061"
+          "SUISA-ID" => "23456"
         }
       ]
     end

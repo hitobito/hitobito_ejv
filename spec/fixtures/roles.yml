@@ -5,26 +5,26 @@
 
 admin:
   person: admin
-  group: hauptgruppe_1
+  group: root
   type: Group::Root::Admin
 
 leader:
   person: leader
-  group: musikgesellschaft_alterswil
+  group: jodlerklub_edelweiss_thun
   type: Group::Verein::Admin
 
 member:
   person: member
-  group: musikverband_hastdutoene
+  group: jodlerklub_berna_bern
   type: Group::VereinMitglieder::Mitglied
   start_on: <%= 1.year.ago %>
 
 suisa_admin:
   person: suisa_admin
-  group: musikgesellschaft_alterswil
+  group: jodlerklub_edelweiss_thun
   type: Group::Verein::SuisaAdmin
 
 conductor:
   person: conductor
-  group: musikverband_hastdutoene
+  group: jodlerklub_berna_bern
   type: Group::Verein::Conductor

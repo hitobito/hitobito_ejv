@@ -44,21 +44,3 @@ Group::Root.seed_once(:parent_id, name: 'EJV')
 #
 #   attrs
 # end
-#
-# def build_kreis_attrs(parent_id, name = nil)
-#   attrs = []
-#   (1..4).to_a.sample.times.each do |i|
-#     attrs << {
-#       name: "Kreis " + ['A', 'B', 'C', 'D'][i],
-#       address: Faker::Address.street_address,
-#       zip_code: Faker::Address.zip[0..3],
-#       town: Faker::Address.city,
-#       parent_id: parent_id
-#     }
-#   end
-#   attrs
-# end
-#
-# def build_regionalverband_attrs(parent_id, name = nil)
-#   build_verein_attrs(parent_id, (name || "Region #{%w[Nord Ost Süd West].sample}"), nil, nil)
-# end

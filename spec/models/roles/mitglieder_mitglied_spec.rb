@@ -17,7 +17,7 @@ describe Role::MitgliederMitglied do
     subject do
       described_class.new(
         type: "Group::VereinMitglieder::Mitglied",
-        group: groups(:mitglieder_mg_aarberg),
+        group: groups(:mitglieder_adelboden),
         person: people(:member),
         start_on: 1.year.ago,
         end_on: nil,

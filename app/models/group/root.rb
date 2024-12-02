@@ -7,22 +7,17 @@
 
 class Group::Root < ::Group
   self.layer = true
-  self.default_children = [Group::RootGeschaeftsstelle,
-    Group::RootVorstand,
-    Group::RootMusikkommission,
-    Group::RootKontakte,
-    Group::RootEhrenmitglieder,
-    Group::RootVeteranen]
+  self.default_children = [
+    Group::RootGeschaeftsstelle,
+    Group::RootVorstand
+  ]
 
   self.event_types = [Event, Event::Course, Event::Festival]
 
   children Group::RootGeschaeftsstelle,
     Group::RootVorstand,
-    Group::RootMusikkommission,
+    Group::RootDelegierte,
     Group::RootArbeitsgruppe,
-    Group::RootKontakte,
-    Group::RootEhrenmitglieder,
-    Group::RootVeteranen,
     Group::Mitgliederverband,
     Group::Verein
 
@@ -34,8 +29,7 @@ class Group::Root < ::Group
       :admin,
       :impersonation,
       :finance,
-      :song_census,
-      :uv_lohnsumme
+      :song_census
     ]
   end
 

@@ -10,5 +10,7 @@ module Ejv::Event
 
   included do # rubocop:disable Metrics/BlockLength
     self.used_attributes += [:waiting_list]
+
+    register_role_type(::Event::Role::JuryMitglied)
   end
 end

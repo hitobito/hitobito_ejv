@@ -17,7 +17,7 @@ describe InvoiceItem::MembershipFee do
                                recipient_id: recipient&.id,
                                cutoff_date: 10.days.from_now.to_date.to_s}}
   }
-  let(:vorstand) { groups(:vorstand_mg_aarberg) }
+  let(:vorstand) { groups(:vorstand_adelboden) }
   let(:verein) { vorstand.layer_group }
 
   describe "#dynamic_cost" do

@@ -13,7 +13,7 @@ N = 1_000
 FETCH_YEARS_TIME = 0.1
 
 describe "VeteranYears", performance: true do
-  let(:group) { groups(:mitglieder_mg_aarberg) }
+  let(:group) { groups(:mitglieder_adelboden) }
   let(:person) { people(:member) }
 
   before do

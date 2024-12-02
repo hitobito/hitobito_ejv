@@ -21,7 +21,7 @@ describe MailRelay::Lists do
   end
 
   let(:relay) { MailRelay::Lists.new(message) }
-  let(:group) { groups(:kontakte_5) }
+  let(:group) { groups(:delegierte) }
 
   before { group.mailing_lists.create!(name: "dummy", mail_name: "dummy") }
 

@@ -8,7 +8,7 @@
 require "spec_helper"
 
 describe SongCountsController do
-  let(:group) { Fabricate(Group::Regionalverband.name.to_sym) }
+  let(:group) { Fabricate(Group::Mitgliederverband.name.to_sym) }
   let(:verein) { Fabricate(Group::Verein.name.to_sym, parent: group, name: "Harmonie Sursee") }
 
   context "index" do
@@ -16,7 +16,7 @@ describe SongCountsController do
 
     before do
       Fabricate(Group::Verein::SuisaAdmin.name.to_sym, group: verein, person: admin)
-      Fabricate(Group::Regionalverband::SuisaAdmin.name.to_sym, group: group, person: admin)
+      Fabricate(Group::Mitgliederverband::SuisaAdmin.name.to_sym, group: group, person: admin)
       sign_in(admin)
     end
 

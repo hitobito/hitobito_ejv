@@ -8,7 +8,7 @@
 Fabricator(:festival, from: :event, class_name: :"Event::Festival") do
   name "Musikfestus"
   group_ids do
-    [ActiveRecord::FixtureSet.identify(:hauptgruppe_1)]
+    [ActiveRecord::FixtureSet.identify(:root)]
   end
   application_opening_at { Date.current }
   application_closing_at { Date.current.advance(weeks: 1) }

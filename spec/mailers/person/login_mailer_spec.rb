@@ -31,7 +31,11 @@ describe Person::LoginMailer do
     subject { mail.body }
 
     it "populates dachverband placeholder" do
-      expect(subject).to match(/Dein Hauptgruppe/)
+      expect(subject).to match(/Dein EJV/)
+    end
+
+    it "populates recipient-name placeholder" do
+      expect(subject).to match(/#{people(:member).first_name}/)
     end
   end
 

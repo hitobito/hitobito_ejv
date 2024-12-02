@@ -12,12 +12,12 @@ describe Export::Tabular::SongCounts::List do
   let(:data) { Export::Tabular::SongCounts::List.csv(list) }
   let(:data_without_bom) { data.gsub(Regexp.new("^#{Export::Csv::UTF8_BOM}"), "") }
   let(:csv) { CSV.parse(data_without_bom, headers: true, col_sep: Settings.csv.separator) }
-  let(:sorted_csv) { csv.sort_by { |r| [r["SUISA-ID"], r["Titel"]] } }
+  let(:sorted_csv) { csv.sort_by { |r| [r["SUISA-ID"], r["Titel"]].join(" ") } }
 
   subject { csv }
 
   context "verein" do
-    let(:list) { groups(:musikgesellschaft_aarberg).song_counts.order(:concert_id) }
+    let(:list) { groups(:jodlergruppe_engstligtal_adelboden).song_counts.order(:concert_id) }
 
     its(:headers) do
       is_expected.to eql ["Anzahl", "Titel", "Komponist", "Arrangeur", "Verlag", "SUISA-ID", "Verein", "Vereins ID"]
@@ -36,8 +36,8 @@ describe Export::Tabular::SongCounts::List do
       its(["Arrangeur"]) { is_expected.to eql "Creedence Clearwater Revival" }
       its(["Verlag"]) { is_expected.to eql "Fantasy" }
       its(["SUISA-ID"]) { is_expected.to eql "12345" }
-      its(["Verein"]) { is_expected.to eql "Musikgesellschaft Aarberg" }
-      its(["Vereins ID"]) { is_expected.to eql groups(:musikgesellschaft_aarberg).id.to_s }
+      its(["Verein"]) { is_expected.to eql "Jodlergruppe Engstligtal Adelboden" }
+      its(["Vereins ID"]) { is_expected.to eql groups(:jodlergruppe_engstligtal_adelboden).id.to_s }
     end
 
     context "second row" do
@@ -49,13 +49,13 @@ describe Export::Tabular::SongCounts::List do
       its(["Arrangeur"]) { is_expected.to eql "The Temptations" }
       its(["Verlag"]) { is_expected.to eql "Motown" }
       its(["SUISA-ID"]) { is_expected.to eql "23456" }
-      its(["Verein"]) { is_expected.to eql "Musikgesellschaft Aarberg" }
-      its(["Vereins ID"]) { is_expected.to eql groups(:musikgesellschaft_aarberg).id.to_s }
+      its(["Verein"]) { is_expected.to eql "Jodlergruppe Engstligtal Adelboden" }
+      its(["Vereins ID"]) { is_expected.to eql groups(:jodlergruppe_engstligtal_adelboden).id.to_s }
     end
   end
 
   context "group" do
-    let(:list) { groups(:hauptgruppe_1).song_counts.order(:concert_id) }
+    let(:list) { groups(:root).song_counts.order(:concert_id) }
 
     its(:headers) do
       is_expected.to eql ["Anzahl", "Titel", "Komponist", "Arrangeur", "Verlag", "SUISA-ID", "Verein und Ort"]
@@ -74,7 +74,7 @@ describe Export::Tabular::SongCounts::List do
       its(["Arrangeur"]) { is_expected.to eql "Creedence Clearwater Revival" }
       its(["Verlag"]) { is_expected.to eql "Fantasy" }
       its(["SUISA-ID"]) { is_expected.to eql "12345" }
-      its(["Verein und Ort"]) { is_expected.to eql "Musikgesellschaft Aarberg, Thiloscheid" }
+      its(["Verein und Ort"]) { is_expected.to eql "Jodlergruppe Engstligtal Adelboden" }
     end
 
     context "second row" do
@@ -86,7 +86,7 @@ describe Export::Tabular::SongCounts::List do
       its(["Arrangeur"]) { is_expected.to eql "The Temptations" }
       its(["Verlag"]) { is_expected.to eql "Motown" }
       its(["SUISA-ID"]) { is_expected.to eql "23456" }
-      its(["Verein und Ort"]) { is_expected.to eql "Musikgesellschaft Aarberg, Thiloscheid" }
+      its(["Verein und Ort"]) { is_expected.to eql "Jodlergruppe Engstligtal Adelboden" }
     end
 
     context "third row" do
@@ -98,7 +98,7 @@ describe Export::Tabular::SongCounts::List do
       its(["Arrangeur"]) { is_expected.to eql "The Temptations" }
       its(["Verlag"]) { is_expected.to eql "Motown" }
       its(["SUISA-ID"]) { is_expected.to eql "23456" }
-      its(["Verein und Ort"]) { is_expected.to eql "Musikgesellschaft Alterswil, Nord Boland" }
+      its(["Verein und Ort"]) { is_expected.to eql "Jodlerklub Edelweiss Thun" }
     end
 
     context "fourth row" do
@@ -110,7 +110,7 @@ describe Export::Tabular::SongCounts::List do
       its(["Arrangeur"]) { is_expected.to eql "Madonna" }
       its(["Verlag"]) { is_expected.to eql "Sire" }
       its(["SUISA-ID"]) { is_expected.to eql "34567" }
-      its(["Verein und Ort"]) { is_expected.to eql "Musikgesellschaft Alterswil, Nord Boland" }
+      its(["Verein und Ort"]) { is_expected.to eql "Jodlerklub Edelweiss Thun" }
     end
   end
 end

@@ -8,7 +8,7 @@
 require "spec_helper"
 
 describe MailingList do
-  let(:group) { groups(:kontakte_5) }
+  let(:group) { groups(:delegierte) }
 
   context "#mail_domain" do
     subject { MailingList.new(group: group).mail_domain }

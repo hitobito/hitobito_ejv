@@ -10,15 +10,12 @@ class Group::Verein < ::Group
 
   self.layer = true
   self.default_children = [Group::VereinVorstand,
-    Group::VereinKontakte,
     Group::VereinMitglieder,
     Group::VereinMusikkommission]
 
   children Group::VereinVorstand,
     Group::VereinMusikkommission,
-    Group::VereinMitglieder,
-    Group::VereinArbeitsgruppe,
-    Group::VereinKontakte
+    Group::VereinMitglieder
 
   self.used_attributes += [:founding_year,
     :correspondence_language,
@@ -83,19 +80,15 @@ class Group::Verein < ::Group
   ### ROLES
 
   class Admin < Role::Admin
-    self.permissions = [:layer_and_below_full, :festival_participation, :uv_lohnsumme]
+    self.permissions = [:layer_and_below_full]
   end
 
   class Conductor < Role
     self.permissions = []
   end
 
-  class Jugendverantwortlicher < Role
-    self.permissions = [:group_and_below_full]
-  end
-
   class SuisaAdmin < Role::SuisaAdmin
   end
 
-  roles Admin, Conductor, SuisaAdmin, Jugendverantwortlicher
+  roles Admin, Conductor, SuisaAdmin
 end

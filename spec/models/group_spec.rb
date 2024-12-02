@@ -8,9 +8,9 @@
 require "spec_helper"
 
 describe Group do
-  let(:group) { groups(:kontakte_5) }
+  let(:group) { groups(:delegierte) }
 
-  include_examples "group types"
+  include_examples "group types", group_group_label: "Group::Verein"
 
   context "hostname" do
     it "is nullfied when blank" do
@@ -56,7 +56,7 @@ describe Group do
   end
 
   context "#song_counts" do
-    subject { groups(:hauptgruppe_1) }
+    subject { groups(:root) }
 
     it "is a scope" do
       expect(subject.song_counts).to be_a ActiveRecord::Relation
@@ -75,7 +75,7 @@ describe Group do
 
   context "manually counted members" do
     it "does not crash when manual_member_count is nil" do
-      group = groups(:hauptgruppe_1)
+      group = groups(:root)
       group.manual_member_count = nil
 
       expect { group.uses_manually_counted_members? }.not_to raise_error

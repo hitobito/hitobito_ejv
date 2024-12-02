@@ -12,7 +12,7 @@ describe HistoryRolesController do
   it "POST#create handles invalid start date" do
     sign_in(people(:admin))
     leader = people(:leader)
-    group = groups(:mitglieder_mg_aarberg)
+    group = groups(:mitglieder_adelboden)
 
     role_params = {
       person_id: leader.id,
@@ -29,7 +29,7 @@ describe HistoryRolesController do
 
   it "POST#create is not allowed for normal members" do
     member = people(:member)
-    group = groups(:mitglieder_mg_aarberg)
+    group = groups(:mitglieder_adelboden)
 
     sign_in(member)
 
@@ -50,7 +50,7 @@ describe HistoryRolesController do
   it "POST#create creates new role for existing VereinMitglieder group" do
     sign_in(people(:admin))
     leader = people(:leader)
-    group = groups(:mitglieder_mg_aarberg)
+    group = groups(:mitglieder_adelboden)
 
     role_params = {
       person_id: leader.id,

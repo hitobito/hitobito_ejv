@@ -11,7 +11,7 @@ describe Export::Pdf::List::People do
   subject { Export::Pdf::List.render(people, group) }
 
   let(:people) { group.people }
-  let(:group) { groups(:musikverband_hastdutoene) }
+  let(:group) { groups(:jodlerklub_berna_bern) }
 
   let(:pdf_text) { PDF::Inspector::Text.analyze(subject).show_text.compact.join(" ") }
 

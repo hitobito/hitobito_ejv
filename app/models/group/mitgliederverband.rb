@@ -47,21 +47,16 @@
 
 class Group::Mitgliederverband < ::Group
   self.layer = true
-  self.default_children = [Group::MitgliederverbandGeschaeftsstelle,
+  self.default_children = [
     Group::MitgliederverbandVorstand,
-    Group::MitgliederverbandKontakte,
-    Group::MitgliederverbandMusikkommission,
-    Group::MitgliederverbandVeteranen]
+    Group::MitgliederverbandEinzelmitglieder
+  ]
 
   self.event_types += [Event::Course]
 
-  children Group::MitgliederverbandGeschaeftsstelle,
-    Group::MitgliederverbandVorstand,
-    Group::MitgliederverbandMusikkommission,
-    Group::MitgliederverbandArbeitsgruppe,
-    Group::MitgliederverbandKontakte,
-    Group::MitgliederverbandVeteranen,
-    Group::Regionalverband,
+  children Group::MitgliederverbandVorstand,
+    Group::MitgliederverbandEinzelmitglieder,
+    Group::MitgliederverbandVereinigung,
     Group::Verein
 
   include SecondaryChildren
@@ -69,7 +64,7 @@ class Group::Mitgliederverband < ::Group
   ### ROLES
 
   class Admin < Role::Admin
-    self.permissions = [:layer_and_below_full, :uv_lohnsumme]
+    self.permissions = [:layer_and_below_full]
   end
 
   class SuisaAdmin < Role::SuisaAdmin

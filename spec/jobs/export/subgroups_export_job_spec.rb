@@ -9,9 +9,9 @@ require "spec_helper"
 require "csv"
 
 describe Export::SubgroupsExportJob do
-  subject(:root_export) { described_class.new(people(:admin).id, groups(:hauptgruppe_1).id, {}) }
+  subject(:root_export) { described_class.new(people(:admin).id, groups(:root).id, {}) }
 
-  subject(:bern_export) { described_class.new(people(:admin).id, groups(:bernischer_kantonal_musikverband).id, {}) }
+  subject(:bern_export) { described_class.new(people(:admin).id, groups(:bkjv).id, {}) }
 
   let(:export) { root_export }
   let(:data_without_bom) { export.data.gsub(Regexp.new("^#{Export::Csv::UTF8_BOM}"), "") }
@@ -19,7 +19,7 @@ describe Export::SubgroupsExportJob do
 
   it "only exports Verband and Verein group types" do
     names = root_export.send(:entries).collect { |e| e.class.sti_name }.uniq
-    expect(names).to eq ["Group::Mitgliederverband", "Group::Regionalverband", "Group::Verein"]
+    expect(names).to eq ["Group::Mitgliederverband", "Group::Verein"]
   end
 
   it "exports address and special columns" do
@@ -27,7 +27,6 @@ describe Export::SubgroupsExportJob do
       "Name",
       "Gruppentyp",
       "Mitgliederverband",
-      "Regionalverband",
       "sekundäre Zugehörigkeit",
       "weitere Zugehörigkeit",
       "Haupt-E-Mail",
@@ -56,27 +55,31 @@ describe Export::SubgroupsExportJob do
     let(:exported_group_names) { csv.pluck("Name") }
 
     it "exports secondary children as well" do
-      groups(:musikgesellschaft_alterswil).update(
-        secondary_parent_id: groups(:regionalverband_mittleres_seeland).id
+      groups(:jodlerclub_stadt_st_gallen).update(
+        secondary_parent_id: groups(:bkjv).id
       )
 
       expect(exported_group_names).to match_array [
-        groups(:bernischer_kantonal_musikverband).name,
-        groups(:regionalverband_mittleres_seeland).name,
-        groups(:musikgesellschaft_aarberg).name,
-        groups(:musikgesellschaft_alterswil).name
+        groups(:bkjv).name,
+        groups(:jodlerclub_stadt_st_gallen).name,
+        groups(:jodlergruppe_engstligtal_adelboden).name,
+        groups(:jodlerklub_edelweiss_thun).name,
+        groups(:jodlerklub_berna_bern).name,
+        groups(:emmentaler_jodler_konolfingen).name
       ]
     end
 
     it "does not include duplicates when exporting secondary children" do
-      groups(:musikgesellschaft_aarberg).update(
-        secondary_parent_id: groups(:bernischer_kantonal_musikverband).id
+      groups(:jodlergruppe_engstligtal_adelboden).update(
+        secondary_parent_id: groups(:bkjv).id
       )
 
       expect(exported_group_names).to match_array [
-        groups(:bernischer_kantonal_musikverband).name,
-        groups(:regionalverband_mittleres_seeland).name,
-        groups(:musikgesellschaft_aarberg).name
+        groups(:bkjv).name,
+        groups(:jodlergruppe_engstligtal_adelboden).name,
+        groups(:jodlerklub_edelweiss_thun).name,
+        groups(:jodlerklub_berna_bern).name,
+        groups(:emmentaler_jodler_konolfingen).name
       ]
     end
   end
@@ -85,38 +88,32 @@ describe Export::SubgroupsExportJob do
     let(:export) { bern_export }
 
     before do
-      groups(:musikgesellschaft_alterswil).update(
-        secondary_parent_id: groups(:regionalverband_mittleres_seeland).id,
-        tertiary_parent_id: groups(:bernischer_kantonal_musikverband).id
+      groups(:jodlerklub_edelweiss_thun).update(
+        secondary_parent_id: groups(:nosjv).id,
+        tertiary_parent_id: groups(:bkjv).id
       )
     end
 
     it "secondary parent is present by name" do
       parents = csv.pluck("sekundäre Zugehörigkeit")
 
-      expect(parents).to match_array [
-        nil,
-        nil,
-        nil,
-        groups(:regionalverband_mittleres_seeland).name
+      expect(parents.compact).to match_array [
+        groups(:nosjv).name
       ]
     end
 
     it "tertiary parent is present by name" do
       parents = csv.pluck("weitere Zugehörigkeit")
 
-      expect(parents).to match_array [
-        nil,
-        nil,
-        nil,
-        groups(:bernischer_kantonal_musikverband).name
+      expect(parents.compact).to match_array [
+        groups(:bkjv).name
       ]
     end
   end
 
   context "suisa status" do
     let(:export) { root_export }
-    let(:verein1) { groups(:musikgesellschaft_alterswil) }
+    let(:verein1) { groups(:jodlerklub_edelweiss_thun) }
     let!(:verein2) { create_verein }
     let!(:verein3) { create_verein }
     let!(:verein4) { create_verein }
@@ -159,6 +156,6 @@ describe Export::SubgroupsExportJob do
 
   def create_verein
     Group::Verein.create!(name: "#{Faker::Space.nebula} #{Faker::Number.number}",
-      parent: groups(:regionalverband_mittleres_seeland))
+      parent: groups(:bkjv))
   end
 end

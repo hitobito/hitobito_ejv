@@ -6,131 +6,56 @@ of the Eidgenössischer Jodlerverband.
 <!-- roles:start -->
     * Dachverband
       * Dachverband
-        * Administrator: [:layer_and_below_full, :admin, :impersonation, :finance, :song_census, :uv_lohnsumme]
+        * Administrator: [:layer_and_below_full, :admin, :impersonation, :finance, :song_census]
         * Verantwortlicher SUISA: [:group_read, :song_census]
-      * Geschäftsstelle
-        * Geschäftsführung: [:layer_and_below_full, :impersonation]
-        * Mitarbeiter: [:layer_and_below_full, :approve_applications, :finance]
+      * Zentralsekretariat
+        * Administrator: [:layer_and_below_full, :finance, :impersonation]
+        * Sekretär: [:layer_and_below_full, :finance]
         * Hilfe: [:layer_and_below_read]
-      * Verbandsleitung
+      * Zentralvorstand
+        * Präsident: [:layer_full, :layer_and_below_read]
+        * Mitglied: [:layer_and_below_read]
+      * Delegierte
+        * Mitglied: [:group_read]
+      * Fachkommission
+        * Präsident: [:group_and_below_full]
+        * Mitglied: [:group_read]
+    * Unterverband
+      * Unterverband
+        * Administrator: [:layer_and_below_full]
+        * Verantwortlicher SUISA: [:group_read, :song_census]
+      * Vorstand
         * Präsident: [:layer_full, :layer_and_below_read]
         * Vizepräsident: [:layer_and_below_read]
-        * Finanzchef: [:layer_and_below_read, :finance]
-        * Veteranenchef: [:layer_and_below_read]
+        * Kassier: [:layer_and_below_read, :finance]
+        * Mitgliederverwalter: [:layer_and_below_read]
+        * Sekretär: [:group_full, :layer_and_below_read]
         * Mitglied: [:layer_and_below_read]
-      * Musikkommission
-        * Präsident: [:layer_read, :group_and_below_full]
-        * Mitglied: [:layer_read]
-      * Arbeitsgruppe
-        * Leitung: [:layer_read]
-        * Mitglied: [:group_and_below_read]
-      * Kontakte
-        * Adressverwaltung: [:group_and_below_full]
-        * Kontakt: []
-      * Ehrenmitglieder
-        * Adressverwaltung: [:group_and_below_full]
+      * Einzelmitglieder
+        * Jodler: []
+        * Alphornbläser: []
+        * Fahnenschwinger: []
+        * Freund & Gönner: []
         * Ehrenmitglied: []
-      * Veteranen
-        * Eidgenössischer Veteran: []
-        * Eidgenössicher Ehrenveteran: []
-        * CISM Veteran: []
-    * Mitgliederverband
-      * Mitgliederverband
-        * Administrator: [:layer_and_below_full, :uv_lohnsumme]
-        * Verantwortlicher SUISA: [:group_read, :song_census]
-      * Geschäftsstelle
-        * Geschäftsführung: [:layer_and_below_full, :finance]
-        * Mitarbeiter: [:layer_and_below_full, :approve_applications, :finance]
-        * Hilfe: [:layer_and_below_read]
-      * Vorstand
-        * Präsident: [:layer_full, :layer_and_below_read]
-        * Vizepräsident: [:layer_and_below_read]
-        * Kassier: [:layer_and_below_read, :finance]
-        * Veteranenchef: [:layer_and_below_read]
-        * Mitglied: [:layer_and_below_read]
-      * Musikkommission
-        * Präsident: [:layer_read, :group_and_below_full]
-        * Mitglied: [:layer_read]
-      * Arbeitsgruppe
-        * Leitung: [:layer_read]
-        * Mitglied: [:group_and_below_read]
-      * Kontakte
-        * Adressverwaltung: [:group_and_below_full]
-        * Kontakt: []
-      * Veteranen
-        * Kantonaler Veteran: []
-        * Kantonaler Ehrenveteran: []
-    * Regionalverband
-      * Regionalverband
+        * Freimitglied: []
+      * Vereinigung
+        * Präsident: [:group_and_below_full]
+        * Mitglied: []
+    * Gruppe
+      * Gruppe
         * Administrator: [:layer_and_below_full]
+        * ChorleiterIn: []
         * Verantwortlicher SUISA: [:group_read, :song_census]
-      * Geschäftsstelle
-        * Geschäftsführung: [:layer_and_below_full, :finance]
-        * Mitarbeiter: [:layer_and_below_full, :approve_applications, :finance]
-        * Hilfe: [:layer_and_below_read]
       * Vorstand
         * Präsident: [:layer_full, :layer_and_below_read]
         * Vizepräsident: [:layer_and_below_read]
         * Kassier: [:layer_and_below_read, :finance]
-        * Veteranenchef: [:layer_and_below_read]
-        * Mitglied: [:layer_and_below_read]
-      * Musikkommission
-        * Präsident: [:layer_read, :group_and_below_full]
-        * Mitglied: [:layer_read]
-      * Arbeitsgruppe
-        * Leitung: [:layer_read]
-        * Mitglied: [:group_and_below_read]
-    * Kreis
-      * Kreis
-        * Administrator: [:layer_and_below_full]
-        * Verantwortlicher SUISA: [:group_read, :song_census]
-      * Geschäftsstelle
-        * Geschäftsführung: [:layer_and_below_full, :finance]
-        * Mitarbeiter: [:layer_and_below_full, :approve_applications, :finance]
-        * Hilfe: [:layer_and_below_read]
-      * Vorstand
-        * Präsident: [:layer_full, :layer_and_below_read]
-        * Vizepräsident: [:layer_and_below_read]
-        * Kassier: [:layer_and_below_read, :finance]
-        * Veteranenchef: [:layer_and_below_read]
-        * Mitglied: [:layer_and_below_read]
-      * Musikkommission
-        * Präsident: [:layer_read, :group_and_below_full]
-        * Mitglied: [:layer_read]
-      * Kontakte
-        * Adressverwaltung: [:group_and_below_full]
-        * Kontakt: []
-    * Verein
-      * Verein
-        * Administrator: [:layer_and_below_full, :festival_participation, :uv_lohnsumme]
-        * DirigentIn: []
-        * Verantwortlicher SUISA: [:group_read, :song_census]
-        * Jugendverantwortlicher: [:group_and_below_full]
-      * Vorstand
-        * Präsident: [:layer_full, :layer_and_below_read]
-        * Vizepräsident: [:layer_and_below_read]
-        * Kassier: [:layer_and_below_read, :finance]
-        * Veteranenchef: [:layer_and_below_read]
-        * Materialverwaltung: [:layer_and_below_read]
         * Mitglied: [:layer_and_below_read]
       * Musikkommission
         * Präsident: [:layer_read, :group_and_below_full]
         * Mitglied: [:layer_read]
       * Mitglieder
-        * Adressverwaltung: [:group_and_below_full]
-        * Mitglied: [:layer_read]
-        * Passivmitglied: []
-        * Ehrenmitglied: []
-      * Arbeitsgruppe
-        * Leitung: [:layer_read]
-        * Mitglied: [:group_and_below_read]
-      * Kontakte
-        * Adressverwaltung: [:group_and_below_full]
-        * Kontakt: []
-    * Global
-      * Kontakte
-        * Adressverwaltung: [:group_and_below_full]
-        * Kontakt: []
+        * Mitglied: [:group_read]
 
 (Output of rake app:hitobito:roles)
 <!-- roles:end -->
@@ -164,4 +89,3 @@ of the Eidgenössischer Jodlerverband.
 | `group:manually_counted_members:deactivate[group_id]` | Setzt auf self und allen Subgruppen manually_counted_members auf `false`. Betrifft nur Vereine. |
 
 Sobald manually_counted_members auf true gesetzt ist, kann die Mitgliederanzahl im groups#edit bearbeitet werden.
-
