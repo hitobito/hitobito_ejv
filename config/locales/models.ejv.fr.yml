@@ -15,54 +15,34 @@ fr:
         many: Organisations faîtières
         other: Organisations faîtières
       group/root_geschaeftsstelle:
-        one: Secrétariat
-        many: Secrétariats
-        other: Secrétariats
+        one: ''
+        many: ''
+        other: ''
       group/root_vorstand:
-        one: Direction de l'association
-        many: Direction de l'association
-        other: Direction de l'association
-      group/root_musikkommission:
-        one: Commission de musique
-        many: Commissions de musique
-        other: Commissions de musique
+        one: ''
+        many: ''
+        other: ''
+      group/root_delegierte:
+        one: ''
+        many: ''
+        other: ''
+      group/root_delegierte/mitglied:
+        one: ''
+        many: ''
+        other: ''
       group/root_arbeitsgruppe:
-        one: Groupe de travail
-        many: Groupes de travail
-        other: Groupes de travail
-      group/root_ehrenmitglieder:
-        one: Membre d'honneur
-        many: Membres d'honneur
-        other: Membres d'honneur
-      group/root_veteranen:
-        one: Vétéran
-        many: Vétérans
-        other: Vétérans
-      group/root_veteranen/veteran:
-        one: Vétéran fédéral
-        many: Vétérans fédéraux
-        other: Vétérans fédéraux
-      group/root_veteranen/ehrenveteran:
-        one: 'Vétéran d’honneur fédéral '
-        many: Vétérans d’honneur fédéraux
-        other: Vétérans d’honneur fédéraux
-      group/root_veteranen/cism_veteran:
-        one: Vétérans CISM
-        many: Vétérans CISM
-        other: Vétérans CISM
-      group/root_kontakte:
-        one: Contacts
-        many: Contacts
-        other: Contacts
+        one: ''
+        many: ''
+        other: ''
       group/root/suisa_admin:
         one: Responsable SUISA
         many: Responsables SUISA
         other: Responsables SUISA
 
       group/mitgliederverband:
-        one: Association membre
-        many: Associations membres
-        other: Associations membres
+        one: ''
+        many: ''
+        other: ''
       group/mitgliederverband_geschaeftsstelle:
         one: Secrétariats
         many: Secrétariats
@@ -71,109 +51,63 @@ fr:
         one: Comité
         many: Comités
         other: Comités
-      group/mitgliederverband_musikkommission:
-        one: Commissions de musique
-        many: Commissions de musique
-        other: Commissions de musique
-      group/mitgliederverband_arbeitsgruppe:
-        one: Groupes de travail
-        many: Groupes de travail
-        other: Groupes de travail
+      group/mitgliederverband_vorstand/sekretaer:
+        one: ''
+        many: ''
+        other: ''
       group/mitgliederverband_ehrenmitglieder:
         one: Membres d'honneur
         many: Membres d'honneur
         other: Membres d'honneur
-      group/mitgliederverband_veteranen:
-        one: Vétérans
-        many: Vétérans
-        other: Vétérans
-      group/mitgliederverband_veteranen/veteran:
-        one: Vétéran cantonal
-        many: Vétérans cantonaux
-        other: Vétérans cantonaux
-      group/mitgliederverband_veteranen/ehrenveteran:
-        one: Vétéran d'honneur cantonal
-        many: Vétérans d'honneur cantonaux
-        other: Vétérans d'honneur cantonaux
-      group/mitgliederverband_kontakte:
-        one: Contacts
-        many: Contacts
-        other: Contacts
       group/mitgliederverband/suisa_admin:
         one: Responsables SUISA
         many: Responsables SUISA
         other: Responsables SUISA
-
-      group/kreis:
+      group/mitgliederverband_einzelmitglieder:
         one: ''
         many: ''
         other: ''
-      group/kreis_geschaeftsstelle:
+      group/mitgliederverband_einzelmitglieder/jodler:
         one: ''
         many: ''
         other: ''
-      group/kreis_vorstand:
+      group/mitgliederverband_einzelmitglieder/alphornblaeser:
         one: ''
         many: ''
         other: ''
-      group/kreis_musikkommission:
+      group/mitgliederverband_einzelmitglieder/fahnenschwinger:
         one: ''
         many: ''
         other: ''
-      group/kreis_arbeitsgruppe:
+      group/mitgliederverband_einzelmitglieder/freund:
+        one: ""
+        many: ""
+        other: ""
+      group/mitgliederverband_einzelmitglieder/ehrenmitglied:
         one: ''
         many: ''
         other: ''
-      group/kreis_ehrenmitglieder:
+      group/mitgliederverband_einzelmitglieder/freimitglied:
         one: ''
         many: ''
         other: ''
-      group/kreis_kontakte:
+      group/mitgliederverband_vereinigung:
         one: ''
         many: ''
         other: ''
-      group/kreis/suisa_admin:
+      group/mitgliederverband_vereinigung/praesident:
         one: ''
         many: ''
         other: ''
-
-      group/regionalverband:
-        one: Association régionale
-        many: Associations régionales
-        other: Associations régionales
-      group/regionalverband_geschaeftsstelle:
-        one: Secrétariats
-        many: Secrétariats
-        other: Secrétariats
-      group/regionalverband_vorstand:
-        one: Comités
-        many: Comités
-        other: Comités
-      group/regionalverband_musikkommission:
-        one: Commissions de musique
-        many: Commissions de musique
-        other: Commissions de musique
-      group/regionalverband_arbeitsgruppe:
-        one: Groupes de travail
-        many: Groupes de travail
-        other: Groupes de travail
-      group/regionalverband_ehrenmitglieder:
-        one: Membres d'honneur
-        many: Membres d'honneur
-        other: Membres d'honneur
-      group/regionalverband_kontakte:
-        one: Contacts
-        many: Contacts
-        other: Contacts
-      group/regionalverband/suisa_admin:
-        one: Responsables SUISA
-        many: Responsables SUISA
-        other: Responsables SUISA
+      group/mitgliederverband_vereinigung/mitglied:
+        one: ''
+        many: ''
+        other: ''
 
       group/verein:
-        one: Société
-        many: Sociétés
-        other: Sociétés
+        one: ''
+        many: ''
+        other: ''
       group/verein_vorstand:
         one: Comités
         many: Comités
@@ -194,9 +128,9 @@ fr:
         many: Contacts
         other: Contacts
       group/verein/conductor:
-        one: Directeur-trice
-        many: Directeur-trice-s
-        other: Directeur-trice-s
+        one: ''
+        many: ''
+        other: ''
       group/verein/jugendverantwortlicher:
         one: ''
         many: ''
@@ -222,13 +156,13 @@ fr:
       #### Geschaeftsstelle Roles
 
       role/geschaeftsstelle_manager:
-        one: Direction du secrétariat
-        many: Direction du secrétariat
-        other: Direction du secrétariat
+        one: ''
+        many: ''
+        other: ''
       role/geschaeftsstelle_staff:
-        one: Collaborateur
-        many: Collaborateurs
-        other: Collaborateurs
+        one: ''
+        many: ''
+        other: ''
       role/geschaeftsstelle_help:
         one: Aide
         many: Aides
@@ -257,9 +191,9 @@ fr:
         many: Vice-présidents
         other: Vice-présidents
       role/vorstand_veteranenchef:
-        one: Chef des vétérans
-        many: Chefs des vétérans
-        other: Chefs des vétérans
+        one: ''
+        many: ''
+        other: ''
       role/vorstand_materialverwaltung:
         one: Responsable matériel
         many: Responsable matériel
@@ -279,20 +213,13 @@ fr:
       #### Arbeitsgruppen Roles
 
       role/arbeitsgruppe_leitung:
-        one: Direction
-        many: Direction
-        other: Direction
+        one: ''
+        many: ''
+        other: ''
       role/arbeitsgruppe_mitglied:
         one: Membres
         many: Membres
         other: Membres
-
-      #### Ehrenmitglieder
-
-      role/ehrenmitglied:
-        one: Membre d'honneur
-        many: Membres d'honneur
-        other: Membres d'honneur
 
       #### Kontakte Roles
 
@@ -339,6 +266,11 @@ fr:
         one: Inscriptions de groupe
         many: Inscriptions de groupe
         other: Inscriptions de groupe
+
+      event/role/jury_mitglied:
+        one: ''
+        many: ''
+        other: ''
 
       invoice_item/membership_fee:
         one: ''
