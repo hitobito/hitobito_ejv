@@ -51,6 +51,6 @@ module Person::ActiveYears
   def calculate_active_years(end_date = Time.zone.now)
     roles.with_inactive.where(veteran_role_condition).map do |role|
       VeteranYears.new((role.start_on || role.created_at).year, (role.end_on || end_date).year)
-    end.sort.sum.years.to_i
+    end.sort.sum(VeteranYears::NULL).years.to_i
   end
 end

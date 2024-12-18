@@ -9,6 +9,7 @@ require "spec_helper"
 
 describe VeteranYears do
   include ActiveSupport::Testing::TimeHelpers
+  let(:empty_veteran_years) { described_class::NULL }
 
   context "with the new algorithm that has been ratified on 2020-11-14 (VL-Sitzung), it" do
     before do
@@ -35,13 +36,13 @@ describe VeteranYears do
         described_class.new(1964, 1970),
         described_class.new(1970, 1981),
         described_class.new(1981, 2020)
-      ].sum.years).to be == 69
+      ].sum(empty_veteran_years).years).to be == 69
     end
 
     it "counts completed years in the past" do
       subject = [
         described_class.new(2018, 2020)
-      ].sum
+      ].sum(empty_veteran_years)
 
       expect(subject.send(:year_list)).to match_array [2018, 2019, 2020]
       expect(subject.years).to be == 2
@@ -51,7 +52,7 @@ describe VeteranYears do
       subject = [
         described_class.new(2018, 2018),
         described_class.new(2018, 2019)
-      ].sum
+      ].sum(empty_veteran_years)
 
       expect(subject.send(:year_list)).to match_array [2018, 2019]
       expect(subject.years).to be == 2
@@ -61,7 +62,7 @@ describe VeteranYears do
       subject = [
         described_class.new(2018, 2018),
         described_class.new(2018, 2020)
-      ].sum
+      ].sum(empty_veteran_years)
 
       expect(subject.send(:year_list)).to match_array [2018, 2019, 2020]
       expect(subject.years).to be == 2
@@ -71,7 +72,7 @@ describe VeteranYears do
       subject = [
         described_class.new(2018, 2018),
         described_class.new(2018, 2020)
-      ].sum
+      ].sum(empty_veteran_years)
 
       expect(subject.send(:year_list)).to match_array [2018, 2019, 2020]
       expect(subject.years).to be == 2
@@ -81,7 +82,7 @@ describe VeteranYears do
       subject = [
         described_class.new(2018, 2018),
         described_class.new(2020, 2020)
-      ].sum
+      ].sum(empty_veteran_years)
 
       expect(subject.send(:year_list)).to match_array [2018, 2020]
       expect(subject.years).to be == 1
@@ -128,7 +129,7 @@ describe VeteranYears do
       end
 
       it "can be used to sum up an array" do
-        expect([first, second].sum).to be_a described_class
+        expect([first, second].sum(empty_veteran_years)).to be_a described_class
       end
     end
   end
