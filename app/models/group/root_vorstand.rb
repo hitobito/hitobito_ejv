@@ -12,6 +12,6 @@ class Group::RootVorstand < Group
   class Mitglied < Role::VorstandMitglied
   end
 
-  self.default_role = Mitglied
+  self.standard_role = Mitglied
   roles Praesident, Mitglied
 end

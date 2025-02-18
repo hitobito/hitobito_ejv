@@ -24,6 +24,6 @@ class Group::MitgliederverbandEinzelmitglieder < Group
   class Freimitglied < Role
   end
 
-  self.default_role = Jodler
+  self.standard_role = Jodler
   roles Jodler, Alphornblaeser, Fahnenschwinger, Freund, Ehrenmitglied, Freimitglied
 end
