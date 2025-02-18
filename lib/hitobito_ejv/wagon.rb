@@ -129,6 +129,9 @@ module HitobitoEjv
     initializer "ejv.add_inflections" do |_app|
       ActiveSupport::Inflector.inflections do |inflect|
         inflect.irregular "song_census", "song_censuses"
+        inflect.plural "klasse", "klassen"
+        inflect.plural "unterhaltungsmusik", "unterhaltungsmusik_stufen"
+        inflect.plural "besetzung", "besetzungen"
       end
     end
 

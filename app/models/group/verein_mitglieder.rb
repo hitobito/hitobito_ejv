@@ -12,6 +12,6 @@ class Group::VereinMitglieder < Group
     self.permissions = [:group_read]
   end
 
-  self.default_role = Mitglied
+  self.standard_role = Mitglied
   roles Mitglied
 end

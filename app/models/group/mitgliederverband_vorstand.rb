@@ -25,6 +25,6 @@ class Group::MitgliederverbandVorstand < Group
     self.permissions = [:group_full, :layer_and_below_read]
   end
 
-  self.default_role = Mitglied
+  self.standard_role = Mitglied
   roles Praesident, VizePraesident, Kassier, Veteranenchef, Sekretaer, Mitglied
 end
