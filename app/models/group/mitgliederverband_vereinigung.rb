@@ -13,6 +13,6 @@ class Group::MitgliederverbandVereinigung < Group
   class Mitglied < Role
   end
 
-  self.default_role = Mitglied
+  self.standard_role = Mitglied
   roles Praesident, Mitglied
 end
