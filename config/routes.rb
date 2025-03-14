@@ -27,14 +27,6 @@ Rails.application.routes.draw do
         end
       end
 
-      resources :events, only: [] do
-        resources :group_participations, controller: 'events/group_participations' do
-          member do
-            get 'edit_stage'
-          end
-        end
-      end
-
       resources :song_censuses, only: [:new, :create, :index] do
         post 'remind', to: 'song_censuses#remind'
       end

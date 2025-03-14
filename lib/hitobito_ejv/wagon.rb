@@ -115,7 +115,6 @@ module HitobitoEjv
 
       # lastly, register the abilities (could happen earlier, it's just a nice conclusion here)
       Ability.store.register SongAbility
-      Ability.store.register Event::GroupParticipationAbility
     end
 
     initializer "ejv.add_settings" do |_app|
