@@ -10,7 +10,6 @@ de:
   navigation:
     help: Hilfe
   group:
-    festival_tab: Musikfeste
     suisa_tab: SUISA
     merge:
       select:
@@ -151,9 +150,6 @@ de:
     export_enqueued: 'Export wird im Hintergrund gestartet und nach Fertigstellung heruntergeladen.'
 
   events:
-    global:
-      link:
-        add_event/festival: Musikfest erstellen
     group_participations:
       edit:
         title: "%{participation} bearbeiten"
@@ -169,12 +165,6 @@ de:
         music_type_and_level: Besetzung und Klasse zurücksetzen
         date_preference: Wunschspieltage zurücksetzen
         parade_music: Parademusik zurücksetzen
-
-    our_participations:
-      list:
-        applicable_festivals: "zur Anmeldung freigegebenen Musikfeste"
-        active_applications: "Anmeldungen meiner Gruppe"
-        edit: bearbeiten
 
   contactable:
     additional_email_fields:

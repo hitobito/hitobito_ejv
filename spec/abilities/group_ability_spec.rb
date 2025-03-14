@@ -12,55 +12,6 @@ describe GroupAbility do
 
   let(:role) { Fabricate(group_role_class.name.to_sym, group: group) }
 
-  context "listing festivals" do
-    let(:group) { groups(:root) }
-    let(:group_role_class) { Group::Root::Admin }
-
-    it { is_expected.to be_able_to(:"index_event/festivals", group) }
-  end
-
-  xdescribe "manage application to festivals" do
-    context "as admin of a group" do
-      let(:group_role_class) { Group::Verein::Admin }
-      let(:group) { groups(:jodlergruppe_engstligtal_adelboden) }
-      let(:checked_group) { groups(:jodlergruppe_engstligtal_adelboden) }
-
-      it { is_expected.to be_able_to(:manage_festival_application, checked_group) }
-    end
-
-    context "as admin of a group" do
-      let(:group_role_class) { Group::Verein::Admin }
-      let(:group) { groups(:jodlergruppe_engstligtal_adelboden) }
-      let(:checked_group) { groups(:jodlergruppe_engstligtal_adelboden) }
-
-      it { is_expected.to be_able_to(:manage_festival_application, checked_group) }
-    end
-
-    context "as member of a group" do
-      let(:group_role_class) { Group::VereinMitglieder::Mitglied }
-      let(:group) { groups(:mitglieder_adelboden) }
-      let(:checked_group) { groups(:jodlergruppe_engstligtal_adelboden) }
-
-      it { is_expected.to_not be_able_to(:manage_festival_application, checked_group) }
-    end
-
-    context "as president of a group" do
-      let(:group_role_class) { Group::VereinVorstand::Praesident }
-      let(:group) { groups(:vorstand_adelboden) }
-      let(:checked_group) { groups(:jodlergruppe_engstligtal_adelboden) }
-
-      it { is_expected.to_not be_able_to(:manage_festival_application, checked_group) }
-    end
-
-    context "as admin of a different group" do
-      let(:group_role_class) { Group::Verein::Admin }
-      let(:group) { groups(:jodlerklub_edelweiss_thun) }
-      let(:checked_group) { groups(:jodlergruppe_engstligtal_adelboden) }
-
-      it { is_expected.to_not be_able_to(:manage_festival_application, checked_group) }
-    end
-  end
-
   xdescribe "manage UV-Lohnsummen" do # uv-lohnsumme is not a permission that is currently used
     context "as admin of dachverband" do
       let(:group_role_class) { Group::Root::Admin }

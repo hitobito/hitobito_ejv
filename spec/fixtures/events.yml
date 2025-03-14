@@ -14,7 +14,3 @@ top_course:
   priorization: true
   requires_approval: true
   external_applications: true
-
-festival:
-  groups: root
-  type: Event::Festival
