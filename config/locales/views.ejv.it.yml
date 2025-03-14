@@ -10,7 +10,6 @@ it:
   navigation:
     help: Auito
   group:
-    festival_tab: Feste di Musica
     suisa_tab: SUISA
     merge:
       select:
@@ -142,9 +141,6 @@ it:
     export_enqueued: 'L’esportazione avverrà in background e sarà scaricata al termine.'
 
   events:
-    global:
-      link:
-        add_event/festival: Creare feste della musica
     group_participations:
       edit:
         title: "%{partecipazione} elaborare"
@@ -160,12 +156,6 @@ it:
         music_type_and_level: Inizializzare di nuovo organico e categoria
         date_preference: Inizializzare di nuovo il giorno di esecuzione desiderato
         parade_music: Inizializzare di nuovo la musica da parata
-
-    our_participations:
-      list:
-        applicable_festivals: "all’iscrizione di Feste di musica disponibili"
-        active_applications: "Iscrizione del mio gruppo"
-        edit: elaborare
 
   contactable:
     additional_email_fields:

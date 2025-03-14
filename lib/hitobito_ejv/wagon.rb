@@ -74,7 +74,6 @@ module HitobitoEjv
 
       ### sheets
       Sheet::Group.include Ejv::Sheet::Group
-      Sheet::Event.include Ejv::Sheet::Event
 
       ### jobs
       Export::SubgroupsExportJob.prepend Ejv::Export::SubgroupsExportJob
@@ -105,13 +104,11 @@ module HitobitoEjv
       GroupAbility.include Ejv::GroupAbility
       PersonAbility.include Ejv::PersonAbility
 
-      # festival_participation allows to manage your group's participation to a festival
       # uv_lohnsumme allows to manage the salary amount for the accident insurance
-      Role::Permissions << :festival_participation << :uv_lohnsumme
+      Role::Permissions << :uv_lohnsumme
 
       # load this class after all abilities have been defined
-      AbilityDsl::UserContext::GROUP_PERMISSIONS << :song_census << :festival_participation
-      AbilityDsl::UserContext::LAYER_PERMISSIONS << :festival_participation
+      AbilityDsl::UserContext::GROUP_PERMISSIONS << :song_census
 
       AbilityDsl::UserContext::GROUP_PERMISSIONS << :uv_lohnsumme
       AbilityDsl::UserContext::LAYER_PERMISSIONS << :uv_lohnsumme

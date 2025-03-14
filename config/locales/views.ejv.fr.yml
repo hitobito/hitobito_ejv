@@ -10,7 +10,6 @@ fr:
   navigation:
     help: Aide
   group:
-    festival_tab: Fêtes de musique
     suisa_tab: SUISA
     merge:
       select:
@@ -142,9 +141,6 @@ fr:
     export_enqueued: 'L’exportation est lancée en arrière-plan et sera téléchargée une fois terminée.'
 
   events:
-    global:
-      link:
-        add_event/festival: Créer une fête de musique
     group_participations:
       edit:
         title: "traiter %{participation}"
@@ -160,12 +156,6 @@ fr:
         music_type_and_level: Réinitialiser l’instrumentation et la catégorie
         date_preference: Réinitialiser les jours de prestation souhaités
         parade_music: Réinitialiser la musique de parade
-
-    our_participations:
-      list:
-        applicable_festivals: "Fêtes de musique ouvertes pour l’inscription"
-        active_applications: "Inscriptions de mon groupe"
-        edit: traiter
 
   contactable:
     additional_email_fields:
