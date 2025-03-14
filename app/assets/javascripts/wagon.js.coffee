@@ -4,6 +4,5 @@
 #  https://github.com/hitobito/hitobito_ejv.
 
 
-import './modules/group_paticipations.js'
 import './modules/song_counts.js'
 import './modules/subverein_select.js'
