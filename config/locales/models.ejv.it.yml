@@ -283,8 +283,6 @@ it:
       group:
         vereinssitz: Sede società bandistica
         founding_year: Anno di fondazione
-        klasse: Classe
-        klasse_value: Classe
         unterhaltungsmusik: Musica d'intrattenimento
         unterhaltungsmusik_value: Musica d'intrattenimento
         subventionen: Sovvenzioni
@@ -296,13 +294,6 @@ it:
           oberstufe: Categoria Superiore
           mittelstufe: Categoria Media
           unterstufe: Categoria Inferiore
-        klassen:
-          _nil: sconosciuto
-          hoechste: Eccellenza
-          erste: 1a Classe
-          zweite: 2a Classe
-          dritte: 3a Classe
-          vierte: 4a Classe
         mitgliederverband: Membri delle associazioni
         secondary_parent_groups: Appartenenze ad altri gruppi
         secondary_parent_id: secondario

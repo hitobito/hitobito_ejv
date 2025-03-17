@@ -283,8 +283,6 @@ fr:
       group:
         vereinssitz: Siège de la société
         founding_year: Année de fondation
-        klasse: Classe
-        klasse_value: Classe
         unterhaltungsmusik: Musique de divertissement
         unterhaltungsmusik_value: Musique de divertissement
         subventionen: Subventions
@@ -296,13 +294,6 @@ fr:
           oberstufe: Catégorie supérieure
           mittelstufe: Catégorie moyenne
           unterstufe: Catégorie inférieure
-        klassen:
-          _nil: Inconnu
-          hoechste: Classe d'excellence
-          erste: 1ère classe
-          zweite: 2ème classe
-          dritte: 3ème classe
-          vierte: 4ème classe
         mitgliederverband: Associations membres
         secondary_parent_groups: autres appartenances à un groupe
         secondary_parent_id: secondaire

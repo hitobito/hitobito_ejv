@@ -228,8 +228,6 @@ de:
       group:
         vereinssitz: Vereinssitz
         founding_year: Gründungsjahr
-        klasse: Klasse
-        klasse_value: Klasse
         unterhaltungsmusik: Unterhaltungsmusik
         unterhaltungsmusik_value: Unterhaltungsmusik
         subventionen: Subventionen
@@ -241,13 +239,6 @@ de:
           oberstufe: Oberstufe
           mittelstufe: Mittelstufe
           unterstufe: Unterstufe
-        klassen:
-          _nil: unbekannt
-          hoechste: Höchstklasse
-          erste: 1. Klasse
-          zweite: 2. Klasse
-          dritte: 3. Klasse
-          vierte: 4. Klasse
         mitgliederverband: Mitgliederverband
         secondary_parent_groups: weitere Gruppenzugehörigkeiten
         secondary_parent_id: sekundär

@@ -30,10 +30,6 @@ module Ejv::GroupsHelper
     verein.unterhaltungsmusik_label
   end
 
-  def format_klasse(verein)
-    verein.klasse_label
-  end
-
   def subverein_checkboxes(root)
     SubvereinCheckboxesBuilder.checkboxes(root, self)
   end
