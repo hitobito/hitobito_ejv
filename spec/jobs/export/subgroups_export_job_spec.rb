@@ -39,7 +39,6 @@ describe Export::SubgroupsExportJob do
       "Besetzung",
       "Klasse",
       "Unterhaltungsmusik",
-      "Korrespondenzsprache",
       "Subventionen",
       "Gründungsjahr",
       "Erfasste Mitglieder",
