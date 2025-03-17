@@ -17,10 +17,6 @@ module Ejv
             super(entry, format)
           end
 
-          def klasse
-            translated_label(:klasse)
-          end
-
           def unterhaltungsmusik
             translated_label(:unterhaltungsmusik)
           end
