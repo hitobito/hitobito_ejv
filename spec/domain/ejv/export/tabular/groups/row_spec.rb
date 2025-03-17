@@ -17,7 +17,6 @@ describe Export::Tabular::Groups::Row do
 
     it "returns blank for nil I18nEnum attributes" do
       expect(row.fetch(:klasse)).to be_blank
-      expect(row.fetch(:besetzung)).to be_blank
       expect(row.fetch(:unterhaltungsmusik)).to be_blank
     end
   end
@@ -27,7 +26,6 @@ describe Export::Tabular::Groups::Row do
 
     it "returns unbekannt for nil I18nEnum attributes" do
       expect(row.fetch(:klasse)).to eq "unbekannt"
-      expect(row.fetch(:besetzung)).to eq "unbekannt"
       expect(row.fetch(:unterhaltungsmusik)).to eq "unbekannt"
     end
   end
@@ -35,13 +33,11 @@ describe Export::Tabular::Groups::Row do
   describe "Group::Verein with values" do
     let(:group) {
       Group::Verein.new(klasse: :erste,
-        unterhaltungsmusik: :oberstufe,
-        besetzung: :brass_band)
+        unterhaltungsmusik: :oberstufe)
     }
 
     it "returns translated values for I18nEnum attributes" do
       expect(row.fetch(:klasse)).to eq "1. Klasse"
-      expect(row.fetch(:besetzung)).to eq "Brass Band"
       expect(row.fetch(:unterhaltungsmusik)).to eq "Oberstufe"
     end
 

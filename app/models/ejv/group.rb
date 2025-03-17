@@ -8,7 +8,6 @@
 module Ejv::Group
   extend ActiveSupport::Concern
 
-  BESETZUNGEN = %w[brass_band harmonie fanfare_benelux fanfare_mixte tambour_percussion].freeze
   KLASSEN = %w[hoechste erste zweite dritte vierte].freeze
   UNTERHALTUNGSMUSIK = %w[oberstufe mittelstufe unterstufe].freeze
   FQDN_REGEX = '(?=\A.{1,254}\z)(\A(([a-z0-9][a-z0-9\-]{0,61}[a-z0-9])\.)+([a-z0-9][a-z0-9\-]{0,61}[a-z0-9]))\z'
@@ -19,11 +18,9 @@ module Ejv::Group
     include I18nSettable
     include I18nEnums
 
-    i18n_enum :besetzung, BESETZUNGEN, key: :besetzungen
     i18n_enum :klasse, KLASSEN, key: :klassen
     i18n_enum :unterhaltungsmusik, UNTERHALTUNGSMUSIK, key: :unterhaltungsmusik_stufen
 
-    i18n_setter :besetzung, (BESETZUNGEN + [nil])
     i18n_setter :klasse, (KLASSEN + [nil])
     i18n_setter :unterhaltungsmusik, (UNTERHALTUNGSMUSIK + [nil])
 

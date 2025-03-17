@@ -17,10 +17,6 @@ module Ejv
             super(entry, format)
           end
 
-          def besetzung
-            translated_label(:besetzung)
-          end
-
           def klasse
             translated_label(:klasse)
           end
