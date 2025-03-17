@@ -228,17 +228,10 @@ de:
       group:
         vereinssitz: Vereinssitz
         founding_year: Gründungsjahr
-        unterhaltungsmusik: Unterhaltungsmusik
-        unterhaltungsmusik_value: Unterhaltungsmusik
         subventionen: Subventionen
         recognized_members: Erfasste Mitglieder
         manual_member_count: Mitglieder (manuell)
         manually_counted_members: Mitglieder manuell erfasst
-        unterhaltungsmusik_stufen:
-          _nil: unbekannt
-          oberstufe: Oberstufe
-          mittelstufe: Mittelstufe
-          unterstufe: Unterstufe
         mitgliederverband: Mitgliederverband
         secondary_parent_groups: weitere Gruppenzugehörigkeiten
         secondary_parent_id: sekundär

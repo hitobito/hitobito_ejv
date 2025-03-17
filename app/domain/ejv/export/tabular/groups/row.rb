@@ -17,10 +17,6 @@ module Ejv
             super(entry, format)
           end
 
-          def unterhaltungsmusik
-            translated_label(:unterhaltungsmusik)
-          end
-
           def contact_email
             entry.contact&.email
           end

@@ -12,32 +12,7 @@ describe Export::Tabular::Groups::Row do
 
   subject { row }
 
-  context "any group without values" do
-    let(:group) { Group::Root.new }
-
-    it "returns blank for nil I18nEnum attributes" do
-      expect(row.fetch(:unterhaltungsmusik)).to be_blank
-    end
-  end
-
-  describe "Group::Verein without values" do
-    let(:group) { Group::Verein.new }
-
-    it "returns unbekannt for nil I18nEnum attributes" do
-      expect(row.fetch(:unterhaltungsmusik)).to eq "unbekannt"
-    end
-  end
-
   describe "Group::Verein with values" do
-    let(:group) {
-      Group::Verein.new(
-        unterhaltungsmusik: :oberstufe)
-    }
-
-    it "returns translated values for I18nEnum attributes" do
-      expect(row.fetch(:unterhaltungsmusik)).to eq "Oberstufe"
-    end
-
     describe "recognized_members" do
       before do
         mitglieder = Group::VereinMitglieder.create!(name: "dummy", parent: group, deleted_at: Time.zone.now)

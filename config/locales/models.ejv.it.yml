@@ -283,17 +283,10 @@ it:
       group:
         vereinssitz: Sede società bandistica
         founding_year: Anno di fondazione
-        unterhaltungsmusik: Musica d'intrattenimento
-        unterhaltungsmusik_value: Musica d'intrattenimento
         subventionen: Sovvenzioni
         recognized_members: Membri recensiti
         manual_member_count: ""
         manually_counted_members: ""
-        unterhaltungsmusik_stufen:
-          _nil: sconosciuto
-          oberstufe: Categoria Superiore
-          mittelstufe: Categoria Media
-          unterstufe: Categoria Inferiore
         mitgliederverband: Membri delle associazioni
         secondary_parent_groups: Appartenenze ad altri gruppi
         secondary_parent_id: secondario

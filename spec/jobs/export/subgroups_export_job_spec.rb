@@ -36,7 +36,6 @@ describe Export::SubgroupsExportJob do
       "PLZ",
       "Ort",
       "Land",
-      "Unterhaltungsmusik",
       "Subventionen",
       "Gründungsjahr",
       "Erfasste Mitglieder",
