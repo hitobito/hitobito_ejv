@@ -18,7 +18,6 @@ class Group::Verein < ::Group
     Group::VereinMitglieder
 
   self.used_attributes += [:founding_year,
-    :unterhaltungsmusik,
     :subventionen,
     :manually_counted_members,
     :manual_member_count,

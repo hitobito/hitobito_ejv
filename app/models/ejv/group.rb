@@ -8,7 +8,6 @@
 module Ejv::Group
   extend ActiveSupport::Concern
 
-  UNTERHALTUNGSMUSIK = %w[oberstufe mittelstufe unterstufe].freeze
   FQDN_REGEX = '(?=\A.{1,254}\z)(\A(([a-z0-9][a-z0-9\-]{0,61}[a-z0-9])\.)+([a-z0-9][a-z0-9\-]{0,61}[a-z0-9]))\z'
 
   included do # rubocop:disable Metrics/BlockLength
@@ -16,10 +15,6 @@ module Ejv::Group
 
     include I18nSettable
     include I18nEnums
-
-    i18n_enum :unterhaltungsmusik, UNTERHALTUNGSMUSIK, key: :unterhaltungsmusik_stufen
-
-    i18n_setter :unterhaltungsmusik, (UNTERHALTUNGSMUSIK + [nil])
 
     validates :hostname,
       uniqueness: {case_sensitive: false},

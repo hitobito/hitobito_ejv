@@ -26,10 +26,6 @@ module Ejv::GroupsHelper
     field_set_tag(title, class: "group-fields", style: element_visible(visible)) { yield }
   end
 
-  def format_unterhaltungsmusik(verein)
-    verein.unterhaltungsmusik_label
-  end
-
   def subverein_checkboxes(root)
     SubvereinCheckboxesBuilder.checkboxes(root, self)
   end
