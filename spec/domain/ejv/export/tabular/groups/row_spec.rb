@@ -20,10 +20,6 @@ describe Export::Tabular::Groups::Row do
       expect(row.fetch(:besetzung)).to be_blank
       expect(row.fetch(:unterhaltungsmusik)).to be_blank
     end
-
-    it "returns nil for correspondence_language" do
-      expect(row.fetch(:correspondence_language)).to be_blank
-    end
   end
 
   describe "Group::Verein without values" do
@@ -34,28 +30,19 @@ describe Export::Tabular::Groups::Row do
       expect(row.fetch(:besetzung)).to eq "unbekannt"
       expect(row.fetch(:unterhaltungsmusik)).to eq "unbekannt"
     end
-
-    it "returns nil for correspondence_language" do
-      expect(row.fetch(:correspondence_language)).to be_blank
-    end
   end
 
   describe "Group::Verein with values" do
     let(:group) {
       Group::Verein.new(klasse: :erste,
         unterhaltungsmusik: :oberstufe,
-        besetzung: :brass_band,
-        correspondence_language: :de)
+        besetzung: :brass_band)
     }
 
     it "returns translated values for I18nEnum attributes" do
       expect(row.fetch(:klasse)).to eq "1. Klasse"
       expect(row.fetch(:besetzung)).to eq "Brass Band"
       expect(row.fetch(:unterhaltungsmusik)).to eq "Oberstufe"
-    end
-
-    it "returns Deutsch for correspondence_language" do
-      expect(row.fetch(:correspondence_language)).to eq "Deutsch"
     end
 
     describe "recognized_members" do

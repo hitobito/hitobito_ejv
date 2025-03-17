@@ -43,14 +43,17 @@ module HitobitoEjv
 
       ### controllers
       GroupsController.permitted_attrs += [:vereinssitz, :founding_year,
-        :correspondence_language, :besetzung,
+        :besetzung,
         :klasse, :unterhaltungsmusik,
         :secondary_parent_id, :tertiary_parent_id,
         :subventionen, :hostname,
         :buv_lohnsumme, :nbuv_lohnsumme, :manual_member_count]
 
-      PeopleController.permitted_attrs += [:profession, :correspondence_language,
-        :personal_data_usage]
+      PeopleController.permitted_attrs += [
+        :profession,
+        :correspondence_language,
+        :personal_data_usage
+      ]
 
       Person::HistoryController.prepend Ejv::Person::HistoryController
       DeviseController.include HostnamedGroups

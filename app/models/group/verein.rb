@@ -18,7 +18,6 @@ class Group::Verein < ::Group
     Group::VereinMitglieder
 
   self.used_attributes += [:founding_year,
-    :correspondence_language,
     :besetzung,
     :klasse,
     :unterhaltungsmusik,
