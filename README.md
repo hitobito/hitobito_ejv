@@ -68,8 +68,6 @@ of the Eidgenössischer Jodlerverband.
 | Song                      | Werk             |
 | SongCensus                | Meldeliste       |
 | SongCount                 | Werkmeldung      |
-| Event::GroupParticipation | Gruppenanmeldung |
-| Event::Festival           | Musikfest        |
 
 ## Ablauf SUISA-Meldung
 

@@ -36,11 +36,6 @@ describe Export::SubgroupsExportJob do
       "PLZ",
       "Ort",
       "Land",
-      "Besetzung",
-      "Klasse",
-      "Unterhaltungsmusik",
-      "Korrespondenzsprache",
-      "Subventionen",
       "Gründungsjahr",
       "Erfasste Mitglieder",
       "SUISA Status"
