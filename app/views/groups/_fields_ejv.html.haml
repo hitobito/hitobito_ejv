@@ -9,9 +9,6 @@
     = f.labeled_input_fields :manual_member_count if entry.manually_counted_members?
     = f.labeled_input_fields :vereinssitz, :founding_year
 
-  = field_set_tag do
-    = f.labeled_input_fields :subventionen
-
   - if can?(:edit_uv_lohnsummen, entry)
     = field_set_tag do
       = f.labeled_input_fields :buv_lohnsumme, :nbuv_lohnsumme
