@@ -34,10 +34,6 @@ module Ejv::GroupsHelper
     verein.klasse_label
   end
 
-  def format_besetzung(verein)
-    verein.besetzung_label
-  end
-
   def subverein_checkboxes(root)
     SubvereinCheckboxesBuilder.checkboxes(root, self)
   end

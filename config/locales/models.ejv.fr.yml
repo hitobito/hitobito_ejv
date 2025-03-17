@@ -285,21 +285,12 @@ fr:
         founding_year: Année de fondation
         klasse: Classe
         klasse_value: Classe
-        besetzung: Instrumentation
-        besetzung_value: Instrumentation
         unterhaltungsmusik: Musique de divertissement
         unterhaltungsmusik_value: Musique de divertissement
         subventionen: Subventions
         recognized_members: Membres saisis
         manual_member_count: ""
         manually_counted_members: Membres saisis manuellement
-        besetzungen:
-          _nil: Inconnu
-          brass_band: Brass Band
-          harmonie: Harmonie
-          fanfare_benelux: Fanfare Benelux
-          fanfare_mixte: Fanfare Mixte
-          tambour_percussion: Tambours et percussion
         unterhaltungsmusik_stufen:
           _nil: Inconnu
           oberstufe: Catégorie supérieure

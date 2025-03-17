@@ -285,21 +285,12 @@ it:
         founding_year: Anno di fondazione
         klasse: Classe
         klasse_value: Classe
-        besetzung: Formazione
-        besetzung_value: Formazione
         unterhaltungsmusik: Musica d'intrattenimento
         unterhaltungsmusik_value: Musica d'intrattenimento
         subventionen: Sovvenzioni
         recognized_members: Membri recensiti
         manual_member_count: ""
         manually_counted_members: ""
-        besetzungen:
-          _nil: sconosciuto
-          brass_band: Brass Band
-          harmonie: Armonia
-          fanfare_benelux: Fanfara Benelux
-          fanfare_mixte: Fanfara Mista
-          tambour_percussion: Tamburi e Percussione
         unterhaltungsmusik_stufen:
           _nil: sconosciuto
           oberstufe: Categoria Superiore

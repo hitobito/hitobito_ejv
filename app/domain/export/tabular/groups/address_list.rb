@@ -14,7 +14,7 @@ module Export::Tabular::Groups
         name type mitgliederverband
         secondary_parent tertiary_parent
         email contact contact_email address zip_code town country
-        besetzung klasse unterhaltungsmusik
+        klasse unterhaltungsmusik
         subventionen founding_year recognized_members
         suisa_status
       ]

@@ -43,7 +43,6 @@ module HitobitoEjv
 
       ### controllers
       GroupsController.permitted_attrs += [:vereinssitz, :founding_year,
-        :besetzung,
         :klasse, :unterhaltungsmusik,
         :secondary_parent_id, :tertiary_parent_id,
         :subventionen, :hostname,
@@ -130,7 +129,6 @@ module HitobitoEjv
         inflect.irregular "song_census", "song_censuses"
         inflect.plural "klasse", "klassen"
         inflect.plural "unterhaltungsmusik", "unterhaltungsmusik_stufen"
-        inflect.plural "besetzung", "besetzungen"
       end
     end
 
