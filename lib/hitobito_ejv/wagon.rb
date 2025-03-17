@@ -44,7 +44,7 @@ module HitobitoEjv
       ### controllers
       GroupsController.permitted_attrs += [:vereinssitz, :founding_year,
         :secondary_parent_id, :tertiary_parent_id,
-        :subventionen, :hostname,
+        :hostname,
         :buv_lohnsumme, :nbuv_lohnsumme, :manual_member_count]
 
       PeopleController.permitted_attrs += [
