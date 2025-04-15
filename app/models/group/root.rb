@@ -12,7 +12,7 @@ class Group::Root < ::Group
     Group::RootVorstand
   ]
 
-  self.event_types = [Event, Event::Course, Event::Festival]
+  self.event_types = [Event, Event::Course]
 
   children Group::RootGeschaeftsstelle,
     Group::RootVorstand,

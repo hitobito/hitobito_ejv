@@ -9,4 +9,4 @@
                               class: 'd-help_inline')
 
 = fields.labeled(:correspondence_language) do
-  = fields.select(:correspondence_language, supported_languages, { selected: fields.object.correspondence_language || default_language_for_person(@group) }, class: 'form-select form-select-sm')
+  = fields.select(:correspondence_language, supported_languages, { selected: fields.object.correspondence_language || default_language_for_person }, class: 'form-select form-select-sm')

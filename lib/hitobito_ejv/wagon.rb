@@ -43,14 +43,15 @@ module HitobitoEjv
 
       ### controllers
       GroupsController.permitted_attrs += [:vereinssitz, :founding_year,
-        :correspondence_language, :besetzung,
-        :klasse, :unterhaltungsmusik,
         :secondary_parent_id, :tertiary_parent_id,
-        :subventionen, :hostname,
+        :hostname,
         :buv_lohnsumme, :nbuv_lohnsumme, :manual_member_count]
 
-      PeopleController.permitted_attrs += [:profession, :correspondence_language,
-        :personal_data_usage]
+      PeopleController.permitted_attrs += [
+        :profession,
+        :correspondence_language,
+        :personal_data_usage
+      ]
 
       Person::HistoryController.prepend Ejv::Person::HistoryController
       DeviseController.include HostnamedGroups
@@ -74,7 +75,6 @@ module HitobitoEjv
 
       ### sheets
       Sheet::Group.include Ejv::Sheet::Group
-      Sheet::Event.include Ejv::Sheet::Event
 
       ### jobs
       Export::SubgroupsExportJob.prepend Ejv::Export::SubgroupsExportJob
@@ -105,20 +105,17 @@ module HitobitoEjv
       GroupAbility.include Ejv::GroupAbility
       PersonAbility.include Ejv::PersonAbility
 
-      # festival_participation allows to manage your group's participation to a festival
       # uv_lohnsumme allows to manage the salary amount for the accident insurance
-      Role::Permissions << :festival_participation << :uv_lohnsumme
+      Role::Permissions << :uv_lohnsumme
 
       # load this class after all abilities have been defined
-      AbilityDsl::UserContext::GROUP_PERMISSIONS << :song_census << :festival_participation
-      AbilityDsl::UserContext::LAYER_PERMISSIONS << :festival_participation
+      AbilityDsl::UserContext::GROUP_PERMISSIONS << :song_census
 
       AbilityDsl::UserContext::GROUP_PERMISSIONS << :uv_lohnsumme
       AbilityDsl::UserContext::LAYER_PERMISSIONS << :uv_lohnsumme
 
       # lastly, register the abilities (could happen earlier, it's just a nice conclusion here)
       Ability.store.register SongAbility
-      Ability.store.register Event::GroupParticipationAbility
     end
 
     initializer "ejv.add_settings" do |_app|
@@ -129,9 +126,6 @@ module HitobitoEjv
     initializer "ejv.add_inflections" do |_app|
       ActiveSupport::Inflector.inflections do |inflect|
         inflect.irregular "song_census", "song_censuses"
-        inflect.plural "klasse", "klassen"
-        inflect.plural "unterhaltungsmusik", "unterhaltungsmusik_stufen"
-        inflect.plural "besetzung", "besetzungen"
       end
     end
 

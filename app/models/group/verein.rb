@@ -18,21 +18,12 @@ class Group::Verein < ::Group
     Group::VereinMitglieder
 
   self.used_attributes += [:founding_year,
-    :correspondence_language,
-    :besetzung,
-    :klasse,
-    :unterhaltungsmusik,
-    :subventionen,
     :manually_counted_members,
     :manual_member_count,
     :recognized_members]
 
   has_many :concerts, dependent: :destroy
   has_many :song_counts, through: :concerts
-
-  has_many :group_participations, dependent: :destroy, # rubocop:disable Rails/InverseOf there are two inverses
-    class_name: "Event::GroupParticipation",
-    foreign_key: "group_id"
 
   def self.hidden
     root = Group::Root.first
