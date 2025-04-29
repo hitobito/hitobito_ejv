@@ -282,11 +282,6 @@ it:
         manual_member_count: ""
         manually_counted_members: ""
         mitgliederverband: Membri delle associazioni
-        secondary_parent_groups: Appartenenze ad altri gruppi
-        secondary_parent_id: secondario
-        secondary_parent: seconda affiliazione
-        tertiary_parent_id: altri
-        tertiary_parent: affiliazione supplemenare
         contact_email: indirizzo e-mail della persona di contatto
         suisa_status: ""
       role:

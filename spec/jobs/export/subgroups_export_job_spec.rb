@@ -27,8 +27,6 @@ describe Export::SubgroupsExportJob do
       "Name",
       "Gruppentyp",
       "Mitgliederverband",
-      "sekundäre Zugehörigkeit",
-      "weitere Zugehörigkeit",
       "Haupt-E-Mail",
       "Kontaktperson",
       "E-Mailadresse Kontaktperson",
@@ -36,6 +34,7 @@ describe Export::SubgroupsExportJob do
       "PLZ",
       "Ort",
       "Land",
+      "Subventionen",
       "Gründungsjahr",
       "Erfasste Mitglieder",
       "SUISA Status"
@@ -43,67 +42,6 @@ describe Export::SubgroupsExportJob do
 
     expect(csv.headers).to match_array expected_headers
     expect(csv.headers).to eq expected_headers
-  end
-
-  context "secondary_children" do
-    let(:export) { bern_export }
-    let(:exported_group_names) { csv.pluck("Name") }
-
-    it "exports secondary children as well" do
-      groups(:jodlerclub_stadt_st_gallen).update(
-        secondary_parent_id: groups(:bkjv).id
-      )
-
-      expect(exported_group_names).to match_array [
-        groups(:bkjv).name,
-        groups(:jodlerclub_stadt_st_gallen).name,
-        groups(:jodlergruppe_engstligtal_adelboden).name,
-        groups(:jodlerklub_edelweiss_thun).name,
-        groups(:jodlerklub_berna_bern).name,
-        groups(:emmentaler_jodler_konolfingen).name
-      ]
-    end
-
-    it "does not include duplicates when exporting secondary children" do
-      groups(:jodlergruppe_engstligtal_adelboden).update(
-        secondary_parent_id: groups(:bkjv).id
-      )
-
-      expect(exported_group_names).to match_array [
-        groups(:bkjv).name,
-        groups(:jodlergruppe_engstligtal_adelboden).name,
-        groups(:jodlerklub_edelweiss_thun).name,
-        groups(:jodlerklub_berna_bern).name,
-        groups(:emmentaler_jodler_konolfingen).name
-      ]
-    end
-  end
-
-  context "data" do
-    let(:export) { bern_export }
-
-    before do
-      groups(:jodlerklub_edelweiss_thun).update(
-        secondary_parent_id: groups(:nosjv).id,
-        tertiary_parent_id: groups(:bkjv).id
-      )
-    end
-
-    it "secondary parent is present by name" do
-      parents = csv.pluck("sekundäre Zugehörigkeit")
-
-      expect(parents.compact).to match_array [
-        groups(:nosjv).name
-      ]
-    end
-
-    it "tertiary parent is present by name" do
-      parents = csv.pluck("weitere Zugehörigkeit")
-
-      expect(parents.compact).to match_array [
-        groups(:bkjv).name
-      ]
-    end
   end
 
   context "suisa status" do

@@ -33,8 +33,6 @@
 #  vereinssitz                 :string(255)
 #  founding_year               :integer
 #  swoffice_id                 :integer
-#  secondary_parent_id         :integer
-#  tertiary_parent_id          :integer
 #  description                 :text(65535)
 #  logo                        :string(255)
 #
@@ -52,8 +50,6 @@ class Group::Mitgliederverband < ::Group
     Group::MitgliederverbandEinzelmitglieder,
     Group::MitgliederverbandVereinigung,
     Group::Verein
-
-  include SecondaryChildren
 
   ### ROLES
 

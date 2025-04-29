@@ -69,38 +69,4 @@ describe Export::SongCountsExportJob do
       end
     end
   end
-
-  context "secondary_children" do
-    let(:export) { bern_export }
-    let(:expected_data) do
-      [
-        {
-          "Anzahl" => "2",
-          "Titel" => "Material Girl",
-          "Komponist" => "Peter Brown / Robert Rans",
-          "Arrangeur" => "Madonna",
-          "Verlag" => "Sire",
-          "SUISA-ID" => "34567"
-        },
-        {
-          "Anzahl" => "4",
-          "Titel" => "Papa Was a Rollin' Stone",
-          "Komponist" => "Barrett Strong / Norman Whitfield",
-          "Arrangeur" => "The Temptations",
-          "Verlag" => "Motown",
-          "SUISA-ID" => "23456"
-        }
-      ]
-    end
-
-    it "exports all played songs with count" do
-      csv.each_with_index do |row, index|
-        expected_row = expected_data[index]
-
-        expected_row.each do |key, expected_value|
-          expect(row[key]).to eq(expected_value)
-        end
-      end
-    end
-  end
 end
