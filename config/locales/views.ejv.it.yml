@@ -18,10 +18,6 @@ it:
       index:
         explanation: >
           Quando sono attive, le persone a questo livello vengono aggiunte a gruppi, eventi ed elenchi solo dopo l'approvazione di una persona autorizzata.
-  mailing_lists:
-    global:
-      link:
-        add: Redigere elenchi
   song_censuses:
     index:
       no_data_for_this_year: Per quest'anno non si sono indicazioni a disposizioni
@@ -66,11 +62,6 @@ it:
         select_existing_verein: Selezionare una società
         text_with_alternative_link_html: "%{text} <small>oppure %{link}</small>"
 
-    add_requests:
-      creator:
-        mailing_list:
-          success: "Abbiamo inviato una richiesta di accesso per %{person}. La persona verrà aggiunta alla lista non appena viene accettata la richiesta."
-
   people:
     fields_ejv:
       allow_personal_data_usage: Accetto l'uso dei dettagli del mio indirizzo
@@ -102,11 +93,6 @@ it:
         form:
           subgroups_selectable: Si possono scegliere gruppi nell'elenco gruppi.
           subgroups_and_siblings_selectable: "Possono essere selezionati unicamente gruppi di questo elenco o nei gruppi contigui del tipo%{type}."
-
-  subscriber/user:
-    success: Sei stato aggiunto con successo alla lista.
-    failure: 'Non sei stato aggiunto alla lista%{errors}'
-    unsubscribed: Sei stato eliminato con successo dalla lista
 
   subscriptions:
     list:

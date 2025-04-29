@@ -205,10 +205,6 @@ de:
         other: Aufführungen
         without_date: Aufführung ohne Datum
 
-      mailing_list:
-        one: Liste
-        other: Listen
-
       event/role/jury_mitglied:
         one: Jurymitglied
         other: Jurymitglieder
@@ -251,8 +247,6 @@ de:
           permission:
             description:
               song_census: Darf SUISA-Meldungen verwalten.
-              layer_full: Alles Lesen und Schreiben auf dieser Ebene. Erstellen von Anlässen und Listen auf dieser Ebene.
-              group_full: Lesen und Schreiben auf der Gruppe. Erstellen von Anlässen und Listen auf der Gruppe.
               uv_lohnsumme: Darf die UV-Lohnsummen verwalten.
 
       invoice_item:

@@ -257,11 +257,6 @@ fr:
         other: Interprétations
         without_date: Interprétation sans date
 
-      mailing_list:
-        one: Liste
-        many: Listes
-        other: Listes
-
       event/role/jury_mitglied:
         one: ''
         many: ''
@@ -306,8 +301,6 @@ fr:
           permission:
             description:
               song_census: Peut gérer les annonces SUISA.
-              layer_full: Tout lire et écrire à ce niveau. Créer des manifestations et des listes à ce niveau.
-              group_full: Lire et écrire sur le groupe. Créer des manifestations et des listes sur le groupe.
               uv_lohnsumme: Peut gérer le salaire AA.
 
       invoice_item:
