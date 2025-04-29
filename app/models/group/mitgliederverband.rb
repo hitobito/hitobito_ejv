@@ -37,7 +37,6 @@
 #  tertiary_parent_id          :integer
 #  description                 :text(65535)
 #  logo                        :string(255)
-#  hostname                    :string(255)
 #
 
 class Group::Mitgliederverband < ::Group

@@ -16,20 +16,12 @@ module Ejv::Group
     include I18nSettable
     include I18nEnums
 
-    validates :hostname,
-      uniqueness: {case_sensitive: false},
-      format: {with: Regexp.new(FQDN_REGEX, Regexp::IGNORECASE)},
-      allow_blank: true
-
     validates :manual_member_count,
       numericality: {greater_than_or_equal_to: 0},
       if: :manually_counted_members?
 
     belongs_to :secondary_parent, class_name: "Group"
     belongs_to :tertiary_parent, class_name: "Group"
-
-    before_validation :nullify_blank_hostname
-    before_validation :downcase_hostname
 
     used_attributes << :secondary_parent_id << :tertiary_parent_id
 
@@ -70,17 +62,5 @@ module Ejv::Group
     return unless is_a?(Group::Verein)
 
     Group::VereinMitglieder::Mitglied.joins(:group).where(groups: {layer_group_id: id}).count
-  end
-
-  def hostname_from_hierarchy
-    self_and_ancestors.find { |g| g.hostname.present? }.try(:hostname).presence
-  end
-
-  def nullify_blank_hostname
-    self.hostname = nil if hostname.blank?
-  end
-
-  def downcase_hostname
-    self.hostname = hostname.downcase if hostname.present?
   end
 end

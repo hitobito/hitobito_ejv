@@ -12,49 +12,6 @@ describe Group do
 
   include_examples "group types", group_group_label: "Group::Verein"
 
-  context "hostname" do
-    it "is nullfied when blank" do
-      expect(group.update(hostname: ""))
-      expect(group.reload.hostname).to eq nil
-    end
-
-    it "is validated to not have a schema" do
-      group.hostname = "https://example.com"
-
-      expect(group).to_not be_valid
-    end
-
-    it "is downcased" do
-      group.update(hostname: "EXAMPLE.COM")
-
-      expect(group.reload.hostname).to eq "example.com"
-    end
-
-    it "allows commonly used abbreviations" do
-      group.hostname = "db.example.com"
-
-      expect(group).to be_valid
-    end
-  end
-
-  context "#hostname_from_hierarchy" do
-    subject { group.hostname_from_hierarchy }
-
-    it "might be nil" do
-      expect(subject).to be_nil
-    end
-
-    it "might read hostname from group" do
-      group.update(hostname: "example.com")
-      expect(subject).to eq "example.com"
-    end
-
-    it "might read hostname from hierarchy" do
-      group.parent.update(hostname: "example.com")
-      expect(subject).to eq "example.com"
-    end
-  end
-
   context "#song_counts" do
     subject { groups(:root) }
 

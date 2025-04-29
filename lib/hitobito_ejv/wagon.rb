@@ -32,7 +32,6 @@ module HitobitoEjv
       Role.include Ejv::Role
       InvoiceItem.add_type_mapping(:membership_fee, InvoiceItem::MembershipFee)
       Subscription.prepend Ejv::Subscription
-      MailingList.prepend Ejv::MailingList
 
       unused_event_fields = [
         :motto, :signature, :signature_confirmation, :signature_confirmation_text
@@ -44,7 +43,6 @@ module HitobitoEjv
       ### controllers
       GroupsController.permitted_attrs += [:vereinssitz, :founding_year,
         :secondary_parent_id, :tertiary_parent_id,
-        :hostname,
         :buv_lohnsumme, :nbuv_lohnsumme, :manual_member_count]
 
       PeopleController.permitted_attrs += [
@@ -54,7 +52,6 @@ module HitobitoEjv
       ]
 
       Person::HistoryController.prepend Ejv::Person::HistoryController
-      DeviseController.include HostnamedGroups
 
       ### helpers
       admin = NavigationHelper::MAIN.find { |opts| opts[:label] == :admin }
@@ -81,7 +78,6 @@ module HitobitoEjv
 
       ### mailers
       Person::LoginMailer.prepend Ejv::Person::LoginMailer
-      ApplicationMailer.prepend Ejv::ApplicationMailer
 
       ### domain
       Export::Pdf::List::People.prepend Ejv::Export::Pdf::List::People

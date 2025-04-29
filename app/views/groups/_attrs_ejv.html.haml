@@ -10,6 +10,3 @@
   = render_attrs(entry, *entry.used_attributes(:manual_member_count))
 - else
   = render_attrs(entry, *entry.used_attributes(:recognized_members))
-
-- if entry.is_a?(Group::Root)
-  = render_attrs(entry, :hostname)

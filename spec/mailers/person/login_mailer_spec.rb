@@ -38,17 +38,4 @@ describe Person::LoginMailer do
       expect(subject).to match(/#{people(:member).first_name}/)
     end
   end
-
-  context "#return_path" do
-    subject { mail.return_path.split("@").last }
-
-    it "defaults to localhost domain" do
-      expect(subject).to eq "localhost"
-    end
-
-    it "reads hostname from top_level group" do
-      people(:leader).primary_group.update(hostname: "example.com")
-      expect(subject).to eq "example.com"
-    end
-  end
 end
