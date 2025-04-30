@@ -18,9 +18,6 @@ module Ejv::GroupAbility
       permission(:layer_full).may(:create_history_member).in_same_layer
       permission(:layer_and_below_full).may(:create_history_member).in_same_layer_or_below
 
-      permission(:uv_lohnsumme).may(:show_uv_lohnsummen).everywhere_if_admin
-      permission(:uv_lohnsumme).may(:edit_uv_lohnsummen).everywhere_if_admin_or_in_same_layer
-
       permission(:finance).may(:subverein_select).in_layer_group
     end
   end
@@ -34,16 +31,5 @@ module Ejv::GroupAbility
     ].any? do |permission|
       user_context.permission_group_ids(permission).include?(group.id)
     end
-  end
-
-  def everywhere_if_admin
-    [
-      Group::Root::Admin,
-      Group::Mitgliederverband::Admin
-    ].any? { |admin_role| role_type?(admin_role) }
-  end
-
-  def everywhere_if_admin_or_in_same_layer
-    everywhere_if_admin || in_same_layer
   end
 end
