@@ -43,7 +43,7 @@ module HitobitoEjv
       ### controllers
       GroupsController.permitted_attrs += [:vereinssitz, :founding_year,
         :secondary_parent_id, :tertiary_parent_id,
-        :buv_lohnsumme, :nbuv_lohnsumme, :manual_member_count]
+        :manual_member_count]
 
       PeopleController.permitted_attrs += [
         :profession,
@@ -101,14 +101,8 @@ module HitobitoEjv
       GroupAbility.include Ejv::GroupAbility
       PersonAbility.include Ejv::PersonAbility
 
-      # uv_lohnsumme allows to manage the salary amount for the accident insurance
-      Role::Permissions << :uv_lohnsumme
-
       # load this class after all abilities have been defined
       AbilityDsl::UserContext::GROUP_PERMISSIONS << :song_census
-
-      AbilityDsl::UserContext::GROUP_PERMISSIONS << :uv_lohnsumme
-      AbilityDsl::UserContext::LAYER_PERMISSIONS << :uv_lohnsumme
 
       # lastly, register the abilities (could happen earlier, it's just a nice conclusion here)
       Ability.store.register SongAbility

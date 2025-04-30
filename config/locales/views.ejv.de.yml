@@ -70,7 +70,6 @@ de:
 
   groups:
     actions_show_ejv:
-      export_lohnsummen: Export UV Lohnsummen
       create_verein_invoice_list: Vereinsrechnungen erstellen
     subverein_select_modal:
       select_all: Alle Vereine an-/abwählen

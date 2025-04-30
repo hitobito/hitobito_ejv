@@ -21,20 +21,6 @@ module Ejv
             entry.contact&.email
           end
 
-          # rubocop:disable Style/FormatString,Style/FormatStringToken
-          def buv_lohnsumme
-            if entry.buv_lohnsumme
-              "%#.2f" % entry.buv_lohnsumme
-            end
-          end
-
-          def nbuv_lohnsumme
-            if entry.nbuv_lohnsumme
-              "%#.2f" % entry.nbuv_lohnsumme
-            end
-          end
-          # rubocop:enable Style/FormatString,Style/FormatStringToken
-
           def suisa_status
             if entry.is_a?(::Group::Verein)
               translated_suisa_status(entry)

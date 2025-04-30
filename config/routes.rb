@@ -18,8 +18,6 @@ Rails.application.routes.draw do
         get :subverein_select
       end
 
-      get 'export_lohnsummen' => 'lohnsummen#show'
-
       resources :song_counts
       resources :concerts do
         collection do

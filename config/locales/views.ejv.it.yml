@@ -64,7 +64,6 @@ it:
 
   groups:
     actions_show_ejv:
-      export_lohnsummen: Esportare i salari AINF
       create_verein_invoice_list: ""
     subverein_select_modal:
       select_all: ""

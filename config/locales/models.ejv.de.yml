@@ -233,8 +233,6 @@ de:
         secondary_parent: sekundäre Zugehörigkeit
         tertiary_parent_id: weitere
         tertiary_parent: weitere Zugehörigkeit
-        buv_lohnsumme: BUV-Lohnsumme
-        nbuv_lohnsumme: NBUV-Lohnsumme
         contact_email: E-Mailadresse Kontaktperson
         suisa_status: SUISA Status
       role:
@@ -246,7 +244,8 @@ de:
           permission:
             description:
               song_census: Darf SUISA-Meldungen verwalten.
-              uv_lohnsumme: Darf die UV-Lohnsummen verwalten.
+              layer_full: Alles Lesen und Schreiben auf dieser Ebene. Erstellen von Anlässen und Listen auf dieser Ebene.
+              group_full: Lesen und Schreiben auf der Gruppe. Erstellen von Anlässen und Listen auf der Gruppe.
 
       invoice_item:
         amount: Betrag

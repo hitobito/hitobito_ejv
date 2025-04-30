@@ -61,7 +61,6 @@ fr:
 
   groups:
     actions_show_ejv:
-      export_lohnsummen: Export des salaires AA
       create_verein_invoice_list: ""
     subverein_select_modal:
       select_all: ""

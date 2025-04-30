@@ -12,53 +12,6 @@ describe GroupAbility do
 
   let(:role) { Fabricate(group_role_class.name.to_sym, group: group) }
 
-  xdescribe "manage UV-Lohnsummen" do # uv-lohnsumme is not a permission that is currently used
-    context "as admin of dachverband" do
-      let(:group_role_class) { Group::Root::Admin }
-      let(:group) { groups(:root) }
-      let(:checked_group) { groups(:jodlergruppe_engstligtal_adelboden) }
-
-      it { is_expected.to be_able_to(:show_uv_lohnsummen, checked_group) }
-      it { is_expected.to be_able_to(:edit_uv_lohnsummen, checked_group) }
-    end
-
-    context "as admin of mitgliederverband" do
-      let(:group_role_class) { Group::Mitgliederverband::Admin }
-      let(:group) { groups(:bkjv) }
-      let(:checked_group) { groups(:jodlergruppe_engstligtal_adelboden) }
-
-      it { is_expected.to be_able_to(:show_uv_lohnsummen, checked_group) }
-      it { is_expected.to be_able_to(:edit_uv_lohnsummen, checked_group) }
-    end
-
-    context "as admin of group" do
-      let(:group_role_class) { Group::Verein::Admin }
-      let(:group) { groups(:jodlergruppe_engstligtal_adelboden) }
-      let(:checked_group) { group }
-
-      it { is_expected.not_to be_able_to(:show_uv_lohnsummen, checked_group) }
-      it { is_expected.to be_able_to(:edit_uv_lohnsummen, checked_group) }
-    end
-
-    context "as admin of different group" do
-      let(:group_role_class) { Group::Verein::Admin }
-      let(:group) { groups(:jodlergruppe_engstligtal_adelboden) }
-      let(:checked_group) { groups(:jodlerklub_edelweiss_thun) }
-
-      it { is_expected.not_to be_able_to(:show_uv_lohnsummen, checked_group) }
-      it { is_expected.not_to be_able_to(:edit_uv_lohnsummen, checked_group) }
-    end
-
-    context "as member of a group" do
-      let(:group_role_class) { Group::VereinMitglieder::Mitglied }
-      let(:group) { groups(:mitglieder_adelboden) }
-      let(:checked_group) { group.layer_group }
-
-      it { is_expected.not_to be_able_to(:show_uv_lohnsummen, checked_group) }
-      it { is_expected.not_to be_able_to(:edit_uv_lohnsummen, checked_group) }
-    end
-  end
-
   describe "delete people" do
     let(:checked_person) { Fabricate(:person, primary_group: checked_group) }
     let!(:checked_person_role) do
