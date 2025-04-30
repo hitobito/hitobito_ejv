@@ -228,11 +228,6 @@ de:
         manual_member_count: Mitglieder (manuell)
         manually_counted_members: Mitglieder manuell erfasst
         mitgliederverband: Mitgliederverband
-        secondary_parent_groups: weitere Gruppenzugehörigkeiten
-        secondary_parent_id: sekundär
-        secondary_parent: sekundäre Zugehörigkeit
-        tertiary_parent_id: weitere
-        tertiary_parent: weitere Zugehörigkeit
         contact_email: E-Mailadresse Kontaktperson
         suisa_status: SUISA Status
       role:

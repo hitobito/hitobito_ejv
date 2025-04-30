@@ -7,12 +7,9 @@
 
 module Export::Tabular::Groups
   class AddressList < List
-    self.row_class = Export::Tabular::Groups::AddressRow
-
     def attributes
       %w[
         name type mitgliederverband
-        secondary_parent tertiary_parent
         email contact contact_email address zip_code town country
         founding_year recognized_members
         suisa_status

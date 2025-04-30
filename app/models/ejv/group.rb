@@ -19,18 +19,6 @@ module Ejv::Group
     validates :manual_member_count,
       numericality: {greater_than_or_equal_to: 0},
       if: :manually_counted_members?
-
-    belongs_to :secondary_parent, class_name: "Group"
-    belongs_to :tertiary_parent, class_name: "Group"
-
-    used_attributes << :secondary_parent_id << :tertiary_parent_id
-
-    # potential other parents, dropdown data
-    def self.secondary_parents
-      where(type: %w[Group::Mitgliederverband])
-        .order(:type, :name)
-        .select(:id, :name)
-    end
   end
 
   def uses_manually_counted_members?
@@ -43,14 +31,6 @@ module Ejv::Group
 
   def mitgliederverband
     ancestors.find_by(type: Group::Mitgliederverband.sti_name)
-  end
-
-  # actual other parents, secondary and tertiary
-  def secondary_parents
-    [
-      Group.find_by(id: secondary_parent_id),
-      Group.find_by(id: tertiary_parent_id)
-    ].compact
   end
 
   def song_counts

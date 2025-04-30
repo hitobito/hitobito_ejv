@@ -27,7 +27,6 @@ module HitobitoEjv
       # models
       Event.include Ejv::Event
       Group.include Ejv::Group
-      Group.include Ejv::Group::NestedSet
       Person.include Ejv::Person
       Role.include Ejv::Role
       InvoiceItem.add_type_mapping(:membership_fee, InvoiceItem::MembershipFee)
@@ -42,7 +41,6 @@ module HitobitoEjv
 
       ### controllers
       GroupsController.permitted_attrs += [:vereinssitz, :founding_year,
-        :secondary_parent_id, :tertiary_parent_id,
         :manual_member_count]
 
       PeopleController.permitted_attrs += [
