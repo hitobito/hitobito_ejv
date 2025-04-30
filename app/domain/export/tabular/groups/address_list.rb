@@ -7,8 +7,6 @@
 
 module Export::Tabular::Groups
   class AddressList < List
-    self.row_class = Export::Tabular::Groups::AddressRow
-
     def attributes
       %w[
         name type mitgliederverband
