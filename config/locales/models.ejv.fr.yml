@@ -287,7 +287,6 @@ fr:
         secondary_parent: appartenance secondaire
         tertiary_parent_id: autres
         tertiary_parent: appartenance supplémentaire
-        hostname: Hostname
         buv_lohnsumme: Salaire AAP
         nbuv_lohnsumme: Salaire AANP
         contact_email: Adresse email de la personne de contact

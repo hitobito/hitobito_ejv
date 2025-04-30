@@ -287,7 +287,6 @@ it:
         secondary_parent: seconda affiliazione
         tertiary_parent_id: altri
         tertiary_parent: affiliazione supplemenare
-        hostname: Hostname
         buv_lohnsumme: Salario AIP
         nbuv_lohnsumme: Salario AINP
         contact_email: indirizzo e-mail della persona di contatto
