@@ -257,11 +257,6 @@ it:
         other: Esecuzioni
         without_date: Esecuzione senza data
 
-      mailing_list:
-        one: Elenco
-        many: Elenchi
-        other: Elenchi
-
       event/role/jury_mitglied:
         one: ''
         many: ''
@@ -306,8 +301,6 @@ it:
           permission:
             description:
               song_census: Può gestire annunci SUISA
-              layer_full: "A questo livello può leggere tutto e scrivere. \nA questo livello può creare eventi e liste."
-              group_full: "Leggere e scrivere nel gruppo.\nCreare eventi e liste nel gruppo."
               uv_lohnsumme: Può gestire il salario AINF.
 
       invoice_item:
