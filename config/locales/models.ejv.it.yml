@@ -257,11 +257,6 @@ it:
         other: Esecuzioni
         without_date: Esecuzione senza data
 
-      mailing_list:
-        one: Elenco
-        many: Elenchi
-        other: Elenchi
-
       event/role/jury_mitglied:
         one: ''
         many: ''
@@ -287,14 +282,6 @@ it:
         manual_member_count: ""
         manually_counted_members: ""
         mitgliederverband: Membri delle associazioni
-        secondary_parent_groups: Appartenenze ad altri gruppi
-        secondary_parent_id: secondario
-        secondary_parent: seconda affiliazione
-        tertiary_parent_id: altri
-        tertiary_parent: affiliazione supplemenare
-        hostname: Hostname
-        buv_lohnsumme: Salario AIP
-        nbuv_lohnsumme: Salario AINP
         contact_email: indirizzo e-mail della persona di contatto
         suisa_status: ""
       role:
@@ -308,7 +295,6 @@ it:
               song_census: Può gestire annunci SUISA
               layer_full: "A questo livello può leggere tutto e scrivere. \nA questo livello può creare eventi e liste."
               group_full: "Leggere e scrivere nel gruppo.\nCreare eventi e liste nel gruppo."
-              uv_lohnsumme: Può gestire il salario AINF.
 
       invoice_item:
         amount: ""
