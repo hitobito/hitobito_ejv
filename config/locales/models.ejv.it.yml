@@ -1,14 +1,48 @@
+#  Copyright (c) 2012-2024, Eidgenössischer Jodlerverband. This file is part of
+#  hitobito_ejv and licensed under the Affero General Public License version 3
+#  or later. See the COPYING file at the top-level directory or at
+#  https://github.com/hitobito/hitobito_ejv.
+
+
 it:
   activerecord:
     models:
+
+      ### GROUPS
+
       group/root:
         one: Associazione Mantello
         many: Associazioni mantello
         other: Associazioni mantello
+      group/root_geschaeftsstelle:
+        one: ''
+        many: ''
+        other: ''
+      group/root_vorstand:
+        one: ''
+        many: ''
+        other: ''
+      group/root_delegierte:
+        one: ''
+        many: ''
+        other: ''
+      group/root_delegierte/mitglied:
+        one: ''
+        many: ''
+        other: ''
+      group/root_arbeitsgruppe:
+        one: ''
+        many: ''
+        other: ''
       group/root/suisa_admin:
         one: Responsabile SUISA
         many: Responsabili SUISA
         other: Responsabili SUISA
+
+      group/mitgliederverband:
+        one: ''
+        many: ''
+        other: ''
       group/mitgliederverband_geschaeftsstelle:
         one: Segretariati
         many: Segretariati
@@ -17,6 +51,10 @@ it:
         one: Comitato
         many: Comitati
         other: Comitati
+      group/mitgliederverband_vorstand/sekretaer:
+        one: ''
+        many: ''
+        other: ''
       group/mitgliederverband_ehrenmitglieder:
         one: Membri onorari
         many: Membri onorari
@@ -25,6 +63,51 @@ it:
         one: Responsabili SUISA
         many: Responsabili SUISA
         other: Responsabili SUISA
+      group/mitgliederverband_einzelmitglieder:
+        one: ''
+        many: ''
+        other: ''
+      group/mitgliederverband_einzelmitglieder/jodler:
+        one: ''
+        many: ''
+        other: ''
+      group/mitgliederverband_einzelmitglieder/alphornblaeser:
+        one: ''
+        many: ''
+        other: ''
+      group/mitgliederverband_einzelmitglieder/fahnenschwinger:
+        one: ''
+        many: ''
+        other: ''
+      group/mitgliederverband_einzelmitglieder/freund:
+        one: ""
+        many: ""
+        other: ""
+      group/mitgliederverband_einzelmitglieder/ehrenmitglied:
+        one: ''
+        many: ''
+        other: ''
+      group/mitgliederverband_einzelmitglieder/freimitglied:
+        one: ''
+        many: ''
+        other: ''
+      group/mitgliederverband_vereinigung:
+        one: ''
+        many: ''
+        other: ''
+      group/mitgliederverband_vereinigung/praesident:
+        one: ''
+        many: ''
+        other: ''
+      group/mitgliederverband_vereinigung/mitglied:
+        one: ''
+        many: ''
+        other: ''
+
+      group/verein:
+        one: ''
+        many: ''
+        other: ''
       group/verein_vorstand:
         one: Comitati
         many: Comitati
@@ -44,10 +127,23 @@ it:
         one: Contatti
         many: Contatti
         other: Contatti
+      group/verein/conductor:
+        one: ''
+        many: ''
+        other: ''
+      group/verein/jugendverantwortlicher:
+        one: ''
+        many: ''
+        other: ''
       group/verein/suisa_admin:
         one: Responsabili SUISA
         many: Responsabili SUISA
         other: Responsabili SUISA
+
+      ### ROLES FOR ALL LAYERS
+
+      #### General
+
       role/admin:
         one: Amministratore
         many: Amministratori
@@ -56,10 +152,24 @@ it:
         one: Gestione indirizzi
         many: Gestione indirizzi
         other: Gestione indirizzi
+
+      #### Geschaeftsstelle Roles
+
+      role/geschaeftsstelle_manager:
+        one: ''
+        many: ''
+        other: ''
+      role/geschaeftsstelle_staff:
+        one: ''
+        many: ''
+        other: ''
       role/geschaeftsstelle_help:
         one: Aiuto
         many: Aiuti
         other: Aiuti
+
+      #### Vorstand Roles
+
       role/vorstand_kassier:
         one: Cassiere
         many: Cassieri
@@ -80,10 +190,17 @@ it:
         one: Vice Presidente
         many: Vice Presidenti
         other: Vice Presidenti
+      role/vorstand_veteranenchef:
+        one: ''
+        many: ''
+        other: ''
       role/vorstand_materialverwaltung:
         one: Gestione materiale
         many: Gestione materiale
         other: Gestione materiale
+
+      #### Musikkommission Roles
+
       role/musikkommission_praesident:
         one: Presidenti
         many: Presidenti
@@ -92,14 +209,27 @@ it:
         one: Membri
         many: Membri
         other: Membri
+
+      #### Arbeitsgruppen Roles
+
+      role/arbeitsgruppe_leitung:
+        one: ''
+        many: ''
+        other: ''
       role/arbeitsgruppe_mitglied:
         one: Membri
         many: Membri
         other: Membri
+
+      #### Kontakte Roles
+
       role/kontakt:
         one: Contatto
         many: Contatti
         other: Contatti
+
+      #### Mitglieder Roles
+
       role/mitglieder_mitglied:
         one: Membri
         many: Membri
@@ -108,20 +238,35 @@ it:
         one: Membro passivo
         many: Membri passivi
         other: Membri passivi
+
       song:
         one: Brano
         many: Brani
         other: Brani
+
       song_census:
         one: Elenchi iscritti
+
       song_count:
         one: Annuncio brani
         many: Annunci brani
         other: Annunci brani
+
       concert:
         one: Esecuzione
         other: Esecuzioni
         without_date: Esecuzione senza data
+
+      event/role/jury_mitglied:
+        one: ''
+        many: ''
+        other: ''
+
+      invoice_item/membership_fee:
+        one: ''
+        many: ''
+        other: ''
+
     attributes:
       person:
         correspondence_language: Lingua di corrispondenza
@@ -134,24 +279,34 @@ it:
         vereinssitz: Sede società bandistica
         founding_year: Anno di fondazione
         recognized_members: Membri recensiti
+        manual_member_count: ""
+        manually_counted_members: ""
         mitgliederverband: Membri delle associazioni
         contact_email: indirizzo e-mail della persona di contatto
+        suisa_status: ""
       role:
         dates: Dati
+        start_on: ""
+        end_on: ""
+        correspondence_language: ""
         class:
           permission:
             description:
               song_census: Può gestire annunci SUISA
               layer_full: "A questo livello può leggere tutto e scrivere. \nA questo livello può creare eventi e liste."
-              group_full: 'Leggere e scrivere nel gruppo.
+              group_full: "Leggere e scrivere nel gruppo.\nCreare eventi e liste nel gruppo."
 
-                Creare eventi e liste nel gruppo.'
+      invoice_item:
+        amount: ""
+        cutoff_date: ""
+
       song:
         title: Titolo
         composed_by: Compositore
         arranged_by: Arrangemento
         published_by: Casa Editrice
         suisa_id: SUISA-ID
+
       song_count:
         song: Composizione
         song_id: Composizione
@@ -164,9 +319,11 @@ it:
         verein: Società bandistica
         verein_id: ID Società di musica
         verein_with_town: Società e Luogo
+
       song_counts:
         song: Composizione
         song_id: Composizione
+
       concert:
         song_counts: Registrazione brano
         performed_at: Data
@@ -176,12 +333,15 @@ it:
           joint_play: società di musica
           not_playable: nessuna esecuzione musicale durante quest’anno
           otherwise_billed: SUISA pagata da terzi
+
     errors:
       models:
         song:
           attributes:
             title:
               taken: esiste già con lo stesso compositore in questa casa editrice
+
   errors:
     messages:
       cannot_be_later_than_today: non può essere più tardi di oggi
+      cannot_be_later_than_end_on: ""

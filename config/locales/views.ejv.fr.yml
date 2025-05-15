@@ -1,3 +1,9 @@
+#  Copyright (c) 2012-2024, Eidgenössischer Jodlerverband. This file is part of
+#  hitobito_ejv and licensed under the Affero General Public License version 3
+#  or later. See the COPYING file at the top-level directory or at
+#  https://github.com/hitobito/hitobito_ejv.
+
+
 fr:
   global:
     last_change: "Dernière modification: %{date}"
@@ -7,7 +13,7 @@ fr:
     suisa_tab: SUISA
     merge:
       select:
-        explanation: Lorsque deux groupes sont fusionnés, tous les sous-groupes, manifestations et personnes, y compris les rôles des deux groupes, sont réunis. Les listes ne sont pas reprises. Les groupes précédents resteront alors visibles sous "Supprimé".
+        explanation: "Lorsque deux groupes sont fusionnés, tous les sous-groupes, manifestations et personnes, y compris les rôles des deux groupes, sont réunis. Les listes ne sont pas reprises. Les groupes précédents resteront alors visibles sous \"Supprimé\"."
   song_censuses:
     index:
       no_data_for_this_year: Aucune donnée disponible pour cette année.
@@ -31,13 +37,15 @@ fr:
         submit: La liste peut être envoyée.
         submitted: La liste a déjà été envoyée
         none: Aucune liste à envoyer.
+
     remind:
       success: "Le rappel a été envoyé à la société %{verein_count}."
       send: Envoyer un rappel
       send_confirm: Envoie un rappel à tous les responsables SUISA qui n'ont pas encore envoyé de liste. Chacun reçoit un courriel dans sa langue de correspondance. Le texte du courriel peut être modifié par un administrateur sous Paramètres.
     finish:
       submit: Clôturer la liste d'annonces
-      start_new_census: En clôturant la liste d'annonces, toutes les annonces effectuées jusqu'ici seront verrouillées. Une nouvelle liste de messages sera créée et les nouvelles annonces seront ajoutées à cette liste.
+      start_new_census: "En clôturant la liste d'annonces, toutes les annonces effectuées jusqu'ici seront verrouillées. Une nouvelle liste de messages sera créée et les nouvelles annonces seront ajoutées à cette liste."
+
   person:
     history:
       history_members_form_ejv:
@@ -49,15 +57,35 @@ fr:
         create_deleted_verein: Saisir la société supprimée
         select_existing_verein: Sélectionner la société
         text_with_alternative_link_html: "%{text} ou %{link}"
+
   people:
     fields_ejv:
       allow_personal_data_usage: J'accepte l'utilisation de mes données d'adresse
+
+  groups:
+    actions_show_ejv:
+      create_verein_invoice_list: ""
+    subverein_select_modal:
+      select_all: ""
+      submit: ""
+      no_entries: ""
+      invoice_config_invalid: ""
+      info:
+        group-vereinvorstand-kassier: ""
+        group-vereinvorstand-praesident: ""
+        group-verein-admin: ""
+        no_recipient: ""
+
   song_counts:
     export_enqueued: 'L’exportation est lancée en arrière-plan et sera téléchargée une fois terminée.'
+
   dropdown/song_counts:
     button: Exporter
     csv: CSV
     xlsx: Excel
+  dropdown/invoice_new:
+    membership_fee: ""
+
   concerts:
     index:
       no_concerts_yet: "Pour envoyer la liste SUISA, vous devez ajouter au moins une exécution musicale ou choisir une alternative:"
