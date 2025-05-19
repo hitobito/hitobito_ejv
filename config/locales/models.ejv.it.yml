@@ -15,34 +15,28 @@ it:
         many: Associazioni mantello
         other: Associazioni mantello
       group/root_geschaeftsstelle:
-        one: ''
-        many: ''
-        other: ''
+        one: Zentralsekretariat
+        other: Zentralsekretariate
       group/root_vorstand:
-        one: ''
-        many: ''
-        other: ''
+        one: Zentralvorstand
+        other: Zentralvorstände
       group/root_delegierte:
-        one: ''
-        many: ''
-        other: ''
+        one: Delegierte
+        other: Delegierte
       group/root_delegierte/mitglied:
-        one: ''
-        many: ''
-        other: ''
+        one: Mitglied
+        other: Mitglieder
       group/root_arbeitsgruppe:
-        one: ''
-        many: ''
-        other: ''
+        one: Fachkommission
+        other: Fachkommissionen
       group/root/suisa_admin:
         one: Responsabile SUISA
         many: Responsabili SUISA
         other: Responsabili SUISA
 
       group/mitgliederverband:
-        one: ''
-        many: ''
-        other: ''
+        one: Unterverband
+        other: Unterverbände
       group/mitgliederverband_geschaeftsstelle:
         one: Segretariati
         many: Segretariati
@@ -52,9 +46,8 @@ it:
         many: Comitati
         other: Comitati
       group/mitgliederverband_vorstand/sekretaer:
-        one: ''
-        many: ''
-        other: ''
+        one: Sekretär
+        other: Sekretäre
       group/mitgliederverband_ehrenmitglieder:
         one: Membri onorari
         many: Membri onorari
@@ -64,50 +57,39 @@ it:
         many: Responsabili SUISA
         other: Responsabili SUISA
       group/mitgliederverband_einzelmitglieder:
-        one: ''
-        many: ''
-        other: ''
+        one: Einzelmitglieder
+        other: Einzelmitglieder
       group/mitgliederverband_einzelmitglieder/jodler:
-        one: ''
-        many: ''
-        other: ''
+        one: Jodler
+        other: Jodler
       group/mitgliederverband_einzelmitglieder/alphornblaeser:
-        one: ''
-        many: ''
-        other: ''
+        one: Alphornbläser
+        other: Alphornbläser
       group/mitgliederverband_einzelmitglieder/fahnenschwinger:
-        one: ''
-        many: ''
-        other: ''
+        one: Fahnenschwinger
+        other: Fahnenschwinger
       group/mitgliederverband_einzelmitglieder/freund:
-        one: ""
-        many: ""
-        other: ""
+        one: "Freund & Gönner"
+        other: "Freunde & Gönner"
       group/mitgliederverband_einzelmitglieder/ehrenmitglied:
-        one: ''
-        many: ''
-        other: ''
+        one: Ehrenmitglied
+        other: Ehrenmitglieder
       group/mitgliederverband_einzelmitglieder/freimitglied:
-        one: ''
-        many: ''
-        other: ''
+        one: Freimitglied
+        other: Freimitglieder
       group/mitgliederverband_vereinigung:
-        one: ''
-        many: ''
-        other: ''
+        one: Vereinigung
+        other: Vereinigungen
       group/mitgliederverband_vereinigung/praesident:
-        one: ''
-        many: ''
-        other: ''
+        one: Präsident
+        other: Präsidenten
       group/mitgliederverband_vereinigung/mitglied:
-        one: ''
-        many: ''
-        other: ''
+        one: Mitglied
+        other: Mitglieder
 
       group/verein:
-        one: ''
-        many: ''
-        other: ''
+        one: Gruppe
+        other: Gruppen
       group/verein_vorstand:
         one: Comitati
         many: Comitati
@@ -128,13 +110,11 @@ it:
         many: Contatti
         other: Contatti
       group/verein/conductor:
-        one: ''
-        many: ''
-        other: ''
+        one: ChorleiterIn
+        other: ChorleiterInnen
       group/verein/jugendverantwortlicher:
-        one: ''
-        many: ''
-        other: ''
+        one: Jugendverantwortlicher
+        other: Jugendverantwortliche
       group/verein/suisa_admin:
         one: Responsabili SUISA
         many: Responsabili SUISA
@@ -156,13 +136,11 @@ it:
       #### Geschaeftsstelle Roles
 
       role/geschaeftsstelle_manager:
-        one: ''
-        many: ''
-        other: ''
+        one: Administrator
+        other: Administratoren
       role/geschaeftsstelle_staff:
-        one: ''
-        many: ''
-        other: ''
+        one: Sekretär
+        other: Sekretäre
       role/geschaeftsstelle_help:
         one: Aiuto
         many: Aiuti
@@ -191,9 +169,8 @@ it:
         many: Vice Presidenti
         other: Vice Presidenti
       role/vorstand_veteranenchef:
-        one: ''
-        many: ''
-        other: ''
+        one: Mitgliederverwalter
+        other: Mitgliederverwalter
       role/vorstand_materialverwaltung:
         one: Gestione materiale
         many: Gestione materiale
@@ -213,9 +190,8 @@ it:
       #### Arbeitsgruppen Roles
 
       role/arbeitsgruppe_leitung:
-        one: ''
-        many: ''
-        other: ''
+        one: Präsident
+        other: Präsidenten
       role/arbeitsgruppe_mitglied:
         one: Membri
         many: Membri
@@ -258,14 +234,12 @@ it:
         without_date: Esecuzione senza data
 
       event/role/jury_mitglied:
-        one: ''
-        many: ''
-        other: ''
+        one: Jurymitglied
+        other: Jurymitglieder
 
       invoice_item/membership_fee:
-        one: ''
-        many: ''
-        other: ''
+        one: Mitgliederbeitrag
+        other: Mitgliederbeiträge
 
     attributes:
       person:
@@ -279,16 +253,16 @@ it:
         vereinssitz: Sede società bandistica
         founding_year: Anno di fondazione
         recognized_members: Membri recensiti
-        manual_member_count: ""
-        manually_counted_members: ""
+        manual_member_count: Mitglieder (manuell)
+        manually_counted_members: Mitglieder manuell erfasst
         mitgliederverband: Membri delle associazioni
         contact_email: indirizzo e-mail della persona di contatto
-        suisa_status: ""
+        suisa_status: SUISA Status
       role:
         dates: Dati
-        start_on: ""
-        end_on: ""
-        correspondence_language: ""
+        start_on: Eintritt
+        end_on: Austritt
+        correspondence_language: Korrespondenz Sprache
         class:
           permission:
             description:
@@ -297,8 +271,8 @@ it:
               group_full: "Leggere e scrivere nel gruppo.\nCreare eventi e liste nel gruppo."
 
       invoice_item:
-        amount: ""
-        cutoff_date: ""
+        amount: Betrag
+        cutoff_date: Stichdatum
 
       song:
         title: Titolo
@@ -344,4 +318,4 @@ it:
   errors:
     messages:
       cannot_be_later_than_today: non può essere più tardi di oggi
-      cannot_be_later_than_end_on: ""
+      cannot_be_later_than_end_on: muss vor oder am selben Tag wie der Austritt sein

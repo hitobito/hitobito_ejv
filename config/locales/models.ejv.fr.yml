@@ -15,34 +15,28 @@ fr:
         many: Organisations faîtières
         other: Organisations faîtières
       group/root_geschaeftsstelle:
-        one: ''
-        many: ''
-        other: ''
+        one: Zentralsekretariat
+        other: Zentralsekretariate
       group/root_vorstand:
-        one: ''
-        many: ''
-        other: ''
+        one: Zentralvorstand
+        other: Zentralvorstände
       group/root_delegierte:
-        one: ''
-        many: ''
-        other: ''
+        one: Delegierte
+        other: Delegierte
       group/root_delegierte/mitglied:
-        one: ''
-        many: ''
-        other: ''
+        one: Mitglied
+        other: Mitglieder
       group/root_arbeitsgruppe:
-        one: ''
-        many: ''
-        other: ''
+        one: Fachkommission
+        other: Fachkommissionen
       group/root/suisa_admin:
         one: Responsable SUISA
         many: Responsables SUISA
         other: Responsables SUISA
 
       group/mitgliederverband:
-        one: ''
-        many: ''
-        other: ''
+        one: Unterverband
+        other: Unterverbände
       group/mitgliederverband_geschaeftsstelle:
         one: Secrétariats
         many: Secrétariats
@@ -52,9 +46,8 @@ fr:
         many: Comités
         other: Comités
       group/mitgliederverband_vorstand/sekretaer:
-        one: ''
-        many: ''
-        other: ''
+        one: Sekretär
+        other: Sekretäre
       group/mitgliederverband_ehrenmitglieder:
         one: Membres d'honneur
         many: Membres d'honneur
@@ -64,50 +57,39 @@ fr:
         many: Responsables SUISA
         other: Responsables SUISA
       group/mitgliederverband_einzelmitglieder:
-        one: ''
-        many: ''
-        other: ''
+        one: Einzelmitglieder
+        other: Einzelmitglieder
       group/mitgliederverband_einzelmitglieder/jodler:
-        one: ''
-        many: ''
-        other: ''
+        one: Jodler
+        other: Jodler
       group/mitgliederverband_einzelmitglieder/alphornblaeser:
-        one: ''
-        many: ''
-        other: ''
+        one: Alphornbläser
+        other: Alphornbläser
       group/mitgliederverband_einzelmitglieder/fahnenschwinger:
-        one: ''
-        many: ''
-        other: ''
+        one: Fahnenschwinger
+        other: Fahnenschwinger
       group/mitgliederverband_einzelmitglieder/freund:
-        one: ""
-        many: ""
-        other: ""
+        one: "Freund & Gönner"
+        other: "Freunde & Gönner"
       group/mitgliederverband_einzelmitglieder/ehrenmitglied:
-        one: ''
-        many: ''
-        other: ''
+        one: Ehrenmitglied
+        other: Ehrenmitglieder
       group/mitgliederverband_einzelmitglieder/freimitglied:
-        one: ''
-        many: ''
-        other: ''
+        one: Freimitglied
+        other: Freimitglieder
       group/mitgliederverband_vereinigung:
-        one: ''
-        many: ''
-        other: ''
+        one: Vereinigung
+        other: Vereinigungen
       group/mitgliederverband_vereinigung/praesident:
-        one: ''
-        many: ''
-        other: ''
+        one: Präsident
+        other: Präsidenten
       group/mitgliederverband_vereinigung/mitglied:
-        one: ''
-        many: ''
-        other: ''
+        one: Mitglied
+        other: Mitglieder
 
       group/verein:
-        one: ''
-        many: ''
-        other: ''
+        one: Gruppe
+        other: Gruppen
       group/verein_vorstand:
         one: Comités
         many: Comités
@@ -128,13 +110,11 @@ fr:
         many: Contacts
         other: Contacts
       group/verein/conductor:
-        one: ''
-        many: ''
-        other: ''
+        one: ChorleiterIn
+        other: ChorleiterInnen
       group/verein/jugendverantwortlicher:
-        one: ''
-        many: ''
-        other: ''
+        one: Jugendverantwortlicher
+        other: Jugendverantwortliche
       group/verein/suisa_admin:
         one: Responsables SUISA
         many: Responsables SUISA
@@ -156,13 +136,11 @@ fr:
       #### Geschaeftsstelle Roles
 
       role/geschaeftsstelle_manager:
-        one: ''
-        many: ''
-        other: ''
+        one: Administrator
+        other: Administratoren
       role/geschaeftsstelle_staff:
-        one: ''
-        many: ''
-        other: ''
+        one: Sekretär
+        other: Sekretäre
       role/geschaeftsstelle_help:
         one: Aide
         many: Aides
@@ -191,9 +169,8 @@ fr:
         many: Vice-présidents
         other: Vice-présidents
       role/vorstand_veteranenchef:
-        one: ''
-        many: ''
-        other: ''
+        one: Mitgliederverwalter
+        other: Mitgliederverwalter
       role/vorstand_materialverwaltung:
         one: Responsable matériel
         many: Responsable matériel
@@ -213,9 +190,8 @@ fr:
       #### Arbeitsgruppen Roles
 
       role/arbeitsgruppe_leitung:
-        one: ''
-        many: ''
-        other: ''
+        one: Präsident
+        other: Präsidenten
       role/arbeitsgruppe_mitglied:
         one: Membres
         many: Membres
@@ -258,14 +234,12 @@ fr:
         without_date: Interprétation sans date
 
       event/role/jury_mitglied:
-        one: ''
-        many: ''
-        other: ''
+        one: Jurymitglied
+        other: Jurymitglieder
 
       invoice_item/membership_fee:
-        one: ''
-        many: ''
-        other: ''
+        one: Mitgliederbeitrag
+        other: Mitgliederbeiträge
 
     attributes:
       person:
@@ -279,15 +253,15 @@ fr:
         vereinssitz: Siège de la société
         founding_year: Année de fondation
         recognized_members: Membres saisis
-        manual_member_count: ""
+        manual_member_count: Mitglieder (manuell)
         manually_counted_members: Membres saisis manuellement
         mitgliederverband: Associations membres
         contact_email: Adresse email de la personne de contact
         suisa_status: Statut SUISA
       role:
         dates: Données
-        start_on: ""
-        end_on: ""
+        start_on: Eintritt
+        end_on: Austritt
         correspondence_language: Langue de correspondance
         class:
           permission:
@@ -297,8 +271,8 @@ fr:
               group_full: Lire et écrire sur le groupe. Créer des manifestations et des listes sur le groupe.
 
       invoice_item:
-        amount: ""
-        cutoff_date: ""
+        amount: Betrag
+        cutoff_date: Stichdatum
 
       song:
         title: Titre
@@ -344,4 +318,4 @@ fr:
   errors:
     messages:
       cannot_be_later_than_today: ne peut pas être postérieur à aujourd'hui
-      cannot_be_later_than_end_on: ""
+      cannot_be_later_than_end_on: muss vor oder am selben Tag wie der Austritt sein
