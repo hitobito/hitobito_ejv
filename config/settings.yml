@@ -43,3 +43,6 @@ messages:
 
 assignments:
   enabled: true
+
+additional_address:
+  enabled: true
