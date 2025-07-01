@@ -1,5 +1,5 @@
 # Hitobito EJV Changelog
 
-## unreleased
+## Version 2.6
 
 * initialer Release
