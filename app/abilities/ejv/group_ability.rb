@@ -18,7 +18,7 @@ module Ejv::GroupAbility
       permission(:layer_full).may(:create_history_member).in_same_layer
       permission(:layer_and_below_full).may(:create_history_member).in_same_layer_or_below
 
-      permission(:finance).may(:subverein_select).in_layer_group
+      permission(:finance).may(:subverein_select).for_finance_layer_ids
     end
   end
 
