@@ -5,26 +5,24 @@
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_ejv.
 
-require Rails.root.join('db', 'seeds', 'support', 'person_seeder')
+require Rails.root.join("db", "seeds", "support", "person_seeder")
 
 class EjvPersonSeeder < PersonSeeder
-
   def amount(role_type)
     case role_type.name
-    when 'Group::VereinMitglieder::Mitglied' then Rails.env.development? ? 4 : 20
+    when "Group::Verein::Mitglied" then Rails.env.development? ? 4 : 20
     else 1
     end
   end
-
 end
 
 puzzlers = [
-  'Andreas Maierhofer',
-  'Daniel Illi',
-  'Matthias Viehweger',
-  'Niklas Jaeggi',
-  'Nils Rauch',
-  'Pascal Zumkehr',
+  "Andreas Maierhofer",
+  "Daniel Illi",
+  "Matthias Viehweger",
+  "Niklas Jaeggi",
+  "Nils Rauch",
+  "Pascal Zumkehr"
 ]
 
 devs = {}

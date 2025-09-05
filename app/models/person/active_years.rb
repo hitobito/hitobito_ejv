@@ -38,7 +38,7 @@ module Person::ActiveYears
   def veteran_role_condition
     {
       type: [
-        Group::VereinMitglieder::Mitglied,
+        Group::Verein::Mitglied,
         Role::MitgliederMitglied
       ].map(&:sti_name)
     }

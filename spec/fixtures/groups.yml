@@ -1,83 +1,44 @@
-#  Copyright (c) 2012-2024, Eidgenössischer Jodlerverband. This file is part of
+#  Copyright (c) 2012-2025, Eidgenössischer Jodlerverband. This file is part of
 #  hitobito_ejv and licensed under the Affero General Public License version 3
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_ejv.
 
 root:
-  parent:
   layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:root)%>"
   lft: 1
-  rgt: 106
-  name: EJV
+  rgt: 62
+  name: Eidgenössischer Jodlerverband
   type: Group::Root
 zentralsekretariat:
   parent: root
   layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:root)%>"
-  lft: 102
-  rgt: 103
+  lft: 52
+  rgt: 53
   name: Zentralsekretariat
   type: Group::RootGeschaeftsstelle
 zentralvorstand:
   parent: root
   layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:root)%>"
-  lft: 104
-  rgt: 105
+  lft: 54
+  rgt: 55
   name: Zentralvorstand
   type: Group::RootVorstand
-ehemalige_aus_verlauf:
-  parent: root
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:ehemalige_aus_verlauf)%>"
-  lft: 42
-  rgt: 43
-  name: Ehemalige aus Verlauf
-  type: Group::Verein
-delegierte:
-  parent: root
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:root)%>"
-  lft: 40
-  rgt: 41
-  name: Delegierte
-  type: Group::RootDelegierte
-fk_jodeln:
-  parent: root
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:root)%>"
-  lft: 48
-  rgt: 49
-  name: Fachkommission Jodeln
-  short_name: FK Jodeln
-  type: Group::RootArbeitsgruppe
-fk_alphorn:
-  parent: root
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:root)%>"
-  lft: 44
-  rgt: 45
-  name: Fachkommission Alphorn
-  short_name: FK Alphorn
-  type: Group::RootArbeitsgruppe
-fk_fahnenschwingen:
-  parent: root
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:root)%>"
-  lft: 46
-  rgt: 47
-  name: Fachkommission Fahnenschwingen
-  short_name: FK Fahnenschwingen
-  type: Group::RootArbeitsgruppe
 bkjv:
   parent: root
   layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:bkjv)%>"
   lft: 2
-  rgt: 39
-  name: Bernisch-Kantonaler Jodlerverband
+  rgt: 15
+  name: Bernisch Kantonaler Jodlerverband
   short_name: BKJV
   type: Group::Mitgliederverband
 vorstand_bkjv:
   parent: bkjv
   layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:bkjv)%>"
-  lft: 37
-  rgt: 38
+  lft: 13
+  rgt: 14
   name: Vorstand
   type: Group::MitgliederverbandVorstand
-einzelmitglieder_11:
+einzelmitglieder_6:
   parent: bkjv
   layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:bkjv)%>"
   lft: 3
@@ -87,300 +48,181 @@ einzelmitglieder_11:
 nosjv:
   parent: root
   layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:nosjv)%>"
-  lft: 50
-  rgt: 79
+  lft: 24
+  rgt: 35
   name: Nordostschweizerischer Jodlerverband
   short_name: NOSJV
   type: Group::Mitgliederverband
-vorstand_13:
+vorstand_8:
   parent: nosjv
   layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:nosjv)%>"
-  lft: 77
-  rgt: 78
+  lft: 33
+  rgt: 34
   name: Vorstand
   type: Group::MitgliederverbandVorstand
-einzelmitglieder_14:
+einzelmitglieder_9:
   parent: nosjv
   layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:nosjv)%>"
-  lft: 51
-  rgt: 52
+  lft: 27
+  rgt: 28
   name: Einzelmitglieder
   type: Group::MitgliederverbandEinzelmitglieder
+nwsjv:
+  parent: root
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:nwsjv)%>"
+  lft: 36
+  rgt: 45
+  name: Nordwestschweizerischer Jodlerverband
+  short_name: NWSJV
+  type: Group::Mitgliederverband
+vorstand_11:
+  parent: nwsjv
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:nwsjv)%>"
+  lft: 43
+  rgt: 44
+  name: Vorstand
+  type: Group::MitgliederverbandVorstand
+einzelmitglieder_12:
+  parent: nwsjv
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:nwsjv)%>"
+  lft: 37
+  rgt: 38
+  name: Einzelmitglieder
+  type: Group::MitgliederverbandEinzelmitglieder
+zsjv:
+  parent: root
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:zsjv)%>"
+  lft: 56
+  rgt: 61
+  name: Zentralschweizerischer Jodlerverband
+  short_name: ZSJV
+  type: Group::Mitgliederverband
+vorstand_14:
+  parent: zsjv
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:zsjv)%>"
+  lft: 59
+  rgt: 60
+  name: Vorstand
+  type: Group::MitgliederverbandVorstand
+einzelmitglieder_15:
+  parent: zsjv
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:zsjv)%>"
+  lft: 57
+  rgt: 58
+  name: Einzelmitglieder
+  type: Group::MitgliederverbandEinzelmitglieder
+wsjv:
+  parent: root
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:wsjv)%>"
+  lft: 46
+  rgt: 51
+  name: Westschweizerischer Jodlerverband
+  short_name: WSJV
+  type: Group::Mitgliederverband
+vorstand_17:
+  parent: wsjv
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:wsjv)%>"
+  lft: 49
+  rgt: 50
+  name: Vorstand
+  type: Group::MitgliederverbandVorstand
+einzelmitglieder_18:
+  parent: wsjv
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:wsjv)%>"
+  lft: 47
+  rgt: 48
+  name: Einzelmitglieder
+  type: Group::MitgliederverbandEinzelmitglieder
+ejv:
+  parent: root
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:ejv)%>"
+  lft: 18
+  rgt: 23
+  name: Ausländische Jodlerverbände
+  short_name: EJV
+  type: Group::Mitgliederverband
+vorstand_20:
+  parent: ejv
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:ejv)%>"
+  lft: 21
+  rgt: 22
+  name: Vorstand
+  type: Group::MitgliederverbandVorstand
+einzelmitglieder_21:
+  parent: ejv
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:ejv)%>"
+  lft: 19
+  rgt: 20
+  name: Einzelmitglieder
+  type: Group::MitgliederverbandEinzelmitglieder
+ehemalige_aus_verlauf:
+  parent: root
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:ehemalige_aus_verlauf)%>"
+  lft: 16
+  rgt: 17
+  name: Ehemalige aus Verlauf
+  type: Group::Verein
 jodlerklub_edelweiss_thun:
   parent: bkjv
   layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_edelweiss_thun)%>"
-  lft: 29
-  rgt: 36
+  lft: 11
+  rgt: 12
   name: Jodlerklub Edelweiss Thun
   type: Group::Verein
-vorstand_16:
-  parent: jodlerklub_edelweiss_thun
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_edelweiss_thun)%>"
-  lft: 34
-  rgt: 35
-  name: Vorstand
-  type: Group::VereinVorstand
-mitglieder_17:
-  parent: jodlerklub_edelweiss_thun
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_edelweiss_thun)%>"
-  lft: 30
-  rgt: 31
-  name: Mitglieder
-  type: Group::VereinMitglieder
-musikkommission_18:
-  parent: jodlerklub_edelweiss_thun
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_edelweiss_thun)%>"
-  lft: 32
-  rgt: 33
-  name: Musikkommission
-  type: Group::VereinMusikkommission
 jodlerklub_berna_bern:
   parent: bkjv
   layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_berna_bern)%>"
-  lft: 21
-  rgt: 28
+  lft: 9
+  rgt: 10
   name: Jodlerklub Berna Bern
   type: Group::Verein
-vorstand_20:
-  parent: jodlerklub_berna_bern
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_berna_bern)%>"
-  lft: 26
-  rgt: 27
-  name: Vorstand
-  type: Group::VereinVorstand
-mitglieder_berna_bern:
-  parent: jodlerklub_berna_bern
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_berna_bern)%>"
-  lft: 22
-  rgt: 23
-  name: Mitglieder
-  type: Group::VereinMitglieder
-musikkommission_22:
-  parent: jodlerklub_berna_bern
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_berna_bern)%>"
-  lft: 24
-  rgt: 25
-  name: Musikkommission
-  type: Group::VereinMusikkommission
 jodlergruppe_engstligtal_adelboden:
   parent: bkjv
   layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlergruppe_engstligtal_adelboden)%>"
-  lft: 13
-  rgt: 20
+  lft: 7
+  rgt: 8
   name: Jodlergruppe Engstligtal Adelboden
   type: Group::Verein
-vorstand_adelboden:
-  parent: jodlergruppe_engstligtal_adelboden
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlergruppe_engstligtal_adelboden)%>"
-  lft: 18
-  rgt: 19
-  name: Vorstand
-  type: Group::VereinVorstand
-mitglieder_adelboden:
-  parent: jodlergruppe_engstligtal_adelboden
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlergruppe_engstligtal_adelboden)%>"
-  lft: 14
-  rgt: 15
-  name: Mitglieder
-  type: Group::VereinMitglieder
-musikkommission_26:
-  parent: jodlergruppe_engstligtal_adelboden
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlergruppe_engstligtal_adelboden)%>"
-  lft: 16
-  rgt: 17
-  name: Musikkommission
-  type: Group::VereinMusikkommission
 emmentaler_jodler_konolfingen:
   parent: bkjv
   layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:emmentaler_jodler_konolfingen)%>"
   lft: 5
-  rgt: 12
+  rgt: 6
   name: Emmentaler-Jodler Konolfingen
   type: Group::Verein
-vorstand_28:
-  parent: emmentaler_jodler_konolfingen
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:emmentaler_jodler_konolfingen)%>"
-  lft: 10
-  rgt: 11
-  name: Vorstand
-  type: Group::VereinVorstand
-mitglieder_29:
-  parent: emmentaler_jodler_konolfingen
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:emmentaler_jodler_konolfingen)%>"
-  lft: 6
-  rgt: 7
-  name: Mitglieder
-  type: Group::VereinMitglieder
-musikkommission_30:
-  parent: emmentaler_jodler_konolfingen
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:emmentaler_jodler_konolfingen)%>"
-  lft: 8
-  rgt: 9
-  name: Musikkommission
-  type: Group::VereinMusikkommission
 jodlerclub_stadt_st_gallen:
   parent: nosjv
   layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerclub_stadt_st_gallen)%>"
-  lft: 61
-  rgt: 68
+  lft: 29
+  rgt: 30
   name: Jodlerclub Stadt St. Gallen
   type: Group::Verein
-vorstand_32:
-  parent: jodlerclub_stadt_st_gallen
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerclub_stadt_st_gallen)%>"
-  lft: 66
-  rgt: 67
-  name: Vorstand
-  type: Group::VereinVorstand
-mitglieder_33:
-  parent: jodlerclub_stadt_st_gallen
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerclub_stadt_st_gallen)%>"
-  lft: 62
-  rgt: 63
-  name: Mitglieder
-  type: Group::VereinMitglieder
-musikkommission_34:
-  parent: jodlerclub_stadt_st_gallen
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerclub_stadt_st_gallen)%>"
-  lft: 64
-  rgt: 65
-  name: Musikkommission
-  type: Group::VereinMusikkommission
 appenzeller_naturjodel:
   parent: nosjv
   layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:appenzeller_naturjodel)%>"
-  lft: 69
-  rgt: 76
+  lft: 25
+  rgt: 26
   name: Appenzeller Naturjodel
   type: Group::Verein
-vorstand_36:
-  parent: appenzeller_naturjodel
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:appenzeller_naturjodel)%>"
-  lft: 74
-  rgt: 75
-  name: Vorstand
-  type: Group::VereinVorstand
-mitglieder_37:
-  parent: appenzeller_naturjodel
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:appenzeller_naturjodel)%>"
-  lft: 70
-  rgt: 71
-  name: Mitglieder
-  type: Group::VereinMitglieder
-musikkommission_38:
-  parent: appenzeller_naturjodel
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:appenzeller_naturjodel)%>"
-  lft: 72
-  rgt: 73
-  name: Musikkommission
-  type: Group::VereinMusikkommission
 jodlergruppe_hirschberg_appenzell:
   parent: nosjv
   layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlergruppe_hirschberg_appenzell)%>"
-  lft: 53
-  rgt: 60
+  lft: 31
+  rgt: 32
   name: Jodlergruppe Hirschberg Appenzell
   type: Group::Verein
-vorstand_40:
-  parent: jodlergruppe_hirschberg_appenzell
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlergruppe_hirschberg_appenzell)%>"
-  lft: 58
-  rgt: 59
-  name: Vorstand
-  type: Group::VereinVorstand
-mitglieder_41:
-  parent: jodlergruppe_hirschberg_appenzell
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlergruppe_hirschberg_appenzell)%>"
-  lft: 54
-  rgt: 55
-  name: Mitglieder
-  type: Group::VereinMitglieder
-musikkommission_42:
-  parent: jodlergruppe_hirschberg_appenzell
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlergruppe_hirschberg_appenzell)%>"
-  lft: 56
-  rgt: 57
-  name: Musikkommission
-  type: Group::VereinMusikkommission
-nwsjv:
-  parent: root
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:nwsjv)%>"
-  lft: 80
-  rgt: 101
-  name: Nordwestschweizer Jodlerverband
-  short_name: NWSJV
-  type: Group::Mitgliederverband
-vorstand_44:
-  parent: nwsjv
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:nwsjv)%>"
-  lft: 99
-  rgt: 100
-  name: Vorstand
-  type: Group::MitgliederverbandVorstand
-einzelmitglieder_45:
-  parent: nwsjv
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:nwsjv)%>"
-  lft: 81
-  rgt: 82
-  name: Einzelmitglieder
-  type: Group::MitgliederverbandEinzelmitglieder
 jodlerklub_gunzgen_olten:
   parent: nwsjv
   layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_gunzgen_olten)%>"
-  lft: 91
-  rgt: 98
+  lft: 41
+  rgt: 42
   name: Jodlerklub Gunzgen-Olten
   type: Group::Verein
-vorstand_47:
-  parent: jodlerklub_gunzgen_olten
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_gunzgen_olten)%>"
-  lft: 96
-  rgt: 97
-  name: Vorstand
-  type: Group::VereinVorstand
-mitglieder_48:
-  parent: jodlerklub_gunzgen_olten
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_gunzgen_olten)%>"
-  lft: 92
-  rgt: 93
-  name: Mitglieder
-  type: Group::VereinMitglieder
-musikkommission_49:
-  parent: jodlerklub_gunzgen_olten
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_gunzgen_olten)%>"
-  lft: 94
-  rgt: 95
-  name: Musikkommission
-  type: Group::VereinMusikkommission
 jodlerklub_edelweiss:
   parent: nwsjv
   layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_edelweiss)%>"
-  lft: 83
-  rgt: 90
+  lft: 39
+  rgt: 40
   name: Jodlerklub Edelweiss
   type: Group::Verein
-  deleted_at: 2020-01-20
-vorstand_51:
-  parent: jodlerklub_edelweiss
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_edelweiss)%>"
-  lft: 88
-  rgt: 89
-  name: Vorstand
-  type: Group::VereinVorstand
-  deleted_at: 2020-01-20
-mitglieder_52:
-  parent: jodlerklub_edelweiss
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_edelweiss)%>"
-  lft: 84
-  rgt: 85
-  name: Mitglieder
-  type: Group::VereinMitglieder
-  deleted_at: 2020-01-20
-musikkommission_53:
-  parent: jodlerklub_edelweiss
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_edelweiss)%>"
-  lft: 86
-  rgt: 87
-  name: Musikkommission
-  type: Group::VereinMusikkommission
   deleted_at: 2020-01-20

@@ -41,6 +41,6 @@ module Ejv::Group
   def member_count
     return unless is_a?(Group::Verein)
 
-    Group::VereinMitglieder::Mitglied.joins(:group).where(groups: {layer_group_id: id}).count
+    Group::Verein::Mitglied.where(group_id: id).count
   end
 end

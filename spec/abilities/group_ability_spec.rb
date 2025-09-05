@@ -15,8 +15,8 @@ describe GroupAbility do
   describe "delete people" do
     let(:checked_person) { Fabricate(:person, primary_group: checked_group) }
     let!(:checked_person_role) do
-      Fabricate(Group::VereinMitglieder::Mitglied.name.to_sym,
-        group: checked_group.children.where(type: Group::VereinMitglieder.sti_name).first,
+      Fabricate(Group::Verein::Mitglied.name.to_sym,
+        group: checked_group,
         person: checked_person)
     end
 
@@ -53,8 +53,8 @@ describe GroupAbility do
     end
 
     context "as member of a group" do
-      let(:group_role_class) { Group::VereinMitglieder::Mitglied }
-      let(:group) { groups(:mitglieder_adelboden) }
+      let(:group_role_class) { Group::Verein::Mitglied }
+      let(:group) { groups(:jodlergruppe_engstligtal_adelboden) }
       let(:checked_group) { group.layer_group }
 
       it { is_expected.not_to be_able_to(:destroy, checked_person) }

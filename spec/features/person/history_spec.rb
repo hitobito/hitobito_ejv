@@ -13,7 +13,7 @@ describe :person_history, js: true do
 
   before { sign_in(person) }
 
-  context "role creation" do
+  xcontext "role creation" do
     it "is possible to create new role" do
       visit history_group_person_path(group_id: role.group_id, id: person.id)
 

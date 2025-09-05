@@ -9,13 +9,6 @@ class Group::Verein < ::Group
   HIDDEN_ROOT_VEREIN_NAME = "Ehemalige aus Verlauf"
 
   self.layer = true
-  self.default_children = [Group::VereinVorstand,
-    Group::VereinMitglieder,
-    Group::VereinMusikkommission]
-
-  children Group::VereinVorstand,
-    Group::VereinMusikkommission,
-    Group::VereinMitglieder
 
   self.used_attributes += [:founding_year,
     :manually_counted_members,
@@ -68,5 +61,15 @@ class Group::Verein < ::Group
   class SuisaAdmin < Role::SuisaAdmin
   end
 
-  roles Admin, Conductor, SuisaAdmin
+  class Mitglied < Role::MitgliederMitglied
+    self.permissions = [:group_read]
+  end
+
+  class Praesident < Role::VorstandPraesident
+  end
+
+  class Kassier < Role::VorstandKassier
+  end
+
+  roles Admin, Conductor, SuisaAdmin, Mitglied, Praesident, Kassier
 end

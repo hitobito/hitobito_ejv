@@ -16,7 +16,7 @@ leader:
 member:
   person: member
   group: jodlerklub_berna_bern
-  type: Group::VereinMitglieder::Mitglied
+  type: Group::Verein::Mitglied
   start_on: <%= 1.year.ago %>
 
 suisa_admin:

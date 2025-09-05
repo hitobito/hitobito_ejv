@@ -32,7 +32,7 @@ class Groups::QueryController < ApplicationController
   end
 
   def list_entries_for_member_history
-    Group::Verein::VereinMitglieder
+    Group::Verein::Verein
       .with_deleted.includes(:parent)
       .where.not(parent_id: Group::Verein.hidden.id)
       .where(parent_id: list_entries.select(:id))

@@ -52,7 +52,7 @@ describe Person do
       Fabricate(
         role_class.name.to_sym,
         person: subject,
-        group: groups(:mitglieder_adelboden),
+        group: groups(:jodlergruppe_engstligtal_adelboden),
         start_on:,
         end_on:
       )
@@ -75,7 +75,7 @@ describe Person do
     end
 
     it "considers Mitglied" do
-      create_role(Group::VereinMitglieder::Mitglied, years: 10)
+      create_role(Group::Verein::Mitglied, years: 10)
       subject.update_active_years
 
       expect(subject.active_years).to be 11 # even partial years count, so 10 years later cover 11 years
@@ -102,40 +102,40 @@ describe Person do
 
       it "counts completed years in the past" do
         expect do
-          create_role(Group::VereinMitglieder::Mitglied, start_date: "2018-12-01", end_date: nil)
+          create_role(Group::Verein::Mitglied, start_date: "2018-12-01", end_date: nil)
           subject.update_active_years
         end.to change(subject, :active_years).to(2)
       end
 
       it "counts only years with membership" do
         expect do
-          create_role(Group::VereinMitglieder::Mitglied, start_date: "2018-02-01", end_date: "2018-04-30")
-          create_role(Group::VereinMitglieder::Mitglied, start_date: "2018-12-01", end_date: "2019-07-31")
+          create_role(Group::Verein::Mitglied, start_date: "2018-02-01", end_date: "2018-04-30")
+          create_role(Group::Verein::Mitglied, start_date: "2018-12-01", end_date: "2019-07-31")
           subject.update_active_years
         end.to change(subject, :active_years).to(2)
       end
 
       it "counts multiple durations in one year only once" do
         expect do
-          create_role(Group::VereinMitglieder::Mitglied, start_date: "2018-02-01", end_date: "2018-04-30")
-          create_role(Group::VereinMitglieder::Mitglied, start_date: "2019-01-01", end_date: nil)
+          create_role(Group::Verein::Mitglied, start_date: "2018-02-01", end_date: "2018-04-30")
+          create_role(Group::Verein::Mitglied, start_date: "2019-01-01", end_date: nil)
           subject.update_active_years
         end.to change(subject, :active_years).to(2)
       end
 
       it "counts years which have an short interruption fully" do
         expect do
-          create_role(Group::VereinMitglieder::Mitglied, start_date: "2018-02-01", end_date: "2018-04-30")
-          create_role(Group::VereinMitglieder::Mitglied, start_date: "2019-01-01", end_date: "2019-10-31")
-          create_role(Group::VereinMitglieder::Mitglied, start_date: "2020-01-01", end_date: nil)
+          create_role(Group::Verein::Mitglied, start_date: "2018-02-01", end_date: "2018-04-30")
+          create_role(Group::Verein::Mitglied, start_date: "2019-01-01", end_date: "2019-10-31")
+          create_role(Group::Verein::Mitglied, start_date: "2020-01-01", end_date: nil)
           subject.update_active_years
         end.to change(subject, :active_years).to(2)
       end
 
       it "does not count completely omitted years" do
         expect do
-          create_role(Group::VereinMitglieder::Mitglied, start_date: "2018-02-01", end_date: "2018-04-30")
-          create_role(Group::VereinMitglieder::Mitglied, start_date: "2020-01-01", end_date: nil)
+          create_role(Group::Verein::Mitglied, start_date: "2018-02-01", end_date: "2018-04-30")
+          create_role(Group::Verein::Mitglied, start_date: "2020-01-01", end_date: nil)
 
           subject.update_active_years
         end.to change(subject, :active_years).to(1)
@@ -144,20 +144,20 @@ describe Person do
 
     it "handles active_years not being cached" do
       travel_to("2020-03-16") do
-        expect(subject.roles.with_inactive.where(type: "Group::VereinMitglieder::Mitglied").count).to eq 0
+        expect(subject.roles.with_inactive.where(type: "Group::Verein::Mitglied").count).to eq 0
         expect(subject.active_years).to be_nil
 
         expect(subject.prognostic_active_years).to eq 0
 
         Fabricate(
-          Group::VereinMitglieder::Mitglied.name.to_sym,
+          Group::Verein::Mitglied.name.to_sym,
           person: subject,
-          group: groups(:mitglieder_adelboden),
+          group: groups(:jodlergruppe_engstligtal_adelboden),
           start_on: Date.current.change(year: 2010),
           end_on: nil # active Role
         )
 
-        expect(subject.roles.where(type: "Group::VereinMitglieder::Mitglied").count).to eq 1
+        expect(subject.roles.where(type: "Group::Verein::Mitglied").count).to eq 1
         expect(subject.active_years).to eq 10
 
         # simulate data not being present

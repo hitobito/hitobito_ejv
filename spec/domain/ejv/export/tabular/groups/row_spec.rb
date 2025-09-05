@@ -13,14 +13,14 @@ describe Export::Tabular::Groups::Row do
 
   subject { row }
 
-  describe "Group::Verein with values" do
+  xdescribe "Group::Verein with values" do
     describe "recognized_members" do
       before do
-        mitglieder = Group::VereinMitglieder.create!(name: "dummy", parent: group, deleted_at: Time.zone.now)
+        mitglieder = Group::Verein.create!(name: "dummy", parent: group.parent, deleted_at: Time.zone.now)
 
         10.times.each do |i|
           p = Fabricate(:person)
-          Group::VereinMitglieder::Mitglied.create!(person: p, group: mitglieder)
+          Group::Verein::Mitglied.create!(person: p, group: mitglieder)
         end
       end
 

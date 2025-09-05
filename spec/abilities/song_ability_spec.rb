@@ -21,7 +21,7 @@ describe SongAbility do
 
   [
     %w[Group::Verein::Admin jodlergruppe_engstligtal_adelboden],
-    %w[Group::VereinMitglieder::Mitglied mitglieder_adelboden]
+    %w[Group::Verein::Mitglied jodlergruppe_engstligtal_adelboden]
   ].each do |role, group|
     context role do
       let(:role) { Fabricate(role.to_sym, group: groups(group)) }

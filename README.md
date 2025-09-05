@@ -20,7 +20,7 @@ of the Eidgenössischer Jodlerverband.
       * Fachkommission
         * Präsident: [:group_and_below_full]
         * Mitglied: [:group_read]
-    * Unterverband
+    * Unterverband < Dachverband
       * Unterverband
         * Administrator: [:layer_and_below_full]
         * Verantwortlicher SUISA: [:group_read, :song_census]
@@ -41,21 +41,14 @@ of the Eidgenössischer Jodlerverband.
       * Vereinigung
         * Präsident: [:group_and_below_full]
         * Mitglied: []
-    * Gruppe
+    * Gruppe < Unterverband, Dachverband
       * Gruppe
         * Administrator: [:layer_and_below_full]
         * ChorleiterIn: []
         * Verantwortlicher SUISA: [:group_read, :song_census]
-      * Vorstand
-        * Präsident: [:layer_full, :layer_and_below_read]
-        * Vizepräsident: [:layer_and_below_read]
-        * Kassier: [:layer_and_below_read, :finance]
-        * Mitglied: [:layer_and_below_read]
-      * Musikkommission
-        * Präsident: [:layer_read, :group_and_below_full]
-        * Mitglied: [:layer_read]
-      * Mitglieder
         * Mitglied: [:group_read]
+        * Präsident: [:layer_full, :layer_and_below_read]
+        * Kassier: [:layer_and_below_read, :finance]
 
 (Output of rake app:hitobito:roles)
 <!-- roles:end -->

@@ -24,7 +24,7 @@ end
 end
 
 current_census = SongCensus.current
-songs          = Song.all.shuffle.take(10)
+songs = Song.all.shuffle.take(10)
 
 SongCensus.all.each do |census|
   Group::Verein.all.shuffle.take(10).each do |verein|
@@ -35,7 +35,7 @@ SongCensus.all.each do |census|
         concert.verein_id = verein.id
         concert.mitgliederverband_id = verein.parent.parent.id if verein.parent.try(:parent).is_a?(Group::Mitgliederverband)
         concert.year = census.year
-        concert.editable = (census == current_census)
+        concert.editable = true
       end
     end
     Concert.all.each do |concert|
@@ -47,6 +47,8 @@ SongCensus.all.each do |census|
           count.count = Faker::Number.between(from: 0, to: 30)
         end
       end
+
+      concert.update(editable: (census == current_census))
     end
   end
 end

@@ -12,12 +12,13 @@ describe People::Merger do
   let(:duplicate) { Fabricate(:person_with_address_and_phone) }
   let(:actor) { people(:admin) }
   let(:person_roles) { person.roles.with_inactive }
+  let(:delegierte) { Fabricate("Group::RootDelegierte", parent: groups(:root)) }
 
   let(:merger) { described_class.new(@source.reload, @target.reload, actor) }
 
   before do
     Fabricate("Group::RootDelegierte::Mitglied",
-      group: groups(:delegierte),
+      group: delegierte,
       person: duplicate,
       start_on: 5.seconds.ago,
       end_on: Time.zone.now)
@@ -36,7 +37,7 @@ describe People::Merger do
 
       expect(person_roles.count).to eq(1)
       group_ids = person_roles.map(&:group_id)
-      expect(group_ids).to include(groups(:delegierte).id)
+      expect(group_ids).to include(delegierte.id)
 
       expect(Person.where(id: duplicate.id)).not_to exist
     end
