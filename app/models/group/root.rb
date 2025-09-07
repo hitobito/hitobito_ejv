@@ -18,8 +18,7 @@ class Group::Root < ::Group
     Group::RootVorstand,
     Group::RootDelegierte,
     Group::RootArbeitsgruppe,
-    Group::Mitgliederverband,
-    Group::Verein
+    Group::Mitgliederverband
 
   ### ROLES
 

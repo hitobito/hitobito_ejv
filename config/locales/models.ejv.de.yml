@@ -84,6 +84,15 @@ de:
       group/verein:
         one: Gruppe
         other: Gruppen
+      group/verein_jodler:
+        one: Jodler-Gruppe
+        other: Jodler-Gruppen
+      group/verein_alphornblaeser:
+        one: Alphornbläser-Gruppe
+        other: Alphornbläser-Gruppen
+      group/verein_fahnenschwinger:
+        one: Fahnenschwinger-Gruppe
+        other: Fahnenschwinger-Gruppen
       group/verein_vorstand:
         one: Vorstand
         other: Vorstände
@@ -102,10 +111,28 @@ de:
       group/verein/conductor:
         one: ChorleiterIn
         other: ChorleiterInnen
+      group/verein_jodler/conductor:
+        one: ChorleiterIn
+        other: ChorleiterInnen
+      group/verein_fahnenschwinger/conductor:
+        one: ChorleiterIn
+        other: ChorleiterInnen
+      group/verein_alphornblaeser/conductor:
+        one: ChorleiterIn
+        other: ChorleiterInnen
       group/verein/jugendverantwortlicher:
         one: Jugendverantwortlicher
         other: Jugendverantwortliche
       group/verein/suisa_admin:
+        one: Verantwortlicher SUISA
+        other: Verantworliche SUISA
+      group/verein_jodler/suisa_admin:
+        one: Verantwortlicher SUISA
+        other: Verantworliche SUISA
+      group/verein_fahnenschwinger/suisa_admin:
+        one: Verantwortlicher SUISA
+        other: Verantworliche SUISA
+      group/verein_alphornblaeser/suisa_admin:
         one: Verantwortlicher SUISA
         other: Verantworliche SUISA
 

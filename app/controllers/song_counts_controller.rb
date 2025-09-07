@@ -41,7 +41,7 @@ class SongCountsController < SimpleCrudController
   end
 
   def verein?
-    @group.is_a?(Group::Verein)
+    @group.is_a?(Group::VereinJodler)
   end
 
   def render_tabular_in_background(format)

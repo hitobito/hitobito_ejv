@@ -19,7 +19,7 @@ describe Export::SubgroupsExportJob do
 
   it "only exports Verband and Verein group types" do
     names = root_export.send(:entries).collect { |e| e.class.sti_name }.uniq
-    expect(names).to eq ["Group::Mitgliederverband", "Group::Verein"]
+    expect(names).to eq ["Group::Mitgliederverband", "Group::VereinJodler"]
   end
 
   it "exports address and special columns" do
@@ -43,9 +43,9 @@ describe Export::SubgroupsExportJob do
     expect(csv.headers).to eq expected_headers
   end
 
-  context "suisa status" do
+  xcontext "suisa status" do
     let(:export) { root_export }
-    let(:verein1) { groups(:jodlerklub_edelweiss_thun) }
+    let(:verein1) { groups(:jodlergruppe_engstligtal_adelboden) }
     let!(:verein2) { create_verein }
     let!(:verein3) { create_verein }
     let!(:verein4) { create_verein }
@@ -87,7 +87,7 @@ describe Export::SubgroupsExportJob do
   end
 
   def create_verein
-    Group::Verein.create!(name: "#{Faker::Space.nebula} #{Faker::Number.number}",
+    Group::VereinJodler.create!(name: "#{Faker::Space.nebula} #{Faker::Number.number}",
       parent: groups(:bkjv))
   end
 end

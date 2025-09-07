@@ -41,8 +41,24 @@ of the Eidgenössischer Jodlerverband.
       * Vereinigung
         * Präsident: [:group_and_below_full]
         * Mitglied: []
-    * Gruppe < Unterverband, Dachverband
-      * Gruppe
+    * Jodler-Gruppe < Unterverband
+      * Jodler-Gruppe
+        * Administrator: [:layer_and_below_full]
+        * ChorleiterIn: []
+        * Verantwortlicher SUISA: [:group_read, :song_census]
+        * Mitglied: [:group_read]
+        * Präsident: [:layer_full, :layer_and_below_read]
+        * Kassier: [:layer_and_below_read, :finance]
+    * Alphornbläser-Gruppe < Unterverband
+      * Alphornbläser-Gruppe
+        * Administrator: [:layer_and_below_full]
+        * ChorleiterIn: []
+        * Verantwortlicher SUISA: [:group_read, :song_census]
+        * Mitglied: [:group_read]
+        * Präsident: [:layer_full, :layer_and_below_read]
+        * Kassier: [:layer_and_below_read, :finance]
+    * Fahnenschwinger-Gruppe < Unterverband
+      * Fahnenschwinger-Gruppe
         * Administrator: [:layer_and_below_full]
         * ChorleiterIn: []
         * Verantwortlicher SUISA: [:group_read, :song_census]

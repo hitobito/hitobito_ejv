@@ -32,7 +32,7 @@ module Export::Tabular::Groups
     end
 
     def verein_ids
-      vereine = list.select { |g| g.type == Group::Verein.sti_name }
+      vereine = list.select { |g| g.type == Group::VereinJodler.sti_name }
       vereine.pluck(:id)
     end
   end

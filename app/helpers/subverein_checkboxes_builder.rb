@@ -18,7 +18,7 @@ class SubvereinCheckboxesBuilder
     @template = template
     @root = root
 
-    @subvereine = Group::Verein.where(id: root.descendants.pluck(:id))
+    @subvereine = Group::VereinJodler.where(id: root.descendants.pluck(:id))
     # rubocop:enable Rails/HelperInstanceVariable
   end
 

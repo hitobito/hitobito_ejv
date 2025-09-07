@@ -155,74 +155,67 @@ einzelmitglieder_21:
   rgt: 20
   name: Einzelmitglieder
   type: Group::MitgliederverbandEinzelmitglieder
-ehemalige_aus_verlauf:
-  parent: root
-  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:ehemalige_aus_verlauf)%>"
-  lft: 16
-  rgt: 17
-  name: Ehemalige aus Verlauf
-  type: Group::Verein
 jodlerklub_edelweiss_thun:
   parent: bkjv
   layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_edelweiss_thun)%>"
   lft: 11
   rgt: 12
   name: Jodlerklub Edelweiss Thun
-  type: Group::Verein
+  type: Group::VereinJodler
 jodlerklub_berna_bern:
   parent: bkjv
   layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_berna_bern)%>"
   lft: 9
   rgt: 10
   name: Jodlerklub Berna Bern
-  type: Group::Verein
+  type: Group::VereinJodler
 jodlergruppe_engstligtal_adelboden:
   parent: bkjv
   layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlergruppe_engstligtal_adelboden)%>"
   lft: 7
   rgt: 8
   name: Jodlergruppe Engstligtal Adelboden
-  type: Group::Verein
+  type: Group::VereinJodler
 emmentaler_jodler_konolfingen:
   parent: bkjv
   layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:emmentaler_jodler_konolfingen)%>"
   lft: 5
   rgt: 6
   name: Emmentaler-Jodler Konolfingen
-  type: Group::Verein
+  type: Group::VereinJodler
 jodlerclub_stadt_st_gallen:
   parent: nosjv
   layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerclub_stadt_st_gallen)%>"
   lft: 29
   rgt: 30
   name: Jodlerclub Stadt St. Gallen
-  type: Group::Verein
+  type: Group::VereinJodler
 appenzeller_naturjodel:
   parent: nosjv
   layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:appenzeller_naturjodel)%>"
   lft: 25
   rgt: 26
   name: Appenzeller Naturjodel
-  type: Group::Verein
+  type: Group::VereinJodler
 jodlergruppe_hirschberg_appenzell:
   parent: nosjv
   layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlergruppe_hirschberg_appenzell)%>"
   lft: 31
   rgt: 32
   name: Jodlergruppe Hirschberg Appenzell
-  type: Group::Verein
+  type: Group::VereinJodler
 jodlerklub_gunzgen_olten:
   parent: nwsjv
   layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_gunzgen_olten)%>"
   lft: 41
   rgt: 42
   name: Jodlerklub Gunzgen-Olten
-  type: Group::Verein
+  type: Group::VereinJodler
 jodlerklub_edelweiss:
   parent: nwsjv
   layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_edelweiss)%>"
   lft: 39
   rgt: 40
   name: Jodlerklub Edelweiss
-  type: Group::Verein
+  type: Group::VereinJodler
   deleted_at: 2020-01-20

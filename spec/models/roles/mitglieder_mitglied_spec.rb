@@ -16,7 +16,7 @@ describe Role::MitgliederMitglied do
   context 'with "historic membership"' do
     subject do
       described_class.new(
-        type: "Group::Verein::Mitglied",
+        type: "Group::VereinJodler::Mitglied",
         group: groups(:jodlergruppe_engstligtal_adelboden),
         person: people(:member),
         start_on: 1.year.ago,

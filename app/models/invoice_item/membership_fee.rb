@@ -37,7 +37,7 @@ class InvoiceItem::MembershipFee < InvoiceItem
       layer.manual_member_count
     else
       roles_scope = Role.with_inactive.joins(:group)
-        .where(type: Group::Verein::Mitglied.sti_name,
+        .where(type: Group::VereinJodler::Mitglied.sti_name,
           group: {layer_group_id: layer.id})
       if cutoff_date.present?
         roles_scope.active(cutoff_date)

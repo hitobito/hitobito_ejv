@@ -52,7 +52,7 @@ class HistoryRolesController < ApplicationController
   end
 
   def build_role(group)
-    Group::Verein::Mitglied.new(
+    Group::VereinJodler::Mitglied.new(
       group: group,
       person_id: params[:role][:person_id],
       label: params[:role][:label],
@@ -62,10 +62,10 @@ class HistoryRolesController < ApplicationController
     )
   end
 
-  def find_or_create_group(scope = Group::Verein)
+  def find_or_create_group(scope = Group::VereinJodler)
     scope.find_by(id: role_group_id) ||
       scope.deleted.find_by(name: params[:role][:group][:name]) ||
-      scope.create(parent: Group::Verein.hidden,
+      scope.create(parent: Group::VereinJodler.hidden,
         name: role_group_name,
         deleted_at: Time.zone.now)
   end

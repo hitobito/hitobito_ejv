@@ -20,8 +20,8 @@ describe SongAbility do
   let(:group) { groups(:bkjv) }
 
   [
-    %w[Group::Verein::Admin jodlergruppe_engstligtal_adelboden],
-    %w[Group::Verein::Mitglied jodlergruppe_engstligtal_adelboden]
+    %w[Group::VereinJodler::Admin jodlergruppe_engstligtal_adelboden],
+    %w[Group::VereinJodler::Mitglied jodlergruppe_engstligtal_adelboden]
   ].each do |role, group|
     context role do
       let(:role) { Fabricate(role.to_sym, group: groups(group)) }
@@ -62,7 +62,7 @@ describe SongAbility do
     end
 
     context "in same verein" do
-      let(:role) { Fabricate(Group::Verein::SuisaAdmin.name.to_sym, group: verein) }
+      let(:role) { Fabricate(Group::VereinJodler::SuisaAdmin.name.to_sym, group: verein) }
 
       context Concert do
         it "may manage concerts for verein" do

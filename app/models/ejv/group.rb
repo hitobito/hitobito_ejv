@@ -34,13 +34,13 @@ module Ejv::Group
   end
 
   def song_counts
-    verein_sql = descendants.where(type: Group::Verein).without_deleted.select(:id).to_sql
+    verein_sql = descendants.where(type: Group::VereinJodler).without_deleted.select(:id).to_sql
     SongCount.joins(:concert).where("concerts.verein_id IN (#{verein_sql})")
   end
 
   def member_count
     return unless is_a?(Group::Verein)
 
-    Group::Verein::Mitglied.where(group_id: id).count
+    Group::VereinJodler::Mitglied.where(group_id: id).count
   end
 end

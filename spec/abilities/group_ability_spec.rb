@@ -15,7 +15,7 @@ describe GroupAbility do
   describe "delete people" do
     let(:checked_person) { Fabricate(:person, primary_group: checked_group) }
     let!(:checked_person_role) do
-      Fabricate(Group::Verein::Mitglied.name.to_sym,
+      Fabricate(Group::VereinJodler::Mitglied.name.to_sym,
         group: checked_group,
         person: checked_person)
     end
@@ -37,7 +37,7 @@ describe GroupAbility do
     end
 
     context "as admin of group" do
-      let(:group_role_class) { Group::Verein::Admin }
+      let(:group_role_class) { Group::VereinJodler::Admin }
       let(:group) { groups(:jodlergruppe_engstligtal_adelboden) }
       let(:checked_group) { group }
 
@@ -45,7 +45,7 @@ describe GroupAbility do
     end
 
     context "as admin of different group" do
-      let(:group_role_class) { Group::Verein::Admin }
+      let(:group_role_class) { Group::VereinJodler::Admin }
       let(:group) { groups(:jodlergruppe_engstligtal_adelboden) }
       let(:checked_group) { groups(:jodlerklub_edelweiss_thun) }
 
@@ -53,7 +53,7 @@ describe GroupAbility do
     end
 
     context "as member of a group" do
-      let(:group_role_class) { Group::Verein::Mitglied }
+      let(:group_role_class) { Group::VereinJodler::Mitglied }
       let(:group) { groups(:jodlergruppe_engstligtal_adelboden) }
       let(:checked_group) { group.layer_group }
 
@@ -63,7 +63,7 @@ describe GroupAbility do
 
   describe "show deleted_subgroups" do
     context "as admin of group" do
-      let(:group_role_class) { Group::Verein::Admin }
+      let(:group_role_class) { Group::VereinJodler::Admin }
       let(:group) { groups(:jodlergruppe_engstligtal_adelboden) }
       let(:checked_group) { group }
 
@@ -71,7 +71,7 @@ describe GroupAbility do
     end
 
     context "as admin of different group" do
-      let(:group_role_class) { Group::Verein::Admin }
+      let(:group_role_class) { Group::VereinJodler::Admin }
       let(:group) { groups(:jodlerklub_edelweiss_thun) }
       let(:checked_group) { groups(:jodlergruppe_engstligtal_adelboden) }
 

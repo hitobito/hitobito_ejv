@@ -10,7 +10,7 @@ require "spec_helper"
 describe SubvereinCheckboxesBuilder do
   describe "#vereine_nesting" do
     let(:root) { groups(:bkjv) }
-    let(:vereine) { Group.where(parent_id: [root.id], type: "Group::Verein") }
+    let(:vereine) { Group.where(parent_id: [root.id], type: "Group::VereinJodler") }
 
     subject { described_class.new(root, nil) }
 

@@ -26,7 +26,7 @@ class Concert < ActiveRecord::Base
   acts_as_paranoid
 
   belongs_to :song_census
-  belongs_to :verein, class_name: "Group::Verein"
+  belongs_to :verein, class_name: "Group::VereinJodler"
   belongs_to :mitgliederverband, class_name: "Group::Mitgliederverband"
 
   has_many :song_counts, dependent: :destroy

@@ -14,7 +14,7 @@ namespace :group do
 
       return puts "Group with id #{args[:group_id]} was not found" unless group
 
-      group.self_and_descendants.where(type: Group::Verein.sti_name).find_each do |subgroup|
+      group.self_and_descendants.where(type: Group::VereinJodler.sti_name).find_each do |subgroup|
         subgroup.update!({manually_counted_members: true, manual_member_count: 0})
 
         puts "Activated manually_counted_members for group id #{subgroup.id}"

@@ -27,7 +27,7 @@ current_census = SongCensus.current
 songs = Song.all.shuffle.take(10)
 
 SongCensus.all.each do |census|
-  Group::Verein.all.shuffle.take(10).each do |verein|
+  Group::VereinJodler.all.shuffle.take(10).each do |verein|
     rand(1..6).times do
       Concert.seed_once(:name, :song_census_id, :verein_id) do |concert|
         concert.name = Faker::Company.name

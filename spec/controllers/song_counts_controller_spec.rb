@@ -9,13 +9,13 @@ require "spec_helper"
 
 describe SongCountsController do
   let(:group) { Fabricate(Group::Mitgliederverband.name.to_sym) }
-  let(:verein) { Fabricate(Group::Verein.name.to_sym, parent: group, name: "Harmonie Sursee") }
+  let(:verein) { Fabricate(Group::VereinJodler.name.to_sym, parent: group, name: "Jodlerei Sursee") }
 
   context "index" do
     let(:admin) { people(:admin) }
 
     before do
-      Fabricate(Group::Verein::SuisaAdmin.name.to_sym, group: verein, person: admin)
+      Fabricate(Group::VereinJodler::SuisaAdmin.name.to_sym, group: verein, person: admin)
       Fabricate(Group::Mitgliederverband::SuisaAdmin.name.to_sym, group: group, person: admin)
       sign_in(admin)
     end

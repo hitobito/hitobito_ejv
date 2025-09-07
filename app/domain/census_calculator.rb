@@ -23,12 +23,12 @@ class CensusCalculator
   end
 
   def vereins_total
-    verein_ids = group.descendants.without_deleted.where(type: Group::Verein.sti_name).pluck(:id)
+    verein_ids = group.descendants.without_deleted.where(type: Group::VereinJodler.sti_name).pluck(:id)
     verein_suisa_statuses(verein_ids)
   end
 
   def deleted_vereins_ids
-    @deleted_vereins_ids ||= Group::Verein.where.not(deleted_at: nil).pluck(:id)
+    @deleted_vereins_ids ||= Group::VereinJodler.where.not(deleted_at: nil).pluck(:id)
   end
 
   def verein_suisa_statuses(verein_ids)

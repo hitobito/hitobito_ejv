@@ -5,7 +5,7 @@
 
 
 - mitgliederverbaende = @group.descendants.without_deleted.where(type: Group::Mitgliederverband.sti_name).order(:name)
-- vereine             = @group.children.without_deleted.where(type: Group::Verein.sti_name).order(:name)
+- vereine             = @group.children.without_deleted.where(type: Group::VereinJodler.sti_name).order(:name)
 
 - if mitgliederverbaende.any?
   %h2

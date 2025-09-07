@@ -28,13 +28,13 @@ class Groups::QueryController < ApplicationController
   private
 
   def list_entries
-    Group::Verein.all
+    Group::VereinJodler.all
   end
 
   def list_entries_for_member_history
-    Group::Verein::Verein
+    Group::VereinJodler
       .with_deleted.includes(:parent)
-      .where.not(parent_id: Group::Verein.hidden.id)
+      .where.not(parent_id: Group::VereinJodler.hidden.id)
       .where(parent_id: list_entries.select(:id))
   end
 

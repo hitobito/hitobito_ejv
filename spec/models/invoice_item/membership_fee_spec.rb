@@ -29,7 +29,7 @@ describe InvoiceItem::MembershipFee do
     end
 
     xcontext "with vorstands kassier as recipient" do
-      let(:recipient) { Fabricate(Group::Verein::Kassier.sti_name.to_sym, group: vorstand).person }
+      let(:recipient) { Fabricate(Group::VereinJodler::Kassier.sti_name.to_sym, group: vorstand).person }
 
       context "using manually_counted_members" do
         before { vorstand.layer_group.update(manually_counted_members: true, manual_member_count: 20) }
@@ -40,8 +40,8 @@ describe InvoiceItem::MembershipFee do
       end
 
       context "using automatic member count" do
-        let!(:member_groups) { (1..3).map { Fabricate(Group::Verein.sti_name.to_sym, parent: verein) } }
-        let!(:member_roles) { member_groups.flat_map { |g| (1..20).map { Fabricate(Group::Verein::Mitglied.sti_name.to_sym, group: g) } } }
+        let!(:member_groups) { (1..3).map { Fabricate(Group::VereinJodler.sti_name.to_sym, parent: verein) } }
+        let!(:member_roles) { member_groups.flat_map { |g| (1..20).map { Fabricate(Group::VereinJodler::Mitglied.sti_name.to_sym, group: g) } } }
 
         it "returns correct amount" do
           expect(invoice_item.dynamic_cost).to eq(600) # 3 * 20 * 10
@@ -55,7 +55,7 @@ describe InvoiceItem::MembershipFee do
     end
 
     context "with vorstands praesident as recipient" do
-      let(:recipient) { Fabricate(Group::Verein::Praesident.sti_name.to_sym, group: vorstand).person }
+      let(:recipient) { Fabricate(Group::VereinJodler::Praesident.sti_name.to_sym, group: vorstand).person }
 
       context "using manually_counted_members" do
         before { vorstand.layer_group.update(manually_counted_members: true, manual_member_count: 20) }
@@ -66,8 +66,8 @@ describe InvoiceItem::MembershipFee do
       end
 
       context "using automatic member count" do
-        let!(:member_groups) { (1..3).map { Fabricate(Group::Verein.sti_name.to_sym) } }
-        let!(:member_roles) { member_groups.flat_map { |g| (1..20).map { Fabricate(Group::Verein::Mitglied.sti_name.to_sym, group: g) } } }
+        let!(:member_groups) { (1..3).map { Fabricate(Group::VereinJodler.sti_name.to_sym) } }
+        let!(:member_roles) { member_groups.flat_map { |g| (1..20).map { Fabricate(Group::VereinJodler::Mitglied.sti_name.to_sym, group: g) } } }
 
         xit "returns correct amount" do
           expect(invoice_item.dynamic_cost).to eq(600) # 3 * 20 * 10
@@ -81,7 +81,7 @@ describe InvoiceItem::MembershipFee do
     end
 
     context "with vereins admin as recipient" do
-      let(:recipient) { Fabricate(Group::Verein::Admin.sti_name.to_sym, group: verein).person }
+      let(:recipient) { Fabricate(Group::VereinJodler::Admin.sti_name.to_sym, group: verein).person }
 
       context "using manually_counted_members" do
         before { vorstand.layer_group.update(manually_counted_members: true, manual_member_count: 20) }
@@ -92,8 +92,8 @@ describe InvoiceItem::MembershipFee do
       end
 
       context "using automatic member count" do
-        let!(:member_groups) { (1..3).map { Fabricate(Group::Verein.sti_name.to_sym) } }
-        let!(:member_roles) { member_groups.flat_map { |g| (1..20).map { Fabricate(Group::Verein::Mitglied.sti_name.to_sym, group: g) } } }
+        let!(:member_groups) { (1..3).map { Fabricate(Group::VereinJodler.sti_name.to_sym) } }
+        let!(:member_roles) { member_groups.flat_map { |g| (1..20).map { Fabricate(Group::VereinJodler::Mitglied.sti_name.to_sym, group: g) } } }
 
         xit "returns correct amount" do
           expect(invoice_item.dynamic_cost).to eq(600) # 3 * 20 * 10

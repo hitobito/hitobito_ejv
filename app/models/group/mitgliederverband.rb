@@ -49,7 +49,9 @@ class Group::Mitgliederverband < ::Group
   children Group::MitgliederverbandVorstand,
     Group::MitgliederverbandEinzelmitglieder,
     Group::MitgliederverbandVereinigung,
-    Group::Verein
+    Group::VereinJodler,
+    Group::VereinAlphornblaeser,
+    Group::VereinFahnenschwinger
 
   ### ROLES
 

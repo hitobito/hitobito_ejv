@@ -20,10 +20,10 @@ class Group::Verein < ::Group
 
   def self.hidden
     root = Group::Root.first
-    verein = Group::Verein.deleted.find_by(name: HIDDEN_ROOT_VEREIN_NAME, parent: root)
+    verein = Group::VereinJodler.deleted.find_by(name: HIDDEN_ROOT_VEREIN_NAME, parent: root)
     return verein if verein
 
-    Group::Verein.new(
+    Group::VereinJodler.new(
       name: HIDDEN_ROOT_VEREIN_NAME,
       parent: root,
       deleted_at: Time.zone.now
@@ -42,34 +42,4 @@ class Group::Verein < ::Group
       .pluck(:song_id)
       .uniq
   end
-
-  def suisa_admins
-    Person.joins(:roles)
-      .where("roles.type = 'Group::Verein::SuisaAdmin' AND roles.group_id = #{id}")
-  end
-
-  ### ROLES
-
-  class Admin < Role::Admin
-    self.permissions = [:layer_and_below_full]
-  end
-
-  class Conductor < Role
-    self.permissions = []
-  end
-
-  class SuisaAdmin < Role::SuisaAdmin
-  end
-
-  class Mitglied < Role::MitgliederMitglied
-    self.permissions = [:group_read]
-  end
-
-  class Praesident < Role::VorstandPraesident
-  end
-
-  class Kassier < Role::VorstandKassier
-  end
-
-  roles Admin, Conductor, SuisaAdmin, Mitglied, Praesident, Kassier
 end

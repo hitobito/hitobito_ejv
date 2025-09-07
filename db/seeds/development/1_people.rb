@@ -10,7 +10,7 @@ require Rails.root.join("db", "seeds", "support", "person_seeder")
 class EjvPersonSeeder < PersonSeeder
   def amount(role_type)
     case role_type.name
-    when "Group::Verein::Mitglied" then Rails.env.development? ? 4 : 20
+    when "Group::VereinJodler::Mitglied" then Rails.env.development? ? 4 : 20
     else 1
     end
   end

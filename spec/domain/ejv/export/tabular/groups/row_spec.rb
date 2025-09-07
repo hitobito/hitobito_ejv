@@ -9,18 +9,18 @@ require "spec_helper"
 
 describe Export::Tabular::Groups::Row do
   let(:row) { Export::Tabular::Groups::Row.new(group, []) }
-  let(:group) { Group::Verein.new }
+  let(:group) { Group::VereinJodler.new }
 
   subject { row }
 
-  xdescribe "Group::Verein with values" do
+  xdescribe "Group::VereinJodler with values" do
     describe "recognized_members" do
       before do
-        mitglieder = Group::Verein.create!(name: "dummy", parent: group.parent, deleted_at: Time.zone.now)
+        mitglieder = Group::VereinJodler.create!(name: "dummy", parent: group.parent, deleted_at: Time.zone.now)
 
         10.times.each do |i|
           p = Fabricate(:person)
-          Group::Verein::Mitglied.create!(person: p, group: mitglieder)
+          Group::VereinJodler::Mitglied.create!(person: p, group: mitglieder)
         end
       end
 

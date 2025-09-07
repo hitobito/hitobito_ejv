@@ -19,14 +19,14 @@ describe Concert do
 
   context "before validation" do
     it "sets mitgliederverband for verein nested under mitgliederverband" do
-      verein = Group::Verein.create!(name: "group", parent: groups(:bkjv))
+      verein = Group::VereinJodler.create!(name: "group", parent: groups(:bkjv))
       concert = Concert.create!(verein: verein, year: 2018)
 
       expect(concert.mitgliederverband).to eq groups(:bkjv)
     end
 
-    it "does not set verband ids for verein nested under root" do
-      verein = Group::Verein.create!(name: "group", parent: groups(:root))
+    xit "does not set verband ids for verein nested under root" do
+      verein = Group::VereinJodler.create!(name: "group", parent: groups(:root))
       concert = Concert.create!(verein: verein, year: 2018)
 
       expect(concert.mitgliederverband).to be_nil

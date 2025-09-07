@@ -89,8 +89,8 @@ describe HistoryRolesController do
 
     expect(leader.reload.active_years).to eq 2
 
-    expect(Group::Verein.hidden).to have(1).children
-    group = Group::Verein.hidden.children.find_by(name: "Dummy")
+    expect(Group::VereinJodler.hidden).to have(1).children
+    group = Group::VereinJodler.hidden.children.find_by(name: "Dummy")
     expect(group).to be_deleted
   end
 

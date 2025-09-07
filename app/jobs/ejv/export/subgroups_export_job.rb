@@ -20,7 +20,9 @@ module Ejv::Export::SubgroupsExportJob
   def types
     [
       Group::Mitgliederverband,
-      Group::Verein
+      Group::VereinJodler,
+      Group::VereinAlphornblaeser,
+      Group::VereinFahnenschwinger
     ]
   end
 end

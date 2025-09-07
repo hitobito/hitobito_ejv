@@ -11,20 +11,20 @@ admin:
 leader:
   person: leader
   group: jodlerklub_edelweiss_thun
-  type: Group::Verein::Admin
+  type: Group::VereinJodler::Admin
 
 member:
   person: member
   group: jodlerklub_berna_bern
-  type: Group::Verein::Mitglied
+  type: Group::VereinJodler::Mitglied
   start_on: <%= 1.year.ago %>
 
 suisa_admin:
   person: suisa_admin
   group: jodlerklub_edelweiss_thun
-  type: Group::Verein::SuisaAdmin
+  type: Group::VereinJodler::SuisaAdmin
 
 conductor:
   person: conductor
   group: jodlerklub_berna_bern
-  type: Group::Verein::Conductor
+  type: Group::VereinJodler::Conductor
