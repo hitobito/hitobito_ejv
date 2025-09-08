@@ -6,7 +6,6 @@
 #  https://github.com/hitobito/hitobito_ejv.
 
 Rails.application.routes.draw do
-
   extend LanguageRouteScope
 
   language_scope do
@@ -21,21 +20,20 @@ Rails.application.routes.draw do
       resources :song_counts
       resources :concerts do
         collection do
-          post 'submit'
+          post "submit"
         end
       end
 
       resources :song_censuses, only: [:new, :create, :index] do
-        post 'remind', to: 'song_censuses#remind'
+        post "remind", to: "song_censuses#remind"
       end
-      resource :roles, only: [] do
-        post 'create_history_member'
-      end
-      resources :history_roles, only: [:create, :destroy]
+      # resource :roles, only: [] do
+      #   post 'create_history_member'
+      # end
+      # resources :history_roles, only: [:create, :destroy]
     end
-    get '/groups/query' => 'groups/query#index', as: :query_groups
+    get "/groups/query" => "groups/query#index", :as => :query_groups
 
-    get 'help' => 'help#index'
+    get "help" => "help#index"
   end
-
 end

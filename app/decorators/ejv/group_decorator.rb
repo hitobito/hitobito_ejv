@@ -6,7 +6,7 @@
 #  https://github.com/hitobito/hitobito_ejv.
 
 module Ejv::GroupDecorator
-  def link_with_layer
-    (model.parent_id == Group::VereinJodler.hidden.id) ? model.name : super
-  end
+  # def link_with_layer
+  #   (model.parent_id == Group::VereinJodler.hidden.id) ? model.name : super
+  # end
 end

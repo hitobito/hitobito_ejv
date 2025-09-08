@@ -31,12 +31,12 @@ class Groups::QueryController < ApplicationController
     Group::VereinJodler.all
   end
 
-  def list_entries_for_member_history
-    Group::VereinJodler
-      .with_deleted.includes(:parent)
-      .where.not(parent_id: Group::VereinJodler.hidden.id)
-      .where(parent_id: list_entries.select(:id))
-  end
+  # def list_entries_for_member_history
+  #   Group::VereinJodler
+  #     .with_deleted.includes(:parent)
+  #     .where.not(parent_id: Group::VereinJodler.hidden.id)
+  #     .where(parent_id: list_entries.select(:id))
+  # end
 
   def authorize_action
     authorize!(:query, Group)
