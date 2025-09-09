@@ -10,7 +10,7 @@ class SongCount < ActiveRecord::Base
   belongs_to :concert, touch: true
 
   validates :count, numericality: {greater_than_or_equal_to: 1, less_than_or_equal_to: 30}, if: :count
-  validates :song_id, uniqueness: {scope: :concert}
+  validates :song_id, uniqueness: {scope: :concert} # rubocop:disable Rails/UniqueValidationWithoutIndex
 
   delegate :title, :composed_by, :arranged_by, :published_by, :suisa_id,
     to: :song
