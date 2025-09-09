@@ -5,6 +5,12 @@ on:
     paths-ignore:
       - 'doc/**'
       - '**.md'
+  push:
+    branches: [ master ]
+    paths-ignore:
+      - 'doc/**'
+      - '**.md'
+      - 'VERSION'
   workflow_dispatch: # Allow triggering manually
     inputs:
       core_ref:
