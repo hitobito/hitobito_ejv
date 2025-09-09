@@ -27,10 +27,10 @@ Rails.application.routes.draw do
       resources :song_censuses, only: [:new, :create, :index] do
         post "remind", to: "song_censuses#remind"
       end
-      # resource :roles, only: [] do
-      #   post 'create_history_member'
-      # end
-      # resources :history_roles, only: [:create, :destroy]
+      resource :roles, only: [] do
+        post "create_history_member"
+      end
+      resources :history_roles, only: [:create, :destroy]
     end
     get "/groups/query" => "groups/query#index", :as => :query_groups
 
