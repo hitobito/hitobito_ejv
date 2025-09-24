@@ -195,7 +195,7 @@ it:
         one: Vice Presidente
         many: Vice Presidenti
         other: Vice Presidenti
-      role/vorstand_mitgliederverwalter:
+      role/vorstand_veteranenchef:
         one: Mitgliederverwalter
         other: Mitgliederverwalter
       role/vorstand_materialverwaltung:
