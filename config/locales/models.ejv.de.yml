@@ -176,7 +176,7 @@ de:
       role/vorstand_vize_praesident:
         one: Vizepräsident
         other: Vizepräsidenten
-      role/vorstand_veteranenchef:
+      role/vorstand_mitgliederverwalter:
         one: Mitgliederverwalter
         other: Mitgliederverwalter
       role/vorstand_materialverwaltung:

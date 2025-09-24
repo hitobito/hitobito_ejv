@@ -5,6 +5,6 @@
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_ejv.
 
-class Role::VorstandVeteranenchef < Role
+class Role::VorstandMitgliederverwalter < Role
   self.permissions = [:layer_and_below_full]
 end
