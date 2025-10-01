@@ -7,6 +7,8 @@
 de:
   global:
     last_change: "Letzte Änderung: %{date}"
+    date_field_placeholder: DD.MM.YYYY
+    phone_placeholder: +41 77 123 45 67
   navigation:
     help: Hilfe
   group:
@@ -82,6 +84,11 @@ de:
         group-verein-admin: Rechnung wird an den/die Administrator*in des Vorstandes gesendet
         no_recipient: Rechnung kann nicht gestellt werden, da kein Empfänger gefunden wurde
 
+    self_registration:
+      create:
+        redirect_existing_email: Es existiert bereits ein Login für diese E-Mail. Melde dich hier an.
+        success_message: Deine Anmeldung wurde erfolgreich verschickt. Wir melden uns in Kürze bei dir.
+
   song_counts:
     export_enqueued: 'Export wird im Hintergrund gestartet und nach Fertigstellung heruntergeladen.'
 
@@ -104,3 +111,9 @@ de:
       title: SUISA Erfassung
       concerts: Aufführungen
       summary: Zusammenfassung
+
+  wizards:
+    steps:
+      signup:
+        main_email_field_title: E-Mail
+        person_fields_title: Personendaten

@@ -8,6 +8,11 @@ de:
   activerecord:
     models:
 
+      wizards:
+        steps:
+          signup:
+            main_email_field_title: E-Mail
+
       ### GROUPS
 
       group/root:
@@ -22,6 +27,9 @@ de:
       group/root_delegierte:
         one: Delegierte
         other: Delegierte
+      group/root_neumitglieder:
+        one: Neumitglieder
+        other: Neumitglieder
       group/root_delegierte/mitglied:
         one: Mitglied
         other: Mitglieder
@@ -248,6 +256,8 @@ de:
         active_role: aktive Mitgliedschaft
         prognostic_active_years: Aktivjahre Prognose
         personal_data_usage: Verwendung der Adressdaten
+        genders:
+          _nil: divers
       group:
         vereinssitz: Vereinssitz
         founding_year: Gründungsjahr
@@ -318,3 +328,12 @@ de:
     messages:
       cannot_be_later_than_today: kann nicht später als heute sein
       cannot_be_later_than_end_on: muss vor oder am selben Tag wie der Austritt sein
+
+  activemodel:
+    attributes:
+      wizards/steps/signup/person_fields:
+        gender: Geschlecht
+        phone_number: Telefon
+        verband: Beitritt zu welchem Verband?
+        sparte: Beitritt zu welcher Sparte?
+        group: Welcher Gruppe gehörst du an?
