@@ -7,12 +7,6 @@
 de:
   activerecord:
     models:
-
-      wizards:
-        steps:
-          signup:
-            main_email_field_title: E-Mail
-
       ### GROUPS
 
       group/root:
@@ -30,6 +24,9 @@ de:
       group/root_neumitglieder:
         one: Neumitglieder
         other: Neumitglieder
+      group/root_neumitglieder/neuanmeldung:
+        one: Neuanmeldung
+        other: Neuanmeldungen
       group/root_delegierte/mitglied:
         one: Mitglied
         other: Mitglieder
@@ -316,6 +313,11 @@ de:
           joint_play: Spielgemeinschaft
           not_playable: nicht spielfähig in diesem Jahr
           otherwise_billed: SUISA über Dritte abgerechnet
+
+      wizards:
+        steps:
+          signup:
+            main_email_field_title: E-Mail
 
     errors:
       models:
