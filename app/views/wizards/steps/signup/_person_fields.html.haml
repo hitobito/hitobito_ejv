@@ -1,0 +1,33 @@
+= c.fields_for do |form|
+  - birthday_data = { action: 'focusout->forwarder#click' } if form.object.wizard.respond_to?(:birthdays)
+
+  = form.labeled_gender_inline_radio_buttons
+  = form.labeled_input_field :first_name
+  = form.labeled_input_field :last_name
+  = form.labeled_date_field :birthday, placeholder: t('global.date_field_placeholder'), yearRange: '-100:+0', data: birthday_data
+  = render 'contactable/address_fields', f: form, country_data: { action: 'forwarder#click' }
+  = form.labeled_input_field :phone_number, placeholder: t('global.phone_placeholder')
+  = form.labeled_collection_select :correspondence_language,
+      form.object.correspondence_languages,
+      :first,
+      :second,
+      {prompt: true},
+      data: { action: 'forwarder#click' },
+      class: "form-select form-select-sm"
+
+  = form.labeled_collection_select :verband,
+      form.object.verbaende,
+      :itself,
+      :itself,
+      {prompt: true},
+      data: { action: 'forwarder#click' },
+      class: "form-select form-select-sm"
+
+  = form.labeled_collection_select :sparte,
+      form.object.sparten,
+      :itself,
+      :itself,
+      {prompt: true},
+      data: { action: 'forwarder#click' },
+      class: "form-select form-select-sm"
+  = form.labeled_input_field :group

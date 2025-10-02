@@ -50,6 +50,7 @@ module HitobitoEjv
       ]
 
       Person::HistoryController.prepend Ejv::Person::HistoryController
+      Groups::SelfRegistrationController.prepend Ejv::Groups::SelfRegistrationController
 
       ### helpers
       admin = NavigationHelper::MAIN.find { |opts| opts[:label] == :admin }
