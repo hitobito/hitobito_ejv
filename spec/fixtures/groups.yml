@@ -23,6 +23,13 @@ zentralvorstand:
   rgt: 55
   name: Zentralvorstand
   type: Group::RootVorstand
+neumitglieder:
+  parent: root
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:root)%>"
+  lft: 56
+  rgt: 57
+  name: Neumitglieder
+  type: Group::RootNeumitglieder
 bkjv:
   parent: root
   layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:bkjv)%>"

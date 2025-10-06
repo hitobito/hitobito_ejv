@@ -46,3 +46,7 @@ assignments:
 
 additional_address:
   enabled: true
+
+groups:
+  self_registration:
+    enabled: true
