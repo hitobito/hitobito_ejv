@@ -14,8 +14,6 @@ module Wizards::Signup
 
     public :group
 
-    def redirection_message = I18n.t("groups.self_registration.create.can_login_already_notice")
-
     private
 
     def build_person

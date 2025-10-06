@@ -45,6 +45,14 @@ class Wizards::Steps::Signup::PersonFields < Wizards::Step
     super(attr, default: Person.human_attribute_name(attr, options))
   end
 
+  def self.verbaende
+    ["EJV", "BKJV", "ZSJV", "NOSJV", "NWSJV", "WSJV"]
+  end
+
+  def self.sparten
+    human_attribute_name(:sparten).split(", ")
+  end
+
   def initialize(...)
     super
 
@@ -80,14 +88,6 @@ class Wizards::Steps::Signup::PersonFields < Wizards::Step
 
   def correspondence_languages
     Settings.application.correspondence_languages.to_a
-  end
-
-  def verbaende
-    ["EJV", "BKJV", "ZSJV", "NOSJV", "NWSJV", "WSJV"]
-  end
-
-  def sparten
-    ["Jodeln", "Alphornblasen", "Fahnenschwingen", "Freund&Gönner"]
   end
 
   private

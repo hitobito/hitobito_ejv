@@ -115,6 +115,12 @@ Welcher Gruppe gehörst du an?: Noch keiner"
     end
   end
 
+  describe "sparten" do
+    it "reads sparten from locales" do
+      expect(described_class.sparten).to eq ["Jodeln", "Alphornblasen", "Fahnenschwingen", "Freund&Gönner"]
+    end
+  end
+
   context "with current user" do
     let(:params) { {} }
     let(:person) { people(:conductor) }

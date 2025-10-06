@@ -6,8 +6,6 @@
 #  https://github.com/hitobito/hitobito_ejv.
 
 class Group::RootNeumitglieder < ::Group
-  self.static_name = true
-
   ### ROLES
   class Neuanmeldung < ::Role
     self.permissions = []

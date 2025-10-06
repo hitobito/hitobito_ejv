@@ -16,7 +16,7 @@
       class: "form-select form-select-sm"
 
   = form.labeled_collection_select :verband,
-      form.object.verbaende,
+      form.object.class.verbaende,
       :itself,
       :itself,
       {prompt: true},
@@ -24,7 +24,7 @@
       class: "form-select form-select-sm"
 
   = form.labeled_collection_select :sparte,
-      form.object.sparten,
+      form.object.class.sparten,
       :itself,
       :itself,
       {prompt: true},
