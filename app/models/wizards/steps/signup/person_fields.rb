@@ -50,7 +50,7 @@ class Wizards::Steps::Signup::PersonFields < Wizards::Step
   end
 
   def self.sparten
-    human_attribute_name(:sparten).split(", ")
+    human_attribute_name(:sparten)
   end
 
   def initialize(...)
