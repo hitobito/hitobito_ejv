@@ -21,7 +21,10 @@ module HitobitoEjv
     ]
 
     config.to_prepare do # rubocop:disable Metrics/BlockLength
-      JobManager.wagon_jobs += [RefreshActiveYearsJob]
+      JobManager.wagon_jobs += [
+        RefreshActiveYearsJob,
+        JodlerfestExportJob
+      ]
 
       # extend application classes here
       # models
