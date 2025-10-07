@@ -15,4 +15,6 @@ Gem::Specification.new do |s|
   s.description = "Structure and additonal features for hitobito of Eidgenössischer Jodlerverband"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["Rakefile"]
+
+  s.add_runtime_dependency "mysql2"
 end
