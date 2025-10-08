@@ -7,7 +7,6 @@
 it:
   activerecord:
     models:
-
       ### GROUPS
 
       group/root:
@@ -23,6 +22,12 @@ it:
       group/root_delegierte:
         one: Delegierte
         other: Delegierte
+      group/root_neumitglieder:
+        one: Neumitglieder
+        other: Neumitglieder
+      group/root_neumitglieder/neuanmeldung:
+        one: Neuanmeldung
+        other: Neuanmeldungen
       group/root_delegierte/mitglied:
         one: Mitglied
         other: Mitglieder
@@ -276,6 +281,8 @@ it:
         active_role: appartenenza attiva
         prognostic_active_years: Stima anni attivi
         personal_data_usage: Utilizzo dettagli indirizzi
+        genders:
+          _nil: divers
       group:
         vereinssitz: Sede società bandistica
         founding_year: Anno di fondazione
@@ -335,6 +342,11 @@ it:
           not_playable: nessuna esecuzione musicale durante quest’anno
           otherwise_billed: SUISA pagata da terzi
 
+      wizards:
+        steps:
+          signup:
+            main_email_field_title: E-Mail
+
     errors:
       models:
         song:
@@ -346,3 +358,17 @@ it:
     messages:
       cannot_be_later_than_today: non può essere più tardi di oggi
       cannot_be_later_than_end_on: muss vor oder am selben Tag wie der Austritt sein
+
+  activemodel:
+    attributes:
+      wizards/steps/signup/person_fields:
+        gender: Geschlecht
+        phone_number: Telefon
+        verband: "Beitritt zu welchem Verband?"
+        sparte: "Beitritt zu welcher Sparte?"
+        group: "Welcher Gruppe gehörst du an?"
+        sparten:
+          - Jodeln
+          - Alphornblasen
+          - Fahnenschwingen
+          - Freund&Gönner

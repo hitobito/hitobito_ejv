@@ -7,7 +7,6 @@
 fr:
   activerecord:
     models:
-
       ### GROUPS
 
       group/root:
@@ -23,6 +22,12 @@ fr:
       group/root_delegierte:
         one: Delegierte
         other: Delegierte
+      group/root_neumitglieder:
+        one: Neumitglieder
+        other: Neumitglieder
+      group/root_neumitglieder/neuanmeldung:
+        one: Neuanmeldung
+        other: Neuanmeldungen
       group/root_delegierte/mitglied:
         one: Mitglied
         other: Mitglieder
@@ -276,6 +281,8 @@ fr:
         active_role: adhésion active
         prognostic_active_years: Années d'activité - projection
         personal_data_usage: Utilisation des données d'adresse
+        genders:
+          _nil: divers
       group:
         vereinssitz: Siège de la société
         founding_year: Année de fondation
@@ -335,6 +342,11 @@ fr:
           not_playable: sans exécution musicale cette année
           otherwise_billed: SUISA payé par un tiers
 
+      wizards:
+        steps:
+          signup:
+            main_email_field_title: E-Mail
+
     errors:
       models:
         song:
@@ -346,3 +358,17 @@ fr:
     messages:
       cannot_be_later_than_today: ne peut pas être postérieur à aujourd'hui
       cannot_be_later_than_end_on: muss vor oder am selben Tag wie der Austritt sein
+
+  activemodel:
+    attributes:
+      wizards/steps/signup/person_fields:
+        gender: Geschlecht
+        phone_number: Telefon
+        verband: "Beitritt zu welchem Verband?"
+        sparte: "Beitritt zu welcher Sparte?"
+        group: "Welcher Gruppe gehörst du an?"
+        sparten:
+          - Jodeln
+          - Alphornblasen
+          - Fahnenschwingen
+          - Freund&Gönner
