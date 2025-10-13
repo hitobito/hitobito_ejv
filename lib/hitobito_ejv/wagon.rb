@@ -83,7 +83,7 @@ module HitobitoEjv
 
       Export::Tabular::Groups::Row.include Ejv::Export::Tabular::Groups::Row
       Export::Tabular::Groups::List.prepend Ejv::Export::Tabular::Groups::List
-      Export::Tabular::People::PeopleFull.include Ejv::Export::Tabular::People::PeopleFull
+      Export::Tabular::People::PeopleFull.prepend Ejv::Export::Tabular::People::PeopleFull
 
       MailRelay::Lists.prepend Ejv::MailRelay::Lists
 
