@@ -9,7 +9,9 @@ require "spec_helper"
 
 describe ConcertsController do
   let(:group) { Fabricate(Group::Mitgliederverband.name.to_sym) }
-  let(:verein) { Fabricate(Group::VereinJodler.name.to_sym, parent: group, name: "Harmonie Sursee") }
+  let(:verein) {
+    Fabricate(Group::VereinJodler.name.to_sym, parent: group, name: "Harmonie Sursee")
+  }
   let(:admin) { people(:suisa_admin) }
 
   before do
@@ -18,7 +20,8 @@ describe ConcertsController do
 
   context "new" do
     it "sets recently played songs as preselection" do
-      allow_any_instance_of(Group::VereinJodler).to receive(:last_played_song_ids).and_return([1, 3])
+      allow_any_instance_of(Group::VereinJodler).to receive(:last_played_song_ids).and_return([1,
+        3])
 
       get :new, params: {group_id: admin.primary_group}
 

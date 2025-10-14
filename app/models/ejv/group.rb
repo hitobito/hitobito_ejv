@@ -8,7 +8,9 @@
 module Ejv::Group
   extend ActiveSupport::Concern
 
+  # rubocop:todo Layout/LineLength
   FQDN_REGEX = '(?=\A.{1,254}\z)(\A(([a-z0-9][a-z0-9\-]{0,61}[a-z0-9])\.)+([a-z0-9][a-z0-9\-]{0,61}[a-z0-9]))\z'
+  # rubocop:enable Layout/LineLength
 
   included do # rubocop:disable Metrics/BlockLength
     root_types Group::Root

@@ -18,11 +18,16 @@ describe "VeteranYears", performance: true do
 
   before do
     person.roles.each { |role| role.really_destroy! }
-    Role.create!(person: person, group: group, start_on: 20.years.ago, end_on: 17.years.ago, type: "Group::VereinJodler::Mitglied")
-    Role.create!(person: person, group: group, start_on: 15.years.ago, end_on: 13.years.ago, type: "Group::VereinJodler::Mitglied")
-    Role.create!(person: person, group: group, start_on: 10.years.ago, end_on: 7.years.ago, type: "Group::VereinJodler::Mitglied")
-    Role.create!(person: person, group: group, start_on: 5.years.ago, end_on: 3.years.ago, type: "Group::VereinJodler::Mitglied")
-    Role.create!(person: person, group: group, start_on: 1.year.ago, end_on: nil, type: "Group::VereinJodler::Mitglied")
+    Role.create!(person: person, group: group, start_on: 20.years.ago, end_on: 17.years.ago,
+      type: "Group::VereinJodler::Mitglied")
+    Role.create!(person: person, group: group, start_on: 15.years.ago, end_on: 13.years.ago,
+      type: "Group::VereinJodler::Mitglied")
+    Role.create!(person: person, group: group, start_on: 10.years.ago, end_on: 7.years.ago,
+      type: "Group::VereinJodler::Mitglied")
+    Role.create!(person: person, group: group, start_on: 5.years.ago, end_on: 3.years.ago,
+      type: "Group::VereinJodler::Mitglied")
+    Role.create!(person: person, group: group, start_on: 1.year.ago, end_on: nil,
+      type: "Group::VereinJodler::Mitglied")
   end
 
   def measure(max_time, &block)

@@ -8,7 +8,9 @@
 module SongCensusesHelper
   def census_submitted_ratio(verband, total)
     census_submitted = total[verband.id].to_a.size
+    # rubocop:todo Layout/LineLength
     census_total = verband.descendants.without_deleted.where(type: Group::VereinJodler.sti_name).size
+    # rubocop:enable Layout/LineLength
 
     # return t('.census_complete') if census_submitted == census_total
     t(".censuses_submitted", submitted: census_submitted, total: census_total)

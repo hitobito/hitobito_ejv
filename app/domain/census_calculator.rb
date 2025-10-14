@@ -23,7 +23,9 @@ class CensusCalculator
   end
 
   def vereins_total
+    # rubocop:todo Layout/LineLength
     verein_ids = group.descendants.without_deleted.where(type: Group::VereinJodler.sti_name).pluck(:id)
+    # rubocop:enable Layout/LineLength
     verein_suisa_statuses(verein_ids)
   end
 

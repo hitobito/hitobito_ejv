@@ -80,7 +80,10 @@ describe GroupAbility do
   end
 
   context "finance" do
-    let(:role) { Fabricate(Group::MitgliederverbandVorstand::Kassier.name.to_sym, group: groups(:vorstand_bkjv)) }
+    let(:role) {
+      Fabricate(Group::MitgliederverbandVorstand::Kassier.name.to_sym,
+        group: groups(:vorstand_bkjv))
+    }
 
     it "may not show subverein_select on random group" do
       is_expected.not_to be_able_to(:subverein_select, Group.new)

@@ -23,7 +23,10 @@ describe Group::Verein do
   end
 
   xcontext "recognized_members" do
-    let(:verein) { described_class.create(name: "Dummy Verein", parent: Group::Root.first, created_at: Time.zone.now) }
+    let(:verein) {
+      described_class.create(name: "Dummy Verein", parent: Group::Root.first,
+        created_at: Time.zone.now)
+    }
 
     before do
       mitglieder = Group::Verein.create!(name: "dummy", parent: verein, deleted_at: Time.zone.now)

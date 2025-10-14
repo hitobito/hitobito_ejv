@@ -22,7 +22,8 @@ describe :self_registration do
     fill_in "wizards_signup_root_neumitglieder_wizard_person_fields_housenumber", with: "1"
     fill_in "wizards_signup_root_neumitglieder_wizard_person_fields_zip_code", with: "8634"
     fill_in "wizards_signup_root_neumitglieder_wizard_person_fields_town", with: "Entenhausen"
-    select "Schweiz", from: "wizards_signup_root_neumitglieder_wizard_person_fields_country", match: :first
+    select "Schweiz", from: "wizards_signup_root_neumitglieder_wizard_person_fields_country",
+      match: :first
     fill_in "Telefon", with: "079 123 45 67"
     select "Deutsch", from: "Korrespondenzsprache"
     select "EJV", from: "Beitritt zu welchem Verband?"
