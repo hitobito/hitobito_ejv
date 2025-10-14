@@ -40,7 +40,7 @@ module HitobitoEjv
       Event::ParticipationContactData.include Ejv::Event::ParticipationContactData
 
       ### controllers
-      GroupsController.permitted_attrs += [:vereinssitz, :founding_year,
+      GroupsController.permitted_attrs += [:vereinssitz, :association_entry,
         :manual_member_count]
 
       PeopleController.permitted_attrs += [

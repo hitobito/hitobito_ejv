@@ -10,7 +10,7 @@ class Group::Verein < ::Group
 
   self.layer = true
 
-  self.used_attributes += [:founding_year,
+  self.used_attributes += [:association_entry,
     :manually_counted_members,
     :manual_member_count,
     :recognized_members]

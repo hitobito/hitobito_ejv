@@ -34,7 +34,7 @@ describe Export::SubgroupsExportJob do
       "PLZ",
       "Ort",
       "Land",
-      "Gründungsjahr",
+      "Verbandsbeitritt",
       "Erfasste Mitglieder",
       "SUISA Status"
     ]

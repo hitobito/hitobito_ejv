@@ -285,7 +285,7 @@ fr:
           _nil: divers
       group:
         vereinssitz: Siège de la société
-        founding_year: Année de fondation
+        association_entry: Adhésion à l'association
         recognized_members: Membres saisis
         manual_member_count: Mitglieder (manuell)
         manually_counted_members: Membres saisis manuellement
