@@ -26,7 +26,9 @@ describe SongCensusMailer do
       its(:from) { is_expected.to eql ["noreply@localhost"] }
       its(:to) { is_expected.to eql [person.email] }
       its(:body) { is_expected.to match(/Hallo Suisa Boy/) }
-      its(:body) { is_expected.to match(/die Meldeliste für den Verein 'Jodlerklub Edelweiss Thun'/) }
+      its(:body) {
+        is_expected.to match(/die Meldeliste für den Verein 'Jodlerklub Edelweiss Thun'/)
+      }
       its(:body) { is_expected.to match(/Dein Eidgenössischer Jodlerverband/) }
     end
   end

@@ -97,7 +97,9 @@ describe Wizards::Steps::Signup::PersonFields do
       form.attributes = required_attrs
 
       expect(form.person_attributes[:phone_number]).to eq nil
-      expect(form.person_attributes[:phone_numbers_attributes]).to eq({number: required_attrs[:phone_number], label: "mobile", id: nil})
+      expect(form.person_attributes[:phone_numbers_attributes]).to eq({
+        number: required_attrs[:phone_number], label: "mobile", id: nil
+      })
     end
 
     it "converts gender value of '_nil' to nil" do
@@ -109,15 +111,18 @@ describe Wizards::Steps::Signup::PersonFields do
     it "joins additional_information" do
       form.attributes = required_attrs.merge(group: "Noch keiner")
 
+      # rubocop:todo Layout/LineLength
       expect(form.person_attributes[:additional_information]).to eq "Beitritt zu welcher Sparte?: Jodeln
 Beitritt zu welchem Verband?: EJV
 Welcher Gruppe gehörst du an?: Noch keiner"
+      # rubocop:enable Layout/LineLength
     end
   end
 
   describe "sparten" do
     it "reads sparten from locales" do
-      expect(described_class.sparten).to eq ["Jodeln", "Alphornblasen", "Fahnenschwingen", "Freund&Gönner"]
+      expect(described_class.sparten).to eq ["Jodeln", "Alphornblasen", "Fahnenschwingen",
+        "Freund&Gönner"]
     end
   end
 

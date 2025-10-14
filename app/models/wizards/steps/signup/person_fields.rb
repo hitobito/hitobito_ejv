@@ -11,7 +11,8 @@ class Wizards::Steps::Signup::PersonFields < Wizards::Step
 
   PHONE_NUMBER_LABEL = "mobile"
 
-  i18n_enum :gender, Person::GENDERS + [I18nEnums::NIL_KEY], i18n_prefix: "activerecord.attributes.person.genders"
+  i18n_enum :gender, Person::GENDERS + [I18nEnums::NIL_KEY],
+    i18n_prefix: "activerecord.attributes.person.genders"
 
   attribute :id, :integer # for when dealing with persisted users
 
@@ -53,7 +54,9 @@ class Wizards::Steps::Signup::PersonFields < Wizards::Step
     human_attribute_name(:sparten)
   end
 
-  def initialize(...)
+  # rubocop:todo Metrics/MethodLength
+  # rubocop:todo Metrics/AbcSize
+  def initialize(...) # rubocop:todo Metrics/CyclomaticComplexity # rubocop:todo Metrics/AbcSize # rubocop:todo Metrics/MethodLength
     super
 
     if current_user
@@ -75,6 +78,8 @@ class Wizards::Steps::Signup::PersonFields < Wizards::Step
       self.country ||= Settings.addresses.imported_countries.to_a.first
     end
   end
+  # rubocop:enable Metrics/AbcSize
+  # rubocop:enable Metrics/MethodLength
 
   def person_attributes
     attributes.compact.symbolize_keys.except(:phone_number).then do |attrs|
@@ -82,7 +87,8 @@ class Wizards::Steps::Signup::PersonFields < Wizards::Step
       attrs[:gender] = nil if attrs[:gender] == I18nEnums::NIL_KEY
 
       next attrs if phone_number.blank?
-      attrs.merge(phone_numbers_attributes: {number: phone_number, label: PHONE_NUMBER_LABEL, id: phone_number_id})
+      attrs.merge(phone_numbers_attributes: {number: phone_number, label: PHONE_NUMBER_LABEL,
+                                             id: phone_number_id})
     end
   end
 
@@ -114,11 +120,16 @@ class Wizards::Steps::Signup::PersonFields < Wizards::Step
   end
 
   def phone_number_id
-    PhoneNumber.find_by(label: PHONE_NUMBER_LABEL, contactable_id: id, contactable_type: Person.sti_name)&.id if id
+    if id
+      PhoneNumber.find_by(label: PHONE_NUMBER_LABEL, contactable_id: id,
+        contactable_type: Person.sti_name)&.id
+    end
   end
 
   def assert_valid_phone_number
+    # rubocop:todo Layout/LineLength
     if phone_number.present? && PhoneNumber.new(number: phone_number).tap(&:valid?).errors.key?(:number)
+      # rubocop:enable Layout/LineLength
       errors.add(:phone_number, :invalid)
     end
   end
