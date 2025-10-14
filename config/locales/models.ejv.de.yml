@@ -247,6 +247,7 @@ de:
 
     attributes:
       person:
+        id: EJV-Nummer
         correspondence_language: Korrespondenzsprache
         profession: Beruf
         active_years: Aktivjahre aktuell

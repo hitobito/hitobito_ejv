@@ -5,22 +5,10 @@
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_ejv.
 
-module Ejv
-  module Export
-    module Tabular
-      module People
-        module PeopleFull
-          extend ActiveSupport::Concern
+module Ejv::Export::Tabular::People::PeopleFull
+  extend ActiveSupport::Concern
 
-          included do
-            alias_method_chain :person_attributes, :active_years
-          end
-
-          def person_attributes_with_active_years
-            person_attributes_without_active_years + [:active_years]
-          end
-        end
-      end
-    end
+  def person_attributes
+    [:id] + super + [:active_years]
   end
 end
