@@ -11,7 +11,7 @@ module Export::Tabular::Groups
       %w[
         name type mitgliederverband
         email contact contact_email address zip_code town country
-        founding_year recognized_members
+        association_entry recognized_members
         suisa_status
       ]
     end

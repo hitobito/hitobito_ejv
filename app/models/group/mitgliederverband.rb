@@ -31,7 +31,7 @@
 #  deleter_id                  :integer
 #  require_person_add_requests :boolean          default(FALSE), not null
 #  vereinssitz                 :string(255)
-#  founding_year               :integer
+#  association_entry               :integer
 #  swoffice_id                 :integer
 #  description                 :text(65535)
 #  logo                        :string(255)
