@@ -14,12 +14,7 @@ class Groups::QueryController < ApplicationController
   def index
     groups = []
     if params.key?(:q) && params[:q].size >= 3
-      groups = if params.fetch(:historic, false)
-        list_entries_for_member_history
-      else
-        list_entries
-      end
-      groups = decorate(groups.limit(10))
+      groups = decorate(list_entries.limit(10))
     end
 
     render json: groups.collect(&:as_typeahead)
@@ -30,13 +25,6 @@ class Groups::QueryController < ApplicationController
   def list_entries
     Group::VereinJodler.all
   end
-
-  # def list_entries_for_member_history
-  #   Group::VereinJodler
-  #     .with_deleted.includes(:parent)
-  #     .where.not(parent_id: Group::VereinJodler.hidden.id)
-  #     .where(parent_id: list_entries.select(:id))
-  # end
 
   def authorize_action
     authorize!(:query, Group)

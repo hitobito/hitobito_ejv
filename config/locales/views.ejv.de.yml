@@ -54,18 +54,6 @@ de:
         Es wird eine neue Meldeliste angelegt, noch offene Meldungen werden dann allenfalls
         dieser Liste hinzugefügt.
 
-  person:
-    history:
-      history_members_form_ejv:
-        verein: Verein
-        new_role: Neue Rolle
-        start_date: Eintritt
-        end_date: Austritt
-        save: Speichern
-        create_deleted_verein: Gelöschten Verein erfassen
-        select_existing_verein: Verein auswählen
-        text_with_alternative_link_html: "%{text} <small>oder %{link}</small>"
-
   people:
     fields_ejv:
       allow_personal_data_usage: Ich akzeptiere eine Verwendung meiner Adressdaten

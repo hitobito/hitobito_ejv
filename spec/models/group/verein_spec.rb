@@ -8,20 +8,6 @@
 require "spec_helper"
 
 describe Group::Verein do
-  let(:hidden) { described_class.hidden }
-
-  xit "hidden verein creates hidden verein in root group without children" do
-    expect(hidden).to be_deleted
-    expect(hidden.reload).to have(0).children
-  end
-
-  xit "hidden verein may have additional deleted children" do
-    Group::Verein.create!(name: "dummy", parent: hidden, deleted_at: Time.zone.now)
-    expect(hidden).to be_deleted
-    expect(hidden.reload).to have(1).children
-    expect(hidden.children.first).to be_deleted
-  end
-
   xcontext "recognized_members" do
     let(:verein) {
       described_class.create(name: "Dummy Verein", parent: Group::Root.first,

@@ -11,20 +11,10 @@ module Ejv
 
     included do
       on(Role) do
-        permission(:group_full).may(:create_history_member).in_every_group
-        permission(:group_and_below_full).may(:create_history_member).in_every_group
-
-        permission(:layer_full).may(:create_history_member).in_every_group
-        permission(:layer_and_below_full).may(:create_history_member).in_every_group
-
         permission(:layer_and_below_full)
           .may(:create, :create_in_subgroup, :update, :destroy)
           .in_same_layer_or_visible_below
       end
-    end
-
-    def in_every_group
-      all
     end
   end
 end

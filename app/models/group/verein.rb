@@ -6,8 +6,6 @@
 #  https://github.com/hitobito/hitobito_ejv.
 
 class Group::Verein < ::Group
-  # HIDDEN_ROOT_VEREIN_NAME = "Ehemalige aus Verlauf"
-
   self.layer = true
 
   self.used_attributes += [:association_entry,
@@ -17,21 +15,6 @@ class Group::Verein < ::Group
 
   has_many :concerts, dependent: :destroy
   has_many :song_counts, through: :concerts
-
-  # def self.hidden
-  #   root = Group::Root.first
-  #   verein = Group::VereinJodler.deleted.find_by(name: HIDDEN_ROOT_VEREIN_NAME, parent: root)
-  #   return verein if verein
-  #
-  #   Group::VereinJodler.new(
-  #     name: HIDDEN_ROOT_VEREIN_NAME,
-  #     parent: root,
-  #     deleted_at: Time.zone.now
-  #   ).tap do |verein|
-  #     verein._skip_default_children = true
-  #     verein.save!
-  #   end
-  # end
 
   # TODO: Validierungen der verschiedenen Values, refactoring, exports
 

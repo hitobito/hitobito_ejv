@@ -85,24 +85,6 @@ describe Person do
       # rubocop:enable Layout/LineLength
     end
 
-    it "considers historic Mitglied roles" do
-      # Create the role without validation because it's technically not allowed,
-      # but we create such roles anyway in import.rake
-      Fabricate.build(
-        :"Role::MitgliederMitglied",
-        person: subject,
-        group: groups(:jodlerklub_berna_bern),
-        start_on: Date.current.change(year: 2005, day: 25),
-        end_on: Date.current.change(year: 2012)
-      ).save(validate: false)
-
-      subject.update_active_years
-
-      # rubocop:todo Layout/LineLength
-      expect(subject.active_years).to be 8 # even partial years count, so 7 years later cover 8 years
-      # rubocop:enable Layout/LineLength
-    end
-
     context "assuming it is the summer of 2020" do
       before { travel_to Date.new(2020, 7, 31) }
 

@@ -49,7 +49,6 @@ module HitobitoEjv
         :personal_data_usage
       ]
 
-      Person::HistoryController.prepend Ejv::Person::HistoryController
       Groups::SelfRegistrationController.prepend Ejv::Groups::SelfRegistrationController
 
       ### helpers
@@ -65,7 +64,6 @@ module HitobitoEjv
       )
 
       GroupsHelper.include Ejv::GroupsHelper
-      GroupDecorator.prepend Ejv::GroupDecorator
       StandardFormBuilder.include Ejv::StandardFormBuilder
       Dropdown::InvoiceNew.prepend Ejv::Dropdown::InvoiceNew
 

@@ -22,19 +22,11 @@
 class Role::MitgliederMitglied < Role
   self.permissions = [:layer_read]
 
-  attr_accessor :historic_membership
-
   after_destroy :update_active_years_on_person
   after_save :update_active_years_on_person
 
   validates_date :start_on,
     allow_nil: true
-
-  validates_date :end_on,
-    if: :historic_membership,
-    allow_nil: false,
-    on_or_before: -> { Time.zone.today },
-    on_or_before_message: :cannot_be_later_than_today
 
   private
 
