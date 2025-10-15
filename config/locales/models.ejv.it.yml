@@ -285,7 +285,7 @@ it:
           _nil: divers
       group:
         vereinssitz: Sede società bandistica
-        association_entry: Adesione all'associazione
+        founding_year: Anno di fondazione
         recognized_members: Membri recensiti
         manual_member_count: Mitglieder (manuell)
         manually_counted_members: Mitglieder manuell erfasst
