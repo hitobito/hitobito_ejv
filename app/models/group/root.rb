@@ -10,6 +10,7 @@ class Group::Root < ::Group
   self.default_children = [
     Group::RootGeschaeftsstelle,
     Group::RootVorstand,
+    Group::RootEinzelmitglieder,
     Group::RootNeumitglieder
   ]
 
@@ -19,8 +20,9 @@ class Group::Root < ::Group
     Group::RootVorstand,
     Group::RootDelegierte,
     Group::RootArbeitsgruppe,
-    Group::Mitgliederverband,
-    Group::RootNeumitglieder
+    Group::RootEinzelmitglieder,
+    Group::RootNeumitglieder,
+    Group::Mitgliederverband
 
   ### ROLES
 

@@ -20,6 +20,12 @@ of the Eidgenössischer Jodlerverband.
       * Fachkommission
         * Präsident: [:group_and_below_full]
         * Mitglied: [:group_read]
+      * Einzelmitglieder
+        * Freund & Gönner: []
+        * Ehrenmitglied: []
+        * Freimitglied: []
+      * Neumitglieder
+        * Neuanmeldung: []
     * Unterverband < Dachverband
       * Unterverband
         * Administrator: [:layer_and_below_full]
@@ -28,7 +34,7 @@ of the Eidgenössischer Jodlerverband.
         * Präsident: [:layer_full, :layer_and_below_read]
         * Vizepräsident: [:layer_and_below_read]
         * Kassier: [:layer_and_below_read, :finance]
-        * Mitgliederverwalter: [:layer_and_below_read]
+        * Mitgliederverwalter: [:layer_and_below_full]
         * Sekretär: [:group_full, :layer_and_below_read]
         * Mitglied: [:layer_and_below_read]
       * Einzelmitglieder
@@ -38,11 +44,20 @@ of the Eidgenössischer Jodlerverband.
         * Freund & Gönner: []
         * Ehrenmitglied: []
         * Freimitglied: []
-      * Vereinigung
-        * Präsident: [:group_and_below_full]
-        * Mitglied: []
+      * Nachwuchsmitglieder
+        * Jodler: []
+        * Alphornbläser: []
+        * Fahnenschwinger: []
     * Jodler-Gruppe < Unterverband
       * Jodler-Gruppe
+        * Administrator: [:layer_and_below_full]
+        * ChorleiterIn: []
+        * Verantwortlicher SUISA: [:group_read, :song_census]
+        * Mitglied: [:group_read]
+        * Präsident: [:layer_full, :layer_and_below_read]
+        * Kassier: [:layer_and_below_read, :finance]
+    * Jodler-Nachwuchsgruppe < Unterverband
+      * Jodler-Nachwuchsgruppe
         * Administrator: [:layer_and_below_full]
         * ChorleiterIn: []
         * Verantwortlicher SUISA: [:group_read, :song_census]
@@ -57,10 +72,26 @@ of the Eidgenössischer Jodlerverband.
         * Mitglied: [:group_read]
         * Präsident: [:layer_full, :layer_and_below_read]
         * Kassier: [:layer_and_below_read, :finance]
+    * Alphornbläser-Nachwuchsgruppe < Unterverband
+      * Alphornbläser-Nachwuchsgruppe
+        * Administrator: [:layer_and_below_full]
+        * ChorleiterIn: []
+        * Verantwortlicher SUISA: [:group_read, :song_census]
+        * Mitglied: [:group_read]
+        * Präsident: [:layer_full, :layer_and_below_read]
+        * Kassier: [:layer_and_below_read, :finance]
     * Fahnenschwinger-Gruppe < Unterverband
       * Fahnenschwinger-Gruppe
         * Administrator: [:layer_and_below_full]
-        * ChorleiterIn: []
+        * Technische Leitung: []
+        * Verantwortlicher SUISA: [:group_read, :song_census]
+        * Mitglied: [:group_read]
+        * Präsident: [:layer_full, :layer_and_below_read]
+        * Kassier: [:layer_and_below_read, :finance]
+    * Fahnenschwinger-Nachwuchsgruppe < Unterverband
+      * Fahnenschwinger-Nachwuchsgruppe
+        * Administrator: [:layer_and_below_full]
+        * Technische Leitung: []
         * Verantwortlicher SUISA: [:group_read, :song_census]
         * Mitglied: [:group_read]
         * Präsident: [:layer_full, :layer_and_below_read]

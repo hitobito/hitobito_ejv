@@ -41,17 +41,21 @@ class Group::Mitgliederverband < ::Group
   self.layer = true
   self.default_children = [
     Group::MitgliederverbandVorstand,
-    Group::MitgliederverbandEinzelmitglieder
+    Group::MitgliederverbandEinzelmitglieder,
+    Group::MitgliederverbandNachwuchsmitglieder
   ]
 
   self.event_types += [Event::Course]
 
   children Group::MitgliederverbandVorstand,
     Group::MitgliederverbandEinzelmitglieder,
-    Group::MitgliederverbandVereinigung,
+    Group::MitgliederverbandNachwuchsmitglieder,
     Group::VereinJodler,
+    Group::VereinJodlerNachwuchs,
     Group::VereinAlphornblaeser,
-    Group::VereinFahnenschwinger
+    Group::VereinAlphornblaeserNachwuchs,
+    Group::VereinFahnenschwinger,
+    Group::VereinFahnenschwingerNachwuchs
 
   ### ROLES
 
