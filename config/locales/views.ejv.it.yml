@@ -48,6 +48,18 @@ it:
       submit: completare elenco
       start_new_census: "Con il completamento dell'elenco, tutte le notifiche inviate fino ad oggi verranno bloccate. Verrà creato un nuovo elenco. Tutte le notiifiche ancora aperte verranno aggiunte a questo elenco."
 
+  person:
+    history:
+      history_members_form_ejv:
+        verein: Società bandistica
+        new_role: Nuovo ruolo
+        start_date: Entrata
+        end_date: Uscita
+        save: Memorizzare
+        create_deleted_verein: Inserire la società cancellata
+        select_existing_verein: Selezionare una società
+        text_with_alternative_link_html: "%{text} <small>oppure %{link}</small>"
+
   people:
     fields_ejv:
       allow_personal_data_usage: Accetto l'uso dei dettagli del mio indirizzo

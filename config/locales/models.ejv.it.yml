@@ -275,6 +275,7 @@ it:
 
     attributes:
       person:
+        id: EJV-Nummer
         correspondence_language: Lingua di corrispondenza
         profession: Lavoro
         active_years: Anni attivi fino ad oggi
@@ -285,7 +286,7 @@ it:
           _nil: divers
       group:
         vereinssitz: Sede società bandistica
-        founding_year: Anno di fondazione
+        association_entry: Verbandsbeitritt
         recognized_members: Membri recensiti
         manual_member_count: Mitglieder (manuell)
         manually_counted_members: Mitglieder manuell erfasst
