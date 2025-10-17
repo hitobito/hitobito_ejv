@@ -48,18 +48,6 @@ fr:
       submit: Clôturer la liste d'annonces
       start_new_census: "En clôturant la liste d'annonces, toutes les annonces effectuées jusqu'ici seront verrouillées. Une nouvelle liste de messages sera créée et les nouvelles annonces seront ajoutées à cette liste."
 
-  person:
-    history:
-      history_members_form_ejv:
-        verein: Société
-        new_role: Nouveau rôle
-        start_date: Admission
-        end_date: Démission
-        save: Sauvegarder
-        create_deleted_verein: Saisir la société supprimée
-        select_existing_verein: Sélectionner la société
-        text_with_alternative_link_html: "%{text} ou %{link}"
-
   people:
     fields_ejv:
       allow_personal_data_usage: J'accepte l'utilisation de mes données d'adresse

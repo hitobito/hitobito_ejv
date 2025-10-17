@@ -25,6 +25,18 @@ it:
       group/root_neumitglieder:
         one: Neumitglieder
         other: Neumitglieder
+      group/root_einzelmitglieder:
+        one: Einzelmitglieder
+        other: Einzelmitglieder
+      group/root_einzelmitglieder/ehrenmitglied:
+        one: Ehrenmitglied
+        other: Ehrenmitglieder
+      group/root_einzelmitglieder/freimitglied:
+        one: Freimitglied
+        other: Freimitglieder
+      group/root_einzelmitglieder/freund:
+        one: Freund & Gönner
+        other: Freunde & Gönner
       group/root_neumitglieder/neuanmeldung:
         one: Neuanmeldung
         other: Neuanmeldungen
@@ -64,6 +76,9 @@ it:
       group/mitgliederverband_einzelmitglieder:
         one: Einzelmitglieder
         other: Einzelmitglieder
+      group/mitgliederverband_nachwuchsmitglieder:
+        one: Nachwuchsmitglieder
+        other: Nachwuchsmitglieder
       group/mitgliederverband_einzelmitglieder/jodler:
         one: Jodler
         other: Jodler
@@ -82,15 +97,15 @@ it:
       group/mitgliederverband_einzelmitglieder/freimitglied:
         one: Freimitglied
         other: Freimitglieder
-      group/mitgliederverband_vereinigung:
-        one: Vereinigung
-        other: Vereinigungen
-      group/mitgliederverband_vereinigung/praesident:
-        one: Präsident
-        other: Präsidenten
-      group/mitgliederverband_vereinigung/mitglied:
-        one: Mitglied
-        other: Mitglieder
+      group/mitgliederverband_nachwuchsmitglieder/jodler:
+        one: Jodler
+        other: Jodler
+      group/mitgliederverband_nachwuchsmitglieder/alphornblaeser:
+        one: Alphornbläser
+        other: Alphornbläser
+      group/mitgliederverband_nachwuchsmitglieder/fahnenschwinger:
+        one: Fahnenschwinger
+        other: Fahnenschwinger
 
       group/verein:
         one: Gruppe
@@ -104,6 +119,15 @@ it:
       group/verein_fahnenschwinger:
         one: Fahnenschwinger-Gruppe
         other: Fahnenschwinger-Gruppen
+      group/verein_jodler_nachwuchs:
+        one: Jodler-Nachwuchsgruppe
+        other: Jodler-Nachwuchsgruppen
+      group/verein_alphornblaeser_nachwuchs:
+        one: Alphornbläser-Nachwuchsgruppe
+        other: Alphornbläser-Nachwuchsgruppen
+      group/verein_fahnenschwinger_nachwuchs:
+        one: Fahnenschwinger-Nachwuchsgruppe
+        other: Fahnenschwinger-Nachwuchsgruppen
       group/verein_vorstand:
         one: Comitati
         many: Comitati
@@ -130,9 +154,18 @@ it:
         one: ChorleiterIn
         other: ChorleiterInnen
       group/verein_fahnenschwinger/conductor:
+        one: Technische Leitung
+        other: Technische Leitungen
+      group/verein_alphornblaeser/conductor:
         one: ChorleiterIn
         other: ChorleiterInnen
-      group/verein_alphornblaeser/conductor:
+      group/verein_jodler_nachwuchs/conductor:
+        one: ChorleiterIn
+        other: ChorleiterInnen
+      group/verein_fahnenschwinger_nachwuchs/conductor:
+        one: Technische Leitung
+        other: Technische Leitungen
+      group/verein_alphornblaeser_nachwuchs/conductor:
         one: ChorleiterIn
         other: ChorleiterInnen
       group/verein/jugendverantwortlicher:
@@ -149,6 +182,15 @@ it:
         one: Verantwortlicher SUISA
         other: Verantworliche SUISA
       group/verein_alphornblaeser/suisa_admin:
+        one: Verantwortlicher SUISA
+        other: Verantworliche SUISA
+      group/verein_jodler_nachwuchs/suisa_admin:
+        one: Verantwortlicher SUISA
+        other: Verantworliche SUISA
+      group/verein_fahnenschwinger_nachwuchs/suisa_admin:
+        one: Verantwortlicher SUISA
+        other: Verantworliche SUISA
+      group/verein_alphornblaeser_nachwuchs/suisa_admin:
         one: Verantwortlicher SUISA
         other: Verantworliche SUISA
 
