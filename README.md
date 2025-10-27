@@ -96,6 +96,10 @@ of the Eidgenössischer Jodlerverband.
         * Mitglied: [:group_read]
         * Präsident: [:layer_full, :layer_and_below_read]
         * Kassier: [:layer_and_below_read, :finance]
+    * Global
+      * Kontakte
+        * Kontaktverwaltung: [:group_full]
+        * Kontakt: []
 
 (Output of rake app:hitobito:roles)
 <!-- roles:end -->

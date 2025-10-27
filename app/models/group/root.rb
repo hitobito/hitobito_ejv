@@ -11,7 +11,8 @@ class Group::Root < ::Group
     Group::RootGeschaeftsstelle,
     Group::RootVorstand,
     Group::RootEinzelmitglieder,
-    Group::RootNeumitglieder
+    Group::RootNeumitglieder,
+    Group::Kontakte
   ]
 
   self.event_types = [Event, Event::Course]

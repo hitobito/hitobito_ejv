@@ -13,6 +13,10 @@ module Ejv::Group
   # rubocop:enable Layout/LineLength
 
   included do # rubocop:disable Metrics/BlockLength
+    # allow to have Kontakte everywhere
+    children Group::Kontakte
+
+    # set after global children are defined
     root_types Group::Root
 
     include I18nSettable
