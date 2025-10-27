@@ -17,16 +17,9 @@ Group::Mitgliederverband.seed_once(:short_name, [
   {parent_id: root_id, short_name: "NWSJV", name: "Nordwestschweizerischer Jodlerverband"},
   {parent_id: root_id, short_name: "ZSJV", name: "Zentralschweizerischer Jodlerverband"},
   {parent_id: root_id, short_name: "WSJV", name: "Westschweizerischer Jodlerverband"},
-  {parent_id: root_id, short_name: "EJV", name: "Ausländische Jodlerverbände"}
+  {parent_id: root_id, short_name: "EJV_A", name: "EJV Ausland"}
 ])
 
 puts "Rebuilding nested set..."
 Group.rebuild!(false)
-puts "Moving Groups in alphabetical order..."
-Group.find_each do |group|
-  group.send(:move_to_alphabetic_position)
-rescue => e
-  puts e
-  puts group
-end
 puts "Done."
