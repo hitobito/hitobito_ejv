@@ -44,6 +44,8 @@ of the Eidgenössischer Jodlerverband.
         * Freund & Gönner: []
         * Ehrenmitglied: []
         * Freimitglied: []
+        * Veteran: []
+        * Ehrenveteran: []
       * Nachwuchsmitglieder
         * Jodler: []
         * Alphornbläser: []

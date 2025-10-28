@@ -73,6 +73,12 @@ de:
       group/mitgliederverband_nachwuchsmitglieder:
         one: Nachwuchsmitglieder
         other: Nachwuchsmitglieder
+      group/mitgliederverband_einzelmitglieder/veteran:
+        one: Veteran
+        other: Veteranen
+      group/mitgliederverband_einzelmitglieder/ehren_veteran:
+        one: Ehrenveteran
+        other: Ehrenveteranen
       group/mitgliederverband_einzelmitglieder/jodler:
         one: Jodler
         other: Jodler
