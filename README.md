@@ -56,7 +56,7 @@ of the Eidgenössischer Jodlerverband.
         * ChorleiterIn: []
         * Verantwortlicher SUISA: [:group_read, :song_census]
         * Mitglied: [:group_read]
-        * Präsident: [:layer_full, :layer_and_below_read]
+        * Präsident: [:layer_and_below_read]
         * Kassier: [:layer_and_below_read, :finance]
     * Jodler-Nachwuchsgruppe < Unterverband
       * Jodler-Nachwuchsgruppe
@@ -64,7 +64,7 @@ of the Eidgenössischer Jodlerverband.
         * ChorleiterIn: []
         * Verantwortlicher SUISA: [:group_read, :song_census]
         * Mitglied: [:group_read]
-        * Präsident: [:layer_full, :layer_and_below_read]
+        * Präsident: [:layer_and_below_read]
         * Kassier: [:layer_and_below_read, :finance]
     * Alphornbläser-Gruppe < Unterverband
       * Alphornbläser-Gruppe
@@ -72,7 +72,7 @@ of the Eidgenössischer Jodlerverband.
         * ChorleiterIn: []
         * Verantwortlicher SUISA: [:group_read, :song_census]
         * Mitglied: [:group_read]
-        * Präsident: [:layer_full, :layer_and_below_read]
+        * Präsident: [:layer_and_below_read]
         * Kassier: [:layer_and_below_read, :finance]
     * Alphornbläser-Nachwuchsgruppe < Unterverband
       * Alphornbläser-Nachwuchsgruppe
@@ -80,7 +80,7 @@ of the Eidgenössischer Jodlerverband.
         * ChorleiterIn: []
         * Verantwortlicher SUISA: [:group_read, :song_census]
         * Mitglied: [:group_read]
-        * Präsident: [:layer_full, :layer_and_below_read]
+        * Präsident: [:layer_and_below_read]
         * Kassier: [:layer_and_below_read, :finance]
     * Fahnenschwinger-Gruppe < Unterverband
       * Fahnenschwinger-Gruppe
@@ -88,7 +88,7 @@ of the Eidgenössischer Jodlerverband.
         * Technische Leitung: []
         * Verantwortlicher SUISA: [:group_read, :song_census]
         * Mitglied: [:group_read]
-        * Präsident: [:layer_full, :layer_and_below_read]
+        * Präsident: [:layer_and_below_read]
         * Kassier: [:layer_and_below_read, :finance]
     * Fahnenschwinger-Nachwuchsgruppe < Unterverband
       * Fahnenschwinger-Nachwuchsgruppe
@@ -96,7 +96,7 @@ of the Eidgenössischer Jodlerverband.
         * Technische Leitung: []
         * Verantwortlicher SUISA: [:group_read, :song_census]
         * Mitglied: [:group_read]
-        * Präsident: [:layer_full, :layer_and_below_read]
+        * Präsident: [:layer_and_below_read]
         * Kassier: [:layer_and_below_read, :finance]
     * Global
       * Kontakte

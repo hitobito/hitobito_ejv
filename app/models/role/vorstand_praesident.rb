@@ -20,5 +20,5 @@
 #
 
 class Role::VorstandPraesident < Role
-  self.permissions = [:layer_full, :layer_and_below_read]
+  self.permissions = [:layer_and_below_read]
 end

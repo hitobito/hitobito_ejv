@@ -7,6 +7,7 @@
 
 class Group::RootVorstand < Group
   class Praesident < Role::VorstandPraesident
+    self.permissions = [:layer_full, :layer_and_below_read]
   end
 
   class Mitglied < Role::VorstandMitglied
