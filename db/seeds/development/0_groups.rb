@@ -7,7 +7,7 @@
 
 require Rails.root.join("db", "seeds", "support", "group_seeder")
 
-Group::Root.seed_once(:parent_id, name: "Eidgenössischer Jodlerverband", short_name: "EJV")
+Group::Root.seed_once(:parent_id, short_name: "EJV", name: "Eidgenössischer Jodlerverband")
 
 root_id = Group.where(name: "Eidgenössischer Jodlerverband").pluck(:id).first
 
