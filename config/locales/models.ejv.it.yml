@@ -79,6 +79,12 @@ it:
       group/mitgliederverband_nachwuchsmitglieder:
         one: Nachwuchsmitglieder
         other: Nachwuchsmitglieder
+      group/mitgliederverband_einzelmitglieder/veteran:
+        one: Veteran
+        other: Veteranen
+      group/mitgliederverband_einzelmitglieder/ehren_veteran:
+        one: Ehrenveteran
+        other: Ehrenveteranen
       group/mitgliederverband_einzelmitglieder/jodler:
         one: Jodler
         other: Jodler
@@ -193,6 +199,14 @@ it:
       group/verein_alphornblaeser_nachwuchs/suisa_admin:
         one: Verantwortlicher SUISA
         other: Verantworliche SUISA
+
+      group/kontakte: Kontakte
+      group/kontakte/admin:
+        one: Kontaktverwaltung
+        other: Kontaktverwaltungen
+      group/kontakte/contact:
+        one: Kontakt
+        other: Kontakte
 
       ### ROLES FOR ALL LAYERS
 
