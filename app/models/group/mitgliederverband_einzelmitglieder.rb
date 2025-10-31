@@ -27,10 +27,10 @@ class Group::MitgliederverbandEinzelmitglieder < Group
   class Veteran < Role
   end
 
-  class EhrenVeteran < Role
+  class Ehrenveteran < Role
   end
 
   self.standard_role = Jodler
   roles Jodler, Alphornblaeser, Fahnenschwinger, Freund, Ehrenmitglied, Freimitglied, Veteran,
-    EhrenVeteran
+    Ehrenveteran
 end
