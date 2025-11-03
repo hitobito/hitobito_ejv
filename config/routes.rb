@@ -12,6 +12,12 @@ Rails.application.routes.draw do
     # Define wagon routes here
 
     resources :songs
+    resources :jobs do
+      member do
+        put "run"
+      end
+    end
+
     resources :groups, only: [] do
       member do
         get :subverein_select

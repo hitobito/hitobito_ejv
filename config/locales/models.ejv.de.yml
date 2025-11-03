@@ -401,3 +401,24 @@ de:
           - Alphornblasen
           - Fahnenschwingen
           - Freund&Gönner
+
+# feature start: job-controller
+  activerecord:
+    attributes:
+      delayed_jobs:
+        run_at: "geplant"
+        locked_at: "gestartet"
+        description: "Beschreibung"
+
+  jobs:
+    actions:
+      run_now: "starten"
+    run:
+      flash:
+        success: "Job wurde für den Start vorgemerkt"
+
+    jodlerfest_export_job:
+      description: "Export der Adressdaten an die Jodlerfest-DB"
+    refresh_active_years_job:
+      description: "Aktivjahre neu berechnen"
+# feature end: job-controller

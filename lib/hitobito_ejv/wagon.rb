@@ -57,6 +57,7 @@ module HitobitoEjv
       ### helpers
       admin = NavigationHelper::MAIN.find { |opts| opts[:label] == :admin }
       admin[:active_for] << "songs"
+      admin[:active_for] << "jobs"
 
       index_admin = NavigationHelper::MAIN.index { |opts| opts[:label] == :admin }
       NavigationHelper::MAIN.insert(
@@ -74,6 +75,7 @@ module HitobitoEjv
       Sheet::Group.include Ejv::Sheet::Group
 
       ### jobs
+      RecurringJob.include Ejv::RecurringJob
       Export::SubgroupsExportJob.prepend Ejv::Export::SubgroupsExportJob
 
       ### mailers
@@ -106,6 +108,7 @@ module HitobitoEjv
 
       # lastly, register the abilities (could happen earlier, it's just a nice conclusion here)
       Ability.store.register SongAbility
+      Ability.store.register AdminAbility
     end
 
     initializer "ejv.add_settings" do |_app|

@@ -1,0 +1,12 @@
+= list_table do |tbl|
+  - tbl.attr t('description', scope: 'activerecord.attributes.delayed_jobs') do |job|
+    = YAML.unsafe_load(job.handler).description
+
+  - tbl.attr t('run_at', scope: 'activerecord.attributes.delayed_jobs') do |job|
+    = job.run_at
+
+  - tbl.attr t('locked_at', scope: 'activerecord.attributes.delayed_jobs') do |job|
+    = job.locked_at
+
+  - tbl.col do |job|
+    = link_to t('jobs.actions.run_now'), run_job_path(job), method: :put
