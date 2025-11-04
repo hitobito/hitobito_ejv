@@ -82,7 +82,7 @@ fr:
       group/mitgliederverband_einzelmitglieder/veteran:
         one: Veteran
         other: Veteranen
-      group/mitgliederverband_einzelmitglieder/ehren_veteran:
+      group/mitgliederverband_einzelmitglieder/ehrenveteran:
         one: Ehrenveteran
         other: Ehrenveteranen
       group/mitgliederverband_einzelmitglieder/jodler:
