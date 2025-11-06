@@ -7,6 +7,8 @@
 fr:
   global:
     last_change: "Dernière modification: %{date}"
+    date_field_placeholder: DD.MM.YYYY
+    phone_placeholder: +41 77 123 45 67
   navigation:
     help: Aide
   group:
@@ -46,18 +48,6 @@ fr:
       submit: Clôturer la liste d'annonces
       start_new_census: "En clôturant la liste d'annonces, toutes les annonces effectuées jusqu'ici seront verrouillées. Une nouvelle liste de messages sera créée et les nouvelles annonces seront ajoutées à cette liste."
 
-  person:
-    history:
-      history_members_form_ejv:
-        verein: Société
-        new_role: Nouveau rôle
-        start_date: Admission
-        end_date: Démission
-        save: Sauvegarder
-        create_deleted_verein: Saisir la société supprimée
-        select_existing_verein: Sélectionner la société
-        text_with_alternative_link_html: "%{text} ou %{link}"
-
   people:
     fields_ejv:
       allow_personal_data_usage: J'accepte l'utilisation de mes données d'adresse
@@ -75,6 +65,11 @@ fr:
         group-vereinvorstand-praesident: Rechnung wird an den/die Präsident*in des Vorstandes gesendet
         group-verein-admin: Rechnung wird an den/die Administrator*in des Vorstandes gesendet
         no_recipient: "Rechnung kann nicht gestellt werden, da kein Empfänger gefunden wurde"
+
+    self_registration:
+      create:
+        redirect_existing_email: Es existiert bereits ein Login für diese E-Mail. Melde dich hier an.
+        success_message: Deine Anmeldung wurde erfolgreich verschickt. Wir melden uns in Kürze bei dir.
 
   song_counts:
     export_enqueued: 'L’exportation est lancée en arrière-plan et sera téléchargée une fois terminée.'
@@ -98,3 +93,9 @@ fr:
       title: Saisie SUISA
       concerts: Interprétations
       summary: Résumé
+
+  wizards:
+    steps:
+      signup:
+        main_email_field_title: E-Mail
+        person_fields_title: Personendaten

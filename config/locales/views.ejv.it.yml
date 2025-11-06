@@ -7,6 +7,8 @@
 it:
   global:
     last_change: "Ultima modifica: %{date}"
+    date_field_placeholder: DD.MM.YYYY
+    phone_placeholder: +41 77 123 45 67
   navigation:
     help: Auito
   group:
@@ -46,18 +48,6 @@ it:
       submit: completare elenco
       start_new_census: "Con il completamento dell'elenco, tutte le notifiche inviate fino ad oggi verranno bloccate. Verrà creato un nuovo elenco. Tutte le notiifiche ancora aperte verranno aggiunte a questo elenco."
 
-  person:
-    history:
-      history_members_form_ejv:
-        verein: Società bandistica
-        new_role: Nuovo ruolo
-        start_date: Entrata
-        end_date: Uscita
-        save: Memorizzare
-        create_deleted_verein: Inserire la società cancellata
-        select_existing_verein: Selezionare una società
-        text_with_alternative_link_html: "%{text} <small>oppure %{link}</small>"
-
   people:
     fields_ejv:
       allow_personal_data_usage: Accetto l'uso dei dettagli del mio indirizzo
@@ -75,6 +65,11 @@ it:
         group-vereinvorstand-praesident: Rechnung wird an den/die Präsident*in des Vorstandes gesendet
         group-verein-admin: Rechnung wird an den/die Administrator*in des Vorstandes gesendet
         no_recipient: "Rechnung kann nicht gestellt werden, da kein Empfänger gefunden wurde"
+
+    self_registration:
+      create:
+        redirect_existing_email: Es existiert bereits ein Login für diese E-Mail. Melde dich hier an.
+        success_message: Deine Anmeldung wurde erfolgreich verschickt. Wir melden uns in Kürze bei dir.
 
   song_counts:
     export_enqueued: 'L’esportazione avverrà in background e sarà scaricata al termine.'
@@ -98,3 +93,9 @@ it:
       title: Registrazione SUISA
       concerts: Esecuzioni
       summary: Riassunto
+
+  wizards:
+    steps:
+      signup:
+        main_email_field_title: E-Mail
+        person_fields_title: Personendaten
