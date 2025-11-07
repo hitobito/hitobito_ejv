@@ -24,6 +24,12 @@ class JobsController < CrudController
   end
 
   def list_entries
-    model_class.where("regexp_like(handler, '(#{MANAGED_JOBS.map(&:name).join("|")})')")
+    managed_jobs.inject(model_class.none) do |scope, job_name|
+      scope.or(model_class.where("handler LIKE ?", "%#{job_name}%"))
+    end
+  end
+
+  def managed_jobs
+    MANAGED_JOBS.map(&:name)
   end
 end
