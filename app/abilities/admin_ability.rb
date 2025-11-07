@@ -9,10 +9,10 @@ class AdminAbility < AbilityDsl::Base
   on(Delayed::Job) do
     class_side(:index).if_admin
 
-    permission(:admin).may(:run).if_root_admin
+    permission(:admin).may(:run).if_admin_on_root_group
   end
 
-  def if_root_admin
-    if_admin && user_context.permission_group_ids(:any).include?(::Group.root.id)
+  def if_admin_on_root_group
+    if_admin && user_context.permission_group_ids(:layer_and_below_full).include?(::Group.root.id)
   end
 end
