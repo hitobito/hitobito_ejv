@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     # Define wagon routes here
 
     resources :songs
-    resources :jobs do
+    resources :jobs, only: [:index] do
       member do
         put "run"
       end
