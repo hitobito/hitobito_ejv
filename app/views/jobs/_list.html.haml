@@ -1,6 +1,6 @@
 = list_table do |tbl|
   - tbl.attr t('description', scope: 'activerecord.attributes.delayed_jobs') do |job|
-    = YAML.unsafe_load(job.handler).description
+    = job.payload_object.description
 
   - tbl.attr t('run_at', scope: 'activerecord.attributes.delayed_jobs') do |job|
     = job.run_at
