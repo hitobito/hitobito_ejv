@@ -11,7 +11,7 @@ class JodlerfestExportJob < RecurringJob
   private
 
   def perform_internal
-    db_url = ENV["JODLER_DB_URL"]
+    db_url = ENV["JODLER_DB_URL"] # rubocop:disable Rails/EnvironmentVariableAccess
     return if db_url.blank?
 
     client = JodlerDb.new(db_url).connect

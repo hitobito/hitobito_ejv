@@ -34,7 +34,7 @@ class JodlerfestExport
     end
   end
 
-  def person_values(person)
+  def person_values(person) # rubocop:disable Metrics/CyclomaticComplexity
     person_mapping.map do |_, source|
       value = if source.respond_to? :call
         source.call(person)
@@ -53,7 +53,7 @@ class JodlerfestExport
     end.join(",")
   end
 
-  def person_mapping
+  def person_mapping # rubocop:disable Metrics/MethodLength
     @person_mapping ||= {
       "AdrNr" => :id,
       "AdrVorname" => :first_name,
