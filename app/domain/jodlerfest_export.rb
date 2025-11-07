@@ -54,7 +54,7 @@ class JodlerfestExport
   end
 
   def person_mapping
-    @person_mapping = {
+    @person_mapping ||= {
       "AdrNr" => :id,
       "AdrVorname" => :first_name,
       "AdrNameZ1" => :last_name,
@@ -82,7 +82,7 @@ class JodlerfestExport
   end
 
   def lang_mapping
-    @lang_mapping = {
+    @lang_mapping ||= {
       "de" => 1,
       "fr" => 2,
       "it" => 3,
