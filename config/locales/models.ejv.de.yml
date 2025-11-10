@@ -376,6 +376,11 @@ de:
           signup:
             main_email_field_title: E-Mail
 
+      delayed_jobs:
+        run_at: "geplant"
+        locked_at: "gestartet"
+        description: "Beschreibung"
+
     errors:
       models:
         song:
@@ -402,14 +407,6 @@ de:
           - Fahnenschwingen
           - Freund&Gönner
 
-# feature start: job-controller
-  activerecord:
-    attributes:
-      delayed_jobs:
-        run_at: "geplant"
-        locked_at: "gestartet"
-        description: "Beschreibung"
-
   jobs:
     actions:
       run_now: "starten"
@@ -421,4 +418,3 @@ de:
       description: "Export der Adressdaten an die Jodlerfest-DB"
     refresh_active_years_job:
       description: "Aktivjahre neu berechnen"
-# feature end: job-controller
