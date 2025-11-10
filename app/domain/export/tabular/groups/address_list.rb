@@ -10,7 +10,7 @@ module Export::Tabular::Groups
     def attributes
       %w[
         name type mitgliederverband
-        email contact contact_email address zip_code town country
+        email contact contact_email address_care_of address postbox zip_code town country
         association_entry recognized_members
         suisa_status
       ]
