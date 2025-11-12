@@ -404,6 +404,11 @@ it:
           signup:
             main_email_field_title: E-Mail
 
+      delayed_jobs:
+        run_at: "geplant"
+        locked_at: "gestartet"
+        description: "Beschreibung"
+
     errors:
       models:
         song:
@@ -429,3 +434,15 @@ it:
           - Alphornblasen
           - Fahnenschwingen
           - Freund&Gönner
+
+  jobs:
+    actions:
+      run_now: "starten"
+    run:
+      flash:
+        success: "Job wurde für den Start vorgemerkt"
+
+    jodlerfest_export_job:
+      description: "Export der Adressdaten an die Jodlerfest-DB"
+    refresh_active_years_job:
+      description: "Aktivjahre neu berechnen"
