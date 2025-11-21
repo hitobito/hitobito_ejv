@@ -10,7 +10,7 @@
 #																			#
 # It's strongly recommended that you check this file into your version control system.									# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_10_17_132141) do												ActiveRecord::Schema[8.0].define(version: 2025_10_17_132141) do
+ActiveRecord::Schema[8.0].define(version: 2025_11_21_120000) do												ActiveRecord::Schema[8.0].define(version: 2025_11_21_120000) do
   # These are extensions that must be enabled in order to support this database										  # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"															  enable_extension "pg_catalog.plpgsql"
 
@@ -467,8 +467,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_10_17_132141) do												Activ
     t.integer "minimum_participants"															    t.integer "minimum_participants"
     t.boolean "automatic_assignment", default: false, null: false											    t.boolean "automatic_assignment", default: false, null: false
     t.string "visible_contact_attributes", default: "[\"name\", \"address\", \"phone_number\", \"email\", \"social_account\"]"				    t.string "visible_contact_attributes", default: "[\"name\", \"address\", \"phone_number\", \"email\", \"social_account\"]"
-    t.integer "guest_limit", default: 0, null: false													    t.integer "guest_limit", default: 0, null: false
 																		     >	    t.virtual "search_column", type: :tsvector, as: "to_tsvector('simple'::regconfig, COALESCE((number)::text, ''::text))", stored: true
+    t.integer "guest_limit", default: 0, null: false													    t.integer "guest_limit", default: 0, null: false
     t.index ["kind_id"], name: "index_events_on_kind_id"												    t.index ["kind_id"], name: "index_events_on_kind_id"
 																		     >	    t.index ["search_column"], name: "events_search_column_gin_idx", using: :gin
     t.index ["shared_access_token"], name: "index_events_on_shared_access_token"									    t.index ["shared_access_token"], name: "index_events_on_shared_access_token"
@@ -625,6 +625,12 @@ ActiveRecord::Schema[8.0].define(version: 2025_10_17_132141) do												Activ
     t.string "sender_name"																    t.string "sender_name"
     t.string "logo_position", default: "disabled", null: false												    t.string "logo_position", default: "disabled", null: false
     t.integer "reference_prefix"															    t.integer "reference_prefix"
+    t.string "payee_name"																    t.string "payee_name"
+    t.string "payee_street"																    t.string "payee_street"
+    t.string "payee_housenumber"															    t.string "payee_housenumber"
+    t.string "payee_zip_code"																    t.string "payee_zip_code"
+    t.string "payee_town"																    t.string "payee_town"
+    t.string "payee_country", default: "CH"														    t.string "payee_country", default: "CH"
     t.index ["group_id"], name: "index_invoice_configs_on_group_id"											    t.index ["group_id"], name: "index_invoice_configs_on_group_id"
   end																			  end
 
@@ -645,7 +651,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_10_17_132141) do												Activ
 																		     >	    t.index ["search_column"], name: "invoice_items_search_column_gin_idx", using: :gin
   end																			  end
 
-  create_table "invoice_lists", force: :cascade do |t|													  create_table "invoice_lists", force: :cascade do |t|
+  create_table "invoice_runs", force: :cascade do |t|													  create_table "invoice_runs", force: :cascade do |t|
     t.string "receiver_type"																    t.string "receiver_type"
     t.bigint "receiver_id"																    t.bigint "receiver_id"
     t.bigint "group_id"																	    t.bigint "group_id"
@@ -660,9 +666,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_10_17_132141) do												Activ
     t.datetime "created_at", null: false														    t.datetime "created_at", null: false
     t.datetime "updated_at", null: false														    t.datetime "updated_at", null: false
     t.text "receivers"																	    t.text "receivers"
-    t.index ["creator_id"], name: "index_invoice_lists_on_creator_id"											    t.index ["creator_id"], name: "index_invoice_lists_on_creator_id"
-    t.index ["group_id"], name: "index_invoice_lists_on_group_id"											    t.index ["group_id"], name: "index_invoice_lists_on_group_id"
-    t.index ["receiver_type", "receiver_id"], name: "index_invoice_lists_on_receiver_type_and_receiver_id"						    t.index ["receiver_type", "receiver_id"], name: "index_invoice_lists_on_receiver_type_and_receiver_id"
+    t.index ["creator_id"], name: "index_invoice_runs_on_creator_id"											    t.index ["creator_id"], name: "index_invoice_runs_on_creator_id"
+    t.index ["group_id"], name: "index_invoice_runs_on_group_id"											    t.index ["group_id"], name: "index_invoice_runs_on_group_id"
+    t.index ["receiver_type", "receiver_id"], name: "index_invoice_runs_on_receiver_type_and_receiver_id"						    t.index ["receiver_type", "receiver_id"], name: "index_invoice_runs_on_receiver_type_and_receiver_id"
   end																			  end
 
   create_table "invoices", id: :serial, force: :cascade do |t|												  create_table "invoices", id: :serial, force: :cascade do |t|
@@ -693,13 +699,25 @@ ActiveRecord::Schema[8.0].define(version: 2025_10_17_132141) do												Activ
     t.integer "creator_id"																    t.integer "creator_id"
     t.string "vat_number"																    t.string "vat_number"
     t.string "currency", default: "CHF", null: false													    t.string "currency", default: "CHF", null: false
-    t.bigint "invoice_list_id"																    t.bigint "invoice_list_id"
+    t.bigint "invoice_run_id"																    t.bigint "invoice_run_id"
     t.string "reference", null: false															    t.string "reference", null: false
     t.boolean "hide_total", default: false, null: false													    t.boolean "hide_total", default: false, null: false
 																		     >	    t.virtual "search_column", type: :tsvector, as: "to_tsvector('simple'::regconfig, ((((COALESCE((title)::text, ''::text) || ' '::text) || COALESC
+    t.string "recipient_name"																    t.string "recipient_name"
+    t.string "recipient_street"																    t.string "recipient_street"
+    t.string "recipient_housenumber"															    t.string "recipient_housenumber"
+    t.string "recipient_zip_code"															    t.string "recipient_zip_code"
+    t.string "recipient_town"																    t.string "recipient_town"
+    t.string "recipient_country"															    t.string "recipient_country"
+    t.string "payee_name"																    t.string "payee_name"
+    t.string "payee_street"																    t.string "payee_street"
+    t.string "payee_housenumber"															    t.string "payee_housenumber"
+    t.string "payee_zip_code"																    t.string "payee_zip_code"
+    t.string "payee_town"																    t.string "payee_town"
+    t.string "payee_country"																    t.string "payee_country"
     t.index ["esr_number"], name: "index_invoices_on_esr_number"											    t.index ["esr_number"], name: "index_invoices_on_esr_number"
     t.index ["group_id"], name: "index_invoices_on_group_id"												    t.index ["group_id"], name: "index_invoices_on_group_id"
-    t.index ["invoice_list_id"], name: "index_invoices_on_invoice_list_id"										    t.index ["invoice_list_id"], name: "index_invoices_on_invoice_list_id"
+    t.index ["invoice_run_id"], name: "index_invoices_on_invoice_run_id"										    t.index ["invoice_run_id"], name: "index_invoices_on_invoice_run_id"
     t.index ["recipient_id"], name: "index_invoices_on_recipient_id"											    t.index ["recipient_id"], name: "index_invoices_on_recipient_id"
 																		     >	    t.index ["search_column"], name: "invoices_search_column_gin_idx", using: :gin
     t.index ["sequence_number"], name: "index_invoices_on_sequence_number"										    t.index ["sequence_number"], name: "index_invoices_on_sequence_number"
@@ -817,7 +835,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_10_17_132141) do												Activ
     t.datetime "created_at", null: false														    t.datetime "created_at", null: false
     t.datetime "updated_at", null: false														    t.datetime "updated_at", null: false
     t.text "invoice_attributes"																    t.text "invoice_attributes"
-    t.bigint "invoice_list_id"																    t.bigint "invoice_list_id"
+    t.bigint "invoice_run_id"																    t.bigint "invoice_run_id"
     t.text "text"																	    t.text "text"
     t.string "salutation"																    t.string "salutation"
     t.string "pp_post"																	    t.string "pp_post"
@@ -829,7 +847,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_10_17_132141) do												Activ
     t.string "uid"																	    t.string "uid"
     t.integer "bounce_parent_id"															    t.integer "bounce_parent_id"
     t.integer "blocked_count", default: 0														    t.integer "blocked_count", default: 0
-    t.index ["invoice_list_id"], name: "index_messages_on_invoice_list_id"										    t.index ["invoice_list_id"], name: "index_messages_on_invoice_list_id"
+    t.index ["invoice_run_id"], name: "index_messages_on_invoice_run_id"										    t.index ["invoice_run_id"], name: "index_messages_on_invoice_run_id"
     t.index ["mailing_list_id"], name: "index_messages_on_mailing_list_id"										    t.index ["mailing_list_id"], name: "index_messages_on_mailing_list_id"
     t.index ["sender_id"], name: "index_messages_on_sender_id"												    t.index ["sender_id"], name: "index_messages_on_sender_id"
   end																			  end
@@ -1055,6 +1073,14 @@ ActiveRecord::Schema[8.0].define(version: 2025_10_17_132141) do												Activ
     t.index ["group_id", "group_type"], name: "index_people_filters_on_group_id_and_group_type"								    t.index ["group_id", "group_type"], name: "index_people_filters_on_group_id_and_group_type"
   end																			  end
 
+  create_table "people_managers", force: :cascade do |t|												  create_table "people_managers", force: :cascade do |t|
+    t.integer "manager_id", null: false															    t.integer "manager_id", null: false
+    t.integer "managed_id", null: false															    t.integer "managed_id", null: false
+    t.datetime "created_at", null: false														    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false														    t.datetime "updated_at", null: false
+    t.index ["manager_id", "managed_id"], name: "index_people_managers_on_manager_id_and_managed_id", unique: true					    t.index ["manager_id", "managed_id"], name: "index_people_managers_on_manager_id_and_managed_id", unique: true
+  end																			  end
+
   create_table "person_add_request_ignored_approvers", id: :serial, force: :cascade do |t|								  create_table "person_add_request_ignored_approvers", id: :serial, force: :cascade do |t|
     t.integer "group_id", null: false															    t.integer "group_id", null: false
     t.integer "person_id", null: false															    t.integer "person_id", null: false
@@ -1183,6 +1209,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_10_17_132141) do												Activ
     t.boolean "event_participations", default: false, null: false											    t.boolean "event_participations", default: false, null: false
     t.boolean "mailing_lists", default: false, null: false												    t.boolean "mailing_lists", default: false, null: false
     t.string "permission", default: "layer_read", null: false												    t.string "permission", default: "layer_read", null: false
+    t.boolean "register_people", default: false, null: false												    t.boolean "register_people", default: false, null: false
   end																			  end
 
   create_table "sessions", id: :serial, force: :cascade do |t|												  create_table "sessions", id: :serial, force: :cascade do |t|
