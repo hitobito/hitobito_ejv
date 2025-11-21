@@ -5,7 +5,7 @@
 
 
 - if entry.layer? && can?(:subverein_select, entry)
-  = action_button(translate('.create_verein_invoice_list'),
+  = action_button(translate('.create_verein_invoice_run'),
     subverein_select_group_path(entry),
     :plus,
     data: { checkable: true, method: :get },

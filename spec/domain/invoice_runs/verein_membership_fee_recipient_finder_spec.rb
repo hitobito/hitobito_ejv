@@ -7,12 +7,12 @@
 
 require "spec_helper"
 
-describe InvoiceLists::VereinMembershipFeeRecipientFinder do
+describe InvoiceRuns::VereinMembershipFeeRecipientFinder do
   let(:verein) { Fabricate(Group::VereinJodler.sti_name.to_sym, parent: groups(:bkjv)) }
   let(:vorstand) { verein }
 
   describe "#find_recipient" do
-    subject { InvoiceLists::VereinMembershipFeeRecipientFinder.find_recipient(verein.id) }
+    subject { InvoiceRuns::VereinMembershipFeeRecipientFinder.find_recipient(verein.id) }
 
     context "with only admin role" do
       let!(:admin_role) { Fabricate(Group::VereinJodler::Admin.sti_name.to_sym, group: verein) }
@@ -95,7 +95,7 @@ describe InvoiceLists::VereinMembershipFeeRecipientFinder do
   end
 
   describe "find_verein" do
-    subject { InvoiceLists::VereinMembershipFeeRecipientFinder.find_verein(recipient.id) }
+    subject { InvoiceRuns::VereinMembershipFeeRecipientFinder.find_verein(recipient.id) }
 
     let!(:admin_role) { Fabricate(Group::VereinJodler::Admin.sti_name.to_sym, group: verein) }
     let!(:kassier_role) { Fabricate(Group::VereinJodler::Kassier.sti_name.to_sym, group: vorstand) }
