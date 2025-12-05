@@ -6,19 +6,19 @@ of the Eidgenössischer Jodlerverband.
 <!-- roles:start -->
     * Dachverband
       * Dachverband
-        * Administrator: [:layer_and_below_full, :admin, :impersonation, :finance, :song_census]
-        * Verantwortlicher SUISA: [:group_read, :song_census]
+        * Administration: [:layer_and_below_full, :admin, :impersonation, :finance, :song_census]
+        * Verantwortung SUISA: [:group_read, :song_census]
       * Zentralsekretariat
-        * Administrator: [:layer_and_below_full, :finance, :impersonation]
-        * Sekretär: [:layer_and_below_full, :finance]
+        * Administration: [:layer_and_below_full, :finance, :impersonation]
+        * Sekretariat: [:layer_and_below_full, :finance]
         * Hilfe: [:layer_and_below_read]
       * Zentralvorstand
-        * Präsident: [:layer_full, :layer_and_below_read]
+        * Präsidium: [:layer_full, :layer_and_below_read]
         * Mitglied: [:layer_and_below_read]
       * Delegierte
         * Mitglied: [:group_read]
       * Fachkommission
-        * Präsident: [:group_and_below_full]
+        * Präsidium: [:group_and_below_full]
         * Mitglied: [:group_read]
       * Einzelmitglieder
         * Freund & Gönner: []
@@ -28,81 +28,80 @@ of the Eidgenössischer Jodlerverband.
         * Neuanmeldung: []
     * Unterverband < Dachverband
       * Unterverband
-        * Administrator: [:layer_and_below_full]
-        * Verantwortlicher SUISA: [:group_read, :song_census]
+        * Administration: [:layer_and_below_full]
+        * Verantwortung SUISA: [:group_read, :song_census]
       * Vorstand
-        * Präsident: [:layer_full, :layer_and_below_read]
-        * Vizepräsident: [:layer_and_below_read]
-        * Kassier: [:layer_and_below_read, :finance]
-        * Mitgliederverwalter: [:layer_and_below_full]
-        * Sekretär: [:group_full, :layer_and_below_read]
+        * Präsidium: [:layer_full, :layer_and_below_read]
+        * Vizepräsidium: [:layer_and_below_read]
+        * Finanzen: [:layer_and_below_read, :finance]
+        * Mitgliedsverantwortung: [:layer_and_below_full]
+        * Sekretariat: [:group_full, :layer_and_below_read]
         * Mitglied: [:layer_and_below_read]
       * Einzelmitglieder
-        * Jodler: []
-        * Alphornbläser: []
-        * Fahnenschwinger: []
+        * Jodeln: []
+        * Alphornblasen: []
+        * Fahnenschwingen: []
         * Freund & Gönner: []
         * Ehrenmitglied: []
         * Freimitglied: []
         * Veteran: []
         * Ehrenveteran: []
       * Nachwuchsmitglieder
-        * Jodler: []
-        * Alphornbläser: []
-        * Fahnenschwinger: []
+        * Jodeln: []
+        * Alphornblasen: []
+        * Fahnenschwingen: []
     * Jodler-Gruppe < Unterverband
       * Jodler-Gruppe
-        * Administrator: [:layer_and_below_full]
-        * ChorleiterIn: []
-        * Verantwortlicher SUISA: [:group_read, :song_census]
+        * Administration: [:layer_and_below_full]
+        * Chorleitung: []
+        * Verantwortung SUISA: [:group_read, :song_census]
         * Mitglied: [:group_read]
-        * Präsident: [:layer_and_below_read]
-        * Kassier: [:layer_and_below_read, :finance]
+        * Präsidium: [:layer_and_below_read]
+        * Finanzen: [:layer_and_below_read, :finance]
     * Jodler-Nachwuchsgruppe < Unterverband
       * Jodler-Nachwuchsgruppe
-        * Administrator: [:layer_and_below_full]
-        * ChorleiterIn: []
-        * Verantwortlicher SUISA: [:group_read, :song_census]
+        * Administration: [:layer_and_below_full]
+        * Chorleitung: []
+        * Verantwortung SUISA: [:group_read, :song_census]
         * Mitglied: [:group_read]
-        * Präsident: [:layer_and_below_read]
-        * Kassier: [:layer_and_below_read, :finance]
+        * Präsidium: [:layer_and_below_read]
+        * Finanzen: [:layer_and_below_read, :finance]
     * Alphornbläser-Gruppe < Unterverband
       * Alphornbläser-Gruppe
-        * Administrator: [:layer_and_below_full]
-        * ChorleiterIn: []
-        * Verantwortlicher SUISA: [:group_read, :song_census]
+        * Administration: [:layer_and_below_full]
+        * Musikalische Leitung: []
+        * Verantwortung SUISA: [:group_read, :song_census]
         * Mitglied: [:group_read]
-        * Präsident: [:layer_and_below_read]
-        * Kassier: [:layer_and_below_read, :finance]
+        * Präsidium: [:layer_and_below_read]
+        * Finanzen: [:layer_and_below_read, :finance]
     * Alphornbläser-Nachwuchsgruppe < Unterverband
       * Alphornbläser-Nachwuchsgruppe
-        * Administrator: [:layer_and_below_full]
-        * ChorleiterIn: []
-        * Verantwortlicher SUISA: [:group_read, :song_census]
+        * Administration: [:layer_and_below_full]
+        * Musikalische Leitung: []
+        * Verantwortung SUISA: [:group_read, :song_census]
         * Mitglied: [:group_read]
-        * Präsident: [:layer_and_below_read]
-        * Kassier: [:layer_and_below_read, :finance]
+        * Präsidium: [:layer_and_below_read]
+        * Finanzen: [:layer_and_below_read, :finance]
     * Fahnenschwinger-Gruppe < Unterverband
       * Fahnenschwinger-Gruppe
-        * Administrator: [:layer_and_below_full]
+        * Administration: [:layer_and_below_full]
         * Technische Leitung: []
-        * Verantwortlicher SUISA: [:group_read, :song_census]
+        * Verantwortung SUISA: [:group_read, :song_census]
         * Mitglied: [:group_read]
-        * Präsident: [:layer_and_below_read]
-        * Kassier: [:layer_and_below_read, :finance]
+        * Präsidium: [:layer_and_below_read]
+        * Finanzen: [:layer_and_below_read, :finance]
     * Fahnenschwinger-Nachwuchsgruppe < Unterverband
       * Fahnenschwinger-Nachwuchsgruppe
-        * Administrator: [:layer_and_below_full]
+        * Administration: [:layer_and_below_full]
         * Technische Leitung: []
-        * Verantwortlicher SUISA: [:group_read, :song_census]
+        * Verantwortung SUISA: [:group_read, :song_census]
         * Mitglied: [:group_read]
-        * Präsident: [:layer_and_below_read]
-        * Kassier: [:layer_and_below_read, :finance]
+        * Präsidium: [:layer_and_below_read]
+        * Finanzen: [:layer_and_below_read, :finance]
     * Global
       * Kontakte
         * Kontaktverwaltung: [:group_full]
         * Kontakt: []
-
 (Output of rake app:hitobito:roles)
 <!-- roles:end -->
 
