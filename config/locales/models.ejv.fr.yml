@@ -47,9 +47,8 @@ fr:
         one: Fachkommission
         other: Fachkommissionen
       group/root/suisa_admin:
-        one: Responsable SUISA
-        many: Responsables SUISA
-        other: Responsables SUISA
+        one: Verantwortung SUISA
+        other: Verantwortung SUISA
 
       group/mitgliederverband:
         one: Unterverband
@@ -63,16 +62,15 @@ fr:
         many: Comités
         other: Comités
       group/mitgliederverband_vorstand/sekretaer:
-        one: Sekretär
-        other: Sekretäre
+        one: Sekretariat
+        other: Sekretariat
       group/mitgliederverband_ehrenmitglieder:
         one: Membres d'honneur
         many: Membres d'honneur
         other: Membres d'honneur
       group/mitgliederverband/suisa_admin:
-        one: Responsables SUISA
-        many: Responsables SUISA
-        other: Responsables SUISA
+        one: Verantwortung SUISA
+        other: Verantwortung SUISA
       group/mitgliederverband_einzelmitglieder:
         one: Einzelmitglieder
         other: Einzelmitglieder
@@ -86,14 +84,14 @@ fr:
         one: Ehrenveteran
         other: Ehrenveteranen
       group/mitgliederverband_einzelmitglieder/jodler:
-        one: Jodler
-        other: Jodler
+        one: Jodeln
+        other: Jodeln
       group/mitgliederverband_einzelmitglieder/alphornblaeser:
-        one: Alphornbläser
-        other: Alphornbläser
+        one: Alphornblasen
+        other: Alphornblasen
       group/mitgliederverband_einzelmitglieder/fahnenschwinger:
-        one: Fahnenschwinger
-        other: Fahnenschwinger
+        one: Fahnenschwingen
+        other: Fahnenschwingen
       group/mitgliederverband_einzelmitglieder/freund:
         one: "Freund & Gönner"
         other: "Freunde & Gönner"
@@ -104,14 +102,14 @@ fr:
         one: Freimitglied
         other: Freimitglieder
       group/mitgliederverband_nachwuchsmitglieder/jodler:
-        one: Jodler
-        other: Jodler
+        one: Jodeln
+        other: Jodeln
       group/mitgliederverband_nachwuchsmitglieder/alphornblaeser:
-        one: Alphornbläser
-        other: Alphornbläser
+        one: Alphornblasen
+        other: Alphornblasen
       group/mitgliederverband_nachwuchsmitglieder/fahnenschwinger:
-        one: Fahnenschwinger
-        other: Fahnenschwinger
+        one: Fahnenschwingen
+        other: Fahnenschwingen
 
       group/verein:
         one: Gruppe
@@ -154,51 +152,50 @@ fr:
         many: Contacts
         other: Contacts
       group/verein/conductor:
-        one: ChorleiterIn
-        other: ChorleiterInnen
+        one: Chorleitung
+        other: Chorleitung
       group/verein_jodler/conductor:
-        one: ChorleiterIn
-        other: ChorleiterInnen
+        one: Chorleitung
+        other: Chorleitung
       group/verein_fahnenschwinger/conductor:
         one: Technische Leitung
         other: Technische Leitungen
       group/verein_alphornblaeser/conductor:
-        one: ChorleiterIn
-        other: ChorleiterInnen
+        one: Musikalische Leitung
+        other: Musikalische Leitung
       group/verein_jodler_nachwuchs/conductor:
-        one: ChorleiterIn
-        other: ChorleiterInnen
+        one: Chorleitung
+        other: Chorleitung
       group/verein_fahnenschwinger_nachwuchs/conductor:
         one: Technische Leitung
         other: Technische Leitungen
       group/verein_alphornblaeser_nachwuchs/conductor:
-        one: ChorleiterIn
-        other: ChorleiterInnen
+        one: Musikalische Leitung
+        other: Musikalische Leitung
       group/verein/jugendverantwortlicher:
         one: Jugendverantwortlicher
         other: Jugendverantwortliche
       group/verein/suisa_admin:
-        one: Responsables SUISA
-        many: Responsables SUISA
-        other: Responsables SUISA
+        one: Verantwortung SUISA
+        other: Verantwortung SUISA
       group/verein_jodler/suisa_admin:
-        one: Verantwortlicher SUISA
-        other: Verantworliche SUISA
+        one: Verantwortung SUISA
+        other: Verantwortung SUISA
       group/verein_fahnenschwinger/suisa_admin:
-        one: Verantwortlicher SUISA
-        other: Verantworliche SUISA
+        one: Verantwortung SUISA
+        other: Verantwortung SUISA
       group/verein_alphornblaeser/suisa_admin:
-        one: Verantwortlicher SUISA
-        other: Verantworliche SUISA
+        one: Verantwortung SUISA
+        other: Verantwortung SUISA
       group/verein_jodler_nachwuchs/suisa_admin:
-        one: Verantwortlicher SUISA
-        other: Verantworliche SUISA
+        one: Verantwortung SUISA
+        other: Verantwortung SUISA
       group/verein_fahnenschwinger_nachwuchs/suisa_admin:
-        one: Verantwortlicher SUISA
-        other: Verantworliche SUISA
+        one: Verantwortung SUISA
+        other: Verantwortung SUISA
       group/verein_alphornblaeser_nachwuchs/suisa_admin:
-        one: Verantwortlicher SUISA
-        other: Verantworliche SUISA
+        one: Verantwortung SUISA
+        other: Verantwortung SUISA
 
       group/kontakte: Kontakte
       group/kontakte/admin:
@@ -213,9 +210,8 @@ fr:
       #### General
 
       role/admin:
-        one: Administrateur
-        many: Administrateurs
-        other: Administrateurs
+        one: Administration
+        other: Administration
       role/adressverwaltung:
         one: Gestion des adresses
         many: Gestion des adresses
@@ -224,11 +220,11 @@ fr:
       #### Geschaeftsstelle Roles
 
       role/geschaeftsstelle_manager:
-        one: Administrator
-        other: Administratoren
+        one: Administration
+        other: Administration
       role/geschaeftsstelle_staff:
-        one: Sekretär
-        other: Sekretäre
+        one: Sekretariat
+        other: Sekretariat
       role/geschaeftsstelle_help:
         one: Aide
         many: Aides
@@ -237,28 +233,24 @@ fr:
       #### Vorstand Roles
 
       role/vorstand_kassier:
-        one: Caissier
-        many: Caissiers
-        other: Caissiers
+        one: Finanzen
+        other: Finanzen
       role/vorstand_finanzchef:
-        one: Chef des finances
-        many: Chefs des finances
-        other: Chefs des finances
+        one: Finanzen
+        other: Finanzen
       role/vorstand_mitglied:
         one: Membre
         many: Membres
         other: Membres
       role/vorstand_praesident:
-        one: Président
-        many: Présidents
-        other: Présidents
+        one: Präsidium
+        other: Präsidium
       role/vorstand_vize_praesident:
-        one: Vice-président
-        many: Vice-présidents
-        other: Vice-présidents
+        one: Vizepräsidium
+        other: Vizepräsidium
       role/vorstand_mitgliederverwalter:
-        one: Mitgliederverwalter
-        other: Mitgliederverwalter
+        one: Mitgliedsverantwortung
+        other: Mitgliedsverantwortung
       role/vorstand_materialverwaltung:
         one: Responsable matériel
         many: Responsable matériel
@@ -267,9 +259,8 @@ fr:
       #### Musikkommission Roles
 
       role/musikkommission_praesident:
-        one: Présidents
-        many: Présidents
-        other: Présidents
+        one: Präsidium
+        other: Präsidium
       role/musikkommission_mitglied:
         one: Membres
         many: Membres
@@ -278,8 +269,8 @@ fr:
       #### Arbeitsgruppen Roles
 
       role/arbeitsgruppe_leitung:
-        one: Präsident
-        other: Präsidenten
+        one: Präsidium
+        other: Präsidium
       role/arbeitsgruppe_mitglied:
         one: Membres
         many: Membres
