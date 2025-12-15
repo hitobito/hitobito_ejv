@@ -92,4 +92,10 @@ describe JodlerfestExport do
     it "name"
     it "ort"
   end
+
+  context "roles" do
+    it "only relevant roles"
+    it "person_id"
+    it "group_id"
+  end
 end
