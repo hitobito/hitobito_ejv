@@ -83,14 +83,49 @@ describe JodlerfestExport do
     let(:model) { groups(:jodlerklub_gunzgen_olten) }
     let(:mapping) { export.send(:group_mapping) }
 
-    it "id"
-    it "dirigent"
-    it "praesident"
-    it "email"
-    it "unterverband"
-    it "typ"
-    it "name"
-    it "ort"
+    it "id" do
+      expect(mapping).to have_key("GruAdrNr")
+      expect(data["GruAdrNr"]).to eq model.id
+    end
+
+    it "dirigent" do
+      role = Fabricate(Group::VereinJodler::Conductor.sti_name, group: model)
+
+      expect(mapping).to have_key("GruAdrNrDirigent")
+      expect(data["GruAdrNrDirigent"]).to eq role.person_id
+    end
+
+    it "praesident" do
+      role = Fabricate(Group::VereinJodler::Praesident.sti_name, group: model)
+
+      expect(mapping).to have_key("GruAdrNrPraesident")
+      expect(data["GruAdrNrPraesident"]).to eq role.person_id
+    end
+
+    it "email" do
+      expect(mapping).to have_key("GruMail")
+      expect(data["GruMail"]).to eq '"olten@example.org"'
+    end
+
+    it "unterverband" do
+      expect(mapping).to have_key("GruUV")
+      expect(data["GruUV"]).to eq '"NWSJV"'
+    end
+
+    it "typ" do
+      expect(mapping).to have_key("GruTyp")
+      expect(data["GruTyp"]).to eq '"Jodler-Gruppe"'
+    end
+
+    it "name" do
+      expect(mapping).to have_key("GruName")
+      expect(data["GruName"]).to eq '"Jodlerklub Gunzgen-Olten"'
+    end
+
+    it "ort" do
+      expect(mapping).to have_key("GruOrt")
+      expect(data["GruOrt"]).to eq '"Olten"'
+    end
   end
 
   context "roles" do

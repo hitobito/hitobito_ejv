@@ -86,8 +86,8 @@ class JodlerfestExport
       "AdrTelM" => ->(p) { p.phone_numbers&.first&.number },
       "AdrGeburtsdatum" => :birthday,
       "AdrUv" => ->(p) { lookup_unterverband(p) },
-      "AdrEinzelmitglied" => ->(p) { lookup_einzelmitglied(p) },
-      "AdrNachwuchs" => ->(p) { lookup_nachwuchs(p) },
+      "AdrEinzelmitglied" => ->(p) { role_type_exists(p.roles, "%Einzelmitglieder%") },
+      "AdrNachwuchs" => ->(p) { role_type_exists(p.roles, "%Nachwuchsmitglieder%") },
       "AdrDatU" => :updated_at,
       "AdrWerbung" => 0,
       "AdrNews" => 0
@@ -99,11 +99,11 @@ class JodlerfestExport
       "GruAdrNr" => :id,
       "GruMail" => :email,
       "GruName" => :name,
-      "GruOrt" => :vereinssitz
-      # "GruAdrNrPraesident" =>
-      # "GruAdrNrDirigent" =>
-      # "GruUV" =>
-      # "GruTyp" =>
+      "GruOrt" => :vereinssitz,
+      "GruAdrNrPraesident" => ->(g) { person_id_with_role(g.roles, "%Praesident") },
+      "GruAdrNrDirigent" => ->(g) { person_id_with_role(g.roles, "%Conductor") },
+      "GruUV" => ->(g) { g.parent.short_name },
+      "GruTyp" => ->(g) { g.model_name.human }
     }
   end
 
@@ -144,11 +144,11 @@ class JodlerfestExport
       .first
   end
 
-  def lookup_einzelmitglied(person)
-    person.roles.where("type LIKE '%Einzelmitglieder%'").exists?
+  def role_type_exists(roles, type_pattern)
+    roles.where("type LIKE ?", type_pattern).exists?
   end
 
-  def lookup_nachwuchs(person)
-    person.roles.where("type LIKE '%Nachwuchsmitglieder%'").exists?
+  def person_id_with_role(roles, type_pattern)
+    roles.where(["type LIKE ?", type_pattern]).pick(:person_id)
   end
 end

@@ -224,6 +224,8 @@ jodlerklub_gunzgen_olten:
   lft: 43
   rgt: 44
   name: Jodlerklub Gunzgen-Olten
+  email: olten@example.org
+  vereinssitz: Olten
   type: Group::VereinJodler
 jodlerklub_edelweiss:
   parent: nwsjv
