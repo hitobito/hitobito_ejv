@@ -11,22 +11,22 @@ class JodlerfestExport
   end
 
   def run
-    send_people_data
-    # send_group_data # maybe
+    send_data("adressenstamm", person_mapping, Person)
+    # send_data("gruppen", group_mapping, Group)
   end
 
   private
 
-  def send_people_data
-    cols = person_mapping.keys
-    header = "INSERT INTO adressenstamm (#{cols.join(",")}) VALUES "
+  def send_data(table, mapping, scope)
+    cols = mapping.keys
+    header = "INSERT INTO #{table} (#{cols.join(",")}) VALUES "
     footer = " ON DUPLICATE KEY UPDATE #{cols.map { |k| "#{k}=VALUES(#{k})" }.join(",")};"
 
-    Person.in_batches(of: 500) do |batch|
+    scope.in_batches(of: 500) do |batch|
       rows = []
 
-      batch.find_each do |person|
-        rows << "(#{person_values(person)})"
+      batch.find_each do |model|
+        rows << "(#{data_values(model, mapping)})"
       end
 
       upsert = header + rows.join(", ") + footer
@@ -34,23 +34,35 @@ class JodlerfestExport
     end
   end
 
-  def person_values(person) # rubocop:disable Metrics/CyclomaticComplexity
-    person_mapping.map do |_, source|
-      value = if source.respond_to? :call
-        source.call(person)
-      elsif source.is_a? Symbol
-        person.send(source)
-      else
-        source
-      end
+  def data_values(model, mapping)
+    data_map(model, mapping).values.join(",")
+  end
 
-      case value
-      when String then @target.escape(value).inspect
-      when Integer then value
-      when ActiveSupport::TimeWithZone then value.strftime("%Y-%m-%d %H:%M").inspect
-      when nil then "NULL"
-      end
-    end.join(",")
+  def data_map(model, mapping)
+    mapping.map do |key, source|
+      value = model_value(model, source).then { |val| cast_value(val) }
+
+      [key, value]
+    end.to_h
+  end
+
+  def model_value(model, value)
+    if source.respond_to? :call
+      source.call(model)
+    elsif source.is_a? Symbol
+      model.send(source)
+    else
+      source
+    end
+  end
+
+  def cast_value(value)
+    case value
+    when String then @target.escape(value).inspect
+    when Integer then value
+    when ActiveSupport::TimeWithZone then value.strftime("%Y-%m-%d %H:%M").inspect
+    when nil then "NULL"
+    end
   end
 
   def person_mapping # rubocop:disable Metrics/MethodLength
