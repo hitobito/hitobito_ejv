@@ -13,6 +13,7 @@ class JodlerfestExport
   def run
     send_data("adressenstamm", person_mapping, Person)
     # send_data("gruppen", group_mapping, Group)
+    # send_data("gruppenmitglieder", role_mapping, Role.where(type: relevant_role_types))
   end
 
   private
@@ -104,6 +105,17 @@ class JodlerfestExport
       # "GruUV" =>
       # "GruTyp" =>
     }
+  end
+
+  def role_mapping
+    @role_mapping ||= {
+      "GmiEjvNr" => :person_id,
+      "GmiEjvNrGrp" => :group_id
+    }
+  end
+
+  def relevant_role_types
+    %w[]
   end
 
   def gender_mapping
