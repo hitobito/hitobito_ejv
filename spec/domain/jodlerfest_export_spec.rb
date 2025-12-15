@@ -78,4 +78,18 @@ describe JodlerfestExport do
       expect(data["AdrNachwuchs"]).to eq "b'1'"
     end
   end
+
+  context "group" do
+    let(:model) { groups(:jodlerklub_gunzgen_olten) }
+    let(:mapping) { export.send(:group_mapping) }
+
+    it "id"
+    it "dirigent"
+    it "praesident"
+    it "email"
+    it "unterverband"
+    it "typ"
+    it "name"
+    it "ort"
+  end
 end

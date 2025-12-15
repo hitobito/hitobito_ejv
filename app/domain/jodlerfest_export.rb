@@ -93,6 +93,19 @@ class JodlerfestExport
     }
   end
 
+  def group_mapping
+    @group_mapping ||= {
+      "GruAdrNr" => :id,
+      "GruMail" => :email,
+      "GruName" => :name,
+      "GruOrt" => :vereinssitz
+      # "GruAdrNrPraesident" =>
+      # "GruAdrNrDirigent" =>
+      # "GruUV" =>
+      # "GruTyp" =>
+    }
+  end
+
   def gender_mapping
     @gender_mapping ||= {
       nil => 1,
