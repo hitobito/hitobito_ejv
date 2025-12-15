@@ -41,13 +41,13 @@ class JodlerfestExport
 
   def data_map(model, mapping)
     mapping.map do |key, source|
-      value = model_value(model, source).then { |val| cast_value(val) }
+      value = read_value(model, source).then { |val| cast_value(val) }
 
       [key, value]
     end.to_h
   end
 
-  def model_value(model, value)
+  def read_value(model, source)
     if source.respond_to? :call
       source.call(model)
     elsif source.is_a? Symbol
