@@ -61,6 +61,9 @@ class JodlerfestExport
     when String then @target.escape(value).inspect
     when Integer then value
     when ActiveSupport::TimeWithZone then value.strftime("%Y-%m-%d %H:%M").inspect
+    when Date then value.strftime("%Y-%m-%d").inspect
+    when TrueClass then "b'1'"
+    when FalseClass then "b'0'"
     when nil then "NULL"
     end
   end
@@ -79,6 +82,11 @@ class JodlerfestExport
       "AdrMail" => :email,
       "AdrSprache" => ->(p) { lang_mapping[p.language] },
       "AdrSex" => ->(p) { gender_mapping[p.gender] },
+      "AdrTelM" => ->(p) { p.phone_numbers&.first&.number },
+      "AdrGeburtsdatum" => :birthday,
+      "AdrUv" => ->(p) { lookup_unterverband(p) },
+      "AdrEinzelmitglied" => ->(p) { lookup_einzelmitglied(p) },
+      "AdrNachwuchs" => ->(p) { lookup_nachwuchs(p) },
       "AdrDatU" => :updated_at,
       "AdrWerbung" => 0,
       "AdrNews" => 0
@@ -100,5 +108,22 @@ class JodlerfestExport
       "it" => 3,
       "en" => 4
     }
+  end
+
+  def lookup_unterverband(person)
+    person.roles
+      .where("type LIKE '%Mitglied'")
+      .map(&:group).compact
+      .map(&:parent).compact
+      .map(&:short_name).compact
+      .first
+  end
+
+  def lookup_einzelmitglied(person)
+    person.roles.where("type LIKE '%Einzelmitglieder%'").exists?
+  end
+
+  def lookup_nachwuchs(person)
+    person.roles.where("type LIKE '%Nachwuchsmitglieder%'").exists?
   end
 end
