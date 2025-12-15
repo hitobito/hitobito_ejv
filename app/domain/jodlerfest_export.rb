@@ -18,6 +18,8 @@ class JodlerfestExport
 
   private
 
+  # technical steps to transform our DB-Data into MySQL-Updates
+
   def send_data(table, mapping, scope)
     cols = mapping.keys
     header = "INSERT INTO #{table} (#{cols.join(",")}) VALUES "
@@ -69,6 +71,8 @@ class JodlerfestExport
     end
   end
 
+  # mappings from different tables
+
   def person_mapping # rubocop:disable Metrics/MethodLength
     @person_mapping ||= {
       "AdrNr" => :id,
@@ -114,6 +118,8 @@ class JodlerfestExport
     }
   end
 
+  # lookup tables of hardcoded values
+
   def relevant_role_types
     %w[
       Group::VereinJodler::Mitglied
@@ -141,6 +147,8 @@ class JodlerfestExport
       "en" => 4
     }
   end
+
+  # dynamic lookups and searches
 
   def lookup_unterverband(person)
     person.roles
