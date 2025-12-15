@@ -129,8 +129,28 @@ describe JodlerfestExport do
   end
 
   context "roles" do
-    it "only relevant roles"
-    it "person_id"
-    it "group_id"
+    let(:model) { roles(:member) }
+    let(:mapping) { export.send(:role_mapping) }
+
+    it "only relevant roles" do
+      expect(export.send(:relevant_role_types)).to match_array([
+        "Group::VereinJodler::Mitglied",
+        "Group::VereinJodlerNachwuchs::Mitglied",
+        "Group::VereinAlphornblaeser::Mitglied",
+        "Group::VereinAlphornblaeserNachwuchs::Mitglied",
+        "Group::VereinFahnenschwinger::Mitglied",
+        "Group::VereinFahnenschwingerNachwuchs::Mitglied"
+      ])
+    end
+
+    it "person_id" do
+      expect(mapping).to have_key("GmiEjvNr")
+      expect(data["GmiEjvNr"]).to eq roles(:member).person_id
+    end
+
+    it "group_id" do
+      expect(mapping).to have_key("GmiEjvNrGrp")
+      expect(data["GmiEjvNrGrp"]).to eq roles(:member).group_id
+    end
   end
 end

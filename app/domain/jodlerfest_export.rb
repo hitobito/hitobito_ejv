@@ -115,7 +115,14 @@ class JodlerfestExport
   end
 
   def relevant_role_types
-    %w[]
+    %w[
+      Group::VereinJodler::Mitglied
+      Group::VereinJodlerNachwuchs::Mitglied
+      Group::VereinAlphornblaeser::Mitglied
+      Group::VereinAlphornblaeserNachwuchs::Mitglied
+      Group::VereinFahnenschwinger::Mitglied
+      Group::VereinFahnenschwingerNachwuchs::Mitglied
+    ]
   end
 
   def gender_mapping
