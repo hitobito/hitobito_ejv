@@ -59,7 +59,7 @@ class JodlerfestExport
     end
   end
 
-  def cast_value(value)
+  def cast_value(value) # rubocop:disable Metrics/CyclomaticComplexity
     case value
     when String then @target.escape(value).inspect
     when Integer then value
@@ -73,7 +73,7 @@ class JodlerfestExport
 
   # mappings from different tables
 
-  def person_mapping # rubocop:disable Metrics/MethodLength
+  def person_mapping # rubocop:disable Metrics/MethodLength,Metrics/AbcSize
     @person_mapping ||= {
       "AdrNr" => :id,
       "AdrVorname" => :first_name,
