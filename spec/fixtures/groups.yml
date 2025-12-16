@@ -78,24 +78,31 @@ nwsjv:
   parent: root
   layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:nwsjv)%>"
   lft: 36
-  rgt: 45
+  rgt: 47
   name: Nordwestschweizerischer Jodlerverband
   short_name: NWSJV
   type: Group::Mitgliederverband
 vorstand_11:
   parent: nwsjv
   layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:nwsjv)%>"
-  lft: 43
-  rgt: 44
+  lft: 45
+  rgt: 46
   name: Vorstand
   type: Group::MitgliederverbandVorstand
-einzelmitglieder_12:
+einzelmitglieder_nwsjv:
   parent: nwsjv
   layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:nwsjv)%>"
   lft: 37
   rgt: 38
   name: Einzelmitglieder
   type: Group::MitgliederverbandEinzelmitglieder
+nachwuchsmitglieder_nwsjv:
+  parent: nwsjv
+  layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:nwsjv)%>"
+  lft: 39
+  rgt: 40
+  name: Nachwuchsmitglieder
+  type: Group::MitgliederverbandNachwuchsmitglieder
 zsjv:
   parent: root
   layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:zsjv)%>"
@@ -214,15 +221,17 @@ jodlergruppe_hirschberg_appenzell:
 jodlerklub_gunzgen_olten:
   parent: nwsjv
   layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_gunzgen_olten)%>"
-  lft: 41
-  rgt: 42
+  lft: 43
+  rgt: 44
   name: Jodlerklub Gunzgen-Olten
+  email: olten@example.org
+  vereinssitz: Olten
   type: Group::VereinJodler
 jodlerklub_edelweiss:
   parent: nwsjv
   layer_group_id: "<%=ActiveRecord::FixtureSet.identify(:jodlerklub_edelweiss)%>"
-  lft: 39
-  rgt: 40
+  lft: 41
+  rgt: 42
   name: Jodlerklub Edelweiss
   type: Group::VereinJodler
   deleted_at: 2020-01-20
