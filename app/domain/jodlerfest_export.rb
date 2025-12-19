@@ -8,6 +8,8 @@
 class JodlerfestExport
   def initialize(target_db_client)
     @target = target_db_client
+
+    @schema_limits = {}
   end
 
   def run
@@ -22,8 +24,11 @@ class JodlerfestExport
 
   def send_data(table, mapping, scope)
     cols = mapping.keys
+    determine_limits(table, cols)
     header = "INSERT INTO #{table} (#{cols.join(",")}) VALUES "
     footer = " ON DUPLICATE KEY UPDATE #{cols.map { |k| "#{k}=VALUES(#{k})" }.join(",")};"
+
+    warn "Upserting #{table} (#{scope.count} entries)"
 
     scope.in_batches(of: 500) do |batch|
       rows = []
@@ -34,7 +39,32 @@ class JodlerfestExport
 
       upsert = header + rows.join(", ") + footer
       @target.query(upsert)
+      $stderr.print "."
     end
+
+    warn " Done."
+  end
+
+  def determine_limits(table, columns)
+    schema_info = @target.query("DESCRIBE #{table};")
+
+    schema_info.each do |row|
+      field_name = row["Field"]
+
+      next unless columns.include?(field_name)
+
+      field_type = row["Type"]
+
+      next unless field_type.start_with?("varchar")
+
+      limit = field_type.gsub(/varchar\((\d+)\)/, '\1').to_i
+
+      next unless limit.positive?
+
+      @schema_limits[field_name] = limit
+    end
+
+    @schema_limits
   end
 
   def data_values(model, mapping)
@@ -43,7 +73,7 @@ class JodlerfestExport
 
   def data_map(model, mapping)
     mapping.map do |key, source|
-      value = read_value(model, source).then { |val| cast_value(val) }
+      value = read_value(model, source).then { |val| cast_value(key, val) }
 
       [key, value]
     end.to_h
@@ -59,16 +89,26 @@ class JodlerfestExport
     end
   end
 
-  def cast_value(value) # rubocop:disable Metrics/CyclomaticComplexity
+  def cast_value(key, value) # rubocop:disable Metrics/CyclomaticComplexity
     case value
-    when String then @target.escape(value).inspect
+    # when String then @target.escape(apply_limits(key, value)).inspect
+    when String then apply_limits(key, value).inspect
     when Integer then value
     when ActiveSupport::TimeWithZone then value.strftime("%Y-%m-%d %H:%M").inspect
     when Date then value.strftime("%Y-%m-%d").inspect
-    when TrueClass then "b'1'"
-    when FalseClass then "b'0'"
+    when TrueClass then "1"
+    when FalseClass then "0"
     when nil then "NULL"
     end
+  end
+
+  def apply_limits(key, value)
+    return value if value == "NULL"
+
+    limit = @schema_limits[key]
+    return value if limit.blank?
+
+    value[...limit]
   end
 
   # mappings from different tables
@@ -93,28 +133,57 @@ class JodlerfestExport
       "AdrEinzelmitglied" => ->(p) { role_type_exists(p.roles, "%Einzelmitglieder%") },
       "AdrNachwuchs" => ->(p) { role_type_exists(p.roles, "%Nachwuchsmitglieder%") },
       "AdrDatU" => :updated_at,
+
       "AdrWerbung" => 0,
-      "AdrNews" => 0
+      "AdrNews" => 0,
+      "AdrStatus" => 0,
+      "AdrVgg" => 0,
+      "AdrMc" => 0
     }
   end
 
-  def group_mapping
+  def group_mapping # rubocop:disable Metrics/MethodLength
     @group_mapping ||= {
       "GruAdrNr" => :id,
       "GruMail" => :email,
       "GruName" => :name,
       "GruOrt" => :vereinssitz,
-      "GruAdrNrPraesident" => ->(g) { person_id_with_role(g.roles, "%Praesident") },
-      "GruAdrNrDirigent" => ->(g) { person_id_with_role(g.roles, "%Conductor") },
-      "GruUV" => ->(g) { g.parent.short_name },
-      "GruTyp" => ->(g) { g.model_name.human }
+      "GruAdrNrPraesident" => ->(g) { person_id_with_role(g.roles, "%Praesident") || 0 },
+      "GruAdrNrDirigent" => ->(g) { person_id_with_role(g.roles, "%Conductor") || 0 },
+      "GruUV" => ->(g) { g.parent&.short_name },
+      "GruTyp" => ->(g) { g.model_name.human },
+
+      "GruZus" => 0,
+      "GruPraesidentSeit" => 0,
+      "GruDirigentSeit" => 0,
+      "GruKorrAdrNr" => 0,
+      "GruGruendungsjahr" => 0,
+      "GruBeitrittsjahrEJV" => 0,
+      "GruAustrittsjahrEJV" => 0,
+      "GruAdrNrVereinigung" => 0,
+      "GruFruehereJahre" => 0,
+      "GruAnzMitglieder" => 0,
+      "GruAlt" => 0,
+      "GruJung" => 0,
+      "GruMittel" => 0,
+      "GruFrauen" => 0,
+      "GruBeitragNr" => 0,
+      "GruZuschlBetrag" => 0,
+      "GruZuschlMitBetrag" => 0,
+      "GruGrMc" => 0
     }
   end
 
   def role_mapping
     @role_mapping ||= {
+      "GmiLnr" => :id,
       "GmiEjvNr" => :person_id,
-      "GmiEjvNrGrp" => :group_id
+      "GmiEjvNrGrp" => :group_id,
+
+      "GmiEintritt" => 0,
+      "GmiAustritt" => 0,
+      "GmiGebJahr" => 0,
+      "GmiMc" => 0
     }
   end
 
