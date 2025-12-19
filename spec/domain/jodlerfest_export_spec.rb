@@ -56,7 +56,7 @@ describe JodlerfestExport do
 
     it "nicht einzelmitglied" do
       expect(mapping).to have_key("AdrEinzelmitglied")
-      expect(data["AdrEinzelmitglied"]).to eq "b'0'"
+      expect(data["AdrEinzelmitglied"]).to eq "0"
     end
 
     it "einzelmitglied" do
@@ -65,12 +65,12 @@ describe JodlerfestExport do
         group: groups(:einzelmitglieder_nwsjv))
 
       expect(mapping).to have_key("AdrEinzelmitglied")
-      expect(data["AdrEinzelmitglied"]).to eq "b'1'"
+      expect(data["AdrEinzelmitglied"]).to eq "1"
     end
 
     it "nicht nachwuchs" do
       expect(mapping).to have_key("AdrNachwuchs")
-      expect(data["AdrNachwuchs"]).to eq "b'0'"
+      expect(data["AdrNachwuchs"]).to eq "0"
     end
 
     it "nachwuchs" do
@@ -79,7 +79,7 @@ describe JodlerfestExport do
         group: groups(:nachwuchsmitglieder_nwsjv))
 
       expect(mapping).to have_key("AdrNachwuchs")
-      expect(data["AdrNachwuchs"]).to eq "b'1'"
+      expect(data["AdrNachwuchs"]).to eq "1"
     end
   end
 
@@ -124,6 +124,14 @@ describe JodlerfestExport do
     it "name" do
       expect(mapping).to have_key("GruName")
       expect(data["GruName"]).to eq '"Jodlerklub Gunzgen-Olten"'
+    end
+
+    it "longer name gets truncated" do
+      export.instance_variable_set(:@schema_limits, {"GruName" => 30})
+      model.name = "Jodlerklub Gunzgen-Olten-Obergösgen-Däniken-Starkirch-und-Umgebung"
+
+      expect(mapping).to have_key("GruName")
+      expect(data["GruName"]).to eq '"Jodlerklub Gunzgen-Olten-Oberg"'
     end
 
     it "ort" do
