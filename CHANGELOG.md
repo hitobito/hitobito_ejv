@@ -1,6 +1,6 @@
 # Hitobito EJV Changelog
 
-## unreleased
+## Version 2.7
 
 * Anbindung an Jodlerfest-Datenbank (hitobito_ejv#34)
 
