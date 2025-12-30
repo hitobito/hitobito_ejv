@@ -22,7 +22,7 @@ describe JodlerfestExport do
   end
 
   it "#run" do
-    expect(export).to receive(:send_data).with("adressenstamm", any_args)
+    expect(export).to receive(:send_data).with("adressenstamm", any_args).twice
     expect(export).to receive(:send_data).with("gruppen", any_args)
     expect(export).to receive(:send_data).with("gruppenmitglieder", any_args)
 
