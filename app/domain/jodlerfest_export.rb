@@ -5,7 +5,7 @@
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_ejv.
 
-class JodlerfestExport
+class JodlerfestExport # rubocop:disable Metrics/ClassLength
   def initialize(target_db_client)
     @target = target_db_client
 
@@ -146,7 +146,7 @@ class JodlerfestExport
 
   def group_mapping # rubocop:disable Metrics/MethodLength
     @group_mapping ||= {
-      "GruAdrNr" => :id,
+      "GruAdrNr" => ->(g) { offset_group_id(g.id) },
       "GruMail" => :email,
       "GruName" => :name,
       "GruOrt" => :vereinssitz,
@@ -193,7 +193,7 @@ class JodlerfestExport
 
   def group_addresses_mapping
     @group_addresses_mapping ||= {
-      "AdrNr" => :id,
+      "AdrNr" => ->(g) { offset_group_id(g.id) },
       "AdrNameZ1" => :name,
       "AdrMail" => :email,
       "AdrOrt" => :vereinssitz,
@@ -256,5 +256,12 @@ class JodlerfestExport
 
   def person_id_with_role(roles, type_pattern)
     roles.where(["type LIKE ?", type_pattern]).pick(:person_id)
+  end
+
+  def offset_group_id(id)
+    legacy_threshold = 200_00
+    conflict_avoidance_offset = 1_000_000
+
+    id + ((id > legacy_threshold) ? conflict_avoidance_offset : 0)
   end
 end

@@ -87,7 +87,15 @@ describe JodlerfestExport do
     let(:model) { groups(:jodlerklub_gunzgen_olten) }
     let(:mapping) { export.send(:group_mapping) }
 
-    it "id" do
+    it "id with offset" do
+      model.update(id: 250_000)
+      expect(mapping).to have_key("GruAdrNr")
+      expect(data["GruAdrNr"]).to eq model.id + 1_000_000
+    end
+
+    it "id without offset" do
+      model.update(id: 12_345)
+
       expect(mapping).to have_key("GruAdrNr")
       expect(data["GruAdrNr"]).to eq model.id
     end
@@ -163,6 +171,25 @@ describe JodlerfestExport do
     it "group_id" do
       expect(mapping).to have_key("GmiEjvNrGrp")
       expect(data["GmiEjvNrGrp"]).to eq roles(:member).group_id
+    end
+  end
+
+  context "group addresses" do
+    let(:model) { groups(:jodlerklub_gunzgen_olten) }
+    let(:mapping) { export.send(:group_addresses_mapping) }
+
+    it "exports the id with less conflicts" do
+      expect(model.id).to eq 547334049
+
+      expect(mapping).to have_key("AdrNr")
+      expect(data["AdrNr"]).to eq(model.id + 1_000_000)
+    end
+
+    it "export older ids 'as is'" do
+      model.update(id: 12345)
+
+      expect(mapping).to have_key("AdrNr")
+      expect(data["AdrNr"]).to eq(model.id)
     end
   end
 end
