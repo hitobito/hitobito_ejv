@@ -5,7 +5,7 @@
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_ejv.
 
-class JodlerfestExport
+class JodlerfestExport # rubocop:disable Metrics/ClassLength
   def initialize(target_db_client)
     @target = target_db_client
 
@@ -15,6 +15,7 @@ class JodlerfestExport
   def run
     send_data("adressenstamm", person_mapping, Person)
     send_data("gruppen", group_mapping, Group)
+    send_data("adressenstamm", group_addresses_mapping, Group)
     send_data("gruppenmitglieder", role_mapping, Role.where(type: relevant_role_types))
   end
 
@@ -134,6 +135,7 @@ class JodlerfestExport
       "AdrNachwuchs" => ->(p) { role_type_exists(p.roles, "%Nachwuchsmitglieder%") },
       "AdrDatU" => :updated_at,
 
+      # not nullable, but not exported
       "AdrWerbung" => 0,
       "AdrNews" => 0,
       "AdrStatus" => 0,
@@ -144,7 +146,7 @@ class JodlerfestExport
 
   def group_mapping # rubocop:disable Metrics/MethodLength
     @group_mapping ||= {
-      "GruAdrNr" => :id,
+      "GruAdrNr" => ->(g) { offset_group_id(g.id) },
       "GruMail" => :email,
       "GruName" => :name,
       "GruOrt" => :vereinssitz,
@@ -153,6 +155,7 @@ class JodlerfestExport
       "GruUV" => ->(g) { g.parent&.short_name },
       "GruTyp" => ->(g) { g.model_name.human },
 
+      # not nullable, but not exported
       "GruZus" => 0,
       "GruPraesidentSeit" => 0,
       "GruDirigentSeit" => 0,
@@ -180,10 +183,29 @@ class JodlerfestExport
       "GmiEjvNr" => :person_id,
       "GmiEjvNrGrp" => :group_id,
 
+      # not nullable, but not exported
       "GmiEintritt" => 0,
       "GmiAustritt" => 0,
       "GmiGebJahr" => 0,
       "GmiMc" => 0
+    }
+  end
+
+  def group_addresses_mapping
+    @group_addresses_mapping ||= {
+      "AdrNr" => ->(g) { offset_group_id(g.id) },
+      "AdrNameZ1" => :name,
+      "AdrMail" => :email,
+      "AdrOrt" => :vereinssitz,
+      "AdrUV" => ->(g) { g.parent&.short_name },
+      "AdrDatU" => :updated_at,
+
+      # not nullable, but not exported
+      "AdrWerbung" => 0,
+      "AdrNews" => 0,
+      "AdrStatus" => 0,
+      "AdrVgg" => 0,
+      "AdrMc" => 0
     }
   end
 
@@ -234,5 +256,12 @@ class JodlerfestExport
 
   def person_id_with_role(roles, type_pattern)
     roles.where(["type LIKE ?", type_pattern]).pick(:person_id)
+  end
+
+  def offset_group_id(id)
+    legacy_threshold = 200_00
+    conflict_avoidance_offset = 1_000_000
+
+    id + ((id > legacy_threshold) ? conflict_avoidance_offset : 0)
   end
 end
