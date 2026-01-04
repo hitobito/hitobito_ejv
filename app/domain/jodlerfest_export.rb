@@ -25,11 +25,12 @@ class JodlerfestExport # rubocop:disable Metrics/ClassLength
 
   def send_data(table, mapping, scope)
     cols = mapping.keys
-    determine_limits(table, cols)
     header = "INSERT INTO #{table} (#{cols.join(",")}) VALUES "
     footer = " ON DUPLICATE KEY UPDATE #{cols.map { |k| "#{k}=VALUES(#{k})" }.join(",")};"
 
     warn "Upserting #{table} (#{scope.count} entries)"
+
+    determine_limits(table, cols)
 
     scope.in_batches(of: 500) do |batch|
       rows = []
@@ -259,7 +260,7 @@ class JodlerfestExport # rubocop:disable Metrics/ClassLength
   end
 
   def offset_group_id(id)
-    legacy_threshold = 200_00
+    legacy_threshold = 200_000
     conflict_avoidance_offset = 1_000_000
 
     id + ((id > legacy_threshold) ? conflict_avoidance_offset : 0)
