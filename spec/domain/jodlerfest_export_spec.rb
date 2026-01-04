@@ -191,5 +191,19 @@ describe JodlerfestExport do
       expect(mapping).to have_key("AdrNr")
       expect(data["AdrNr"]).to eq(model.id)
     end
+
+    it "export ids until 200_000 'as is'" do
+      model.update(id: 200_000)
+
+      expect(mapping).to have_key("AdrNr")
+      expect(data["AdrNr"]).to eq(model.id)
+    end
+
+    it "export ids from 200_000 on with offset" do
+      model.update(id: 200_001)
+
+      expect(mapping).to have_key("AdrNr")
+      expect(data["AdrNr"]).to eq(model.id + 1_000_000)
+    end
   end
 end
