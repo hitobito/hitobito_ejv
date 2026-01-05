@@ -136,6 +136,8 @@ class JodlerfestExport # rubocop:disable Metrics/ClassLength
       "AdrNachwuchs" => ->(p) { role_type_exists(p.roles, "%Nachwuchsmitglieder%") },
       "AdrDatU" => :updated_at,
 
+      "AdrArt" => 1, # 1 = Person, 2 = Gruppe
+
       # not nullable, but not exported
       "AdrWerbung" => 0,
       "AdrNews" => 0,
@@ -182,7 +184,7 @@ class JodlerfestExport # rubocop:disable Metrics/ClassLength
     @role_mapping ||= {
       "GmiLnr" => :id,
       "GmiEjvNr" => :person_id,
-      "GmiEjvNrGrp" => :group_id,
+      "GmiEjvNrGrp" => ->(r) { offset_group_id(r.group_id) },
 
       # not nullable, but not exported
       "GmiEintritt" => 0,
@@ -200,6 +202,8 @@ class JodlerfestExport # rubocop:disable Metrics/ClassLength
       "AdrOrt" => :vereinssitz,
       "AdrUV" => ->(g) { g.parent&.short_name },
       "AdrDatU" => :updated_at,
+
+      "AdrArt" => 2, # 1 = Person, 2 = Gruppe
 
       # not nullable, but not exported
       "AdrWerbung" => 0,

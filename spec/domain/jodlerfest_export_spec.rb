@@ -165,12 +165,22 @@ describe JodlerfestExport do
 
     it "person_id" do
       expect(mapping).to have_key("GmiEjvNr")
-      expect(data["GmiEjvNr"]).to eq roles(:member).person_id
+      expect(data["GmiEjvNr"]).to eq model.person_id
     end
 
-    it "group_id" do
+    it "group_id with offset" do
+      expect(model.group_id).to eq 51155821 # i.e. bigger than threshold
+
       expect(mapping).to have_key("GmiEjvNrGrp")
-      expect(data["GmiEjvNrGrp"]).to eq roles(:member).group_id
+      expect(data["GmiEjvNrGrp"]).to eq model.group_id + 1_000_000
+    end
+
+    it "group_id without offset" do
+      model.update(group_id: 44733) # i.e. lower than threshold
+      expect(model.group_id).to eq 44733
+
+      expect(mapping).to have_key("GmiEjvNrGrp")
+      expect(data["GmiEjvNrGrp"]).to eq model.group_id
     end
   end
 
