@@ -296,6 +296,12 @@ de:
       event/role/jury_mitglied:
         one: Jurymitglied
         other: Jurymitglieder
+      event/role/jury_leader:
+        one: Juryleiter
+        other: Juryleiter
+      event/role/secretariat:
+        one: Sekretariat
+        other: Sekretariat
 
     attributes:
       person:

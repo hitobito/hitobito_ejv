@@ -29,6 +29,7 @@ module HitobitoEjv
       # extend application classes here
       # models
       Event.include Ejv::Event
+      Event::Course.include Ejv::Course
       Group.include Ejv::Group
       Person.include Ejv::Person
       Role.include Ejv::Role
