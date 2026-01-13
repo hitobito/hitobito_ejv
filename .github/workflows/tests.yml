@@ -1,16 +1,18 @@
 name: 'Lint and test'
 
 on:
-  pull_request:
-    paths-ignore:
-      - 'doc/**'
-      - '**.md'
   push:
-    branches: [ master ]
+    branches:
+      - master
+      - stable
     paths-ignore:
       - 'doc/**'
       - '**.md'
       - 'VERSION'
+  pull_request:
+    paths-ignore:
+      - 'doc/**'
+      - '**.md'
   workflow_dispatch: # Allow triggering manually
     inputs:
       core_ref:
