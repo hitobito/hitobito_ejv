@@ -296,10 +296,10 @@ de:
       event/role/jury_mitglied:
         one: Jurymitglied
         other: Jurymitglieder
-      event/role/jury_leader:
-        one: Juryleiter
-        other: Juryleiter
-      event/role/secretariat:
+      event/role/jury_leiter:
+        one: Juryleitung
+        other: Juryleitung
+      event/role/sekretariat:
         one: Sekretariat
         other: Sekretariat
 

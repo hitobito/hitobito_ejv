@@ -3,7 +3,7 @@
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito.
 
-class Event::Role::JuryLeader < Event::Role
+class Event::Role::JuryLeiter < Event::Role
   self.permissions = [:participations_read]
 
   self.kind = :helper

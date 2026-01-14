@@ -7,6 +7,6 @@ module Ejv::Course
   extend ActiveSupport::Concern
 
   included do
-    register_role_type(::Event::Role::Secretariat)
+    register_role_type(::Event::Role::Sekretariat)
   end
 end
