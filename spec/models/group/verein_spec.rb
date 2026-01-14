@@ -8,42 +8,17 @@
 require "spec_helper"
 
 describe Group::Verein do
-  xcontext "recognized_members" do
-    let(:verein) {
-      described_class.create(name: "Dummy Verein", parent: Group::Root.first,
-        created_at: Time.zone.now)
-    }
+  context "recognized_members" do
+    let(:verein) { groups(:emmentaler_jodler_konolfingen) }
 
     before do
-      mitglieder = Group::Verein.create!(name: "dummy", parent: verein, deleted_at: Time.zone.now)
-
-      10.times.each do |i|
-        p = Fabricate(:person)
-        Group::Verein::Mitglied.create!(person: p, group: mitglieder)
+      10.times do
+        Fabricate(Group::VereinJodler::Mitglied.sti_name.to_sym, group: verein)
       end
     end
 
-    context "when manually_counted_members is false" do
-      it "returns automatically calulated" do
-        expect(verein.manually_counted_members).to eq(false)
-        expect(verein.recognized_members).to eq(10)
-      end
-    end
-
-    context "when manually_counted_members is true" do
-      it "returns manually reported count if manual count is nonzero" do
-        verein.update(manually_counted_members: true, manual_member_count: 20)
-
-        expect(verein.manually_counted_members).to eq(true)
-        expect(verein.recognized_members).to eq(20)
-      end
-
-      it "returns automatically calulated if manual count is zero" do
-        verein.update(manually_counted_members: true, manual_member_count: 0)
-
-        expect(verein.manually_counted_members).to eq(true)
-        expect(verein.recognized_members).to eq(10)
-      end
+    it "returns automatically calulated" do
+      expect(verein.recognized_members).to eq(10)
     end
   end
 end

@@ -21,18 +21,10 @@ module Ejv::Group
 
     include I18nSettable
     include I18nEnums
-
-    validates :manual_member_count,
-      numericality: {greater_than_or_equal_to: 0},
-      if: :manually_counted_members?
-  end
-
-  def uses_manually_counted_members?
-    manually_counted_members? && manual_member_count.present? && manual_member_count.nonzero?
   end
 
   def recognized_members
-    uses_manually_counted_members? ? manual_member_count : member_count
+    member_count
   end
 
   def mitgliederverband

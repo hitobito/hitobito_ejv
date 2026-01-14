@@ -5,7 +5,6 @@
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_ejv.
 
-
 class AddManualMemberCountAttrsToGroups < ActiveRecord::Migration[6.0]
   def up
     add_column :groups, :manual_member_count, :integer, default: 0

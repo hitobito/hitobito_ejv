@@ -29,13 +29,4 @@ describe Group do
       expect(subject.song_counts).to_not include song_counts(:mama_count)
     end
   end
-
-  context "manually counted members" do
-    it "does not crash when manual_member_count is nil" do
-      group = groups(:root)
-      group.manual_member_count = nil
-
-      expect { group.uses_manually_counted_members? }.not_to raise_error
-    end
-  end
 end

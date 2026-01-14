@@ -33,17 +33,14 @@ class InvoiceItem::MembershipFee < InvoiceItem
   def member_count_for_dynamic_cost(recipient_id, cutoff_date)
     layer = InvoiceRuns::VereinMembershipFeeRecipientFinder.find_verein(recipient_id)
 
-    if layer.uses_manually_counted_members?
-      layer.manual_member_count
+    roles_scope = Role.with_inactive.joins(:group)
+      .where(type: Group::VereinJodler::Mitglied.sti_name,
+        group: {layer_group_id: layer.id})
+
+    if cutoff_date.present?
+      roles_scope.active(cutoff_date)
     else
-      roles_scope = Role.with_inactive.joins(:group)
-        .where(type: Group::VereinJodler::Mitglied.sti_name,
-          group: {layer_group_id: layer.id})
-      if cutoff_date.present?
-        roles_scope.active(cutoff_date)
-      else
-        roles_scope
-      end.count
-    end
+      roles_scope
+    end.count
   end
 end

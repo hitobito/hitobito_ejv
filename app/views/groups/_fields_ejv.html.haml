@@ -6,5 +6,4 @@
 
 - if entry.is_a?(Group::Verein)
   = field_set_tag do
-    = f.labeled_input_fields :manual_member_count if entry.manually_counted_members?
     = f.labeled_input_fields :vereinssitz, :association_entry
