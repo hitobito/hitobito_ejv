@@ -55,7 +55,7 @@ describe Export::Tabular::SongCounts::List do
     end
   end
 
-  xcontext "group" do
+  context "group" do
     let(:list) { groups(:root).song_counts.order(:concert_id) }
 
     its(:headers) do

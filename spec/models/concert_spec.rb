@@ -25,13 +25,6 @@ describe Concert do
       expect(concert.mitgliederverband).to eq groups(:bkjv)
     end
 
-    xit "does not set verband ids for verein nested under root" do
-      verein = Group::VereinJodler.create!(name: "group", parent: groups(:root))
-      concert = Concert.create!(verein: verein, year: 2018)
-
-      expect(concert.mitgliederverband).to be_nil
-    end
-
     it "sets name if nothing is given" do
       concert = Concert.create!(verein: groups(:jodlerklub_edelweiss_thun), year: 2018)
 

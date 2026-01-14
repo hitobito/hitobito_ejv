@@ -39,7 +39,7 @@ describe SongCensusesController do
       Fabricate(Group::VereinJodler::SuisaAdmin.name.to_sym, group: verein2)
     end
 
-    xit "reminds suisa_admins" do
+    it "reminds suisa_admins" do
       ref = @request.env["HTTP_REFERER"] = group_song_censuses_path(group, song_census)
 
       expect do

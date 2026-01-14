@@ -45,7 +45,7 @@ describe Export::SubgroupsExportJob do
     expect(csv.headers).to eq expected_headers
   end
 
-  xcontext "suisa status" do
+  context "suisa status" do
     let(:export) { root_export }
     let(:verein1) { groups(:jodlergruppe_engstligtal_adelboden) }
     let!(:verein2) { create_verein }
