@@ -296,6 +296,12 @@ de:
       event/role/jury_mitglied:
         one: Jurymitglied
         other: Jurymitglieder
+      event/role/jury_leiter:
+        one: Juryleitung
+        other: Juryleitung
+      event/role/sekretariat:
+        one: Sekretariat
+        other: Sekretariat
 
       invoice_item/membership_fee:
         one: Mitgliederbeitrag

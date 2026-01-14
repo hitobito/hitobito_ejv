@@ -12,5 +12,7 @@ module Ejv::Event
     self.used_attributes += [:waiting_list]
 
     register_role_type(::Event::Role::JuryMitglied)
+    register_role_type(::Event::Role::JuryLeiter)
+    register_role_type(::Event::Role::Sekretariat)
   end
 end
