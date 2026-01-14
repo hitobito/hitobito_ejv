@@ -32,7 +32,6 @@ module HitobitoEjv
       Group.include Ejv::Group
       Person.include Ejv::Person
       Role.include Ejv::Role
-      InvoiceItem.add_type_mapping(:membership_fee, InvoiceItem::MembershipFee)
       Subscription.prepend Ejv::Subscription
 
       unused_event_fields = [
@@ -66,9 +65,7 @@ module HitobitoEjv
         url: :help_path
       )
 
-      GroupsHelper.include Ejv::GroupsHelper
       StandardFormBuilder.include Ejv::StandardFormBuilder
-      Dropdown::InvoiceNew.prepend Ejv::Dropdown::InvoiceNew
 
       ### sheets
       Sheet::Group.include Ejv::Sheet::Group

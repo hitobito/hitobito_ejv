@@ -19,10 +19,6 @@ Rails.application.routes.draw do
     end
 
     resources :groups, only: [] do
-      member do
-        get :subverein_select
-      end
-
       resources :song_counts
       resources :concerts do
         collection do

@@ -78,27 +78,4 @@ describe GroupAbility do
       it { is_expected.not_to be_able_to(:deleted_subgroups, checked_group) }
     end
   end
-
-  context "finance" do
-    let(:role) {
-      Fabricate(Group::MitgliederverbandVorstand::Kassier.name.to_sym,
-        group: groups(:vorstand_bkjv))
-    }
-
-    it "may not show subverein_select on random group" do
-      is_expected.not_to be_able_to(:subverein_select, Group.new)
-    end
-
-    it "may not show subverein_select in own group" do
-      is_expected.not_to be_able_to(:subverein_select, groups(:vorstand_bkjv))
-    end
-
-    it "may not show subverein_select in layer below" do
-      is_expected.not_to be_able_to(:subverein_select, groups(:jodlergruppe_engstligtal_adelboden))
-    end
-
-    it "may show subverein_select in layer" do
-      is_expected.to be_able_to(:subverein_select, groups(:bkjv))
-    end
-  end
 end

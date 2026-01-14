@@ -316,10 +316,6 @@ it:
         one: Jurymitglied
         other: Jurymitglieder
 
-      invoice_item/membership_fee:
-        one: Mitgliederbeitrag
-        other: Mitgliederbeiträge
-
     attributes:
       person:
         id: EJV-Nummer

@@ -12,8 +12,6 @@ module Ejv::GroupAbility
     on(Group) do
       permission(:any).may(:query).all
       permission(:any).may(:deleted_subgroups).if_writable
-
-      permission(:finance).may(:subverein_select).for_finance_layer_ids
     end
   end
 
