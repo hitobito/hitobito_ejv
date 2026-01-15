@@ -18,8 +18,7 @@ describe Export::Tabular::People::PeopleFull do
     expected = [:id, :first_name, :last_name, :nickname, :company_name, :company, :email,
       :address_care_of, :street, :housenumber, :postbox, :zip_code, :town, :country,
       :layer_group, :roles, :gender, :birthday, :additional_information, :language,
-      :profession, :correspondence_language, :active_years, :active_role, :personal_data_usage,
-      :tags]
+      :profession, :active_years, :active_role, :personal_data_usage, :tags]
     should match_array expected
     should eq expected
   end

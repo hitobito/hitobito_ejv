@@ -47,7 +47,6 @@ module HitobitoEjv
 
       PeopleController.permitted_attrs += [
         :profession,
-        :correspondence_language,
         :personal_data_usage
       ]
 

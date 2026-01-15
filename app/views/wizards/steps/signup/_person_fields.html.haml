@@ -7,13 +7,7 @@
   = form.labeled_date_field :birthday, placeholder: t('global.date_field_placeholder'), yearRange: '-100:+0', data: birthday_data
   = render 'contactable/address_fields', f: form, country_data: { action: 'forwarder#click' }
   = form.labeled_input_field :phone_number, placeholder: t('global.phone_placeholder')
-  = form.labeled_collection_select :correspondence_language,
-      form.object.correspondence_languages,
-      :first,
-      :second,
-      {prompt: true},
-      data: { action: 'forwarder#click' },
-      class: "form-select form-select-sm"
+  = form.labeled_i18n_enum_field :language, Person.language_labels.to_a, class: 'form-select form-select-sm'
 
   = form.labeled_collection_select :verband,
       form.object.class.verbaende,

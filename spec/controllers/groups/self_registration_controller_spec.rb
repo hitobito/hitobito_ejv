@@ -34,7 +34,7 @@ describe Groups::SelfRegistrationController do
           zip_code: "8000",
           birthday: "1.1.2000",
           country: "CH",
-          correspondence_language: "de",
+          language: "de",
           phone_number: "+41 79 123 45 67",
           verband: "EJV",
           sparte: "Jodlerverein",

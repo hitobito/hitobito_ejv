@@ -30,13 +30,13 @@ class Wizards::Steps::Signup::PersonFields < Wizards::Step
   attribute :town, :string
   attribute :country, :string
   attribute :phone_number, :string
-  attribute :correspondence_language, :string
+  attribute :language, :string
   attribute :verband, :string
   attribute :sparte, :string
   attribute :group, :string
 
   validates :gender, :first_name, :last_name, :birthday, :street, :housenumber, :town, :zip_code,
-    :country, :correspondence_language, :verband, :sparte, :phone_number, presence: true
+    :country, :language, :verband, :sparte, :phone_number, presence: true
 
   validates :zip_code, zipcode: {country_code_attribute: :country}
 
@@ -90,10 +90,6 @@ class Wizards::Steps::Signup::PersonFields < Wizards::Step
       attrs.merge(phone_numbers_attributes: {number: phone_number, label: PHONE_NUMBER_LABEL,
                                              id: phone_number_id})
     end
-  end
-
-  def correspondence_languages
-    Settings.application.correspondence_languages.to_a
   end
 
   private
