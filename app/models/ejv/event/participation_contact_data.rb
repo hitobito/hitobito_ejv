@@ -9,8 +9,6 @@ module Ejv::Event::ParticipationContactData
   extend ActiveSupport::Concern
 
   included do
-    Event.possible_contact_attrs << :correspondence_language
-
     delegate(*Event.possible_contact_attrs, to: :person)
   end
 end
