@@ -319,7 +319,7 @@ it:
     attributes:
       person:
         id: EJV-Nummer
-        correspondence_language: Lingua di corrispondenza
+        language: Lingua di corrispondenza
         profession: Lavoro
         active_years: Anni attivi fino ad oggi
         active_role: appartenenza attiva
@@ -338,7 +338,7 @@ it:
         dates: Dati
         start_on: Eintritt
         end_on: Austritt
-        correspondence_language: Korrespondenz Sprache
+        language: Korrespondenz Sprache
         class:
           permission:
             description:

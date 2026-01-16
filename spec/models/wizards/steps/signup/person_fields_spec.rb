@@ -21,7 +21,7 @@ describe Wizards::Steps::Signup::PersonFields do
       town: "Zurich",
       zip_code: "8000",
       country: "CH",
-      correspondence_language: "de",
+      language: "de",
       verband: "EJV",
       sparte: "Jodeln",
       phone_number: "079 123 34 56"

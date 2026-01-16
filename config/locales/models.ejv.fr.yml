@@ -319,7 +319,7 @@ fr:
     attributes:
       person:
         id: EJV-Nummer
-        correspondence_language: Langue de correspondance
+        language: Langue de correspondance
         profession: Profession
         active_years: Années d'activité actuelles
         active_role: adhésion active
@@ -338,7 +338,7 @@ fr:
         dates: Données
         start_on: Eintritt
         end_on: Austritt
-        correspondence_language: Langue de correspondance
+        language: Langue de correspondance
         class:
           permission:
             description:

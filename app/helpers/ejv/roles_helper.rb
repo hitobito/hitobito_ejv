@@ -13,6 +13,9 @@ module Ejv::RolesHelper
   end
 
   def default_language_for_person
-    Settings.application.correspondence_languages.to_hash.invert.first
+    Settings.application.languages
+      .to_hash
+      .merge(Settings.application.additional_languages&.to_hash || {})
+      .invert
   end
 end
