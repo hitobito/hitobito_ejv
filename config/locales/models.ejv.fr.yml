@@ -329,7 +329,9 @@ fr:
     attributes:
       person:
         id: EJV-Nummer
-        language: Langue de correspondance
+        language: Korrespondenzsprache
+        languages:
+          rm: Rumantsch
         profession: Profession
         active_years: Années d'activité actuelles
         active_role: adhésion active
@@ -350,7 +352,7 @@ fr:
         dates: Données
         start_on: Eintritt
         end_on: Austritt
-        language: Langue de correspondance
+        language: Korrespondenz Sprache
         class:
           permission:
             description:
