@@ -42,7 +42,7 @@ class JodlerfestDbExport # rubocop:disable Metrics/ClassLength
       "AdrNachwuchs" => ->(p) { role_type_exists(p.roles, "%Nachwuchsmitglieder%") },
       "AdrDatU" => :updated_at,
 
-      "AdrArt" => 1, # 1 = Person, 2 = Gruppe
+      "AdrArt" => 2, # 1 = Gruppe, 2 = Person
 
       # not nullable, but not exported
       "AdrWerbung" => 0,
@@ -109,7 +109,7 @@ class JodlerfestDbExport # rubocop:disable Metrics/ClassLength
       "AdrUV" => ->(g) { g.parent&.short_name },
       "AdrDatU" => :updated_at,
 
-      "AdrArt" => 2, # 1 = Person, 2 = Gruppe
+      "AdrArt" => 1, # 1 = Gruppe, 2 = Person
 
       # not nullable, but not exported
       "AdrWerbung" => 0,
