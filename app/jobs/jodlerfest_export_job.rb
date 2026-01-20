@@ -14,7 +14,8 @@ class JodlerfestExportJob < RecurringJob
     db_url = ENV["JODLER_DB_URL"] # rubocop:disable Rails/EnvironmentVariableAccess
     return if db_url.blank?
 
-    client = JodlerDb.new(db_url).connect
-    JodlerfestExport.new(client).run
+    client = JodlerfestDb.new(db_url).connect
+    adapter = JodlerfestDbAdapter.new(client)
+    JodlerfestDbExport.new(adapter).run
   end
 end
