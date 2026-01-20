@@ -153,8 +153,14 @@ class JodlerfestDbExport # rubocop:disable Metrics/ClassLength
   # dynamic lookups and searches
 
   def lookup_unterverband(person)
+    mitglieder_rollen_sql = <<~SQL.squish
+      type LIKE 'Group::Verein%Mitglied'
+      OR
+      type LIKE 'Group::Mitgliederverband%mitglieder%'
+    SQL
+
     person.roles
-      .where("type LIKE '%Mitglied'")
+      .where(mitglieder_rollen_sql)
       .map(&:group).compact
       .map(&:parent).compact
       .map(&:short_name).compact
