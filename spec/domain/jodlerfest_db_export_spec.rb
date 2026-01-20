@@ -89,6 +89,11 @@ describe JodlerfestDbExport do
       expect(mapping).to have_key("AdrNachwuchs")
       expect(data["AdrNachwuchs"]).to eq "1"
     end
+
+    it "art" do
+      expect(mapping).to have_key("AdrArt")
+      expect(data["AdrArt"]).to eq 2
+    end
   end
 
   context "group" do
@@ -187,6 +192,11 @@ describe JodlerfestDbExport do
   context "group addresses" do
     let(:model) { groups(:jodlerklub_gunzgen_olten) }
     let(:mapping) { export.send(:group_addresses_mapping) }
+
+    it "art" do
+      expect(mapping).to have_key("AdrArt")
+      expect(data["AdrArt"]).to eq 1
+    end
 
     it "exports the id with less conflicts" do
       expect(model.id).to eq 547334049
