@@ -8,7 +8,7 @@
 require "uri"
 require "mysql2"
 
-class JodlerDb
+class JodlerfestDb
   attr_reader :client
 
   def initialize(connection_url)
