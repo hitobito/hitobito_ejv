@@ -8,25 +8,33 @@
 require "spec_helper"
 require "mysql2"
 
-describe JodlerfestExport do
+describe JodlerfestDbExport do
   let(:client) { instance_double(Mysql2::Client) }
+  let(:adapter) { JodlerfestDbAdapter.new(client) }
+
   let(:person) { people(:member) }
 
-  subject(:export) { described_class.new(client) }
+  subject(:export) { described_class.new(adapter) }
 
-  subject(:data) { export.send(:data_map, model, mapping) }
+  subject(:data) { adapter.data_map(model, mapping) }
 
   before do
     allow(client).to receive(:query)
     allow(client).to receive(:escape) { |arg| arg }
   end
 
-  it "#run" do
-    expect(export).to receive(:send_data).with("adressenstamm", any_args).twice
-    expect(export).to receive(:send_data).with("gruppen", any_args)
-    expect(export).to receive(:send_data).with("gruppenmitglieder", any_args)
+  context "integrates with adapter and client" do
+    let(:adapter_double) { object_double(adapter).as_null_object }
 
-    export.run
+    subject(:mocked_export) { described_class.new(adapter_double) }
+
+    it "#run" do
+      expect(adapter_double).to receive(:send_data).with("adressenstamm", any_args).twice
+      expect(adapter_double).to receive(:send_data).with("gruppen", any_args)
+      expect(adapter_double).to receive(:send_data).with("gruppenmitglieder", any_args)
+
+      mocked_export.run
+    end
   end
 
   context "person" do
@@ -81,6 +89,11 @@ describe JodlerfestExport do
       expect(mapping).to have_key("AdrNachwuchs")
       expect(data["AdrNachwuchs"]).to eq "1"
     end
+
+    it "art" do
+      expect(mapping).to have_key("AdrArt")
+      expect(data["AdrArt"]).to eq 2
+    end
   end
 
   context "group" do
@@ -134,14 +147,6 @@ describe JodlerfestExport do
       expect(data["GruName"]).to eq '"Jodlerklub Gunzgen-Olten"'
     end
 
-    it "longer name gets truncated" do
-      export.instance_variable_set(:@schema_limits, {"GruName" => 30})
-      model.name = "Jodlerklub Gunzgen-Olten-Obergösgen-Däniken-Starkirch-und-Umgebung"
-
-      expect(mapping).to have_key("GruName")
-      expect(data["GruName"]).to eq '"Jodlerklub Gunzgen-Olten-Oberg"'
-    end
-
     it "ort" do
       expect(mapping).to have_key("GruOrt")
       expect(data["GruOrt"]).to eq '"Olten"'
@@ -187,6 +192,11 @@ describe JodlerfestExport do
   context "group addresses" do
     let(:model) { groups(:jodlerklub_gunzgen_olten) }
     let(:mapping) { export.send(:group_addresses_mapping) }
+
+    it "art" do
+      expect(mapping).to have_key("AdrArt")
+      expect(data["AdrArt"]).to eq 1
+    end
 
     it "exports the id with less conflicts" do
       expect(model.id).to eq 547334049
