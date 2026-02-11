@@ -38,7 +38,7 @@ app.SongCounts = {
   },
   new: function(song) {
     var fields;
-    $('.add_nested_fields').first().click(); // add new lineitem
+    document.querySelector('[data-action="nested-form#add"]').click(); // add new lineitem
     fields = $('#song_counts_fields .fields').last().find('input, label');
     fields.each(function(idx, elm) {
       var name;
