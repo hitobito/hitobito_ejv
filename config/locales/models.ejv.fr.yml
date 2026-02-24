@@ -326,8 +326,6 @@ fr:
       person:
         id: EJV-Nummer
         language: Korrespondenzsprache
-        languages:
-          rm: Rumantsch
         profession: Profession
         active_years: Années d'activité actuelles
         active_role: adhésion active
