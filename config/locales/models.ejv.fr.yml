@@ -322,16 +322,10 @@ fr:
         one: Sekretariat
         other: Sekretariat
 
-      invoice_item/membership_fee:
-        one: Mitgliederbeitrag
-        other: Mitgliederbeiträge
-
     attributes:
       person:
         id: EJV-Nummer
         language: Korrespondenzsprache
-        languages:
-          rm: Rumantsch
         profession: Profession
         active_years: Années d'activité actuelles
         active_role: adhésion active
@@ -343,8 +337,6 @@ fr:
         vereinssitz: Siège de la société
         association_entry: Verbandsbeitritt
         recognized_members: Membres saisis
-        manual_member_count: Mitglieder (manuell)
-        manually_counted_members: Membres saisis manuellement
         mitgliederverband: Associations membres
         contact_email: Adresse email de la personne de contact
         suisa_status: Statut SUISA

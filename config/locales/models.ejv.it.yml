@@ -322,16 +322,10 @@ it:
         one: Sekretariat
         other: Sekretariat
 
-      invoice_item/membership_fee:
-        one: Mitgliederbeitrag
-        other: Mitgliederbeiträge
-
     attributes:
       person:
         id: EJV-Nummer
         language: Korrespondenzsprache
-        languages:
-          rm: Rumantsch
         profession: Lavoro
         active_years: Anni attivi fino ad oggi
         active_role: appartenenza attiva
@@ -343,8 +337,6 @@ it:
         vereinssitz: Sede società bandistica
         association_entry: Verbandsbeitritt
         recognized_members: Membri recensiti
-        manual_member_count: Mitglieder (manuell)
-        manually_counted_members: Mitglieder manuell erfasst
         mitgliederverband: Membri delle associazioni
         contact_email: indirizzo e-mail della persona di contatto
         suisa_status: SUISA Status
