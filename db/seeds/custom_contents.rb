@@ -5,7 +5,7 @@
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_ejv.
 
-CustomContent.seed_once(:key,
+CustomContent.seed(:key,
   {
     key: SongCensusMailer::SONG_CENSUS_REMINDER,
     placeholders_optional: 'recipient-name, recipient-first-name, verein, census-url, dachverband'
