@@ -6,5 +6,5 @@
 #  https://github.com/hitobito/hitobito_ejv.
 
 module HitobitoEjv
-  VERSION = "2.9.9"
+  VERSION = "2.9.10"
 end
