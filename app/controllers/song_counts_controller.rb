@@ -7,7 +7,7 @@
 
 class SongCountsController < SimpleCrudController
   include YearBasedPaging
-  include UserManageableExportJob
+  include ExportableRedirect
 
   self.nesting = Group
   self.permitted_attrs = [:song_id, :year, :count]
@@ -52,7 +52,7 @@ class SongCountsController < SimpleCrudController
       year,
       filename: export_filename(format)).enqueue!
 
-    respond_to_export_job(redirection_target: target)
+    redirect_after_enqueued_export(target)
   end
 
   def export_filename(_format)
