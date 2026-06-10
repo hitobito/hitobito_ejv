@@ -437,3 +437,6 @@ it:
       description: "Export der Adressdaten an die Jodlerfest-DB"
     refresh_active_years_job:
       description: "Aktivjahre neu berechnen"
+
+  delayed_job:
+    export/song_counts_export_job: Werkmeldungs-Export
