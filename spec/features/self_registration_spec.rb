@@ -18,7 +18,7 @@ describe :self_registration do
     fill_in "Vorname", with: "Max"
     fill_in "Nachname", with: "Mustermann"
     fill_in "Geburtstag", with: "19.01.1991"
-    fill_in "Adresse", with: "Brauereistrasse"
+    fill_in "Strasse", with: "Brauereistrasse"
     fill_in "wizards_signup_root_neumitglieder_wizard_person_fields_housenumber", with: "1"
     fill_in "wizards_signup_root_neumitglieder_wizard_person_fields_zip_code", with: "8634"
     fill_in "wizards_signup_root_neumitglieder_wizard_person_fields_town", with: "Entenhausen"
