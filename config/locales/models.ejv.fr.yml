@@ -439,4 +439,4 @@ fr:
       description: "Aktivjahre neu berechnen"
 
   delayed_job:
-    export/song_counts_export_job: Werkmeldungs-Export
+    export/song_counts_export_job: Export des déclarations d'œuvres
