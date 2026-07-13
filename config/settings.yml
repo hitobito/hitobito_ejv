@@ -42,3 +42,7 @@ assignments:
 
 additional_address:
   enabled: true
+
+invoices:
+  filter_by_finance_layer:
+    enabled: false
