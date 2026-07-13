@@ -1,6 +1,11 @@
 # Hitobito EJV Changelog
 
+## unreleased
+
+* Feature Toggle für Sichtbarkeit von Rechnungen basierend auf finance permission deaktiviert (hitobito_ejv#76)
+
 ## Version 2.8
+
 * Neue Kurs- und Anlassrollen können auf Anlässen und Kursen zugeordnet werden (hitobito_ejv#66)
 
 ## Version 2.7
