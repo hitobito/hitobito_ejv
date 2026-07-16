@@ -59,7 +59,7 @@ it:
         success_message: Deine Anmeldung wurde erfolgreich verschickt. Wir melden uns in Kürze bei dir.
 
   song_counts:
-    export_enqueued: "Export wird im Hintergrund gestartet und kann nach Fertigstellung auf der Jobübersicht heruntergeladen werden: %{overview_link}"
+    export_enqueued: "L'esportazione viene avviata in background e, una volta completata, potrà essere scaricata dalla panoramica dei processi: %{overview_link}"
 
   dropdown/song_counts:
     button: Esportazione

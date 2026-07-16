@@ -1,6 +1,6 @@
 # Hitobito EJV Changelog
 
-## unreleased
+## Version 2.10
 
 * Feature Toggle für Sichtbarkeit von Rechnungen basierend auf finance permission deaktiviert (hitobito_ejv#76)
 
