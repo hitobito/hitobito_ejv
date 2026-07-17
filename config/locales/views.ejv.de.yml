@@ -85,6 +85,10 @@ de:
       concerts: Aufführungen
       summary: Zusammenfassung
 
+  admins:
+    show:
+      concerts: Aufführungen
+
   wizards:
     steps:
       signup:
