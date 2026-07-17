@@ -1,0 +1,2 @@
+- if can?(:index, Delayed::Job)
+  %li= link_to Delayed::Job.model_name.human(count: 2), jobs_path
