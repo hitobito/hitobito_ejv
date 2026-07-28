@@ -62,11 +62,11 @@ module HitobitoEjv
       )
 
       NavigationHelper::ADMIN_GROUPS[:info][:items] <<
-        {model: Delayed::Job, path: :jobs_path}
+        NavigationHelper::Item.new(model: Delayed::Job, path: :jobs_path)
 
       NavigationHelper::ADMIN_GROUPS[:concerts] = {
         heading: "admins.show.concerts",
-        items: [{model: Song, path: :songs_path}]
+        items: [NavigationHelper::Item.new(model: Song, path: :songs_path)]
       }
 
       StandardFormBuilder.include Ejv::StandardFormBuilder
