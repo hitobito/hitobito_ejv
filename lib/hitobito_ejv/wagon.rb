@@ -53,10 +53,6 @@ module HitobitoEjv
       Groups::SelfRegistrationController.prepend Ejv::Groups::SelfRegistrationController
 
       ### helpers
-      admin = NavigationHelper::MAIN.find { |opts| opts[:label] == :admin }
-      admin[:active_for] << "songs"
-      admin[:active_for] << "jobs"
-
       index_admin = NavigationHelper::MAIN.index { |opts| opts[:label] == :admin }
       NavigationHelper::MAIN.insert(
         index_admin,
@@ -64,6 +60,14 @@ module HitobitoEjv
         icon_name: :"info-circle",
         url: :help_path
       )
+
+      NavigationHelper::ADMIN_GROUPS[:info][:items] <<
+        NavigationHelper::Item.new(model: Delayed::Job, path: :jobs_path)
+
+      NavigationHelper::ADMIN_GROUPS[:concerts] = {
+        heading: "admins.show.concerts",
+        items: [NavigationHelper::Item.new(model: Song, path: :songs_path)]
+      }
 
       StandardFormBuilder.include Ejv::StandardFormBuilder
 
