@@ -79,6 +79,10 @@ fr:
       concerts: Interprétations
       summary: Résumé
 
+  admins:
+    show:
+      concerts: Aufführungen
+
   wizards:
     steps:
       signup:
