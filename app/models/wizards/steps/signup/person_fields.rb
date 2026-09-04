@@ -9,7 +9,7 @@
 class Wizards::Steps::Signup::PersonFields < Wizards::Step
   include I18nEnums
 
-  PHONE_NUMBER_LABEL = "mobile"
+  PHONE_NUMBER_CATEGORY_KEY = "mobile"
 
   i18n_enum :gender, Person::GENDERS + [I18nEnums::NIL_KEY],
     i18n_prefix: "activerecord.attributes.person.genders"
@@ -73,7 +73,8 @@ class Wizards::Steps::Signup::PersonFields < Wizards::Step
       self.zip_code ||= current_user.zip_code
       self.town ||= current_user.town
       self.country ||= current_user.country
-      self.phone_number ||= current_user.phone_numbers.find_by(label: PHONE_NUMBER_LABEL)&.number
+      self.phone_number ||= current_user.phone_numbers
+        .find_by(category_id: self.class.phone_number_category_id)&.number
     else
       self.country ||= Settings.addresses.imported_countries.to_a.first
     end
@@ -87,9 +88,20 @@ class Wizards::Steps::Signup::PersonFields < Wizards::Step
       attrs[:gender] = nil if attrs[:gender] == I18nEnums::NIL_KEY
 
       next attrs if phone_number.blank?
-      attrs.merge(phone_numbers_attributes: {number: phone_number, label: PHONE_NUMBER_LABEL,
-                                             id: phone_number_id})
+      attrs.merge(phone_numbers_attributes: {
+        number: phone_number,
+        category_id: self.class.phone_number_category_id,
+        id: phone_number_id
+      })
     end
+  end
+
+  # Categories are immutable reference data once seeded, so memoizing avoids
+  # re-querying on every wizard step render.
+  def self.phone_number_category_id
+    @phone_number_category_id ||=
+      ContactAccountCategory.for("PhoneNumber",
+        "Person").where(key: PHONE_NUMBER_CATEGORY_KEY).pick(:id)
   end
 
   private
@@ -117,7 +129,7 @@ class Wizards::Steps::Signup::PersonFields < Wizards::Step
 
   def phone_number_id
     if id
-      PhoneNumber.find_by(label: PHONE_NUMBER_LABEL, contactable_id: id,
+      PhoneNumber.find_by(category_id: self.class.phone_number_category_id, contactable_id: id,
         contactable_type: Person.sti_name)&.id
     end
   end

@@ -98,7 +98,9 @@ describe Wizards::Steps::Signup::PersonFields do
 
       expect(form.person_attributes[:phone_number]).to eq nil
       expect(form.person_attributes[:phone_numbers_attributes]).to eq({
-        number: required_attrs[:phone_number], label: "mobile", id: nil
+        number: required_attrs[:phone_number],
+        category_id: contact_account_categories(:phone_number_person_mobile).id,
+        id: nil
       })
     end
 
@@ -155,7 +157,9 @@ Welcher Gruppe gehörst du an?: Noch keiner"
     end
 
     it "reads phone_number if present" do
-      number = person.phone_numbers.create!(label: "mobile", number: "0791234567")
+      number = person.phone_numbers.create!(
+        category: contact_account_categories(:phone_number_person_mobile), number: "0791234567"
+      )
       expect(form.phone_number).to eq "+41 79 123 45 67"
       expect(form.person_attributes[:phone_numbers_attributes][:id]).to eq number.id
     end
