@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-#  Copyright (c) 2012-2024, Eidgenössischer Jodlerverband. This file is part of
+#  Copyright (c) 2012-2026, Eidgenössischer Jodlerverband. This file is part of
 #  hitobito_ejv and licensed under the Affero General Public License version 3
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_ejv.
@@ -21,6 +21,17 @@ describe Export::Pdf::List::People do
 
   it "renders the name of people" do
     expect(pdf_text).to match(/My Member/)
+  end
+
+  it "renders the home and mobile phone numbers" do
+    person = people.first
+    %w[landline mobile work].each_with_index do |key, i|
+      category = contact_account_categories(:"phone_number_person_#{key}")
+      Fabricate(:phone_number, contactable: person, category:, number: "+41 79 000 00 0#{i}")
+    end
+
+    expect(pdf_text).to include("+41 79 000 00 00", "+41 79 000 00 01")
+    expect(pdf_text).not_to include("+41 79 000 00 02")
   end
 
   it "creates a pdf" do
